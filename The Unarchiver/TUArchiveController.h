@@ -44,13 +44,11 @@
 -(void)setCopyArchiveDateToExtractedFolder:(BOOL)copydate;
 -(BOOL)changeDateOfExtractedSingleItems;
 -(void)setChangeDateOfExtractedSingleItems:(BOOL)changefiles;
--(BOOL)deleteArchive;
--(void)setDeleteArchive:(BOOL)delete;
+@property BOOL deleteArchive;
 -(BOOL)openExtractedItem;
 -(void)setOpenExctractedItem:(BOOL)open;
 
--(BOOL)isCancelled;
--(void)setIsCancelled:(BOOL)iscancelled;
+@property BOOL isCancelled;
 
 #ifdef UseSandbox
 -(void)useSecurityScopedURL:(NSURL *)url;

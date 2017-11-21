@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@（残り +%2$d 項目）";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */

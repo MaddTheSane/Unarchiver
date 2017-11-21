@@ -13,7 +13,7 @@
 -(void)buildEncodingListWithDefaultEncoding;
 -(void)buildEncodingListMatchingXADString:(id <XADString>)string;
 
-+(NSArray *)encodings;
++(NSArray<NSDictionary<NSString*,id>*> *)encodings;
 +(float)maximumEncodingNameWidthWithAttributes:(NSDictionary *)attrs;
 
 @end

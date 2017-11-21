@@ -11,7 +11,9 @@
 static NSString *globalpassword=nil;
 NSStringEncoding globalpasswordencoding=0;
 
+@interface TUArchiveController () <XADSimpleUnarchiverDelegate>
 
+@end
 
 @implementation TUArchiveController
 

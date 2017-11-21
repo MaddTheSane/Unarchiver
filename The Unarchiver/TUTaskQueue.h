@@ -10,7 +10,6 @@
 }
 
 -(id)init;
--(void)dealloc;
 
 -(void)setFinishAction:(SEL)selector target:(id)target;
 
@@ -20,9 +19,9 @@
 -(void)stallCurrentTask;
 -(void)finishCurrentTask;
 
--(BOOL)isRunning;
--(BOOL)isStalled;
--(BOOL)isEmpty;
+@property (readonly, getter=isRunning) BOOL running;
+@property (readonly, getter=isStalled) BOOL stalled;
+@property (readonly, getter=isEmpty) BOOL empty;
 
 -(void)restart;
 

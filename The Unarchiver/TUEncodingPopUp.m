@@ -142,7 +142,7 @@ NSComparisonResult encoding_sort(NSDictionary *enc1,NSDictionary *enc2,void *dum
 
 		[encodingarray addObject:[NSDictionary dictionaryWithObjectsAndKeys:
 			name,@"Name",
-			[NSNumber numberWithLong:encoding],@"Encoding",
+			@(encoding),@"Encoding",
 		nil]];
 	}
 
