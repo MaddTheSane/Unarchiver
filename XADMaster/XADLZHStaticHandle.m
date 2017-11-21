@@ -5,7 +5,7 @@
 
 -(id)initWithHandle:(CSHandle *)handle length:(off_t)length windowBits:(int)bits
 {
-	if((self=[super initWithHandle:handle length:length windowSize:1<<bits]))
+	if((self=[super initWithInputBufferForHandle:handle length:length windowSize:1<<bits]))
 	{
 		literalcode=distancecode=nil;
 		windowbits=bits;
@@ -114,7 +114,7 @@
 		int n=0;
 		while(n<num)
 		{
-			int c=CSInputNextSymbolUsingCode(input,metacode);
+			unsigned int c=CSInputNextSymbolUsingCode(input,metacode);
 			if(c<=2)
 			{
 				int zeros;

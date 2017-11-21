@@ -41,9 +41,8 @@ correctCRC:(uint32_t)correctcrc conditioned:(BOOL)conditioned
 -(id)initWithHandle:(CSHandle *)handle length:(off_t)length initialCRC:(uint32_t)initialcrc
 correctCRC:(uint32_t)correctcrc CRCTable:(const uint32_t *)crctable
 {
-	if((self=[super initWithName:[handle name] length:length]))
+	if((self=[super initWithParentHandle:handle length:length]))
 	{
-		parent=[handle retain];
 		crc=initcrc=initialcrc;
 		compcrc=correctcrc;
 		table=crctable;
@@ -55,14 +54,15 @@ correctCRC:(uint32_t)correctcrc CRCTable:(const uint32_t *)crctable
 
 -(void)dealloc
 {
-	[parent release];
+	[transformationcontext release];
 	[super dealloc];
 }
 
--(void)setCRCTransformationFunction:(XADCRCTransformationFunction *)function context:(void *)context
+-(void)setCRCTransformationFunction:(XADCRCTransformationFunction *)function context:(id)context
 {
 	transformationfunction=function;
-	transformationcontext=context;
+	[transformationcontext release];
+	transformationcontext=[context retain];
 }
 
 -(void)resetStream

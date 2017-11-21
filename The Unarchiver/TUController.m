@@ -5,8 +5,12 @@
 #import "XADMaster/XADPlatform.h"
 #import "TUDockTileView.h"
 
-#ifndef IsLegacyVersion
+#ifdef UseSandbox
 #import "CSURLCache.h"
+#endif
+
+#ifdef UseSparkle
+#import <Sparkle/Sparkle.h>
 #endif
 
 #import <unistd.h>
@@ -29,7 +33,7 @@ static BOOL IsPathWritable(NSString *path);
 {
 	if((self=[super init]))
 	{
-		setuptasks=[TUTaskQueue new];
+		addtasks=[TUTaskQueue new];
 		extracttasks=[TUTaskQueue new];
 		archivecontrollers=[NSMutableArray new];
 		selecteddestination=nil;
@@ -39,15 +43,19 @@ static BOOL IsPathWritable(NSString *path);
 
 		opened=NO;
 
-		[setuptasks setFinishAction:@selector(setupQueueEmpty:) target:self];
+		[addtasks setFinishAction:@selector(addQueueEmpty:) target:self];
 		[extracttasks setFinishAction:@selector(extractQueueEmpty:) target:self];
+
+		#ifdef UseSparkle
+		[SUUpdater new];
+		#endif
 	}
 	return self;
 }
 
 -(void)dealloc
 {
-	[setuptasks release];
+	[addtasks release];
 	[extracttasks release];
 	[archivecontrollers release];
 	[selecteddestination release];
@@ -69,6 +77,18 @@ static BOOL IsPathWritable(NSString *path);
 
 	if(floor(NSAppKitVersionNumber)<=NSAppKitVersionNumber10_3)
 	[prefstabs removeTabViewItem:formattab];
+
+	#ifdef UseSparkle
+	NSMenu *mainmenu=[[NSApplication sharedApplication] mainMenu];
+	NSMenu *appmenu=[[mainmenu itemAtIndex:0] submenu];
+
+	NSMenuItem *item=[[NSMenuItem new] autorelease];
+	item.title=NSLocalizedString(@"Check for Update…",@"Check for update menu item");
+	item.target=self;
+	item.action=@selector(checkForUpdates:);
+
+	[appmenu insertItem:item atIndex:1];
+	#endif
 
 	[encodingpopup buildEncodingListWithAutoDetect];
 	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
@@ -96,10 +116,18 @@ static BOOL IsPathWritable(NSString *path);
 		#ifdef IsLegacyVersion
 		[fm removeFileAtPath:tmpdir handler:nil];
 		#else
+
+		#ifdef UseSandbox
 		NSURL *url=[[CSURLCache defaultCache] securityScopedURLAllowingAccessToPath:tmpdir];
 		[url startAccessingSecurityScopedResource];
+		#endif
+
 		[fm removeItemAtPath:tmpdir error:nil];
+
+		#ifdef UseSandbox
 		[url stopAccessingSecurityScopedResource];
+		#endif
+
 		#endif
 	}
 
@@ -124,7 +152,7 @@ static BOOL IsPathWritable(NSString *path);
 	[NSApp setServicesProvider:self];
 	[self performSelector:@selector(delayedAfterLaunch) withObject:nil afterDelay:0.3];
 
-	#ifndef IsLegacyVersion
+	#ifdef UseSandbox
 	if([[NSUserDefaults standardUserDefaults] integerForKey:@"extractionDestination"]==UnintializedDestination)
 	{
 		NSArray *array=[[NSBundle mainBundle] preferredLocalizations];
@@ -184,7 +212,7 @@ static BOOL IsPathWritable(NSString *path);
 {
 	opened=YES;
 
-	#ifndef IsLegacyVersion
+	#ifdef UseSandbox
 	// Get rid of sandbox junk.
 	filename=[filename stringByResolvingSymlinksInPath];
 	#endif
@@ -193,58 +221,70 @@ static BOOL IsPathWritable(NSString *path);
 	if(GetCurrentKeyModifiers()&(optionKey|shiftKey)) desttype=SelectedDestination;
 	else desttype=(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"extractionDestination"];
 
-	[self newArchiveForFile:filename destination:desttype];
+	[self addArchiveControllerForFile:filename destinationType:desttype];
 	return YES;
 }
 
 
 
--(void)newArchivesForFiles:(NSArray *)filenames destination:(int)desttype
+
+-(void)addArchiveControllersForFiles:(NSArray *)filenames destinationType:(int)desttype;
 {
 	NSEnumerator *enumerator=[filenames objectEnumerator];
 	NSString *filename;
-	while((filename=[enumerator nextObject])) [self newArchiveForFile:filename destination:desttype];
+	while((filename=[enumerator nextObject])) [self addArchiveControllerForFile:filename destinationType:desttype];
 }
 
--(void)newArchivesForURLs:(NSArray *)urls destination:(int)desttype
+-(void)addArchiveControllersForURLs:(NSArray *)urls destinationType:(int)desttype;
 {
 	NSEnumerator *enumerator=[urls objectEnumerator];
 	NSURL *url;
-	while((url=[enumerator nextObject])) [self newArchiveForFile:[url path] destination:desttype];
+	while((url=[enumerator nextObject])) [self addArchiveControllerForFile:[url path] destinationType:desttype];
 }
 
--(void)newArchiveForFile:(NSString *)filename destination:(int)desttype
+-(void)addArchiveControllerForFile:(NSString *)filename destinationType:(int)desttype;
 {
-	// Check if this file is already included in any of the currently queued archives.
-	if([self archiveControllerForFilename:filename]) return;
-
-	TUArchiveController *archive=[[[TUArchiveController alloc] initWithFilename:filename] autorelease];
-	[archive setDestination:[self destinationForFilename:filename type:desttype]];
-	[self addArchiveController:archive];
-}
-
--(NSString *)destinationForFilename:(NSString *)filename type:(int)desttype
-{
+	NSString *destination;
 	switch(desttype)
 	{
 		default:
 		case CurrentFolderDestination:
-			return [filename stringByDeletingLastPathComponent];
+			destination=[filename stringByDeletingLastPathComponent];
+		break;
 
 		case DesktopDestination:
-			return [[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+			destination=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+		break;
 
 		case SelectedDestination:
-			return nil;
+			destination=selecteddestination;
+		break;
 	}
+
+	TUArchiveController *archive=[[[TUArchiveController alloc] initWithFilename:filename] autorelease];
+	[archive setDestination:destination];
+
+	[self addArchiveController:archive];
 }
 
 -(void)addArchiveController:(TUArchiveController *)archive
 {
+	[[addtasks taskWithTarget:self] actuallyAddArchiveController:archive];
+}
+
+-(void)actuallyAddArchiveController:(TUArchiveController *)archive
+{
+	// Check if this file is already included in any of the currently queued archives.
+	if([self archiveControllerForFilename:[archive filename]])
+	{
+		[addtasks finishCurrentTask];
+		return;
+	}
+
 	// Create status view and archive controller.
 	TUArchiveTaskView *taskview=[[TUArchiveTaskView new] autorelease];
 
-	[taskview setCancelAction:@selector(archiveTaskViewCancelledBeforeSetup:) target:self];
+	//[taskview setCancelAction:@selector(archiveTaskViewCancelledBeforeSetup:) target:self];
 	[taskview setArchiveController:archive];
 	[taskview setupWaitView];
 	[mainlist addTaskView:taskview];
@@ -258,14 +298,14 @@ static BOOL IsPathWritable(NSString *path);
 	[NSApp activateIgnoringOtherApps:YES];
 	[mainwindow makeKeyAndOrderFront:nil];
 
-	[[setuptasks taskWithTarget:self] setupExtractionForArchiveController:archive];
+	[self findDestinationForArchiveController:archive];
 }
 
 -(TUArchiveController *)archiveControllerForFilename:(NSString *)filename
 {
 	NSEnumerator *enumerator=[archivecontrollers objectEnumerator];
 	TUArchiveController *archive;
-	while((archive=[enumerator nextObject]))
+	while(archive=[enumerator nextObject])
 	{
 		if([archive isCancelled]) continue;
 		NSArray *filenames=[archive allFilenames];
@@ -274,46 +314,7 @@ static BOOL IsPathWritable(NSString *path);
 	return nil;
 }
 
-
-
-
--(void)archiveTaskViewCancelledBeforeSetup:(TUArchiveTaskView *)taskview
-{
-	[mainlist removeTaskView:taskview];
-	[[taskview archiveController] setIsCancelled:YES];
-}
-
-
-
-
--(void)setupExtractionForArchiveController:(TUArchiveController *)archive
-{
-	if([archive isCancelled])
-	{
- 		[archivecontrollers removeObjectIdenticalTo:archive];
-		[docktile setCount:(int)[archivecontrollers count]];
-		[setuptasks finishCurrentTask];
-		return;
-	}
-
-	[[archive taskView] setCancelAction:NULL target:nil];
-
-	if(![archive destination]) [archive setDestination:selecteddestination];
-
-	[self checkDestinationForArchiveController:archive];
-}
-
--(void)checkDestinationForArchiveController:(TUArchiveController *)archive
-{
-	[self checkDestinationForArchiveController:archive secondAttempt:NO];
-}
-
--(void)checkDestinationForArchiveControllerAgain:(TUArchiveController *)archive
-{
-	[self checkDestinationForArchiveController:archive secondAttempt:YES];
-}
-
--(void)checkDestinationForArchiveController:(TUArchiveController *)archive secondAttempt:(BOOL)secondattempt
+-(void)findDestinationForArchiveController:(TUArchiveController *)archive
 {
 	NSString *destination=[archive destination];
 
@@ -330,94 +331,114 @@ static BOOL IsPathWritable(NSString *path);
 		NSString *rememberedpath=[[NSUserDefaults standardUserDefaults] stringForKey:@"lastDestination"];
 
 		#ifdef IsLegacyVersion
+
 		if(rememberedpath) [panel setDirectory:rememberedpath];
+
 		[panel beginSheetForDirectory:nil file:nil modalForWindow:mainwindow
 		modalDelegate:self didEndSelector:@selector(archiveDestinationPanelDidEnd:returnCode:contextInfo:)
 		contextInfo:archive];
+
 		#else
+
 		if(rememberedpath) [panel setDirectoryURL:[NSURL fileURLWithPath:rememberedpath]];
+
 		[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
 			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:archive];
 		}];
+
 		#endif
 
 		return;
+	}
+
+	[self gainAccessToDestinationForArchiveController:archive];
+}
+
+-(void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive
+{
+	#ifndef UseSandbox
+
+	[self checkDestinationForArchiveController:archive];
+
+	#else
+
+	NSString *destination=[archive destination];
+
+	// Always try to find the directory in our cache of security-scoped URLs.
+	// We may have access to write to it already, but this may only be
+	// because an archive ahead of us in the queue requested it, and will
+	// later give up that right, so we have to make sure we get it for
+	// ourselves too.
+	NSURL *scopedurl=[[CSURLCache defaultCache] securityScopedURLAllowingAccessToPath:destination];
+	if(scopedurl)
+	{
+		// If we do have one, we can just move on.
+		[archive useSecurityScopedURL:scopedurl];
+		[self checkDestinationForArchiveController:archive];
+	}
+	else if(IsPathWritable(destination))
+	{
+		// If we don't, but the destination is writable anyway, just go ahead.
+		[self checkDestinationForArchiveController:archive];
 	}
 	else
 	{
-		#ifndef IsLegacyVersion
-		// On the first attempt to access a given path, try to find a cached
-		// security-scoped URL for this path, and use it, even if we already have
-		// access. (This is to balance the number of starts and stops for the URL.)
-		if(!secondattempt)
+		// If the destination is not writable and we didn't have cached access
+		// to it, open a file panel to get fresh access to the directory.
+		NSOpenPanel *panel=[NSOpenPanel openPanel];
+
+		NSTextField *text=[[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)] autorelease];
+
+		[text setStringValue:NSLocalizedString(
+		@"The Unarchiver does not have permission to write to this folder. "
+		@"To allow The Unarchiver to write to this folder, simply click "
+		@"\"Extract\". This permission will be remembered for this folder, and "
+		@"The Unarchiver will not need to ask for it again.",
+		@"Informative text in the file panel shown when trying to gain sandbox access")];
+		[text setBezeled:NO];
+		[text setDrawsBackground:NO];
+		[text setEditable:NO];
+		[text setSelectable:NO];
+		[text setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:[[text cell] controlSize]]]];
+
+		NSSize size=[[text cell] cellSizeForBounds:NSMakeRect(0,0,460,100000)];
+		[text setFrame:NSMakeRect(0,0,size.width,size.height)];
+
+		[panel setAccessoryView:text];
+		if([panel respondsToSelector:@selector(isAccessoryViewDisclosed)])
 		{
-			NSURL *scopedurl=[[CSURLCache defaultCache] securityScopedURLAllowingAccessToPath:destination];
-			[archive useSecurityScopedURL:scopedurl];
+			[panel setAccessoryViewDisclosed:YES];
 		}
-		#endif
+
+		[panel setCanCreateDirectories:YES];
+		[panel setCanChooseDirectories:YES];
+		[panel setCanChooseFiles:NO];
+		[panel setPrompt:NSLocalizedString(@"Extract",@"Panel OK button title when choosing an unarchiving destination for an archive")];
+		[panel setDirectoryURL:[NSURL fileURLWithPath:destination]];
+
+		[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
+			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:archive];
+		}];
 	}
 
-	if(!IsPathWritable(destination))
-	{
-		#ifdef IsLegacyVersion
+	#endif
+}
 
+-(void)checkDestinationForArchiveController:(TUArchiveController *)archive
+{
+	NSString *destination=[archive destination];
+
+	if(IsPathWritable(destination))
+	{
+		// Continue the setup process by trying to initialize the unarchiver,
+		// and handle getting access from the sandbox to scan for volume files.
+		[self prepareArchiveController:archive];
+	}
+	else
+	{
 		// Can not write to the given destination. Show an error.
 		[[archive taskView] displayNotWritableErrorWithResponseAction:@selector(archiveTaskView:notWritableResponse:) target:self];
-		return;
-
-		#else
-
-		// Can not write to the given destination. Open a file
-		// panel to get sandbox access to the directory, or show an error
-		// if a file panel was already shown.
-		if(!IsPathWritable(destination))
-		{
-			if(secondattempt)
-			{
-				[[archive taskView] displayNotWritableErrorWithResponseAction:@selector(archiveTaskView:notWritableResponse:) target:self];
-			}
-			else
-			{
-				NSOpenPanel *panel=[NSOpenPanel openPanel];
-
-				NSTextField *text=[[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)] autorelease];
-
-				[text setStringValue:NSLocalizedString(
-				@"The Unarchiver does not have permission to write to this folder. "
-				@"To allow The Unarchiver to write to this folder, simply click "
-				@"\"Extract\". This permission will be remembered for this folder, and "
-				@"The Unarchiver will not need to ask for it again.",
-				@"Informative text in the file panel shown when trying to gain sandbox access")];
-				[text setBezeled:NO];
-				[text setDrawsBackground:NO];
-				[text setEditable:NO];
-				[text setSelectable:NO];
-				[text setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:[[text cell] controlSize]]]];
-
-				NSSize size=[[text cell] cellSizeForBounds:NSMakeRect(0,0,460,100000)];
-				[text setFrame:NSMakeRect(0,0,size.width,size.height)];
-
-				[panel setAccessoryView:text];
-
-				[panel setCanCreateDirectories:YES];
-				[panel setCanChooseDirectories:YES];
-				[panel setCanChooseFiles:NO];
-				[panel setPrompt:NSLocalizedString(@"Extract",@"Panel OK button title when choosing an unarchiving destination for an archive")];
-				[panel setDirectoryURL:[NSURL fileURLWithPath:destination]];
-
-				[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
-					[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:archive];
-				}];
-			}
-			return;
-		}
-
-		#endif
 	}
-
-	// Continue the setup process by trying to initialize the unarchiver,
-	// and handle getting access from the sandbox to scan for volume files.
-	[self prepareArchiveController:archive];
 }
 
 -(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)res contextInfo:(void  *)info
@@ -432,14 +453,16 @@ static BOOL IsPathWritable(NSString *path);
 		selecteddestination=[[panel directory] retain];
 		#else
 		NSURL *url=[panel URL];
+		#ifdef UseSandbox
 		[[CSURLCache defaultCache] cacheSecurityScopedURL:url];
+		#endif
 		selecteddestination=[[url path] retain];
 		#endif
 
 		[[NSUserDefaults standardUserDefaults] setObject:selecteddestination forKey:@"lastDestination"];
 
 		[archive setDestination:selecteddestination];
-		[self performSelector:@selector(checkDestinationForArchiveControllerAgain:) withObject:archive afterDelay:0];
+		[self performSelector:@selector(checkDestinationForArchiveController:) withObject:archive afterDelay:0];
 	}
 	else
 	{
@@ -462,20 +485,22 @@ static BOOL IsPathWritable(NSString *path);
 			NSString *desktop=[NSSearchPathForDirectoriesInDomains(
 			NSDesktopDirectory,NSUserDomainMask,YES) objectAtIndex:0];
 			[archive setDestination:desktop];
-			[self checkDestinationForArchiveController:archive];
+			[[archive taskView] setupWaitView];
+			[self gainAccessToDestinationForArchiveController:archive];
 		}
 		break;
 
 		case 2: // Elsewhere.
 			[archive setDestination:nil];
-			[self checkDestinationForArchiveController:archive];
+			[[archive taskView] setupWaitView];
+			[self findDestinationForArchiveController:archive];
 		break;
 	}
 }
 
 -(void)prepareArchiveController:(TUArchiveController *)archive
 {
-	#ifdef IsLegacyVersion
+	#ifndef UseSandbox
 
 	// With no sandbox, this is easy.
 	[archive prepare];
@@ -529,6 +554,10 @@ static BOOL IsPathWritable(NSString *path);
 			[text setFrame:NSMakeRect(0,0,size.width,size.height)];
 
 			[panel setAccessoryView:text];
+			if([panel respondsToSelector:@selector(isAccessoryViewDisclosed)])
+			{
+				[panel setAccessoryViewDisclosed:YES];
+			}
 
 			[panel setCanCreateDirectories:YES];
 			[panel setCanChooseDirectories:YES];
@@ -563,7 +592,7 @@ static BOOL IsPathWritable(NSString *path);
 
 	[[extracttasks taskWithTarget:self] startExtractionForArchiveController:archive];
 
-	[setuptasks finishCurrentTask];
+	[addtasks finishCurrentTask];
 }
 
 -(void)cancelSetupForArchiveController:(TUArchiveController *)archive
@@ -571,10 +600,10 @@ static BOOL IsPathWritable(NSString *path);
 	[archivecontrollers removeObjectIdenticalTo:archive];
 	[docktile setCount:(int)[archivecontrollers count]];
 	[mainlist removeTaskView:[archive taskView]];
-	[setuptasks finishCurrentTask];
+	[addtasks finishCurrentTask];
 }
 
--(void)setupQueueEmpty:(TUTaskQueue *)queue
+-(void)addQueueEmpty:(TUTaskQueue *)queue
 {
 	if([extracttasks isEmpty])
 	{
@@ -620,7 +649,7 @@ static BOOL IsPathWritable(NSString *path);
 
 -(void)extractQueueEmpty:(TUTaskQueue *)queue
 {
-	if([setuptasks isEmpty])
+	if([addtasks isEmpty])
 	{
 		if([mainwindow isMiniaturized]) [mainwindow close];
 		else [mainwindow orderOut:nil];
@@ -646,6 +675,17 @@ static BOOL IsPathWritable(NSString *path);
 	[mainwindow setMaxSize:NSMakeSize(100000,newframe.size.height)];
 	[mainwindow setFrame:newframe display:YES animate:NO];
 }
+
+
+
+
+#ifdef UseSparkle
+-(IBAction)checkForUpdates:(id)sender
+{
+	[SUUpdater.sharedUpdater checkForUpdates:sender];
+}
+#endif
+
 
 
 
@@ -695,7 +735,9 @@ static BOOL IsPathWritable(NSString *path);
 		NSString *directory=[panel directory];
 		#else
 		NSURL *url=[panel URL];
+		#ifdef UseSandbox
 		[[CSURLCache defaultCache] cacheSecurityScopedURL:url];
+		#endif
 		NSString *directory=[url path];
 		#endif
 
@@ -716,7 +758,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([[pboard types] containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self newArchivesForFiles:filenames destination:CurrentFolderDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:CurrentFolderDestination];
 	}
 }
 
@@ -727,7 +769,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([[pboard types] containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self newArchivesForFiles:filenames destination:DesktopDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:DesktopDestination];
 	}
 }
 
@@ -738,7 +780,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([[pboard types] containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self newArchivesForFiles:filenames destination:SelectedDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:SelectedDestination];
 	}
 }
 
@@ -773,9 +815,9 @@ userData:(NSString *)data error:(NSString **)error
 	if(res==NSOKButton)
 	{
 		#ifdef IsLegacyVersion
-		[self newArchivesForFiles:[panel filenames] destination:desttype];
+		[self addArchiveControllersForFiles:[panel filenames] destinationType:desttype];
 		#else
-		[self newArchivesForURLs:[panel URLs] destination:desttype];
+		[self addArchiveControllersForURLs:[panel URLs] destinationType:desttype];
 		#endif
 	}
 }

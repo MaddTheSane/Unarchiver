@@ -1,14 +1,14 @@
 #import "XADRAR30Handle.h"
-#import "XADRAR30Filter.h"
+#import "XADRARFilters.h"
 #import "XADException.h"
 
 @implementation XADRAR30Handle
 
--(id)initWithRARParser:(XADRARParser *)parent files:(NSArray *)filearray
+-(id)initWithRARParser:(XADRARParser *)parentparser files:(NSArray *)filearray
 {
-	if((self=[super initWithName:[parent filename]]))
+	if((self=[super initWithParentHandle:[parentparser handle]]))
 	{
-		parser=parent;
+		parser=parentparser;
 		files=[filearray retain];
 
 		InitializeLZSS(&lzss,0x400000);
@@ -576,7 +576,7 @@
 	if(isnew)
 	{
 		int length=CSInputNextRARVMNumber(filterinput);
-		if(length==0||length>0x10000) [XADException raiseIllegalDataException];
+		if(length<=0||length>0x10000) [XADException raiseIllegalDataException];
 
 		uint8_t bytecode[length];
 		for(int i=0;i<length;i++) bytecode[i]=CSInputNextBitString(filterinput,8);

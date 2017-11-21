@@ -13,6 +13,9 @@ typedef struct RAR5Block
 {
 	NSData *headerkey;
 	NSMutableDictionary *cryptocache;
+
+	NSMutableArray *solidstreams,*currsolidstream;
+	off_t totalsolidsize;
 }
 
 +(int)requiredHeaderSize;
@@ -20,6 +23,8 @@ typedef struct RAR5Block
 +(NSArray *)volumesForHandle:(CSHandle *)handle firstBytes:(NSData *)data name:(NSString *)name;
 
 -(void)parse;
+-(void)addEntryWithDictionary:(NSMutableDictionary *)dict
+inputParts:(NSArray *)parts isCorrupted:(BOOL)iscorrupted;
 
 -(NSMutableDictionary *)readFileBlockHeader:(RAR5Block)block;
 -(RAR5Block)readBlockHeader;
@@ -28,6 +33,9 @@ typedef struct RAR5Block
 -(NSData *)encryptionKeyForPassword:(NSString *)passwordstring salt:(NSData *)salt strength:(int)strength passwordCheck:(NSData *)check;
 -(NSData *)hashKeyForPassword:(NSString *)passwordstring salt:(NSData *)salt strength:(int)strength passwordCheck:(NSData *)check;
 -(NSDictionary *)keysForPassword:(NSString *)passwordstring salt:(NSData *)salt strength:(int)strength passwordCheck:(NSData *)check;
+
+-(CSInputBuffer *)inputBufferWithDictionary:(NSDictionary *)dict;
+-(CSHandle *)inputHandleWithDictionary:(NSDictionary *)dict;
 
 -(NSString *)formatName;
 

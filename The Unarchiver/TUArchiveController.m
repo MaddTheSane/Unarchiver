@@ -46,8 +46,8 @@ NSStringEncoding globalpasswordencoding=0;
 		ignoreall=NO;
 		haderrors=NO;
 
-		#ifndef IsLegacyVersion
-		scopedurl=nil;
+		#ifdef UseSandbox
+		scopedurls=[NSMutableArray new];
 		#endif
 	}
 	return self;
@@ -62,9 +62,14 @@ NSStringEncoding globalpasswordencoding=0;
 	[destination release];
 	[tmpdest release];
 
-	#ifndef IsLegacyVersion
-	[scopedurl stopAccessingSecurityScopedResource];
-	[scopedurl release];
+	#ifdef UseSandbox
+	NSEnumerator *enumerator=[scopedurls objectEnumerator];
+	NSURL *scopedurl;
+	while((scopedurl=[enumerator nextObject]))
+	{
+		[scopedurl stopAccessingSecurityScopedResource];
+	}
+	[scopedurls release];
 	#endif
 
 	[super dealloc];
@@ -142,14 +147,11 @@ NSStringEncoding globalpasswordencoding=0;
 
 
 
-#ifndef IsLegacyVersion
+#ifdef UseSandbox
 -(void)useSecurityScopedURL:(NSURL *)url
 {
-	[scopedurl stopAccessingSecurityScopedResource];
-	[scopedurl autorelease];
-
-	scopedurl=[url retain];
-	[scopedurl startAccessingSecurityScopedResource];
+	[url startAccessingSecurityScopedResource];
+	[scopedurls addObject:url];
 }
 #endif
 
@@ -536,7 +538,10 @@ extractionProgressForEntryWithDictionary:(NSDictionary *)dict
 fileProgress:(off_t)fileprogress of:(off_t)filesize
 totalProgress:(off_t)totalprogress of:(off_t)totalsize
 {
-	double progress=(double)totalprogress/(double)totalsize;
+	double progress;
+	if(totalsize) progress=(double)totalprogress/(double)totalsize;
+	else progress=1;
+
 	[view setProgress:progress];
 	[docktile setProgress:progress];
 }

@@ -1,7 +1,7 @@
 #import <XADMaster/XADArchive.h>
 
 #import "TUTaskListView.h"
-#import "TUEncodingPopup.h"
+#import "TUEncodingPopUp.h"
 
 @class TUArchiveController;
 

@@ -23,7 +23,7 @@
 	BOOL cancelled,ignoreall,haderrors;
 
 	#ifndef IsLegacyVersion
-	NSURL *scopedurl;
+	NSMutableArray *scopedurls;
 	#endif
 }
 
@@ -52,7 +52,7 @@
 -(BOOL)isCancelled;
 -(void)setIsCancelled:(BOOL)iscancelled;
 
-#ifndef IsLegacyVersion
+#ifdef UseSandbox
 -(void)useSecurityScopedURL:(NSURL *)url;
 #endif
 

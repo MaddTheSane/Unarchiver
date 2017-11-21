@@ -8,7 +8,6 @@
 #import "NSDateXAD.h"
 #import "CSMemoryHandle.h"
 #import "CSFileHandle.h"
-#import "CSMultiHandle.h"
 #import "Scanning.h"
 
 #include <dirent.h>
@@ -228,8 +227,10 @@ static CSHandle *FindHandleForName(NSData *namedata,NSString *dirname,NSArray *d
 			XADCABBlockReader *blocks=[[file objectForKey:XADSolidObjectKey] objectForKey:@"BlockReader"];
 			off_t streamcompsize=[blocks compressedLength];
 			off_t streamuncompsize=[blocks uncompressedLength];
+			off_t compsize=0;
+			if(streamuncompsize!=0) compsize=filesize*streamcompsize/streamuncompsize;
 
-			[file setObject:[NSNumber numberWithLongLong:filesize*streamcompsize/streamuncompsize] forKey:XADCompressedSizeKey];
+			[file setObject:[NSNumber numberWithLongLong:compsize] forKey:XADCompressedSizeKey];
 
 			[self addEntryWithDictionary:file];
 			[files removeObjectAtIndex:0];
@@ -237,13 +238,16 @@ static CSHandle *FindHandleForName(NSData *namedata,NSString *dirname,NSArray *d
 
 		[fh seekToFileOffset:position];
 
-		if([fh respondsToSelector:@selector(currentHandle)])
+		if([self hasVolumes])
 		{
-			[[(id)fh currentHandle] seekToEndOfFile];
+			[[self currentHandle] seekToEndOfFile];
 			if([fh atEndOfFile]) break;
 			baseoffs=[fh offsetInFile];
 		}
-		else break;
+		else
+		{
+			break;
+		}
 	}
 }
 

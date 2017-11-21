@@ -58,17 +58,15 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 		return;
 	}
 
-	NSString *path=url.path;
-	if([cachedbookmarks objectForKey:path]) return;
-
 	NSData *bookmark=[url bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
 	includingResourceValuesForKeys:nil relativeToURL:nil error:NULL];
-
 	if(!bookmark)
 	{
 		NSLog(@"Failed to create security-scoped bookmark of URL \"%@\"!",url);
 		return;
 	}
+
+	NSString *path=url.path;
 
 	for(NSString *bookmarkpath in cachedbookmarks.allKeys)
 	{
@@ -80,11 +78,7 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 	}
 
 	[cachedbookmarks setObject:bookmark forKey:path];
-
-	BOOL isstale;
-	[cachedurls setObject:url forKey:[NSURL URLByResolvingBookmarkData:bookmark
-	options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil
-	bookmarkDataIsStale:&isstale error:NULL]];
+	[cachedurls setObject:url forKey:path];
 
 	[NSUserDefaults.standardUserDefaults setObject:cachedbookmarks forKey:@"cachedBookmarks"];
 	[NSUserDefaults.standardUserDefaults synchronize];
@@ -131,13 +125,18 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 	options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil
 	bookmarkDataIsStale:&isstale error:NULL];
 
-	if(url && !isstale)
+	if(!url) return nil;
+
+	if(isstale)
 	{
-		[cachedurls setObject:url forKey:path];
-		return url;
+		[cachedbookmarks removeObjectForKey:path];
+		[NSUserDefaults.standardUserDefaults setObject:cachedbookmarks forKey:@"cachedBookmarks"];
+		[NSUserDefaults.standardUserDefaults synchronize];
+		return nil;
 	}
 
-	return nil;
+	[cachedurls setObject:url forKey:path];
+	return url;
 }
 
 @end
