@@ -5,15 +5,15 @@
 {
 }
 
--(id)initWithFrame:(NSRect)frame;
--(id)initWithCoder:(NSCoder *)coder;
+-(instancetype)initWithFrame:(NSRect)frame;
+-(instancetype)initWithCoder:(NSCoder *)coder;
 
 -(void)buildEncodingList;
 -(void)buildEncodingListWithAutoDetect;
 -(void)buildEncodingListWithDefaultEncoding;
 -(void)buildEncodingListMatchingXADString:(id <XADString>)string;
 
-+(NSArray<NSDictionary<NSString*,id>*> *)encodings;
-+(float)maximumEncodingNameWidthWithAttributes:(NSDictionary *)attrs;
+@property (class, readonly, copy) NSArray<NSDictionary<NSString*,id>*> *encodings;
++(CGFloat)maximumEncodingNameWidthWithAttributes:(NSDictionary *)attrs;
 
 @end

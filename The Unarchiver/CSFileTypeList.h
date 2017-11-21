@@ -10,9 +10,8 @@
 
 +(void)setDisabledInSandbox:(BOOL)disabled;
 
--(id)initWithCoder:(NSCoder *)coder;
--(id)initWithFrame:(NSRect)frame;
--(void)dealloc;
+-(instancetype)initWithCoder:(NSCoder *)coder;
+-(instancetype)initWithFrame:(NSRect)frame;
 
 -(IBAction)selectAll:(id)sender;
 -(IBAction)deselectAll:(id)sender;
@@ -32,9 +31,8 @@
 	NSArray *filetypes;
 }
 
--(id)init;
--(void)dealloc;
--(NSArray *)readFileTypes;
+-(instancetype)init;
+-(NSArray<NSString*> *)readFileTypes;
 
 -(void)claimAllTypesExceptAlternate;
 -(void)surrenderAllTypes;

@@ -4,19 +4,18 @@
 
 @interface TUTaskListView:NSView
 {
-	float totalheight;
+	CGFloat totalheight;
 
 	SEL resizeaction;
 	id resizetarget;
 }
 
--(id)initWithFrame:(NSRect)frame;
--(void)dealloc;
+-(instancetype)initWithFrame:(NSRect)frame;
 
 -(void)addTaskView:(TUTaskView *)taskview;
 -(void)removeTaskView:(TUTaskView *)taskview;
 -(BOOL)containsTaskView:(TUTaskView *)taskview;
--(void)setHeight:(float)height forView:(NSView *)view;
+-(void)setHeight:(CGFloat)height forView:(NSView *)view;
 -(void)_layoutSubviews;
 
 -(void)setResizeAction:(SEL)action target:(id)target;
@@ -29,7 +28,7 @@
 {
 }
 
--(id)init;
+-(instancetype)init;
 -(TUTaskListView *)taskListView;
 
 @end
@@ -38,7 +37,7 @@
 {
 }
 
--(id)init;
+-(instancetype)init;
 -(void)setDisplayedView:(NSView *)dispview;
 
 @end

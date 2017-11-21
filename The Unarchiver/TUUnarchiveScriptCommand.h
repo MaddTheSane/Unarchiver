@@ -12,8 +12,8 @@
 	NSString * extractDestination;
 }
 
--(id)initWithCommandDescription:(NSScriptCommandDescription *)commandDef;
--(id)performDefaultImplementation;
+-(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef;
+-(instancetype)performDefaultImplementation;
 
 -(BOOL)evalBooleanParameterForKey:(NSString *)parameterKey;
 -(id)errorFileDontExist:(NSString *)file;

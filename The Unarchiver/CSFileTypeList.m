@@ -48,13 +48,6 @@ static BOOL DisabledInSandbox=YES;
 	return self;
 }
 
--(void)dealloc
-{
-	[datasource release];
-	[blockerview release];
-	[super dealloc];
-}
-
 -(IBAction)selectAll:(id)sender
 {
 	[datasource claimAllTypesExceptAlternate];
@@ -73,7 +66,7 @@ static BOOL DisabledInSandbox=YES;
 	if(!getenv("APP_SANDBOX_CONTAINER_ID")) return;
 	if(!IsYosemiteOrAbove()) return;
 
-	NSTextField *label=[[[NSTextField alloc] initWithFrame:[self bounds]] autorelease];
+	NSTextField *label=[[NSTextField alloc] initWithFrame:[self bounds]];
 	[label setTextColor:[NSColor whiteColor]];
 	[label setBackgroundColor:[NSColor colorWithCalibratedRed:0 green:0 blue:0 alpha:0.75]];
 	[label setFont:[NSFont systemFontOfSize:17]];
@@ -97,39 +90,39 @@ static BOOL DisabledInSandbox=YES;
 	@"3. Click \"Change All...\"",
 	@"App store file format limitation message format"),appname];
 
-	NSMutableParagraphStyle *centeredstyle=[[NSMutableParagraphStyle new] autorelease];
+	NSMutableParagraphStyle *centeredstyle=[NSMutableParagraphStyle new];
 	[centeredstyle setFirstLineHeadIndent:32];
 	[centeredstyle setHeadIndent:32];
 	[centeredstyle setTailIndent:-32];
 	[centeredstyle setAlignment:NSCenterTextAlignment];
 
-	NSMutableParagraphStyle *leftstyle=[[NSMutableParagraphStyle new] autorelease];
+	NSMutableParagraphStyle *leftstyle=[NSMutableParagraphStyle new];
 	[leftstyle setFirstLineHeadIndent:32];
 	[leftstyle setHeadIndent:32];
 	[leftstyle setTailIndent:-32];
 	[leftstyle setAlignment:NSLeftTextAlignment];
 
-	NSMutableAttributedString *string=[[NSMutableAttributedString new] autorelease];
+	NSMutableAttributedString *string=[NSMutableAttributedString new];
 
-	[string appendAttributedString:[[[NSAttributedString alloc]
+	[string appendAttributedString:[[NSAttributedString alloc]
 	initWithString:title
 	attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 		[NSFont boldSystemFontOfSize:16],NSFontAttributeName,
 		[NSColor whiteColor],NSForegroundColorAttributeName,
 		centeredstyle,NSParagraphStyleAttributeName,
-	nil]] autorelease]];
+	nil]]];
 
-	[string appendAttributedString:[[[NSAttributedString alloc]
+	[string appendAttributedString:[[NSAttributedString alloc]
 	initWithString:message
 	attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 		[NSFont boldSystemFontOfSize:12],NSFontAttributeName,
 		[NSColor whiteColor],NSForegroundColorAttributeName,
 		leftstyle,NSParagraphStyleAttributeName,
-	nil]] autorelease]];
+	nil]]];
 
 	[label setAttributedStringValue:string];
 
-	blockerview=[label retain];
+	blockerview=label;
 	[[self superview] addSubview:blockerview];
 }
 
@@ -149,15 +142,9 @@ static BOOL DisabledInSandbox=YES;
 {
 	if((self=[super init]))
 	{
-		filetypes=[[self readFileTypes] retain];
+		filetypes=[self readFileTypes];
 	}
 	return self;
-}
-
--(void)dealloc
-{
-	[filetypes release];
-	[super dealloc];
 }
 
 -(NSArray *)readFileTypes
@@ -210,7 +197,7 @@ static BOOL DisabledInSandbox=YES;
 	{
 		NSString *self_id=[[NSBundle mainBundle] bundleIdentifier];
 		NSString *type=[[filetypes objectAtIndex:row] objectForKey:@"type"];
-		NSString *handler=[(id)LSCopyDefaultRoleHandlerForContentType((CFStringRef)type,kLSRolesViewer) autorelease];
+		NSString *handler=(id)CFBridgingRelease(LSCopyDefaultRoleHandlerForContentType((__bridge CFStringRef)type,kLSRolesViewer));
 
 		return [NSNumber numberWithBool:[self_id caseInsensitiveCompare:handler]==0];
 	}
@@ -268,7 +255,7 @@ static BOOL DisabledInSandbox=YES;
 -(void)claimType:(NSString *)type
 {
 	NSString *self_id=[[NSBundle mainBundle] bundleIdentifier];
-	NSString *oldhandler=[(id)LSCopyDefaultRoleHandlerForContentType((CFStringRef)type,kLSRolesViewer) autorelease];
+	NSString *oldhandler=(id)CFBridgingRelease(LSCopyDefaultRoleHandlerForContentType((__bridge CFStringRef)type,kLSRolesViewer));
 
 	if(oldhandler && [oldhandler caseInsensitiveCompare:self_id]!=0 && ![oldhandler isEqual:@"__dummy__"])
 	{
@@ -291,7 +278,7 @@ static BOOL DisabledInSandbox=YES;
 
 -(void)setHandler:(NSString *)handler forType:(NSString *)type
 {
-	LSSetDefaultRoleHandlerForContentType((CFStringRef)type,kLSRolesViewer,(CFStringRef)handler);
+	LSSetDefaultRoleHandlerForContentType((__bridge CFStringRef)type,kLSRolesViewer,(__bridge CFStringRef)handler);
 }
 
 -(void)removeHandlerForType:(NSString *)type
@@ -299,14 +286,14 @@ static BOOL DisabledInSandbox=YES;
 	NSMutableArray *handlers=[NSMutableArray array];
 	NSString *self_id=[[NSBundle mainBundle] bundleIdentifier];
 
-	[handlers addObjectsFromArray:[(id)LSCopyAllRoleHandlersForContentType((CFStringRef)type,kLSRolesViewer) autorelease]];
-	[handlers addObjectsFromArray:[(id)LSCopyAllRoleHandlersForContentType((CFStringRef)type,kLSRolesEditor) autorelease]];
+	[handlers addObjectsFromArray:(id)CFBridgingRelease(LSCopyAllRoleHandlersForContentType((__bridge CFStringRef)type,kLSRolesViewer))];
+	[handlers addObjectsFromArray:(id)CFBridgingRelease(LSCopyAllRoleHandlersForContentType((__bridge CFStringRef)type,kLSRolesEditor))];
 
-	NSString *ext=[(id)UTTypeCopyPreferredTagWithClass((CFStringRef)type,kUTTagClassFilenameExtension) autorelease];
+	NSString *ext=(id)CFBridgingRelease(UTTypeCopyPreferredTagWithClass((__bridge CFStringRef)type,kUTTagClassFilenameExtension));
 	NSString *filename=[NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"CSFileTypeList%04x.%@",rand()&0xffff,ext]];
 
 	[[NSFileManager defaultManager] createFileAtPath:filename contents:nil attributes:nil];
-	NSArray *apps=[(NSArray *)LSCopyApplicationURLsForURL((CFURLRef)[NSURL fileURLWithPath:filename],kLSRolesAll) autorelease];
+	NSArray *apps=(NSArray *)CFBridgingRelease(LSCopyApplicationURLsForURL((__bridge CFURLRef)[NSURL fileURLWithPath:filename],kLSRolesAll));
 
 	#ifdef IsLegacyVersion
 	[[NSFileManager defaultManager] removeFileAtPath:filename handler:nil];

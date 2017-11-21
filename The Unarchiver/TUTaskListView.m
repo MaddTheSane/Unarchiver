@@ -14,12 +14,6 @@
 	return self;
 }
 
--(void)dealloc
-{
-	[resizetarget release];
-	[super dealloc];
-}
-
 -(void)addTaskView:(TUTaskView *)taskview
 {
 	[taskview setAutoresizingMask:NSViewWidthSizable|NSViewMinYMargin];
@@ -41,7 +35,7 @@
 	return [[self subviews] indexOfObjectIdenticalTo:taskview]!=NSNotFound;
 }
 
--(void)setHeight:(float)height forView:(NSView *)view
+-(void)setHeight:(CGFloat)height forView:(NSView *)view
 {
 	NSRect frame=[view frame];
 	frame.size.height=height;
@@ -54,7 +48,7 @@
 	NSEnumerator *enumerator;
 	NSView *subview;
 
-	float oldheight=totalheight;
+	CGFloat oldheight=totalheight;
 
 	totalheight=0;
 	enumerator=[[self subviews] reverseObjectEnumerator];
@@ -62,7 +56,7 @@
 	if(totalheight) totalheight-=1;
 
 	NSRect listframe=[self frame];
-	float y=listframe.size.height-totalheight;
+	CGFloat y=listframe.size.height-totalheight;
 
 	enumerator=[[self subviews] reverseObjectEnumerator];
 	while((subview=[enumerator nextObject]))
@@ -116,8 +110,7 @@
 -(void)setResizeAction:(SEL)action target:(id)target
 {
 	resizeaction=action;
-	[resizetarget autorelease];
-	resizetarget=[target retain];
+	resizetarget=target;
 }
 
 -(NSSize)preferredSize

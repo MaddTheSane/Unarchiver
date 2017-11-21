@@ -28,15 +28,6 @@
 	return self;
 }
 
--(void)dealloc
-{
-	[pauselock release];
-
-	[nibObjects release];
-
-	[super dealloc];
-}
-
 
 -(void)setCancelAction:(SEL)selector target:(id)target
 {
@@ -147,7 +138,7 @@
 	if(!waitview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"WaitView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"WaitView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -182,7 +173,7 @@
 	if(!progressview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"ProgressView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"ProgressView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -208,7 +199,7 @@
 	if(!notwritableview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"NotWritableView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"NotWritableView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -222,7 +213,7 @@
 	if(!errorview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"ErrorView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"ErrorView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -237,7 +228,7 @@
 	if(!openerrorview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"OpenErrorView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"OpenErrorView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -252,7 +243,7 @@
 	if(!passwordview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"PasswordView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"PasswordView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -296,7 +287,7 @@
 	if(!encodingview)
 	{
 		NSArray *nibObjs = nil;
-		NSNib *nib=[[[NSNib alloc] initWithNibNamed:@"EncodingView" bundle:nil] autorelease];
+		NSNib *nib=[[NSNib alloc] initWithNibNamed:@"EncodingView" bundle:nil];
 		[nib instantiateWithOwner:self topLevelObjects:&nibObjs];
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
@@ -434,7 +425,8 @@
 
 		[invocation setTarget:responsetarget];
 		[invocation setSelector:responseselector];
-		[invocation setArgument:&self atIndex:2];
+		__unsafe_unretained id aSelf = self;
+		[invocation setArgument:&aSelf atIndex:2];
 		[invocation setArgument:&response atIndex:3];
 
 		[invocation invoke];

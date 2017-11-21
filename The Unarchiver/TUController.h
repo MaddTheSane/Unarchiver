@@ -35,9 +35,7 @@
 //	NSLock *metalock;
 }
 
--(id)init;
--(void)dealloc;
--(void)awakeFromNib;
+-(instancetype)init;
 
 -(void)cleanupOrphanedTempDirectories;
 
@@ -58,7 +56,7 @@
 -(void)findDestinationForArchiveController:(TUArchiveController *)archive;
 -(void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive;
 -(void)checkDestinationForArchiveController:(TUArchiveController *)archive;
--(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)res contextInfo:(void  *)info;
+-(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)info;
 -(void)archiveTaskView:(TUArchiveTaskView *)taskview notWritableResponse:(int)response;
 -(void)prepareArchiveController:(TUArchiveController *)archive;
 -(void)finishSetupForArchiveController:(TUArchiveController *)archive;
@@ -73,7 +71,7 @@
 
 -(void)updateDestinationPopup;
 -(IBAction)changeDestination:(id)sender;
--(void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)res contextInfo:(void  *)context;
+-(void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)context;
 
 -(void)unarchiveToCurrentFolderWithPasteboard:(NSPasteboard *)pboard
 userData:(NSString *)data error:(NSString **)error;

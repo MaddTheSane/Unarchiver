@@ -12,7 +12,10 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 	if(!getenv("APP_SANDBOX_CONTAINER_ID")) return nil; // Don't bother doing anything unless sandboxed.
 
 	static CSURLCache *defaultcache=nil;
-	if(!defaultcache) defaultcache=[CSURLCache new];
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		defaultcache=[CSURLCache new];
+	});
 	return defaultcache;
 }
 
@@ -20,7 +23,7 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 {
 	if((self=[super init]))
 	{
-		providers=(NSMutableArray *)CFArrayCreateMutable(NULL,0,&(const CFArrayCallBacks){0,NULL,NULL,NULL,NULL});
+		providers=(NSMutableArray *)CFBridgingRelease(CFArrayCreateMutable(NULL,0,&(const CFArrayCallBacks){0,NULL,NULL,NULL,NULL}));
 		cachedurls=[NSMutableDictionary new];
 		cachedbookmarks=[NSMutableDictionary new];
 
@@ -30,14 +33,6 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 		[self addURLProvider:self];
 	}
 	return self;
-}
-
--(void)dealloc
-{
-	[providers release];
-	[cachedurls release];
-	[cachedbookmarks release];
-	[super dealloc];
 }
 
 -(void)addURLProvider:(NSObject <CSURLCacheProvider> *)provider

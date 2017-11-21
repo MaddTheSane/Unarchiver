@@ -225,7 +225,7 @@ enum extracionDestination {
 			break;
 	}
 
-	TUArchiveController *archiveController=[[[TUArchiveController alloc] initWithFilename:fileName] autorelease];
+	TUArchiveController *archiveController=[[TUArchiveController alloc] initWithFilename:fileName];
 	[archiveController setDestination:destination];
 	[archiveController setDeleteArchive:deleteOriginals];
 	[archiveController setFolderCreationMode:creatingFolder];

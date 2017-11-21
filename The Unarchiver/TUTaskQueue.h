@@ -9,7 +9,7 @@
 	SEL finishselector;
 }
 
--(id)init;
+-(instancetype)init;
 
 -(void)setFinishAction:(SEL)selector target:(id)target;
 
@@ -33,8 +33,7 @@
 	TUTaskQueue *parent;
 }
 
--(id)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
--(void)dealloc;
+-(instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
 
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)sel;
 -(void)forwardInvocation:(NSInvocation *)invocation;

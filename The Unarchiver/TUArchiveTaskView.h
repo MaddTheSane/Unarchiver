@@ -7,7 +7,7 @@
 
 @interface TUArchiveTaskView:TUMultiTaskView
 {
-	TUArchiveController *archive;
+	TUArchiveController *__weak archive;
 
 	id canceltarget;
 	SEL cancelselector;
@@ -54,10 +54,9 @@
 	IBOutlet NSImageView *encodingicon;
 }
 
--(id)init;
--(void)dealloc;
+-(instancetype)init;
 
-@property (assign) TUArchiveController *archiveController;
+@property (weak) TUArchiveController *archiveController;
 
 -(void)setCancelAction:(SEL)selector target:(id)target;
 

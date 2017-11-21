@@ -15,12 +15,6 @@
 	return self;
 }
 
--(void)dealloc
-{
-	[tasks release];
-	[super dealloc];
-}
-
 -(void)setFinishAction:(SEL)selector target:(id)target
 {
 	finishtarget=target;
@@ -29,7 +23,7 @@
 
 -(id)taskWithTarget:(id)target
 {
-	return [[[TUTaskTrampoline alloc] initWithTarget:target queue:self] autorelease];
+	return [[TUTaskTrampoline alloc] initWithTarget:target queue:self];
 }
 
 -(void)newTaskWithTarget:(id)target invocation:(NSInvocation *)invocation
@@ -96,9 +90,7 @@
 	id target=[tasks objectAtIndex:0];
 	NSInvocation *invocation=[tasks objectAtIndex:1];
 
-	[invocation retain];
 	[invocation invokeWithTarget:target];
-	[invocation release];
 }
 
 @end
@@ -111,11 +103,6 @@
 	actual=target;
 	parent=queue;
 	return self;
-}
-
--(void)dealloc
-{
-	[super dealloc];
 }
 
 

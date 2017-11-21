@@ -7,8 +7,7 @@
 	NSTrackingRectTag trackingtag;
 }
 
--(id)initWithCoder:(NSCoder *)coder;
--(void)dealloc;
+-(instancetype)initWithCoder:(NSCoder *)coder;
 
 -(void)mouseEntered:(NSEvent *)event;
 -(void)mouseExited:(NSEvent *)event;

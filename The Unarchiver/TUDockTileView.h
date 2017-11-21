@@ -5,10 +5,9 @@
 	double progress,lastupdate,lastwidth;
 }
 
--(id)initWithFrame:(NSRect)frame;
--(void)dealloc;
+-(instancetype)initWithFrame:(NSRect)frame;
 
--(void)setCount:(int)count;
+-(void)setCount:(NSInteger)count;
 -(void)setProgress:(double)fraction;
 -(void)hideProgress;
 

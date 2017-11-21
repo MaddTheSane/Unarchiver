@@ -29,24 +29,16 @@
 
 +(void)clearGlobalPassword;
 
--(id)initWithFilename:(NSString *)filename;
--(void)dealloc;
+-(instancetype)initWithFilename:(NSString *)filename;
 
--(TUArchiveTaskView *)taskView;
--(void)setTaskView:(TUArchiveTaskView *)taskview;
--(TUDockTileView *)dockTileView;
--(void)setDockTileView:(TUDockTileView *)tileview;
--(NSString *)destination;
--(void)setDestination:(NSString *)destination;
--(int)folderCreationMode;
--(void)setFolderCreationMode:(int)mode;
--(BOOL)copyArchiveDateToExtractedFolder;
--(void)setCopyArchiveDateToExtractedFolder:(BOOL)copydate;
--(BOOL)changeDateOfExtractedSingleItems;
--(void)setChangeDateOfExtractedSingleItems:(BOOL)changefiles;
-@property BOOL deleteArchive;
--(BOOL)openExtractedItem;
--(void)setOpenExctractedItem:(BOOL)open;
+@property (strong) TUArchiveTaskView *taskView;
+@property (strong) TUDockTileView *dockTileView;
+@property (copy) NSString *destination;
+@property (nonatomic) int folderCreationMode;
+@property (nonatomic) BOOL copyArchiveDateToExtractedFolder;
+@property BOOL changeDateOfExtractedSingleItems;
+@property (nonatomic) BOOL deleteArchive;
+@property (nonatomic) BOOL openExtractedItem;
 
 @property BOOL isCancelled;
 
@@ -54,12 +46,12 @@
 -(void)useSecurityScopedURL:(NSURL *)url;
 #endif
 
--(NSString *)filename;
--(NSArray *)allFilenames;
--(BOOL)volumeScanningFailed;
--(BOOL)caresAboutPasswordEncoding;
+@property (readonly, copy) NSString *filename;
+@property (readonly, copy) NSArray<NSString*> *allFilenames;
+@property (readonly) BOOL volumeScanningFailed;
+@property (readonly) BOOL caresAboutPasswordEncoding;
 
--(NSString *)currentArchiveName;
+@property (readonly, copy) NSString *currentArchiveName;
 -(NSString *)localizedDescriptionOfError:(XADError)error;
 -(NSString *)stringForXADPath:(XADPath *)path;
 

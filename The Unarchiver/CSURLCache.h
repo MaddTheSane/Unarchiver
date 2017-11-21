@@ -1,27 +1,31 @@
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol CSURLCacheProvider;
 
 @interface CSURLCache:NSObject
 {
 	NSMutableArray *providers;
-	NSMutableDictionary *cachedurls;
-	NSMutableDictionary *cachedbookmarks;
+	NSMutableDictionary<NSString*,NSURL*> *cachedurls;
+	NSMutableDictionary<NSString*,NSData*> *cachedbookmarks;
 }
 
-+(CSURLCache *)defaultCache;
+@property (class, readonly, strong, nullable) CSURLCache *defaultCache;
 
 -(void)addURLProvider:(NSObject <CSURLCacheProvider> *)provider;
 -(void)cacheSecurityScopedURL:(NSURL *)url;
 
--(NSURL *)securityScopedURLAllowingAccessToURL:(NSURL *)url;
--(NSURL *)securityScopedURLAllowingAccessToPath:(NSString *)path;
+-(nullable NSURL *)securityScopedURLAllowingAccessToURL:(NSURL *)url;
+-(nullable NSURL *)securityScopedURLAllowingAccessToPath:(NSString *)path;
 
 @end
 
 @protocol CSURLCacheProvider
 
--(NSArray *)availablePaths;
--(NSURL *)securityScopedURLForPath:(NSString *)path;
+-(NSArray<NSString*> *)availablePaths;
+-(nullable NSURL *)securityScopedURLForPath:(NSString *)path;
 
 @end
+
+NS_ASSUME_NONNULL_END

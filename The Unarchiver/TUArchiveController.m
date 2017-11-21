@@ -16,10 +16,14 @@ NSStringEncoding globalpasswordencoding=0;
 @end
 
 @implementation TUArchiveController
+@synthesize taskView = view;
+@synthesize dockTileView = docktile;
+@synthesize destination;
+@synthesize isCancelled = cancelled;
+@synthesize folderCreationMode=foldermodeoverride;
 
 +(void)clearGlobalPassword
 {
-	[globalpassword release];
 	globalpassword=nil;
 	globalpasswordencoding=0;
 }
@@ -32,7 +36,7 @@ NSStringEncoding globalpasswordencoding=0;
 		docktile=nil;
 		unarchiver=nil;
 
-		archivename=[filename retain];
+		archivename=filename;
 		destination=nil;
 		tmpdest=nil;
 
@@ -57,50 +61,13 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)dealloc
 {
-	[view release];
-	[docktile release];
-	[unarchiver release];
-	[archivename release];
-	[destination release];
-	[tmpdest release];
 
 	#ifdef UseSandbox
-	NSEnumerator *enumerator=[scopedurls objectEnumerator];
-	NSURL *scopedurl;
-	while((scopedurl=[enumerator nextObject]))
+	for(NSURL *scopedurl in scopedurls)
 	{
 		[scopedurl stopAccessingSecurityScopedResource];
 	}
-	[scopedurls release];
 	#endif
-
-	[super dealloc];
-}
-
-
-
--(TUArchiveTaskView *)taskView { return view; }
-
--(void)setTaskView:(TUArchiveTaskView *)taskview
-{
-	[view autorelease];
-	view=[taskview retain];
-}
-
--(TUDockTileView *)dockTileView { return docktile; }
-
--(void)setDockTileView:(TUDockTileView *)tileview
-{
-	[docktile autorelease];
-	docktile=[tileview retain];
-}
-
--(NSString *)destination { return destination; }
-
--(void)setDestination:(NSString *)newdestination
-{
-	[destination autorelease];
-	destination=[newdestination retain];
 }
 
 -(int)folderCreationMode
@@ -108,8 +75,6 @@ NSStringEncoding globalpasswordencoding=0;
 	if(foldermodeoverride>=0) return foldermodeoverride;
 	else return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"createFolder"];
 }
-
--(void)setFolderCreationMode:(int)mode { foldermodeoverride=mode; }
 
 -(BOOL)copyArchiveDateToExtractedFolder
 {
@@ -143,9 +108,6 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)setOpenExctractedItem:(BOOL)open { openextractedoverride=open; }
 
--(BOOL)isCancelled { return cancelled; }
-
--(void)setIsCancelled:(BOOL)iscancelled { cancelled=iscancelled; }
 
 
 
@@ -210,15 +172,13 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)prepare
 {
-	[unarchiver release];
-	unarchiver=[[XADSimpleUnarchiver simpleUnarchiverForPath:archivename error:NULL] retain];
+	unarchiver=[XADSimpleUnarchiver simpleUnarchiverForPath:archivename error:NULL];
 }
 
 -(void)runWithFinishAction:(SEL)selector target:(id)target
 {
 	finishtarget=target;
 	finishselector=selector;
-	[self retain];
 
 	[view setCancelAction:@selector(archiveTaskViewCancelled:) target:self];
 
@@ -226,16 +186,16 @@ NSStringEncoding globalpasswordencoding=0;
 
 	static int tmpcounter=0;
 	NSString *tmpdir=[NSString stringWithFormat:@".TheUnarchiverTemp%d",tmpcounter++];
-	tmpdest=[[destination stringByAppendingPathComponent:tmpdir] retain];
+	tmpdest=[destination stringByAppendingPathComponent:tmpdir];
 
 	[NSThread detachNewThreadSelector:@selector(extractThreadEntry) toTarget:self withObject:nil];
 }
 
 -(void)extractThreadEntry
 {
-	NSAutoreleasePool *pool=[[NSAutoreleasePool alloc] init];
-	[self extract];
-	[pool release];
+	@autoreleasepool {
+		[self extract];
+	}
 }
 
 -(void)extract
@@ -402,7 +362,6 @@ NSStringEncoding globalpasswordencoding=0;
 
 	[docktile hideProgress];
 	[finishtarget performSelector:finishselector withObject:self];
-	[self release];
 }
 
 -(void)extractFailed
@@ -413,7 +372,6 @@ NSStringEncoding globalpasswordencoding=0;
 
 	[docktile hideProgress];
 	[finishtarget performSelector:finishselector withObject:self];
-	[self release];
 }
 
 -(void)rememberTempDirectory:(NSString *)tmpdir
@@ -509,7 +467,7 @@ NSStringEncoding globalpasswordencoding=0;
 
 			if(applytoall)
 			{
-				globalpassword=[password retain];
+				globalpassword=password;
 				globalpasswordencoding=encoding;
 			}
 		}

@@ -55,18 +55,10 @@ static BOOL IsPathWritable(NSString *path);
 
 -(void)dealloc
 {
-	[addtasks release];
-	[extracttasks release];
-	[archivecontrollers release];
-	[selecteddestination release];
-
 	if(docktile)
 	{
 		[[NSApp dockTile] setContentView:nil];
-		[docktile release];
 	}
-
-	[super dealloc];
 }
 
 -(void)awakeFromNib
@@ -261,7 +253,7 @@ static BOOL IsPathWritable(NSString *path);
 		break;
 	}
 
-	TUArchiveController *archive=[[[TUArchiveController alloc] initWithFilename:filename] autorelease];
+	TUArchiveController *archive=[[TUArchiveController alloc] initWithFilename:filename];
 	[archive setDestination:destination];
 
 	[self addArchiveController:archive];
@@ -282,7 +274,7 @@ static BOOL IsPathWritable(NSString *path);
 	}
 
 	// Create status view and archive controller.
-	TUArchiveTaskView *taskview=[[TUArchiveTaskView new] autorelease];
+	TUArchiveTaskView *taskview=[TUArchiveTaskView new];
 
 	//[taskview setCancelAction:@selector(archiveTaskViewCancelledBeforeSetup:) target:self];
 	[taskview setArchiveController:archive];
@@ -343,7 +335,7 @@ static BOOL IsPathWritable(NSString *path);
 		if(rememberedpath) [panel setDirectoryURL:[NSURL fileURLWithPath:rememberedpath]];
 
 		[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
-			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:archive];
+			[self archiveDestinationPanelDidEnd:panel returnCode:result contextInfo:(__bridge void *)(archive)];
 		}];
 
 		#endif
@@ -387,7 +379,7 @@ static BOOL IsPathWritable(NSString *path);
 		// to it, open a file panel to get fresh access to the directory.
 		NSOpenPanel *panel=[NSOpenPanel openPanel];
 
-		NSTextField *text=[[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)] autorelease];
+		NSTextField *text=[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)];
 
 		[text setStringValue:NSLocalizedString(
 		@"The Unarchiver does not have permission to write to this folder. "
@@ -417,7 +409,7 @@ static BOOL IsPathWritable(NSString *path);
 		[panel setDirectoryURL:[NSURL fileURLWithPath:destination]];
 
 		[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
-			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:archive];
+			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:(__bridge void *)(archive)];
 		}];
 	}
 
@@ -441,13 +433,12 @@ static BOOL IsPathWritable(NSString *path);
 	}
 }
 
--(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)res contextInfo:(void  *)info
+-(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)info
 {
-	TUArchiveController *archive=(id)info;
+	TUArchiveController *archive=(__bridge id)info;
 
 	if(res==NSOKButton)
 	{
-		[selecteddestination release];
 
 		#ifdef IsLegacyVersion
 		selecteddestination=[[panel directory] retain];
@@ -456,7 +447,7 @@ static BOOL IsPathWritable(NSString *path);
 		#ifdef UseSandbox
 		[[CSURLCache defaultCache] cacheSecurityScopedURL:url];
 		#endif
-		selecteddestination=[[url path] retain];
+		selecteddestination=[url path];
 		#endif
 
 		[[NSUserDefaults standardUserDefaults] setObject:selecteddestination forKey:@"lastDestination"];
@@ -535,7 +526,7 @@ static BOOL IsPathWritable(NSString *path);
 			// No access available in the cache. Nag the user.
 			NSOpenPanel *panel=[NSOpenPanel openPanel];
 
-			NSTextField *text=[[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)] autorelease];
+			NSTextField *text=[[NSTextField alloc] initWithFrame:NSMakeRect(0,0,100,100)];
 
 			[text setStringValue:NSLocalizedString(
 			@"The Unarchiver needs to search for more parts of this archive, "
@@ -611,7 +602,6 @@ static BOOL IsPathWritable(NSString *path);
 		else [mainwindow orderOut:nil];
 	}
 
-	[selecteddestination release];
 	selecteddestination=nil;
 }
 
@@ -727,7 +717,7 @@ static BOOL IsPathWritable(NSString *path);
 	}
 }
 
--(void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)res contextInfo:(void  *)context
+-(void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)context
 {
 	if(res==NSOKButton)
 	{
@@ -859,7 +849,7 @@ userData:(NSString *)data error:(NSString **)error
 	NSString *usernameregex=[NSUserName() escapedPattern];
 
 	#define regexForUserPath(path) [NSString stringWithFormat:@"/%@/%@$",usernameregex,path,nil]
-	#define folderIconNamed(iconName) [[[NSImage alloc] initWithContentsOfFile:@"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/" iconName] autorelease]
+	#define folderIconNamed(iconName) [[NSImage alloc] initWithContentsOfFile:@"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/" iconName]
 
 	NSImage *icon=nil;
 
