@@ -483,9 +483,9 @@
 		551F2A6E1FC4D4B500CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/OpenErrorView.xib; sourceTree = "<group>"; };
 		551F2A6F1FC4D4BA00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/PasswordView.xib; sourceTree = "<group>"; };
 		551F2A701FC4D4BF00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/EncodingView.xib; sourceTree = "<group>"; };
-		551F2A711FC4D4C600CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		551F2A721FC4D4CA00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
-		551F2A731FC4D4CE00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		551F2A711FC4D4C600CE4E5A /* sv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		551F2A721FC4D4CA00CE4E5A /* sv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		551F2A731FC4D4CE00CE4E5A /* sv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XADMaster.xcodeproj; path = ../XADMaster/XADMaster/XADMaster.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };

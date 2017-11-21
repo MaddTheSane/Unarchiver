@@ -1,11 +1,11 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d more)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
-"Could not extract the file \"%@\" from the archive \"%@\": %@" = "Could not extract the file \"%1$@\" from the archive \"%2$@\": %3$@";
+"Could not extract the file \"%@\" from the archive \"%@\": %@" = "Could not extract the file “%1$@” from the archive “%2$@”: %3$@";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
-"Could not extract the resource fork for the file \"%@\" from the archive \"%@\":\n%@" = "Could not extract the resource fork for the file \"%1$@\" from the archive \"%2$@\":\n%3$@";
+"Could not extract the resource fork for the file \"%@\" from the archive \"%@\":\n%@" = "Could not extract the resource fork for the file “%1$@” from the archive “%2$@”:\n%3$@";
 
 /* Option in the password encoding pop-up to use the default encoding */
 "Default encoding" = "Default encoding";
@@ -20,10 +20,10 @@
 "Extract Archive" = "Extract Archive";
 
 /* Status text while extracting an archive */
-"Extracting \"%@\"" = "Extracting \"%@\"";
+"Extracting \"%@\"" = "Extracting “%@”";
 
 /* Status text when preparing to extract an archive */
-"Preparing to extract \"%@\"" = "Preparing to extract \"%@\"";
+"Preparing to extract \"%@\"" = "Preparing to extract “%@”";
 
 /* Panel OK button title when choosing a default unarchiving destination */
 "Select" = "Select";
@@ -32,19 +32,19 @@
 "Select files to unarchive" = "Select files to unarchive";
 
 /* Error message for files not extractable by The Unarchiver */
-"The contents of the file \"%@\" can not be extracted with this program." = "The contents of the file \"%@\" can not be extracted with this program.";
+"The contents of the file \"%@\" can not be extracted with this program." = "The contents of the file “%@” can not be extracted with this program.";
 
 /* Error message when encountering an error while extracting entries */
-"There was a problem while extracting the contents of the file \"%@\": %@" = "There was a problem while extracting the contents of the file \"%1$@\": %2$@";
+"There was a problem while extracting the contents of the file \"%@\": %@" = "There was a problem while extracting the contents of the file “%1$@”: %2$@";
 
 /* Error message when encountering an error while parsing an archive */
-"There was a problem while reading the contents of the file \"%@\": %@" = "There was a problem while reading the contents of the file \"%1$@\": %2$@";
+"There was a problem while reading the contents of the file \"%@\": %@" = "There was a problem while reading the contents of the file “%1$@”: %2$@";
 
 /* Panel OK button title when choosing archives to extract */
 "Unarchive" = "Unarchive";
 
 /* Status text when asking for a password */
-"You need to supply a password to open the archive \"%@\"." = "You need to supply a password to open the archive \"%@\".";
+"You need to supply a password to open the archive \"%@\"." = "You need to supply a password to open the archive “%@”.";
 
 /* Title for nagging alert on first startup */
 "Where should The Unarchiver extract archives?" = "Where should The Unarchiver extract archives?";
@@ -59,10 +59,10 @@
 "Extract to the same folder" = "Extract to the same folder";
 
 /* Informative text in the file panel shown when trying to gain sandbox access */
-"The Unarchiver does not have permission to write to this folder. To allow The Unarchiver to write to this folder, simply click \"Extract\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again." = "The Unarchiver does not have permission to write to this folder. To allow The Unarchiver to write to this folder, simply click \"Extract\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again.";
+"The Unarchiver does not have permission to write to this folder. To allow The Unarchiver to write to this folder, simply click \"Extract\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again." = "The Unarchiver does not have permission to write to this folder. To allow The Unarchiver to write to this folder, simply click “Extract”. This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again.";
 
 /* Informative text in the file panel shown when trying to gain sandbox access for multi-part archives */
-"The Unarchiver needs to search for more parts of this archive, but does not have permission to read the folder. To allow The Unarchiver to search in this folder, simply click \"Search\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again." = "The Unarchiver needs to search for more parts of this archive, but does not have permission to read the folder. To allow The Unarchiver to search in this folder, simply click \"Search\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again.";
+"The Unarchiver needs to search for more parts of this archive, but does not have permission to read the folder. To allow The Unarchiver to search in this folder, simply click \"Search\". This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again." = "The Unarchiver needs to search for more parts of this archive, but does not have permission to read the folder. To allow The Unarchiver to search in this folder, simply click “Search”. This permission will be remembered for this folder, and The Unarchiver will not need to ask for it again.";
 
 /* Panel OK button title when searching for more archive parts */
 "Search" = "Search";
