@@ -19,26 +19,6 @@
 		1B1D484C0AFCCD30009AA7EB /* WaitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2117AC0A4E10D3005ED2AF /* WaitView.xib */; };
 		1B2109F90A38F2BA005ED2AF /* TUArchiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2109F80A38F2BA005ED2AF /* TUArchiveController.m */; };
 		1B2116FC0A4CA510005ED2AF /* TUTaskListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2116FB0A4CA510005ED2AF /* TUTaskListView.m */; };
-		1B2AD8530A5C4BD200FAEA01 /* 7z.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8380A5C4BD200FAEA01 /* 7z.icns */; };
-		1B2AD8540A5C4BD200FAEA01 /* ace.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8390A5C4BD200FAEA01 /* ace.icns */; };
-		1B2AD8550A5C4BD200FAEA01 /* adf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83A0A5C4BD200FAEA01 /* adf.icns */; };
-		1B2AD8560A5C4BD200FAEA01 /* adz.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83B0A5C4BD200FAEA01 /* adz.icns */; };
-		1B2AD8570A5C4BD200FAEA01 /* archive.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83C0A5C4BD200FAEA01 /* archive.icns */; };
-		1B2AD8590A5C4BD200FAEA01 /* bin.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83E0A5C4BD200FAEA01 /* bin.icns */; };
-		1B2AD85A0A5C4BD200FAEA01 /* bz2.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83F0A5C4BD200FAEA01 /* bz2.icns */; };
-		1B2AD85B0A5C4BD200FAEA01 /* cab.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8400A5C4BD200FAEA01 /* cab.icns */; };
-		1B2AD8600A5C4BD200FAEA01 /* dms.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8450A5C4BD200FAEA01 /* dms.icns */; };
-		1B2AD8610A5C4BD200FAEA01 /* exe.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8460A5C4BD200FAEA01 /* exe.icns */; };
-		1B2AD8630A5C4BD200FAEA01 /* gz.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8480A5C4BD200FAEA01 /* gz.icns */; };
-		1B2AD8640A5C4BD200FAEA01 /* hqx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8490A5C4BD200FAEA01 /* hqx.icns */; };
-		1B2AD8650A5C4BD200FAEA01 /* jar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84A0A5C4BD200FAEA01 /* jar.icns */; };
-		1B2AD8660A5C4BD200FAEA01 /* lha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84B0A5C4BD200FAEA01 /* lha.icns */; };
-		1B2AD8670A5C4BD200FAEA01 /* rar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84C0A5C4BD200FAEA01 /* rar.icns */; };
-		1B2AD8680A5C4BD200FAEA01 /* rpm.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84D0A5C4BD200FAEA01 /* rpm.icns */; };
-		1B2AD86A0A5C4BD200FAEA01 /* sit.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84F0A5C4BD200FAEA01 /* sit.icns */; };
-		1B2AD86B0A5C4BD200FAEA01 /* tar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8500A5C4BD200FAEA01 /* tar.icns */; };
-		1B2AD86C0A5C4BD200FAEA01 /* z.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8510A5C4BD200FAEA01 /* z.icns */; };
-		1B2AD86D0A5C4BD200FAEA01 /* zip.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8520A5C4BD200FAEA01 /* zip.icns */; };
 		1B4E39F71677EDA200AA29D3 /* CSURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E39F61677EDA200AA29D3 /* CSURLCache.m */; };
 		1B6BD56E1BB194D000EA3E01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		1B6BD56F1BB194D000EA3E01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -46,30 +26,8 @@
 		1B6BD5711BB194D000EA3E01 /* WaitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2117AC0A4E10D3005ED2AF /* WaitView.xib */; };
 		1B6BD5721BB194D000EA3E01 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47B90AFCBE94009AA7EB /* ErrorView.xib */; };
 		1B6BD5731BB194D000EA3E01 /* OpenErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47BB0AFCBE94009AA7EB /* OpenErrorView.xib */; };
-		1B6BD5751BB194D000EA3E01 /* 7z.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8380A5C4BD200FAEA01 /* 7z.icns */; };
-		1B6BD5761BB194D000EA3E01 /* ace.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8390A5C4BD200FAEA01 /* ace.icns */; };
-		1B6BD5771BB194D000EA3E01 /* adf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83A0A5C4BD200FAEA01 /* adf.icns */; };
-		1B6BD5781BB194D000EA3E01 /* adz.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83B0A5C4BD200FAEA01 /* adz.icns */; };
-		1B6BD5791BB194D000EA3E01 /* archive.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83C0A5C4BD200FAEA01 /* archive.icns */; };
-		1B6BD57A1BB194D000EA3E01 /* bin.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83E0A5C4BD200FAEA01 /* bin.icns */; };
-		1B6BD57B1BB194D000EA3E01 /* bz2.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83F0A5C4BD200FAEA01 /* bz2.icns */; };
-		1B6BD57C1BB194D000EA3E01 /* cab.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8400A5C4BD200FAEA01 /* cab.icns */; };
-		1B6BD57D1BB194D000EA3E01 /* dms.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8450A5C4BD200FAEA01 /* dms.icns */; };
-		1B6BD57E1BB194D000EA3E01 /* exe.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8460A5C4BD200FAEA01 /* exe.icns */; };
-		1B6BD57F1BB194D000EA3E01 /* gz.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8480A5C4BD200FAEA01 /* gz.icns */; };
-		1B6BD5801BB194D000EA3E01 /* hqx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8490A5C4BD200FAEA01 /* hqx.icns */; };
-		1B6BD5811BB194D000EA3E01 /* jar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84A0A5C4BD200FAEA01 /* jar.icns */; };
-		1B6BD5821BB194D000EA3E01 /* lha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84B0A5C4BD200FAEA01 /* lha.icns */; };
-		1B6BD5831BB194D000EA3E01 /* rar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84C0A5C4BD200FAEA01 /* rar.icns */; };
-		1B6BD5841BB194D000EA3E01 /* rpm.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84D0A5C4BD200FAEA01 /* rpm.icns */; };
-		1B6BD5851BB194D000EA3E01 /* sit.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD84F0A5C4BD200FAEA01 /* sit.icns */; };
-		1B6BD5861BB194D000EA3E01 /* tar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8500A5C4BD200FAEA01 /* tar.icns */; };
-		1B6BD5871BB194D000EA3E01 /* z.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8510A5C4BD200FAEA01 /* z.icns */; };
-		1B6BD5881BB194D000EA3E01 /* zip.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8520A5C4BD200FAEA01 /* zip.icns */; };
 		1B6BD5891BB194D000EA3E01 /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47BD0AFCBE94009AA7EB /* PasswordView.xib */; };
 		1B6BD58A1BB194D000EA3E01 /* EncodingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47BF0AFCBE94009AA7EB /* EncodingView.xib */; };
-		1B6BD58B1BB194D000EA3E01 /* amiga.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B9767BA0A6D79CA00A8E8DA /* amiga.icns */; };
-		1B6BD58C1BB194D000EA3E01 /* unarchiver.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B9767BB0A6D79CA00A8E8DA /* unarchiver.icns */; };
 		1B6BD58D1BB194D000EA3E01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47060AFC294E009AA7EB /* Localizable.strings */; };
 		1B6BD58E1BB194D000EA3E01 /* NotWritableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */; };
 		1B6BD58F1BB194D000EA3E01 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B782D20106ACC1700EBF3E8 /* ServicesMenu.strings */; };
@@ -99,8 +57,6 @@
 		1B81DDA710003BBB005C5B23 /* TUArchiveTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B81DDA610003BBB005C5B23 /* TUArchiveTaskView.m */; };
 		1B81DDCE10012A2D005C5B23 /* TUTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B81DDCD10012A2D005C5B23 /* TUTaskQueue.m */; };
 		1B932D6A0A560AC900F7DE66 /* TUCancelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B932D690A560AC900F7DE66 /* TUCancelButton.m */; };
-		1B9767BC0A6D79CA00A8E8DA /* amiga.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B9767BA0A6D79CA00A8E8DA /* amiga.icns */; };
-		1B9767BD0A6D79CA00A8E8DA /* unarchiver.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B9767BB0A6D79CA00A8E8DA /* unarchiver.icns */; };
 		1BED5DB50A600D6E00CA31C2 /* TUEncodingPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BED5DB40A600D6E00CA31C2 /* TUEncodingPopUp.m */; };
 		3D66507710378C6A00A679EF /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; };
 		3D66507810378C6F00A679EF /* UniversalDetector.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -324,12 +280,12 @@
 		1B0DE4C80A37A1620009B697 /* TUController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUController.h; sourceTree = "<group>"; };
 		1B0DE4C90A37A1620009B697 /* TUController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUController.m; sourceTree = "<group>"; };
 		1B1B99EF0B07C8D200EC8324 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		1B2109F50A38EEAF005ED2AF /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		1B2109F50A38EEAF005ED2AF /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = SOURCE_ROOT; };
 		1B2109F70A38F2BA005ED2AF /* TUArchiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUArchiveController.h; sourceTree = "<group>"; };
 		1B2109F80A38F2BA005ED2AF /* TUArchiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUArchiveController.m; sourceTree = "<group>"; };
 		1B2116FA0A4CA50F005ED2AF /* TUTaskListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUTaskListView.h; sourceTree = "<group>"; };
 		1B2116FB0A4CA510005ED2AF /* TUTaskListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUTaskListView.m; sourceTree = "<group>"; };
-		1B2117AC0A4E10D3005ED2AF /* WaitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitView.xib; sourceTree = "<group>"; };
+		1B2117AC0A4E10D3005ED2AF /* WaitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitView.xib; sourceTree = SOURCE_ROOT; };
 		1B25A0B5153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/ServicesMenu.strings"; sourceTree = "<group>"; };
 		1B25A0B6153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/EncodingView.xib"; sourceTree = "<group>"; };
 		1B25A0B7153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/ErrorView.xib"; sourceTree = "<group>"; };
@@ -339,26 +295,6 @@
 		1B25A0BB153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/PasswordView.xib"; sourceTree = "<group>"; };
 		1B25A0BC153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1B25A0BD153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/NotWritableView.xib"; sourceTree = "<group>"; };
-		1B2AD8380A5C4BD200FAEA01 /* 7z.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = 7z.icns; sourceTree = "<group>"; };
-		1B2AD8390A5C4BD200FAEA01 /* ace.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ace.icns; sourceTree = "<group>"; };
-		1B2AD83A0A5C4BD200FAEA01 /* adf.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = adf.icns; sourceTree = "<group>"; };
-		1B2AD83B0A5C4BD200FAEA01 /* adz.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = adz.icns; sourceTree = "<group>"; };
-		1B2AD83C0A5C4BD200FAEA01 /* archive.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = archive.icns; sourceTree = "<group>"; };
-		1B2AD83E0A5C4BD200FAEA01 /* bin.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = bin.icns; sourceTree = "<group>"; };
-		1B2AD83F0A5C4BD200FAEA01 /* bz2.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = bz2.icns; sourceTree = "<group>"; };
-		1B2AD8400A5C4BD200FAEA01 /* cab.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cab.icns; sourceTree = "<group>"; };
-		1B2AD8450A5C4BD200FAEA01 /* dms.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = dms.icns; sourceTree = "<group>"; };
-		1B2AD8460A5C4BD200FAEA01 /* exe.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = exe.icns; sourceTree = "<group>"; };
-		1B2AD8480A5C4BD200FAEA01 /* gz.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gz.icns; sourceTree = "<group>"; };
-		1B2AD8490A5C4BD200FAEA01 /* hqx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = hqx.icns; sourceTree = "<group>"; };
-		1B2AD84A0A5C4BD200FAEA01 /* jar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = jar.icns; sourceTree = "<group>"; };
-		1B2AD84B0A5C4BD200FAEA01 /* lha.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = lha.icns; sourceTree = "<group>"; };
-		1B2AD84C0A5C4BD200FAEA01 /* rar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rar.icns; sourceTree = "<group>"; };
-		1B2AD84D0A5C4BD200FAEA01 /* rpm.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rpm.icns; sourceTree = "<group>"; };
-		1B2AD84F0A5C4BD200FAEA01 /* sit.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sit.icns; sourceTree = "<group>"; };
-		1B2AD8500A5C4BD200FAEA01 /* tar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = tar.icns; sourceTree = "<group>"; };
-		1B2AD8510A5C4BD200FAEA01 /* z.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = z.icns; sourceTree = "<group>"; };
-		1B2AD8520A5C4BD200FAEA01 /* zip.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = zip.icns; sourceTree = "<group>"; };
 		1B375D2016EEA96E00773BB8 /* bg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B375D2116EEA96E00773BB8 /* bg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B375D2216EEA96E00773BB8 /* bg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
@@ -416,8 +352,6 @@
 		1B81DDCD10012A2D005C5B23 /* TUTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUTaskQueue.m; sourceTree = "<group>"; };
 		1B932D680A560AC900F7DE66 /* TUCancelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUCancelButton.h; sourceTree = "<group>"; };
 		1B932D690A560AC900F7DE66 /* TUCancelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUCancelButton.m; sourceTree = "<group>"; };
-		1B9767BA0A6D79CA00A8E8DA /* amiga.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = amiga.icns; sourceTree = "<group>"; };
-		1B9767BB0A6D79CA00A8E8DA /* unarchiver.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = unarchiver.icns; sourceTree = "<group>"; };
 		1BA155AC164469BB00BFF440 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1BA155AD164469BB00BFF440 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1BA155AE164469BB00BFF440 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ServicesMenu.strings"; sourceTree = "<group>"; };
@@ -543,9 +477,9 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* The Unarchiver_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "The Unarchiver_Prefix.pch"; sourceTree = "<group>"; };
 		3D664F4B103776C900A679EF /* UniversalDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalDetector.xcodeproj; path = ../UniversalDetector/UniversalDetector.xcodeproj; sourceTree = SOURCE_ROOT; };
-		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
+		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XADMaster.xcodeproj; path = ../XADMaster/XADMaster/XADMaster.xcodeproj; sourceTree = SOURCE_ROOT; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		8D1107320486CEB800E47090 /* The Unarchiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Unarchiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDABE4516298EB300BAFD4F /* TheUnarchiverSuite.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TheUnarchiverSuite.sdef; sourceTree = "<group>"; };
 		DBDABE4616298EB300BAFD4F /* TUUnarchiveScriptCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUUnarchiveScriptCommand.h; sourceTree = "<group>"; };
@@ -633,35 +567,7 @@
 				1B1D47BF0AFCBE94009AA7EB /* EncodingView.xib */,
 			);
 			name = Localizable;
-			sourceTree = "<group>";
-		};
-		1B2AD8370A5C4BD200FAEA01 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				1B2AD8380A5C4BD200FAEA01 /* 7z.icns */,
-				1B2AD8390A5C4BD200FAEA01 /* ace.icns */,
-				1B2AD83A0A5C4BD200FAEA01 /* adf.icns */,
-				1B2AD83B0A5C4BD200FAEA01 /* adz.icns */,
-				1B9767BA0A6D79CA00A8E8DA /* amiga.icns */,
-				1B2AD83C0A5C4BD200FAEA01 /* archive.icns */,
-				1B2AD83E0A5C4BD200FAEA01 /* bin.icns */,
-				1B2AD83F0A5C4BD200FAEA01 /* bz2.icns */,
-				1B2AD8400A5C4BD200FAEA01 /* cab.icns */,
-				1B2AD8450A5C4BD200FAEA01 /* dms.icns */,
-				1B2AD8460A5C4BD200FAEA01 /* exe.icns */,
-				1B2AD8480A5C4BD200FAEA01 /* gz.icns */,
-				1B2AD8490A5C4BD200FAEA01 /* hqx.icns */,
-				1B2AD84A0A5C4BD200FAEA01 /* jar.icns */,
-				1B2AD84B0A5C4BD200FAEA01 /* lha.icns */,
-				1B2AD84C0A5C4BD200FAEA01 /* rar.icns */,
-				1B2AD84D0A5C4BD200FAEA01 /* rpm.icns */,
-				1B2AD84F0A5C4BD200FAEA01 /* sit.icns */,
-				1B2AD8500A5C4BD200FAEA01 /* tar.icns */,
-				1B9767BB0A6D79CA00A8E8DA /* unarchiver.icns */,
-				1B2AD8510A5C4BD200FAEA01 /* z.icns */,
-				1B2AD8520A5C4BD200FAEA01 /* zip.icns */,
-			);
-			path = icons;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* The Unarchiver */ = {
@@ -697,9 +603,8 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				1B2109F50A38EEAF005ED2AF /* ProgressView.xib */,
 				1B2117AC0A4E10D3005ED2AF /* WaitView.xib */,
-				1B2AD8370A5C4BD200FAEA01 /* icons */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -1043,30 +948,8 @@
 				1B6BD5711BB194D000EA3E01 /* WaitView.xib in Resources */,
 				1B6BD5721BB194D000EA3E01 /* ErrorView.xib in Resources */,
 				1B6BD5731BB194D000EA3E01 /* OpenErrorView.xib in Resources */,
-				1B6BD5751BB194D000EA3E01 /* 7z.icns in Resources */,
-				1B6BD5761BB194D000EA3E01 /* ace.icns in Resources */,
-				1B6BD5771BB194D000EA3E01 /* adf.icns in Resources */,
-				1B6BD5781BB194D000EA3E01 /* adz.icns in Resources */,
-				1B6BD5791BB194D000EA3E01 /* archive.icns in Resources */,
-				1B6BD57A1BB194D000EA3E01 /* bin.icns in Resources */,
-				1B6BD57B1BB194D000EA3E01 /* bz2.icns in Resources */,
-				1B6BD57C1BB194D000EA3E01 /* cab.icns in Resources */,
-				1B6BD57D1BB194D000EA3E01 /* dms.icns in Resources */,
-				1B6BD57E1BB194D000EA3E01 /* exe.icns in Resources */,
-				1B6BD57F1BB194D000EA3E01 /* gz.icns in Resources */,
-				1B6BD5801BB194D000EA3E01 /* hqx.icns in Resources */,
-				1B6BD5811BB194D000EA3E01 /* jar.icns in Resources */,
-				1B6BD5821BB194D000EA3E01 /* lha.icns in Resources */,
-				1B6BD5831BB194D000EA3E01 /* rar.icns in Resources */,
-				1B6BD5841BB194D000EA3E01 /* rpm.icns in Resources */,
-				1B6BD5851BB194D000EA3E01 /* sit.icns in Resources */,
-				1B6BD5861BB194D000EA3E01 /* tar.icns in Resources */,
-				1B6BD5871BB194D000EA3E01 /* z.icns in Resources */,
-				1B6BD5881BB194D000EA3E01 /* zip.icns in Resources */,
 				1B6BD5891BB194D000EA3E01 /* PasswordView.xib in Resources */,
 				1B6BD58A1BB194D000EA3E01 /* EncodingView.xib in Resources */,
-				1B6BD58B1BB194D000EA3E01 /* amiga.icns in Resources */,
-				1B6BD58C1BB194D000EA3E01 /* unarchiver.icns in Resources */,
 				5565D3BF1FC4CC7600AFF13C /* Media.xcassets in Resources */,
 				1B6BD58D1BB194D000EA3E01 /* Localizable.strings in Resources */,
 				1B6BD58E1BB194D000EA3E01 /* NotWritableView.xib in Resources */,
@@ -1085,31 +968,9 @@
 				1B1D484C0AFCCD30009AA7EB /* WaitView.xib in Resources */,
 				1B1D47BA0AFCBE94009AA7EB /* ErrorView.xib in Resources */,
 				1B1D47BC0AFCBE94009AA7EB /* OpenErrorView.xib in Resources */,
-				1B2AD8530A5C4BD200FAEA01 /* 7z.icns in Resources */,
-				1B2AD8540A5C4BD200FAEA01 /* ace.icns in Resources */,
-				1B2AD8550A5C4BD200FAEA01 /* adf.icns in Resources */,
-				1B2AD8560A5C4BD200FAEA01 /* adz.icns in Resources */,
-				1B2AD8570A5C4BD200FAEA01 /* archive.icns in Resources */,
-				1B2AD8590A5C4BD200FAEA01 /* bin.icns in Resources */,
-				1B2AD85A0A5C4BD200FAEA01 /* bz2.icns in Resources */,
-				1B2AD85B0A5C4BD200FAEA01 /* cab.icns in Resources */,
-				1B2AD8600A5C4BD200FAEA01 /* dms.icns in Resources */,
-				1B2AD8610A5C4BD200FAEA01 /* exe.icns in Resources */,
-				1B2AD8630A5C4BD200FAEA01 /* gz.icns in Resources */,
-				1B2AD8640A5C4BD200FAEA01 /* hqx.icns in Resources */,
-				1B2AD8650A5C4BD200FAEA01 /* jar.icns in Resources */,
-				1B2AD8660A5C4BD200FAEA01 /* lha.icns in Resources */,
 				55A2D4531FBF936200939897 /* Media.xcassets in Resources */,
-				1B2AD8670A5C4BD200FAEA01 /* rar.icns in Resources */,
-				1B2AD8680A5C4BD200FAEA01 /* rpm.icns in Resources */,
-				1B2AD86A0A5C4BD200FAEA01 /* sit.icns in Resources */,
-				1B2AD86B0A5C4BD200FAEA01 /* tar.icns in Resources */,
-				1B2AD86C0A5C4BD200FAEA01 /* z.icns in Resources */,
-				1B2AD86D0A5C4BD200FAEA01 /* zip.icns in Resources */,
 				1B1D47BE0AFCBE94009AA7EB /* PasswordView.xib in Resources */,
 				1B1D47C00AFCBE94009AA7EB /* EncodingView.xib in Resources */,
-				1B9767BC0A6D79CA00A8E8DA /* amiga.icns in Resources */,
-				1B9767BD0A6D79CA00A8E8DA /* unarchiver.icns in Resources */,
 				1B1D47070AFC294E009AA7EB /* Localizable.strings in Resources */,
 				1B81DBD20FF98BF9005C5B23 /* NotWritableView.xib in Resources */,
 				1B782D21106ACC1700EBF3E8 /* ServicesMenu.strings in Resources */,

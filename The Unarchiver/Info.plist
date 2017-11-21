@@ -13,7 +13,7 @@
 				<string>z01</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>zip.icns</string>
+			<string>zip</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/zip</string>
@@ -37,8 +37,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -266,8 +264,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -275,7 +271,7 @@
 				<string>7z</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>7z.icns</string>
+			<string>7z</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-7z-compressed</string>
@@ -290,8 +286,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -300,7 +294,7 @@
 				<string>lzh</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>lha.icns</string>
+			<string>lha</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-lzh-compressed</string>
@@ -323,8 +317,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -332,7 +324,7 @@
 				<string>zipx</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>zip.icns</string>
+			<string>zip</string>
 			<key>CFBundleTypeName</key>
 			<string>Zipx Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -343,8 +335,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -354,7 +344,7 @@
 				<string>1</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>sit.icns</string>
+			<string>sit</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-stuffit</string>
@@ -379,8 +369,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -388,7 +376,7 @@
 				<string>hqx</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>hqx.icns</string>
+			<string>hqx</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/mac-binhex40</string>
@@ -408,8 +396,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -418,7 +404,7 @@
 				<string>macbin</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>bin.icns</string>
+			<string>bin</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-macbinary</string>
@@ -439,8 +425,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -448,7 +432,7 @@
 				<string>as</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>AppleSingle File</string>
 			<key>CFBundleTypeRole</key>
@@ -457,6 +441,8 @@
 			<array>
 				<string>com.apple.applesingle-archive</string>
 			</array>
+			<key>LSTypeIsPackage</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -465,7 +451,7 @@
 				<string>gzip</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>gz.icns</string>
+			<string>gz</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/gzip</string>
@@ -485,8 +471,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -495,7 +479,7 @@
 				<string>tar-gz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>gz.icns</string>
+			<string>gz</string>
 			<key>CFBundleTypeName</key>
 			<string>Gzip Tar Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -506,8 +490,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -517,7 +499,7 @@
 				<string>bz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>bz2.icns</string>
+			<string>bz2</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/bzip2</string>
@@ -540,8 +522,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -550,7 +530,7 @@
 				<string>tbz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>bz2.icns</string>
+			<string>bz2</string>
 			<key>CFBundleTypeName</key>
 			<string>Bzip2 Tar Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -562,8 +542,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -571,7 +549,7 @@
 				<string>xz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-xz</string>
@@ -587,8 +565,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -596,7 +572,7 @@
 				<string>txz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>tar.icns</string>
+			<string>tar</string>
 			<key>CFBundleTypeName</key>
 			<string>XZ Tar Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -608,8 +584,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -617,7 +591,7 @@
 				<string>tar</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>tar.icns</string>
+			<string>tar</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-tar</string>
@@ -637,8 +611,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -646,7 +618,7 @@
 				<string>iso</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-iso-image</string>
@@ -661,8 +633,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -670,7 +640,7 @@
 				<string>cdi</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>CDI Disk Image</string>
 			<key>CFBundleTypeRole</key>
@@ -681,8 +651,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -690,7 +658,7 @@
 				<string>nrg</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>NRG Disk Image</string>
 			<key>CFBundleTypeRole</key>
@@ -701,8 +669,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -710,7 +676,7 @@
 				<string>mdf</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>MDF Disk Image</string>
 			<key>CFBundleTypeRole</key>
@@ -721,8 +687,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -730,7 +694,7 @@
 				<string>gtar</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>tar.icns</string>
+			<string>tar</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-gtar</string>
@@ -746,8 +710,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -755,7 +717,7 @@
 				<string>z</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>z.icns</string>
+			<string>z</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-compress</string>
@@ -775,8 +737,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -785,7 +745,7 @@
 				<string>tar-z</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>z.icns</string>
+			<string>z</string>
 			<key>CFBundleTypeName</key>
 			<string>Unix Compress Tar Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -796,8 +756,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -805,7 +763,7 @@
 				<string>lzma</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>LZMA File</string>
 			<key>CFBundleTypeRole</key>
@@ -817,8 +775,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -826,7 +782,7 @@
 				<string>xar</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>XAR Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -838,8 +794,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -847,7 +801,7 @@
 				<string>xip</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>XIP Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -858,8 +812,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -867,7 +819,7 @@
 				<string>ace</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>ace.icns</string>
+			<string>ace</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-ace-compressed</string>
@@ -882,8 +834,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -891,7 +841,7 @@
 				<string>arj</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>ARJ Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -902,8 +852,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -913,7 +861,7 @@
 				<string>spk</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>ARC Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -924,8 +872,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -933,7 +879,7 @@
 				<string>zoo</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>ZOO Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -944,8 +890,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -955,7 +899,7 @@
 				<string>lzr</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>LBR Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -966,8 +910,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -975,7 +917,7 @@
 				<string>pma</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>PMA Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -986,8 +928,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -995,7 +935,7 @@
 				<string>cab</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>cab.icns</string>
+			<string>cab</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/vnd.ms-cab-compressed</string>
@@ -1010,8 +950,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1019,7 +957,7 @@
 				<string>rpm</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>rpm.icns</string>
+			<string>rpm</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-rpm</string>
@@ -1035,8 +973,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1044,7 +980,7 @@
 				<string>deb</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Deb Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1060,7 +996,7 @@
 				<string>alz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>ALZip Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1071,8 +1007,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1080,7 +1014,7 @@
 				<string>dd</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>DiskDoubler Archive</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -1095,8 +1029,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1104,7 +1036,7 @@
 				<string>cpt</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Compact Pro Archive</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -1119,8 +1051,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1128,7 +1058,7 @@
 				<string>pit</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>PackIt Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1139,8 +1069,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1148,7 +1076,7 @@
 				<string>now</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Now Compress Archive</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -1166,8 +1094,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1175,7 +1101,7 @@
 				<string>sea</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Self-Extracting Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1186,8 +1112,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1195,7 +1119,7 @@
 				<string>exe</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>exe.icns</string>
+			<string>exe</string>
 			<key>CFBundleTypeName</key>
 			<string>Windows Self-Extracting Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1206,8 +1130,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1215,7 +1137,7 @@
 				<string>msi</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Microsoft MSI Installer</string>
 			<key>CFBundleTypeRole</key>
@@ -1226,8 +1148,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1235,7 +1155,7 @@
 				<string>cpio</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-cpio</string>
@@ -1250,8 +1170,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1259,7 +1177,7 @@
 				<string>cpgz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Gzip CPIO Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1270,8 +1188,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1279,7 +1195,7 @@
 				<string>pax</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Pax Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1291,8 +1207,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1300,7 +1214,7 @@
 				<string>warc</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>WARC Web Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1311,8 +1225,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1320,7 +1232,7 @@
 				<string>ha</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>HA Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1331,8 +1243,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1340,7 +1250,7 @@
 				<string>adf</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>adf.icns</string>
+			<string>adf</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga Disk File</string>
 			<key>CFBundleTypeRole</key>
@@ -1351,8 +1261,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1360,7 +1268,7 @@
 				<string>adz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>adz.icns</string>
+			<string>adz</string>
 			<key>CFBundleTypeName</key>
 			<string>Compressed Amiga Disk File</string>
 			<key>CFBundleTypeRole</key>
@@ -1371,8 +1279,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1380,7 +1286,7 @@
 				<string>dms</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>dms.icns</string>
+			<string>dms</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga DMS Disk Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1391,8 +1297,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1400,7 +1304,7 @@
 				<string>f</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga LhF Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1411,8 +1315,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1420,7 +1322,7 @@
 				<string>lzx</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/x-lzx</string>
@@ -1435,8 +1337,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1444,7 +1344,7 @@
 				<string>dcs</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga DCS Disk Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1455,8 +1355,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1464,7 +1362,7 @@
 				<string>pkd</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga PackDev Disk Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1475,8 +1373,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1484,7 +1380,7 @@
 				<string>xms</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga xMash Disk Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1495,8 +1391,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1504,7 +1398,7 @@
 				<string>zom</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga Zoom Disk Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1515,8 +1409,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1524,7 +1416,7 @@
 				<string>pp</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>amiga.icns</string>
+			<string>amiga</string>
 			<key>CFBundleTypeName</key>
 			<string>Amiga PowerPacker File</string>
 			<key>CFBundleTypeRole</key>
@@ -1535,8 +1427,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1544,7 +1434,7 @@
 				<string>nsa</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>NSA Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1555,8 +1445,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1564,7 +1452,7 @@
 				<string>sar</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>SAR Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1575,8 +1463,6 @@
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1632,15 +1518,13 @@
 				<string>049</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Split File</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1648,7 +1532,7 @@
 				<string>jar</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>jar.icns</string>
+			<string>jar</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/java-archive</string>
@@ -1659,8 +1543,6 @@
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1668,15 +1550,13 @@
 				<string>cbz</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>zip.icns</string>
+			<string>zip</string>
 			<key>CFBundleTypeName</key>
 			<string>Comic Book Zip Archive</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1684,15 +1564,13 @@
 				<string>cbr</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>rar.icns</string>
+			<string>rar</string>
 			<key>CFBundleTypeName</key>
 			<string>Comic Book Rar Archive</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1700,15 +1578,13 @@
 				<string>nds</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Nintendo DS ROM file</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1716,15 +1592,13 @@
 				<string>pkg</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Installer package</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
@@ -1732,7 +1606,7 @@
 				<string>a</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Ar Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -1768,7 +1642,7 @@
 				<string>*</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>archive.icns</string>
+			<string>archive</string>
 			<key>CFBundleTypeName</key>
 			<string>Archive</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -1779,8 +1653,6 @@
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -1804,7 +1676,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6.0</string>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSMainNibFile</key>
