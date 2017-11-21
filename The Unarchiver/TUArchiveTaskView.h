@@ -57,8 +57,7 @@
 -(id)init;
 -(void)dealloc;
 
--(TUArchiveController *)archiveController;
--(void)setArchiveController:(TUArchiveController *)archivecontroller;
+@property (assign) TUArchiveController *archiveController;
 
 -(void)setCancelAction:(SEL)selector target:(id)target;
 

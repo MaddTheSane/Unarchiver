@@ -202,7 +202,7 @@ static BOOL DisabledInSandbox=YES;
 	return [filetypes count];
 }
 
--(id)tableView:(NSTableView *)table objectValueForTableColumn:(NSTableColumn *)column row:(int)row
+-(id)tableView:(NSTableView *)table objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
 	NSString *ident=[column identifier];
 
@@ -228,7 +228,7 @@ static BOOL DisabledInSandbox=YES;
 	}
 }
 
--(void)tableView:(NSTableView *)table setObjectValue:(id)object forTableColumn:(NSTableColumn *)column row:(int)row
+-(void)tableView:(NSTableView *)table setObjectValue:(id)object forTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
 	NSString *ident=[column identifier];
 

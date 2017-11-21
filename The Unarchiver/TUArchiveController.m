@@ -262,7 +262,7 @@ NSStringEncoding globalpasswordencoding=0;
 	[unarchiver setResetsDateForSoloItems:!copydatepref && changefilespref];
 
 	XADError error=[unarchiver parse];
-	if(error==XADBreakError)
+	if(error==XADErrorBreak)
 	{
 		[self performSelectorOnMainThread:@selector(extractFailed) withObject:nil waitUntilDone:NO];
 		return;
@@ -308,7 +308,7 @@ NSStringEncoding globalpasswordencoding=0;
 	error=[unarchiver unarchive];
 	if(error)
 	{
-		if(error!=XADBreakError)
+		if(error!=XADErrorBreak)
 		[view displayOpenError:[NSString stringWithFormat:
 			NSLocalizedString(@"There was a problem while extracting the contents of the file \"%@\": %@",@"Error message when encountering an error while extracting entries"),
 			[self currentArchiveName],
