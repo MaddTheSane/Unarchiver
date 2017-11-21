@@ -280,12 +280,12 @@
 		1B0DE4C80A37A1620009B697 /* TUController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUController.h; sourceTree = "<group>"; };
 		1B0DE4C90A37A1620009B697 /* TUController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUController.m; sourceTree = "<group>"; };
 		1B1B99EF0B07C8D200EC8324 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		1B2109F50A38EEAF005ED2AF /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = SOURCE_ROOT; };
+		1B2109F50A38EEAF005ED2AF /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		1B2109F70A38F2BA005ED2AF /* TUArchiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUArchiveController.h; sourceTree = "<group>"; };
 		1B2109F80A38F2BA005ED2AF /* TUArchiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUArchiveController.m; sourceTree = "<group>"; };
 		1B2116FA0A4CA50F005ED2AF /* TUTaskListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUTaskListView.h; sourceTree = "<group>"; };
 		1B2116FB0A4CA510005ED2AF /* TUTaskListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUTaskListView.m; sourceTree = "<group>"; };
-		1B2117AC0A4E10D3005ED2AF /* WaitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitView.xib; sourceTree = SOURCE_ROOT; };
+		1B2117AC0A4E10D3005ED2AF /* WaitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitView.xib; sourceTree = "<group>"; };
 		1B25A0B5153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/ServicesMenu.strings"; sourceTree = "<group>"; };
 		1B25A0B6153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/EncodingView.xib"; sourceTree = "<group>"; };
 		1B25A0B7153FA0EE001817D8 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/ErrorView.xib"; sourceTree = "<group>"; };
@@ -477,6 +477,15 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* The Unarchiver_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "The Unarchiver_Prefix.pch"; sourceTree = "<group>"; };
 		3D664F4B103776C900A679EF /* UniversalDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalDetector.xcodeproj; path = ../UniversalDetector/UniversalDetector.xcodeproj; sourceTree = SOURCE_ROOT; };
+		551F2A6B1FC4D49F00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		551F2A6C1FC4D4A800CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/ErrorView.xib; sourceTree = "<group>"; };
+		551F2A6D1FC4D4AF00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/NotWritableView.xib; sourceTree = "<group>"; };
+		551F2A6E1FC4D4B500CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/OpenErrorView.xib; sourceTree = "<group>"; };
+		551F2A6F1FC4D4BA00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/PasswordView.xib; sourceTree = "<group>"; };
+		551F2A701FC4D4BF00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/EncodingView.xib; sourceTree = "<group>"; };
+		551F2A711FC4D4C600CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		551F2A721FC4D4CA00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		551F2A731FC4D4CE00CE4E5A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XADMaster.xcodeproj; path = ../XADMaster/XADMaster/XADMaster.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -553,23 +562,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B1D48570AFCCE1F009AA7EB /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1B1D47060AFC294E009AA7EB /* Localizable.strings */,
-				1B782D20106ACC1700EBF3E8 /* ServicesMenu.strings */,
-				29B97318FDCFA39411CA2CEA /* MainMenu.xib */,
-				1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */,
-				1B1D47B90AFCBE94009AA7EB /* ErrorView.xib */,
-				1B1D47BB0AFCBE94009AA7EB /* OpenErrorView.xib */,
-				1B1D47BD0AFCBE94009AA7EB /* PasswordView.xib */,
-				1B1D47BF0AFCBE94009AA7EB /* EncodingView.xib */,
-			);
-			name = Localizable;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* The Unarchiver */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,11 +590,19 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				55A2D4521FBF936200939897 /* Media.xcassets */,
-				1B1D48570AFCCE1F009AA7EB /* Localizable */,
-				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1B1D47060AFC294E009AA7EB /* Localizable.strings */,
+				1B782D20106ACC1700EBF3E8 /* ServicesMenu.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.xib */,
+				1B1D47B90AFCBE94009AA7EB /* ErrorView.xib */,
+				1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */,
+				1B1D47BB0AFCBE94009AA7EB /* OpenErrorView.xib */,
+				1B1D47BD0AFCBE94009AA7EB /* PasswordView.xib */,
+				1B1D47BF0AFCBE94009AA7EB /* EncodingView.xib */,
 				1B2109F50A38EEAF005ED2AF /* ProgressView.xib */,
 				1B2117AC0A4E10D3005ED2AF /* WaitView.xib */,
+				55A2D4521FBF936200939897 /* Media.xcassets */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -737,27 +737,26 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
-				Spanish,
+				en,
+				ja,
+				fr,
+				de,
+				es,
 				pt,
 				ru,
 				zh_TW,
-				Dutch,
+				nl,
 				sv,
 				es,
-				Korean,
+				kr,
 				zh_CN,
 				be,
 				da,
-				Italian,
+				it,
 				cs,
 				"zh-Hans",
 				bg,
 				"pt-BR",
-				nl,
 				hu,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* The Unarchiver */;
@@ -1086,6 +1085,7 @@
 				1BB30DEC1767C7F800D41A57 /* pt-BR */,
 				1B738CB917DE856C00481D43 /* nl */,
 				1B61E9341B5D8149005AE72C /* hu */,
+				551F2A711FC4D4C600CE4E5A /* sv */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1112,6 +1112,7 @@
 				1BB30DED1767C7F800D41A57 /* pt-BR */,
 				1B738CBA17DE856C00481D43 /* nl */,
 				1B61E9351B5D8149005AE72C /* hu */,
+				551F2A731FC4D4CE00CE4E5A /* sv */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1138,6 +1139,7 @@
 				1BB30DF11767C7F900D41A57 /* pt-BR */,
 				1B738CBE17DE856C00481D43 /* nl */,
 				1B61E9391B5D8149005AE72C /* hu */,
+				551F2A6C1FC4D4A800CE4E5A /* sv */,
 			);
 			name = ErrorView.xib;
 			sourceTree = "<group>";
@@ -1164,6 +1166,7 @@
 				1BB30DF21767C7F900D41A57 /* pt-BR */,
 				1B738CBF17DE856C00481D43 /* nl */,
 				1B61E93A1B5D8149005AE72C /* hu */,
+				551F2A6E1FC4D4B500CE4E5A /* sv */,
 			);
 			name = OpenErrorView.xib;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				1BB30DF31767C7F900D41A57 /* pt-BR */,
 				1B738CC017DE856C00481D43 /* nl */,
 				1B61E93B1B5D8149005AE72C /* hu */,
+				551F2A6F1FC4D4BA00CE4E5A /* sv */,
 			);
 			name = PasswordView.xib;
 			sourceTree = "<group>";
@@ -1216,6 +1220,7 @@
 				1BB30DF41767C7F900D41A57 /* pt-BR */,
 				1B738CC117DE856C00481D43 /* nl */,
 				1B61E9331B5D8149005AE72C /* hu */,
+				551F2A701FC4D4BF00CE4E5A /* sv */,
 			);
 			name = EncodingView.xib;
 			sourceTree = "<group>";
@@ -1242,6 +1247,7 @@
 				1BB30DEE1767C7F800D41A57 /* pt-BR */,
 				1B738CBB17DE856C00481D43 /* nl */,
 				1B61E9361B5D8149005AE72C /* hu */,
+				551F2A721FC4D4CA00CE4E5A /* sv */,
 			);
 			name = ServicesMenu.strings;
 			sourceTree = "<group>";
@@ -1268,6 +1274,7 @@
 				1BB30DF01767C7F800D41A57 /* pt-BR */,
 				1B738CBD17DE856C00481D43 /* nl */,
 				1B61E9381B5D8149005AE72C /* hu */,
+				551F2A6D1FC4D4AF00CE4E5A /* sv */,
 			);
 			name = NotWritableView.xib;
 			sourceTree = "<group>";
@@ -1294,6 +1301,7 @@
 				1BB30DEF1767C7F800D41A57 /* pt-BR */,
 				1B738CBC17DE856C00481D43 /* nl */,
 				1B61E9371B5D8149005AE72C /* hu */,
+				551F2A6B1FC4D49F00CE4E5A /* sv */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
