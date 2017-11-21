@@ -46,7 +46,6 @@
 		1B6BD5711BB194D000EA3E01 /* WaitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2117AC0A4E10D3005ED2AF /* WaitView.xib */; };
 		1B6BD5721BB194D000EA3E01 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47B90AFCBE94009AA7EB /* ErrorView.xib */; };
 		1B6BD5731BB194D000EA3E01 /* OpenErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47BB0AFCBE94009AA7EB /* OpenErrorView.xib */; };
-		1B6BD5741BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		1B6BD5751BB194D000EA3E01 /* 7z.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8380A5C4BD200FAEA01 /* 7z.icns */; };
 		1B6BD5761BB194D000EA3E01 /* ace.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD8390A5C4BD200FAEA01 /* ace.icns */; };
 		1B6BD5771BB194D000EA3E01 /* adf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AD83A0A5C4BD200FAEA01 /* adf.icns */; };
@@ -74,13 +73,6 @@
 		1B6BD58D1BB194D000EA3E01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D47060AFC294E009AA7EB /* Localizable.strings */; };
 		1B6BD58E1BB194D000EA3E01 /* NotWritableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */; };
 		1B6BD58F1BB194D000EA3E01 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B782D20106ACC1700EBF3E8 /* ServicesMenu.strings */; };
-		1B6BD5901BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5911BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5921BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5931BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5941BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5951BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		1B6BD5961BB194D000EA3E01 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		1B6BD5971BB194D000EA3E01 /* TheUnarchiverSuite.sdef in Resources */ = {isa = PBXBuildFile; fileRef = DBDABE4516298EB300BAFD4F /* TheUnarchiverSuite.sdef */; };
 		1B6BD5991BB194D000EA3E01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		1B6BD59A1BB194D000EA3E01 /* TUController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0DE4C90A37A1620009B697 /* TUController.m */; };
@@ -98,9 +90,9 @@
 		1B6BD5A71BB194D000EA3E01 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		1B6BD5A81BB194D000EA3E01 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1B99EF0B07C8D200EC8324 /* Carbon.framework */; };
 		1B6BD5AA1BB194D000EA3E01 /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; };
-		1B6BD5AC1BB194D000EA3E01 /* UniversalDetector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1B6BD5AC1BB194D000EA3E01 /* UniversalDetector.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1B6BD5C71BB1A30700EA3E01 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6BD5C61BB1A30700EA3E01 /* Sparkle.framework */; };
-		1B6BD5C81BB1A32900EA3E01 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6BD5C61BB1A30700EA3E01 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1B6BD5C81BB1A32900EA3E01 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6BD5C61BB1A30700EA3E01 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B6FA20B0A58A1D800066489 /* CSFileTypeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6FA20A0A58A1D800066489 /* CSFileTypeList.m */; };
 		1B782D21106ACC1700EBF3E8 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B782D20106ACC1700EBF3E8 /* ServicesMenu.strings */; };
 		1B81DBD20FF98BF9005C5B23 /* NotWritableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */; };
@@ -111,7 +103,12 @@
 		1B9767BD0A6D79CA00A8E8DA /* unarchiver.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B9767BB0A6D79CA00A8E8DA /* unarchiver.icns */; };
 		1BED5DB50A600D6E00CA31C2 /* TUEncodingPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BED5DB40A600D6E00CA31C2 /* TUEncodingPopUp.m */; };
 		3D66507710378C6A00A679EF /* UniversalDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; };
-		3D66507810378C6F00A679EF /* UniversalDetector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3D66507810378C6F00A679EF /* UniversalDetector.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5565D3B31FC4CB8700AFF13C /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; };
+		5565D3B41FC4CB8700AFF13C /* XADMaster.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5565D3BB1FC4CC6D00AFF13C /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; };
+		5565D3BC1FC4CC6D00AFF13C /* XADMaster.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5565D3BF1FC4CC7600AFF13C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A2D4521FBF936200939897 /* Media.xcassets */; };
 		55A2D4531FBF936200939897 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A2D4521FBF936200939897 /* Media.xcassets */; };
 		8D11072A0486CEB800E47090 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -263,6 +260,20 @@
 			remoteGlobalIDString = 1B91D2EE11E694860081E40A;
 			remoteInfo = lsar.exe;
 		};
+		5565D3B51FC4CB8700AFF13C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = XADMaster;
+		};
+		5565D3BD1FC4CC6D00AFF13C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = XADMaster;
+		};
 		55A2D45B1FBF936300939897 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D664F4B103776C900A679EF /* UniversalDetector.xcodeproj */;
@@ -280,25 +291,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1B6BD5AB1BB194D000EA3E01 /* CopyFiles */ = {
+		1B6BD5AB1BB194D000EA3E01 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1B6BD5C81BB1A32900EA3E01 /* Sparkle.framework in CopyFiles */,
-				1B6BD5AC1BB194D000EA3E01 /* UniversalDetector.framework in CopyFiles */,
+				1B6BD5C81BB1A32900EA3E01 /* Sparkle.framework in Copy Frameworks */,
+				1B6BD5AC1BB194D000EA3E01 /* UniversalDetector.framework in Copy Frameworks */,
+				5565D3BC1FC4CC6D00AFF13C /* XADMaster.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D664F5F1037772400A679EF /* CopyFiles */ = {
+		3D664F5F1037772400A679EF /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3D66507810378C6F00A679EF /* UniversalDetector.framework in CopyFiles */,
+				5565D3B41FC4CB8700AFF13C /* XADMaster.framework in Copy Frameworks */,
+				3D66507810378C6F00A679EF /* UniversalDetector.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -546,6 +561,7 @@
 			files = (
 				1B6BD5A61BB194D000EA3E01 /* QuartzCore.framework in Frameworks */,
 				1B6BD5C71BB1A30700EA3E01 /* Sparkle.framework in Frameworks */,
+				5565D3BB1FC4CC6D00AFF13C /* XADMaster.framework in Frameworks */,
 				1B6BD5A71BB194D000EA3E01 /* Cocoa.framework in Frameworks */,
 				1B6BD5A81BB194D000EA3E01 /* Carbon.framework in Frameworks */,
 				1B6BD5AA1BB194D000EA3E01 /* UniversalDetector.framework in Frameworks */,
@@ -556,6 +572,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5565D3B31FC4CB8700AFF13C /* XADMaster.framework in Frameworks */,
 				1B033DEE1BA15D27008792ED /* QuartzCore.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				1B1B99F00B07C8D200EC8324 /* Carbon.framework in Frameworks */,
@@ -755,11 +772,12 @@
 				1B6BD56D1BB194D000EA3E01 /* Resources */,
 				1B6BD5981BB194D000EA3E01 /* Sources */,
 				1B6BD5A51BB194D000EA3E01 /* Frameworks */,
-				1B6BD5AB1BB194D000EA3E01 /* CopyFiles */,
+				1B6BD5AB1BB194D000EA3E01 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5565D3BE1FC4CC6D00AFF13C /* PBXTargetDependency */,
 			);
 			name = "The Good Unarchiver";
 			productInstallPath = "$(HOME)/Applications";
@@ -775,11 +793,12 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				3D664F5F1037772400A679EF /* CopyFiles */,
+				3D664F5F1037772400A679EF /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5565D3B61FC4CB8700AFF13C /* PBXTargetDependency */,
 			);
 			name = "The Unarchiver";
 			productInstallPath = "$(HOME)/Applications";
@@ -1024,7 +1043,6 @@
 				1B6BD5711BB194D000EA3E01 /* WaitView.xib in Resources */,
 				1B6BD5721BB194D000EA3E01 /* ErrorView.xib in Resources */,
 				1B6BD5731BB194D000EA3E01 /* OpenErrorView.xib in Resources */,
-				1B6BD5741BB194D000EA3E01 /* (null) in Resources */,
 				1B6BD5751BB194D000EA3E01 /* 7z.icns in Resources */,
 				1B6BD5761BB194D000EA3E01 /* ace.icns in Resources */,
 				1B6BD5771BB194D000EA3E01 /* adf.icns in Resources */,
@@ -1049,16 +1067,10 @@
 				1B6BD58A1BB194D000EA3E01 /* EncodingView.xib in Resources */,
 				1B6BD58B1BB194D000EA3E01 /* amiga.icns in Resources */,
 				1B6BD58C1BB194D000EA3E01 /* unarchiver.icns in Resources */,
+				5565D3BF1FC4CC7600AFF13C /* Media.xcassets in Resources */,
 				1B6BD58D1BB194D000EA3E01 /* Localizable.strings in Resources */,
 				1B6BD58E1BB194D000EA3E01 /* NotWritableView.xib in Resources */,
 				1B6BD58F1BB194D000EA3E01 /* ServicesMenu.strings in Resources */,
-				1B6BD5901BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5911BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5921BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5931BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5941BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5951BB194D000EA3E01 /* (null) in Resources */,
-				1B6BD5961BB194D000EA3E01 /* (null) in Resources */,
 				1B6BD5971BB194D000EA3E01 /* TheUnarchiverSuite.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1176,6 +1188,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5565D3B61FC4CB8700AFF13C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XADMaster;
+			targetProxy = 5565D3B51FC4CB8700AFF13C /* PBXContainerItemProxy */;
+		};
+		5565D3BE1FC4CC6D00AFF13C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XADMaster;
+			targetProxy = 5565D3BD1FC4CC6D00AFF13C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -1436,8 +1461,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "The Unarchiver_Prefix.pch";
@@ -1459,18 +1486,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = unarchiver;
 				CODE_SIGN_ENTITLEMENTS = "The Unarchiver.entitlements";
 				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					/Library/Frameworks,
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				IBC_STRIP_NIBS = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-DUseSandbox";
 				PRODUCT_BUNDLE_IDENTIFIER = cx.c3.theunarchiver;
@@ -1484,30 +1509,26 @@
 		1B6BD5AF1BB194D000EA3E01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = unarchiver;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					/Library/Frameworks,
 					"$(PROJECT_DIR)",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				IBC_STRIP_NIBS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_CFLAGS = "-DUseSparkle";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cx.c3.theunarchiver;
 				PRODUCT_NAME = "The Unarchiver";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1516,30 +1537,25 @@
 		1B6BD5B01BB194D000EA3E01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = unarchiver;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					/Library/Frameworks,
 					"$(PROJECT_DIR)",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				IBC_STRIP_NIBS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_CFLAGS = "-DUseSparkle";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cx.c3.theunarchiver;
 				PRODUCT_NAME = "The Unarchiver";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -1552,19 +1568,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = unarchiver;
 				CODE_SIGN_ENTITLEMENTS = "The Unarchiver.entitlements";
 				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					/Library/Frameworks,
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				IBC_STRIP_NIBS = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-DUseSandbox";
 				PRODUCT_BUNDLE_IDENTIFIER = cx.c3.theunarchiver;
@@ -1596,11 +1610,14 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "The Unarchiver_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

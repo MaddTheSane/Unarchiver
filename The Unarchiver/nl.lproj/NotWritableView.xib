@@ -68,12 +68,12 @@ DQ
                 <imageView id="6">
                     <rect key="frame" x="11" y="44" width="32" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="error" id="49"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="49"/>
                 </imageView>
             </subviews>
         </customView>
     </objects>
     <resources>
-        <image name="error" width="32" height="32"/>
+        <image name="NSCaution" width="32" height="32"/>
     </resources>
 </document>
