@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "The Unarchiver heeft geen bevoegdheid om in deze map te schrijven. Het archief kan hier niet worden uitgepakt."; ObjectID = "50"; */
+"50.title" = "The Unarchiver heeft geen bevoegdheid om in deze map te schrijven. Het archief kan hier niet worden uitgepakt.";
+
+/* Class = "NSButtonCell"; title = "Pak uit op bureaublad"; ObjectID = "51"; */
+"51.title" = "Pak uit op bureaublad";
+
+/* Class = "NSButtonCell"; title = "Annuleer"; ObjectID = "52"; */
+"52.title" = "Annuleer";
+
+/* Class = "NSButtonCell"; title = "Pak elders uit..."; ObjectID = "53"; */
+"53.title" = "Pak elders uit...";

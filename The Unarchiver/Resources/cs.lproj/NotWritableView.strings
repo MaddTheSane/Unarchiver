@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Do této složky nelze zapisovat, proto sem nelze archiv rozbalit."; ObjectID = "50"; */
+"50.title" = "Do této složky nelze zapisovat, proto sem nelze archiv rozbalit.";
+
+/* Class = "NSButtonCell"; title = "Rozbalit na plochu"; ObjectID = "51"; */
+"51.title" = "Rozbalit na plochu";
+
+/* Class = "NSButtonCell"; title = "Zastavit"; ObjectID = "52"; */
+"52.title" = "Zastavit";
+
+/* Class = "NSButtonCell"; title = "Rozbalit jinam…"; ObjectID = "53"; */
+"53.title" = "Rozbalit jinam…";

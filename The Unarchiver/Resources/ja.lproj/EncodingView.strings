@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "ファイル名のエンコーディング形式を選択してください。"; ObjectID = "52"; */
+"52.title" = "ファイル名のエンコーディング形式を選択してください。";
+
+/* Class = "NSButtonCell"; title = "続ける"; ObjectID = "53"; */
+"53.title" = "続ける";
+
+/* Class = "NSButtonCell"; title = "中止"; ObjectID = "54"; */
+"54.title" = "中止";
+
+/* Class = "NSTextFieldCell"; title = "エンコーディング："; ObjectID = "56"; */
+"56.title" = "エンコーディング：";
+
+/* Class = "NSTextFieldCell"; title = "プレビュー："; ObjectID = "57"; */
+"57.title" = "プレビュー：";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

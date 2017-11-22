@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Mappen saknar skrivbehörighet, arkivet kunde därför inte packas upp till mappen."; ObjectID = "50"; */
+"50.title" = "Mappen saknar skrivbehörighet, arkivet kunde därför inte packas upp till mappen.";
+
+/* Class = "NSButtonCell"; title = "Packa upp till Skrivbordet"; ObjectID = "51"; */
+"51.title" = "Packa upp till Skrivbordet";
+
+/* Class = "NSButtonCell"; title = "Stopp"; ObjectID = "52"; */
+"52.title" = "Stopp";
+
+/* Class = "NSButtonCell"; title = "Packa upp till…"; ObjectID = "53"; */
+"53.title" = "Packa upp till…";

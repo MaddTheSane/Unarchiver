@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Não tem permissões de escrita para esta pasta, o arquivo não pode ser descompactado aqui."; ObjectID = "60"; */
+"50.title" = "Não tem permissões de escrita para esta pasta, o arquivo não pode ser descompactado aqui.";
+
+/* Class = "NSButtonCell"; title = "Extrair para Secretária"; ObjectID = "62"; */
+"51.title" = "Extrair para Secretária";
+
+/* Class = "NSButtonCell"; title = "Extrair para outro local"; ObjectID = "64"; */
+"52.title" = "Extrair para outro local";
+
+/* Class = "NSButtonCell"; title = "Parar"; ObjectID = "66"; */
+"53.title" = "Parar";

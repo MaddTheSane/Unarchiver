@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "このフォルダは書き込み禁止なので、アーカイブを展開できません。"; ObjectID = "50"; */
+"50.title" = "このフォルダは書き込み禁止なので、アーカイブを展開できません。";
+
+/* Class = "NSButtonCell"; title = "デスクトップに展開"; ObjectID = "51"; */
+"51.title" = "デスクトップに展開";
+
+/* Class = "NSButtonCell"; title = "中止"; ObjectID = "52"; */
+"52.title" = "中止";
+
+/* Class = "NSButtonCell"; title = "ほかの場所に展開…"; ObjectID = "53"; */
+"53.title" = "ほかの場所に展開…";

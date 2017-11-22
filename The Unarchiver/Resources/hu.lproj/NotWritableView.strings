@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Ez a mappa nem írható, ezért az archívum nem bontható ki ide."; ObjectID = "50"; */
+"50.title" = "Ez a mappa nem írható, ezért az archívum nem bontható ki ide.";
+
+/* Class = "NSButtonCell"; title = "Kibontás az Íróasztalra"; ObjectID = "51"; */
+"51.title" = "Kibontás az Íróasztalra";
+
+/* Class = "NSButtonCell"; title = "Leállít"; ObjectID = "52"; */
+"52.title" = "Leállít";
+
+/* Class = "NSButtonCell"; title = "Kibontás máshova..."; ObjectID = "53"; */
+"53.title" = "Kibontás máshova...";

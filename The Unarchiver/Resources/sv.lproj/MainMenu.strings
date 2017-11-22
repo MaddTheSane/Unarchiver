@@ -27,7 +27,7 @@
 "58.title" = "About The Unarchiver";
 
 /* Class = "NSMenuItem"; title = "Unarchive To Current Folder..."; ObjectID = "72"; */
-"72.title" = "Unarchive To Current Folder…";
+"72.title" = "Unarchive To Current Folder...";
 
 /* Class = "NSMenu"; title = "File"; ObjectID = "81"; */
 "81.title" = "File";
@@ -201,22 +201,22 @@
 "427.title" = "Radio";
 
 /* Class = "NSMenuItem"; title = "Unarchive To..."; ObjectID = "433"; */
-"433.title" = "Unarchive To…";
+"433.title" = "Unarchive To...";
 
 /* Class = "NSMenuItem"; title = "Close Window"; ObjectID = "435"; */
 "435.title" = "Close Window";
 
 /* Class = "NSMenuItem"; title = "Unarchive To Desktop..."; ObjectID = "440"; */
-"440.title" = "Unarchive To Desktop…";
+"440.title" = "Unarchive To Desktop...";
 
 /* Class = "NSMenuItem"; title = "Support Board..."; ObjectID = "443"; */
-"443.title" = "Support Board…";
+"443.title" = "Support Board...";
 
 /* Class = "NSMenuItem"; title = "Home Page..."; ObjectID = "444"; */
-"444.title" = "Home Page…";
+"444.title" = "Home Page...";
 
 /* Class = "NSMenuItem"; title = "Report a Bug..."; ObjectID = "445"; */
-"445.title" = "Report a Bug…";
+"445.title" = "Report a Bug...";
 
 /* Class = "NSButtonCell"; title = "Always"; ObjectID = "475"; */
 "475.title" = "Always";

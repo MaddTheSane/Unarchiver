@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Ten folder nie jest zapisywalny, więc nie można tutaj rozpakować archiwum."; ObjectID = "50"; */
+"50.title" = "Ten folder nie jest zapisywalny, więc nie można tutaj rozpakować archiwum.";
+
+/* Class = "NSButtonCell"; title = "Rozpakuj na Biurko"; ObjectID = "51"; */
+"51.title" = "Rozpakuj na Biurko";
+
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "52"; */
+"52.title" = "Stop";
+
+/* Class = "NSButtonCell"; title = "Rozpakuj do…"; ObjectID = "53"; */
+"53.title" = "Rozpakuj do…";

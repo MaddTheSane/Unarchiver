@@ -1,0 +1,222 @@
+
+/* Class = "NSMenuItem"; title = "Przenieś wszystko na wierzch"; ObjectID = "5"; */
+"5.title" = "Przenieś wszystko na wierzch";
+
+/* Class = "NSMenuItem"; title = "Okno"; ObjectID = "19"; */
+"19.title" = "Okno";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Minimalizuj"; ObjectID = "23"; */
+"23.title" = "Minimalizuj";
+
+/* Class = "NSMenu"; title = "Okno"; ObjectID = "24"; */
+"24.title" = "Okno";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "O The Unarchiver"; ObjectID = "58"; */
+"58.title" = "O The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Wypakuj do bieżącego folderu..."; ObjectID = "72"; */
+"72.title" = "Wypakuj do bieżącego folderu...";
+
+/* Class = "NSMenu"; title = "Plik"; ObjectID = "81"; */
+"81.title" = "Plik";
+
+/* Class = "NSMenuItem"; title = "Plik"; ObjectID = "83"; */
+"83.title" = "Plik";
+
+/* Class = "NSMenuItem"; title = "Pomoc"; ObjectID = "103"; */
+"103.title" = "Pomoc";
+
+/* Class = "NSMenu"; title = "Pomoc"; ObjectID = "106"; */
+"106.title" = "Pomoc";
+
+/* Class = "NSMenuItem"; title = "Preferencje…"; ObjectID = "129"; */
+"129.title" = "Preferencje…";
+
+/* Class = "NSMenu"; title = "Usługi"; ObjectID = "130"; */
+"130.title" = "Usługi";
+
+/* Class = "NSMenuItem"; title = "Usługi"; ObjectID = "131"; */
+"131.title" = "Usługi";
+
+/* Class = "NSMenuItem"; title = "Ukryj The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Ukryj The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Zakończ The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Zakończ The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Ukryj pozostałe"; ObjectID = "145"; */
+"145.title" = "Ukryj pozostałe";
+
+/* Class = "NSMenuItem"; title = "Pokaż wszystkie"; ObjectID = "150"; */
+"150.title" = "Pokaż wszystkie";
+
+/* Class = "NSMenuItem"; title = "Kopiuj"; ObjectID = "157"; */
+"157.title" = "Kopiuj";
+
+/* Class = "NSMenuItem"; title = "Cofnij"; ObjectID = "158"; */
+"158.title" = "Cofnij";
+
+/* Class = "NSMenuItem"; title = "Wytnij"; ObjectID = "160"; */
+"160.title" = "Wytnij";
+
+/* Class = "NSMenuItem"; title = "Edycja"; ObjectID = "163"; */
+"163.title" = "Edycja";
+
+/* Class = "NSMenuItem"; title = "Usuń"; ObjectID = "164"; */
+"164.title" = "Usuń";
+
+/* Class = "NSMenu"; title = "Edycja"; ObjectID = "169"; */
+"169.title" = "Edycja";
+
+/* Class = "NSMenuItem"; title = "Wklej"; ObjectID = "171"; */
+"171.title" = "Wklej";
+
+/* Class = "NSMenuItem"; title = "Zaznacz wszystko"; ObjectID = "172"; */
+"172.title" = "Zaznacz wszystko";
+
+/* Class = "NSMenuItem"; title = "Ponów"; ObjectID = "173"; */
+"173.title" = "Ponów";
+
+/* Class = "NSMenuItem"; title = "Powiększ"; ObjectID = "197"; */
+"197.title" = "Powiększ";
+
+/* Class = "NSWindow"; title = "Preferencje"; ObjectID = "231"; */
+"231.title" = "Preferencje";
+
+/* Class = "NSTabViewItem"; label = "Formaty archiwów"; ObjectID = "235"; */
+"235.label" = "Formaty archiwów";
+
+/* Class = "NSTabViewItem"; label = "Zaawansowane"; ObjectID = "237"; */
+"237.label" = "Zaawansowane";
+
+/* Class = "NSTableColumn"; headerCell.title = "Format pliku"; ObjectID = "241"; */
+"241.headerCell.title" = "Format pliku";
+
+/* Class = "NSTableColumn"; headerCell.title = "Rozszerzenia"; ObjectID = "244"; */
+"244.headerCell.title" = "Rozszerzenia";
+
+/* Class = "NSBox"; title = "Wykrywanie kodowania nazw"; ObjectID = "263"; */
+"263.title" = "Wykrywanie kodowania nazw";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "obojętnie"; ObjectID = "269"; */
+"269.title" = "obojętnie";
+
+/* Class = "NSTabViewItem"; label = "Rozpakowanie"; ObjectID = "291"; */
+"291.label" = "Rozpakowanie";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Inny…"; ObjectID = "318"; */
+"318.title" = "Inny…";
+
+/* Class = "NSMenuItem"; title = "Ten sam katalog co archiwum"; ObjectID = "319"; */
+"319.title" = "Ten sam katalog co archiwum";
+
+/* Class = "NSMenuItem"; title = "Obojętnie"; ObjectID = "320"; */
+"320.title" = "Obojętnie";
+
+/* Class = "NSMenuItem"; title = "Zapytaj o docelowy katalog"; ObjectID = "328"; */
+"328.title" = "Zapytaj o docelowy katalog";
+
+/* Class = "NSButtonCell"; title = "Nigdy"; ObjectID = "356"; */
+"356.title" = "Nigdy";
+
+/* Class = "NSButtonCell"; title = "Jeśli istnieje więcej niż jeden objekt najwyższego poziomu"; ObjectID = "357"; */
+"357.title" = "Jeśli istnieje więcej niż jeden objekt najwyższego poziomu";
+
+/* Class = "NSButtonCell"; title = "Bieżąca data i godzina"; ObjectID = "362"; */
+"362.title" = "Bieżąca data i godzina";
+
+/* Class = "NSButtonCell"; title = "Data modyfikacji pliku archiwum"; ObjectID = "363"; */
+"363.title" = "Data modyfikacji pliku archiwum";
+
+/* Class = "NSButtonCell"; title = "Zaznacz wszystko"; ObjectID = "407"; */
+"407.title" = "Zaznacz wszystko";
+
+/* Class = "NSButtonCell"; title = "Odznacz wszystko"; ObjectID = "408"; */
+"408.title" = "Odznacz wszystko";
+
+/* Class = "NSTextFieldCell"; title = "Otwórz te typy archiwów przez The Unarchiver:"; ObjectID = "409"; */
+"409.title" = "Otwórz te typy archiwów przez The Unarchiver:";
+
+/* Class = "NSTextFieldCell"; title = "Kodowanie nazw:"; ObjectID = "411"; */
+"411.title" = "Kodowanie nazw:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Próg pewności:"; ObjectID = "414"; */
+"414.title" = "Próg pewności:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "(Poziom pewności poniżej tego poziomu, spowoduje wyświetlenie zapytania o kodowanie, zamiast użycia wykrytego.)"; ObjectID = "417"; */
+"417.title" = "(Poziom pewności poniżej tego poziomu, spowoduje wyświetlenie zapytania o kodowanie, zamiast użycia wykrytego.)";
+
+/* Class = "NSTextFieldCell"; title = "Po pomyślnym rozpakowaniu archiwum:"; ObjectID = "418"; */
+"418.title" = "Po pomyślnym rozpakowaniu archiwum:";
+
+/* Class = "NSButtonCell"; title = "Otwórz rozpakowany folder"; ObjectID = "419"; */
+"419.title" = "Otwórz rozpakowany folder";
+
+/* Class = "NSButtonCell"; title = "Przenieś archiwum do kosza"; ObjectID = "420"; */
+"420.title" = "Przenieś archiwum do kosza";
+
+/* Class = "NSTextFieldCell"; title = "Rozpakuj do:"; ObjectID = "421"; */
+"421.title" = "Rozpakuj do:";
+
+/* Class = "NSTextFieldCell"; title = "Utwórz nowy katalog dla rozpakowanych plików:"; ObjectID = "423"; */
+"423.title" = "Utwórz nowy katalog dla rozpakowanych plików:";
+
+/* Class = "NSTextFieldCell"; title = "Ustaw datę modyfikacji utworzonego folderu na:"; ObjectID = "424"; */
+"424.title" = "Ustaw datę modyfikacji utworzonego folderu na:";
+
+/* Class = "NSButtonCell"; title = "Ustaw datę modyfikacji elementów najwyższego poziomu"; ObjectID = "425"; */
+"425.title" = "Ustaw datę modyfikacji elementów najwyższego poziomu";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Wypakuj do..."; ObjectID = "433"; */
+"433.title" = "Wypakuj do...";
+
+/* Class = "NSMenuItem"; title = "Zamknij okno"; ObjectID = "435"; */
+"435.title" = "Zamknij okno";
+
+/* Class = "NSMenuItem"; title = "Wypakuj na Biurko..."; ObjectID = "440"; */
+"440.title" = "Wypakuj na Biurko...";
+
+/* Class = "NSMenuItem"; title = "Wsparcie forum..."; ObjectID = "443"; */
+"443.title" = "Wsparcie forum...";
+
+/* Class = "NSMenuItem"; title = "Strona domowa..."; ObjectID = "444"; */
+"444.title" = "Strona domowa...";
+
+/* Class = "NSMenuItem"; title = "Raportuj błąd..."; ObjectID = "445"; */
+"445.title" = "Raportuj błąd...";
+
+/* Class = "NSButtonCell"; title = "Zawsze"; ObjectID = "475"; */
+"475.title" = "Zawsze";
+
+/* Class = "NSButtonCell"; title = "Support The Unarchiver! Make a donation on the home page!"; ObjectID = "482"; */
+"482.title" = "Support The Unarchiver! Make a donation on the home page!";

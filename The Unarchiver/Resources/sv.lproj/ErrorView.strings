@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "1\n2\n3"; ObjectID = "37"; */
+"37.title" = "1\n2\n3";
+
+/* Class = "NSButtonCell"; title = "Fortsätt"; ObjectID = "38"; */
+"38.title" = "Fortsätt";
+
+/* Class = "NSButtonCell"; title = "Stopp"; ObjectID = "39"; */
+"39.title" = "Stopp";
+
+/* Class = "NSButtonCell"; title = "Använd för alla"; ObjectID = "40"; */
+"40.title" = "Använd för alla";

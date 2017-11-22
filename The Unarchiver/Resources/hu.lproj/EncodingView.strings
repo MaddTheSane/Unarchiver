@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "Az archívum megnyitásához meg kell adnia a fájlnév kódolását."; ObjectID = "52"; */
+"52.title" = "Az archívum megnyitásához meg kell adnia a fájlnév kódolását.";
+
+/* Class = "NSButtonCell"; title = "Folytat"; ObjectID = "53"; */
+"53.title" = "Folytat";
+
+/* Class = "NSButtonCell"; title = "Leállít"; ObjectID = "54"; */
+"54.title" = "Leállít";
+
+/* Class = "NSTextFieldCell"; title = "Filename encoding:"; ObjectID = "56"; */
+"56.title" = "Filename encoding:";
+
+/* Class = "NSTextFieldCell"; title = "Eredmény:"; ObjectID = "57"; */
+"57.title" = "Eredmény:";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

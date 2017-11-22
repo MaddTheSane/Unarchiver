@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "Je třeba vybrat kódování souboru pro otevření tohoto archivu."; ObjectID = "52"; */
+"52.title" = "Je třeba vybrat kódování souboru pro otevření tohoto archivu.";
+
+/* Class = "NSButtonCell"; title = "Pokračovat"; ObjectID = "53"; */
+"53.title" = "Pokračovat";
+
+/* Class = "NSButtonCell"; title = "Zastavit"; ObjectID = "54"; */
+"54.title" = "Zastavit";
+
+/* Class = "NSTextFieldCell"; title = "Kódování souboru:"; ObjectID = "56"; */
+"56.title" = "Kódování souboru:";
+
+/* Class = "NSTextFieldCell"; title = "Výsledek:"; ObjectID = "57"; */
+"57.title" = "Výsledek:";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

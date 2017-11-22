@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "لا يمكن استخراج محتوى الأرشيف إلى هذا المجلد لأنه غير قابل للكتابة."; ObjectID = "50"; */
+"50.title" = "لا يمكن استخراج محتوى الأرشيف إلى هذا المجلد لأنه غير قابل للكتابة.";
+
+/* Class = "NSButtonCell"; title = "استخراج إلى سطح المكتب"; ObjectID = "51"; */
+"51.title" = "استخراج إلى سطح المكتب";
+
+/* Class = "NSButtonCell"; title = "إيقاف"; ObjectID = "52"; */
+"52.title" = "إيقاف";
+
+/* Class = "NSButtonCell"; title = "استخراج إلى مكان آخر…"; ObjectID = "53"; */
+"53.title" = "استخراج إلى مكان آخر…";

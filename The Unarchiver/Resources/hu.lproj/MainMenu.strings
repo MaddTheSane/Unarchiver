@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
+"5.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
+"19.title" = "Window";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "23"; */
+"23.title" = "Minimize";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */
+"24.title" = "Window";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "About The Unarchiver"; ObjectID = "58"; */
+"58.title" = "About The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Unarchive To Current Folder..."; ObjectID = "72"; */
+"72.title" = "Unarchive To Current Folder...";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "81"; */
+"81.title" = "File";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "83"; */
+"83.title" = "File";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "103"; */
+"103.title" = "Help";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "106"; */
+"106.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Hide The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Hide The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Quit The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Quit The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "157"; */
+"157.title" = "Copy";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "158"; */
+"158.title" = "Undo";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "160"; */
+"160.title" = "Cut";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "163"; */
+"163.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "164"; */
+"164.title" = "Delete";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "169"; */
+"169.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "171"; */
+"171.title" = "Paste";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "172"; */
+"172.title" = "Select All";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "173"; */
+"173.title" = "Redo";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "197"; */
+"197.title" = "Zoom";
+
+/* Class = "NSWindow"; title = "Beállítások"; ObjectID = "231"; */
+"231.title" = "Beállítások";
+
+/* Class = "NSTabViewItem"; label = "Formátumok"; ObjectID = "235"; */
+"235.label" = "Formátumok";
+
+/* Class = "NSTabViewItem"; label = "Haladó"; ObjectID = "237"; */
+"237.label" = "Haladó";
+
+/* Class = "NSTableColumn"; headerCell.title = "Fájlformátum"; ObjectID = "241"; */
+"241.headerCell.title" = "Fájlformátum";
+
+/* Class = "NSTableColumn"; headerCell.title = "Kiterjesztések"; ObjectID = "244"; */
+"244.headerCell.title" = "Kiterjesztések";
+
+/* Class = "NSBox"; title = "Fájlnevek kódolásának automatikus felismerése"; ObjectID = "263"; */
+"263.title" = "Fájlnevek kódolásának automatikus felismerése";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "Kibontás"; ObjectID = "291"; */
+"291.label" = "Kibontás";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Egyéb..."; ObjectID = "318"; */
+"318.title" = "Egyéb...";
+
+/* Class = "NSMenuItem"; title = "Az archívumot tarttalmazó mappába"; ObjectID = "319"; */
+"319.title" = "Az archívumot tarttalmazó mappába";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "Kérdezzen rá minden alkalommal"; ObjectID = "328"; */
+"328.title" = "Kérdezzen rá minden alkalommal";
+
+/* Class = "NSButtonCell"; title = "Soha"; ObjectID = "356"; */
+"356.title" = "Soha";
+
+/* Class = "NSButtonCell"; title = "Csak akkor, ha a gyökérkönyvtár több elemet is tartalmaz"; ObjectID = "357"; */
+"357.title" = "Csak akkor, ha a gyökérkönyvtár több elemet is tartalmaz";
+
+/* Class = "NSButtonCell"; title = "A jelenlegi időpontra"; ObjectID = "362"; */
+"362.title" = "A jelenlegi időpontra";
+
+/* Class = "NSButtonCell"; title = "Az archívum utolsó módosításának idejére"; ObjectID = "363"; */
+"363.title" = "Az archívum utolsó módosításának idejére";
+
+/* Class = "NSButtonCell"; title = "Összes kiválasztása"; ObjectID = "407"; */
+"407.title" = "Összes kiválasztása";
+
+/* Class = "NSButtonCell"; title = "Összes kiválasztás eltávolítása"; ObjectID = "408"; */
+"408.title" = "Összes kiválasztás eltávolítása";
+
+/* Class = "NSTextFieldCell"; title = "Az ilyen típusú archívumokat az Unarchiver nyitja meg:"; ObjectID = "409"; */
+"409.title" = "Az ilyen típusú archívumokat az Unarchiver nyitja meg:";
+
+/* Class = "NSTextFieldCell"; title = "Fájlnevek kódolása:"; ObjectID = "411"; */
+"411.title" = "Fájlnevek kódolása:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Küszöbérték:"; ObjectID = "414"; */
+"414.title" = "Küszöbérték:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "biztosság"; ObjectID = "416"; */
+"416.title" = "biztosság";
+
+/* Class = "NSTextFieldCell"; title = "(A megadottnál alacsonyabb biztossági szint esetén a program rá fog kérdezni a fájlnevek kódolására.)"; ObjectID = "417"; */
+"417.title" = "(A megadottnál alacsonyabb biztossági szint esetén a program rá fog kérdezni a fájlnevek kódolására.)";
+
+/* Class = "NSTextFieldCell"; title = "Archívum sikeres kibontása után:"; ObjectID = "418"; */
+"418.title" = "Archívum sikeres kibontása után:";
+
+/* Class = "NSButtonCell"; title = "Mappa megnyitása"; ObjectID = "419"; */
+"419.title" = "Mappa megnyitása";
+
+/* Class = "NSButtonCell"; title = "Archívum áthelyezése a Kukába"; ObjectID = "420"; */
+"420.title" = "Archívum áthelyezése a Kukába";
+
+/* Class = "NSTextFieldCell"; title = "Kibontás ide:"; ObjectID = "421"; */
+"421.title" = "Kibontás ide:";
+
+/* Class = "NSTextFieldCell"; title = "Helyezze új mappába a kibontott fájlokat:"; ObjectID = "423"; */
+"423.title" = "Helyezze új mappába a kibontott fájlokat:";
+
+/* Class = "NSTextFieldCell"; title = "Állítsa az új mappa legutóbbi módosításának dátumát:"; ObjectID = "424"; */
+"424.title" = "Állítsa az új mappa legutóbbi módosításának dátumát:";
+
+/* Class = "NSButtonCell"; title = "Az archívum gyökérkönyvtárának elemeire is állítsa be"; ObjectID = "425"; */
+"425.title" = "Az archívum gyökérkönyvtárának elemeire is állítsa be";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Unarchive To..."; ObjectID = "433"; */
+"433.title" = "Unarchive To...";
+
+/* Class = "NSMenuItem"; title = "Close Window"; ObjectID = "435"; */
+"435.title" = "Close Window";
+
+/* Class = "NSMenuItem"; title = "Unarchive To Desktop..."; ObjectID = "440"; */
+"440.title" = "Unarchive To Desktop...";
+
+/* Class = "NSMenuItem"; title = "Support Board..."; ObjectID = "443"; */
+"443.title" = "Support Board...";
+
+/* Class = "NSMenuItem"; title = "Home Page..."; ObjectID = "444"; */
+"444.title" = "Home Page...";
+
+/* Class = "NSMenuItem"; title = "Report a Bug..."; ObjectID = "445"; */
+"445.title" = "Report a Bug...";
+
+/* Class = "NSButtonCell"; title = "Mindig"; ObjectID = "475"; */
+"475.title" = "Mindig";
+
+/* Class = "NSButtonCell"; title = "Támogassa az Unarchiver-t! Küldjön adományt honlapunkról!"; ObjectID = "482"; */
+"482.title" = "Támogassa az Unarchiver-t! Küldjön adományt honlapunkról!";

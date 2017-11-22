@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "すべてを手前に移動"; ObjectID = "5"; */
+"5.title" = "すべてを手前に移動";
+
+/* Class = "NSMenuItem"; title = "ウインドウ"; ObjectID = "19"; */
+"19.title" = "ウインドウ";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "しまう"; ObjectID = "23"; */
+"23.title" = "しまう";
+
+/* Class = "NSMenu"; title = "ウインドウ"; ObjectID = "24"; */
+"24.title" = "ウインドウ";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver について"; ObjectID = "58"; */
+"58.title" = "The Unarchiver について";
+
+/* Class = "NSMenuItem"; title = "現在のフォルダに展開…"; ObjectID = "72"; */
+"72.title" = "現在のフォルダに展開…";
+
+/* Class = "NSMenu"; title = "ファイル"; ObjectID = "81"; */
+"81.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "ファイル"; ObjectID = "83"; */
+"83.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "ヘルプ"; ObjectID = "103"; */
+"103.title" = "ヘルプ";
+
+/* Class = "NSMenu"; title = "ヘルプ"; ObjectID = "106"; */
+"106.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "環境設定…"; ObjectID = "129"; */
+"129.title" = "環境設定…";
+
+/* Class = "NSMenu"; title = "サービス"; ObjectID = "130"; */
+"130.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "サービス"; ObjectID = "131"; */
+"131.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver を隠す"; ObjectID = "134"; */
+"134.title" = "The Unarchiver を隠す";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver を終了"; ObjectID = "136"; */
+"136.title" = "The Unarchiver を終了";
+
+/* Class = "NSMenuItem"; title = "ほかを隠す"; ObjectID = "145"; */
+"145.title" = "ほかを隠す";
+
+/* Class = "NSMenuItem"; title = "すべてを表示"; ObjectID = "150"; */
+"150.title" = "すべてを表示";
+
+/* Class = "NSMenuItem"; title = "コピー"; ObjectID = "157"; */
+"157.title" = "コピー";
+
+/* Class = "NSMenuItem"; title = "取り消す"; ObjectID = "158"; */
+"158.title" = "取り消す";
+
+/* Class = "NSMenuItem"; title = "カット"; ObjectID = "160"; */
+"160.title" = "カット";
+
+/* Class = "NSMenuItem"; title = "編集"; ObjectID = "163"; */
+"163.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "削除"; ObjectID = "164"; */
+"164.title" = "削除";
+
+/* Class = "NSMenu"; title = "編集"; ObjectID = "169"; */
+"169.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "ペースト"; ObjectID = "171"; */
+"171.title" = "ペースト";
+
+/* Class = "NSMenuItem"; title = "すべてを選択"; ObjectID = "172"; */
+"172.title" = "すべてを選択";
+
+/* Class = "NSMenuItem"; title = "やり直す"; ObjectID = "173"; */
+"173.title" = "やり直す";
+
+/* Class = "NSMenuItem"; title = "拡大／縮小"; ObjectID = "197"; */
+"197.title" = "拡大／縮小";
+
+/* Class = "NSWindow"; title = "環境設定"; ObjectID = "231"; */
+"231.title" = "環境設定";
+
+/* Class = "NSTabViewItem"; label = "アーカイブ形式"; ObjectID = "235"; */
+"235.label" = "アーカイブ形式";
+
+/* Class = "NSTabViewItem"; label = "詳細設定"; ObjectID = "237"; */
+"237.label" = "詳細設定";
+
+/* Class = "NSTableColumn"; headerCell.title = "ファイル形式"; ObjectID = "241"; */
+"241.headerCell.title" = "ファイル形式";
+
+/* Class = "NSTableColumn"; headerCell.title = "拡張子"; ObjectID = "244"; */
+"244.headerCell.title" = "拡張子";
+
+/* Class = "NSBox"; title = "ファイル名エンコーディングの自動判別"; ObjectID = "263"; */
+"263.title" = "ファイル名エンコーディングの自動判別";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "展開"; ObjectID = "291"; */
+"291.label" = "展開";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "その他…"; ObjectID = "318"; */
+"318.title" = "その他…";
+
+/* Class = "NSMenuItem"; title = "アーカイブと同じフォルダ"; ObjectID = "319"; */
+"319.title" = "アーカイブと同じフォルダ";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "展開先フォルダを確認"; ObjectID = "328"; */
+"328.title" = "展開先フォルダを確認";
+
+/* Class = "NSButtonCell"; title = "しない"; ObjectID = "356"; */
+"356.title" = "しない";
+
+/* Class = "NSButtonCell"; title = "複数の最上位項目がある場合のみ"; ObjectID = "357"; */
+"357.title" = "複数の最上位項目がある場合のみ";
+
+/* Class = "NSButtonCell"; title = "現在の日付と時刻"; ObjectID = "362"; */
+"362.title" = "現在の日付と時刻";
+
+/* Class = "NSButtonCell"; title = "アーカイブファイルの変更日"; ObjectID = "363"; */
+"363.title" = "アーカイブファイルの変更日";
+
+/* Class = "NSButtonCell"; title = "すべてを選択"; ObjectID = "407"; */
+"407.title" = "すべてを選択";
+
+/* Class = "NSButtonCell"; title = "すべてを選択解除"; ObjectID = "408"; */
+"408.title" = "すべてを選択解除";
+
+/* Class = "NSTextFieldCell"; title = "以下のアーカイブ形式を The Unarchiver で展開："; ObjectID = "409"; */
+"409.title" = "以下のアーカイブ形式を The Unarchiver で展開：";
+
+/* Class = "NSTextFieldCell"; title = "エンコーディング："; ObjectID = "411"; */
+"411.title" = "エンコーディング：";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "しきい値："; ObjectID = "414"; */
+"414.title" = "しきい値：";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "の確度"; ObjectID = "416"; */
+"416.title" = "の確度";
+
+/* Class = "NSTextFieldCell"; title = "（確度がこの値より低いときは、自動判別したエンコーディング\n形式を使用せずに、そのつど確認します。）"; ObjectID = "417"; */
+"417.title" = "（確度がこの値より低いときは、自動判別したエンコーディング\n形式を使用せずに、そのつど確認します。）";
+
+/* Class = "NSTextFieldCell"; title = "アーカイブ展開後の動作："; ObjectID = "418"; */
+"418.title" = "アーカイブ展開後の動作：";
+
+/* Class = "NSButtonCell"; title = "展開先フォルダを開く"; ObjectID = "419"; */
+"419.title" = "展開先フォルダを開く";
+
+/* Class = "NSButtonCell"; title = "アーカイブファイルをゴミ箱に入れる"; ObjectID = "420"; */
+"420.title" = "アーカイブファイルをゴミ箱に入れる";
+
+/* Class = "NSTextFieldCell"; title = "アーカイブの展開先："; ObjectID = "421"; */
+"421.title" = "アーカイブの展開先：";
+
+/* Class = "NSTextFieldCell"; title = "展開ファイル用の新規フォルダを作成："; ObjectID = "423"; */
+"423.title" = "展開ファイル用の新規フォルダを作成：";
+
+/* Class = "NSTextFieldCell"; title = "作成したフォルダの変更日："; ObjectID = "424"; */
+"424.title" = "作成したフォルダの変更日：";
+
+/* Class = "NSButtonCell"; title = "最上位項目の変更日にも適用"; ObjectID = "425"; */
+"425.title" = "最上位項目の変更日にも適用";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "場所を指定して展開…"; ObjectID = "433"; */
+"433.title" = "場所を指定して展開…";
+
+/* Class = "NSMenuItem"; title = "ウインドウを閉じる"; ObjectID = "435"; */
+"435.title" = "ウインドウを閉じる";
+
+/* Class = "NSMenuItem"; title = "デスクトップに展開…"; ObjectID = "440"; */
+"440.title" = "デスクトップに展開…";
+
+/* Class = "NSMenuItem"; title = "サポート掲示板…"; ObjectID = "443"; */
+"443.title" = "サポート掲示板…";
+
+/* Class = "NSMenuItem"; title = "ホームページ…"; ObjectID = "444"; */
+"444.title" = "ホームページ…";
+
+/* Class = "NSMenuItem"; title = "不具合を報告…"; ObjectID = "445"; */
+"445.title" = "不具合を報告…";
+
+/* Class = "NSButtonCell"; title = "常に作成"; ObjectID = "475"; */
+"475.title" = "常に作成";
+
+/* Class = "NSButtonCell"; title = "Support The Unarchiver! Make a donation on the home page!"; ObjectID = "482"; */
+"482.title" = "Support The Unarchiver! Make a donation on the home page!";

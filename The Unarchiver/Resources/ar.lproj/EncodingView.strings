@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "عليك تزويد التطبيق بترميز اسم الملف لفتح هذا الأرشيف."; ObjectID = "52"; */
+"52.title" = "عليك تزويد التطبيق بترميز اسم الملف لفتح هذا الأرشيف.";
+
+/* Class = "NSButtonCell"; title = "متابعة"; ObjectID = "53"; */
+"53.title" = "متابعة";
+
+/* Class = "NSButtonCell"; title = "إيقاف"; ObjectID = "54"; */
+"54.title" = "إيقاف";
+
+/* Class = "NSTextFieldCell"; title = "ترميز إسم الملف:"; ObjectID = "56"; */
+"56.title" = "ترميز إسم الملف:";
+
+/* Class = "NSTextFieldCell"; title = "النتيحة:"; ObjectID = "57"; */
+"57.title" = "النتيحة:";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

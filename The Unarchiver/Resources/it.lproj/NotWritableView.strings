@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Questa cartella non è scrivibile, quindi non è possibile estrarre qui l'archivio."; ObjectID = "50"; */
+"50.title" = "Questa cartella non è scrivibile, quindi non è possibile estrarre qui l'archivio.";
+
+/* Class = "NSButtonCell"; title = "Estrai sulla Scrivania"; ObjectID = "51"; */
+"51.title" = "Estrai sulla Scrivania";
+
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "52"; */
+"52.title" = "Stop";
+
+/* Class = "NSButtonCell"; title = "Estrai altrove…"; ObjectID = "53"; */
+"53.title" = "Estrai altrove…";

@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Все окна — на передний план"; ObjectID = "5"; */
+"5.title" = "Все окна — на передний план";
+
+/* Class = "NSMenuItem"; title = "Окно"; ObjectID = "19"; */
+"19.title" = "Окно";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Свернуть"; ObjectID = "23"; */
+"23.title" = "Свернуть";
+
+/* Class = "NSMenu"; title = "Окно"; ObjectID = "24"; */
+"24.title" = "Окно";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "О программе The Unarchiver"; ObjectID = "58"; */
+"58.title" = "О программе The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Распаковать в текущую папку…"; ObjectID = "72"; */
+"72.title" = "Распаковать в текущую папку…";
+
+/* Class = "NSMenu"; title = "Файл"; ObjectID = "81"; */
+"81.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Файл"; ObjectID = "83"; */
+"83.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Справка"; ObjectID = "103"; */
+"103.title" = "Справка";
+
+/* Class = "NSMenu"; title = "Справка"; ObjectID = "106"; */
+"106.title" = "Справка";
+
+/* Class = "NSMenuItem"; title = "Настройки…"; ObjectID = "129"; */
+"129.title" = "Настройки…";
+
+/* Class = "NSMenu"; title = "Службы"; ObjectID = "130"; */
+"130.title" = "Службы";
+
+/* Class = "NSMenuItem"; title = "Службы"; ObjectID = "131"; */
+"131.title" = "Службы";
+
+/* Class = "NSMenuItem"; title = "Скрыть The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Скрыть The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Завершить The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Завершить The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Скрыть остальные"; ObjectID = "145"; */
+"145.title" = "Скрыть остальные";
+
+/* Class = "NSMenuItem"; title = "Показать все"; ObjectID = "150"; */
+"150.title" = "Показать все";
+
+/* Class = "NSMenuItem"; title = "Скопировать"; ObjectID = "157"; */
+"157.title" = "Скопировать";
+
+/* Class = "NSMenuItem"; title = "Отменить"; ObjectID = "158"; */
+"158.title" = "Отменить";
+
+/* Class = "NSMenuItem"; title = "Вырезать"; ObjectID = "160"; */
+"160.title" = "Вырезать";
+
+/* Class = "NSMenuItem"; title = "Правка"; ObjectID = "163"; */
+"163.title" = "Правка";
+
+/* Class = "NSMenuItem"; title = "Удалить"; ObjectID = "164"; */
+"164.title" = "Удалить";
+
+/* Class = "NSMenu"; title = "Правка"; ObjectID = "169"; */
+"169.title" = "Правка";
+
+/* Class = "NSMenuItem"; title = "Вставить"; ObjectID = "171"; */
+"171.title" = "Вставить";
+
+/* Class = "NSMenuItem"; title = "Выбрать все"; ObjectID = "172"; */
+"172.title" = "Выбрать все";
+
+/* Class = "NSMenuItem"; title = "Повторить"; ObjectID = "173"; */
+"173.title" = "Повторить";
+
+/* Class = "NSMenuItem"; title = "Изменить масштаб"; ObjectID = "197"; */
+"197.title" = "Изменить масштаб";
+
+/* Class = "NSWindow"; title = "Настройки"; ObjectID = "231"; */
+"231.title" = "Настройки";
+
+/* Class = "NSTabViewItem"; label = "Формат архива"; ObjectID = "235"; */
+"235.label" = "Формат архива";
+
+/* Class = "NSTabViewItem"; label = "Эксперт"; ObjectID = "237"; */
+"237.label" = "Эксперт";
+
+/* Class = "NSTableColumn"; headerCell.title = "Формат файла"; ObjectID = "241"; */
+"241.headerCell.title" = "Формат файла";
+
+/* Class = "NSTableColumn"; headerCell.title = "Расширения"; ObjectID = "244"; */
+"244.headerCell.title" = "Расширения";
+
+/* Class = "NSBox"; title = "Настройки автоматического определения кодировки"; ObjectID = "263"; */
+"263.title" = "Настройки автоматического определения кодировки";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "Распаковка"; ObjectID = "291"; */
+"291.label" = "Распаковка";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Другая…"; ObjectID = "318"; */
+"318.title" = "Другая…";
+
+/* Class = "NSMenuItem"; title = "Ту же папку, где архив"; ObjectID = "319"; */
+"319.title" = "Ту же папку, где архив";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "Запросить"; ObjectID = "328"; */
+"328.title" = "Запросить";
+
+/* Class = "NSButtonCell"; title = "Никогда"; ObjectID = "356"; */
+"356.title" = "Никогда";
+
+/* Class = "NSButtonCell"; title = "Только если есть вложенные папки"; ObjectID = "357"; */
+"357.title" = "Только если есть вложенные папки";
+
+/* Class = "NSButtonCell"; title = "Текущая дата и время"; ObjectID = "362"; */
+"362.title" = "Текущая дата и время";
+
+/* Class = "NSButtonCell"; title = "Дата изменения файла архива"; ObjectID = "363"; */
+"363.title" = "Дата изменения файла архива";
+
+/* Class = "NSButtonCell"; title = "Выбрать все"; ObjectID = "407"; */
+"407.title" = "Выбрать все";
+
+/* Class = "NSButtonCell"; title = "Отменить выбор"; ObjectID = "408"; */
+"408.title" = "Отменить выбор";
+
+/* Class = "NSTextFieldCell"; title = "Открывать следующие архивы с помощью The Unarchiver:"; ObjectID = "409"; */
+"409.title" = "Открывать следующие архивы с помощью The Unarchiver:";
+
+/* Class = "NSTextFieldCell"; title = "Кодировка:"; ObjectID = "411"; */
+"411.title" = "Кодировка:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Порог:"; ObjectID = "414"; */
+"414.title" = "Порог:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "уверенности"; ObjectID = "416"; */
+"416.title" = "уверенности";
+
+/* Class = "NSTextFieldCell"; title = "(Если уровень уверенности меньше заданного, программа будет предлагать выбрать кодировку вручную)"; ObjectID = "417"; */
+"417.title" = "(Если уровень уверенности меньше заданного, программа будет предлагать выбрать кодировку вручную)";
+
+/* Class = "NSTextFieldCell"; title = "После успешной распаковки:"; ObjectID = "418"; */
+"418.title" = "После успешной распаковки:";
+
+/* Class = "NSButtonCell"; title = "Открыть распакованную папку"; ObjectID = "419"; */
+"419.title" = "Открыть распакованную папку";
+
+/* Class = "NSButtonCell"; title = "Переместить архив в Корзину"; ObjectID = "420"; */
+"420.title" = "Переместить архив в Корзину";
+
+/* Class = "NSTextFieldCell"; title = "Распаковывать в:"; ObjectID = "421"; */
+"421.title" = "Распаковывать в:";
+
+/* Class = "NSTextFieldCell"; title = "Создавать папку для извлеченных файлов:"; ObjectID = "423"; */
+"423.title" = "Создавать папку для извлеченных файлов:";
+
+/* Class = "NSTextFieldCell"; title = "Дата изменения созданой папки:"; ObjectID = "424"; */
+"424.title" = "Дата изменения созданой папки:";
+
+/* Class = "NSButtonCell"; title = "Так же и для одиночных файлов верхнего уровня"; ObjectID = "425"; */
+"425.title" = "Так же и для одиночных файлов верхнего уровня";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Распаковать в…"; ObjectID = "433"; */
+"433.title" = "Распаковать в…";
+
+/* Class = "NSMenuItem"; title = "Закрыть окно"; ObjectID = "435"; */
+"435.title" = "Закрыть окно";
+
+/* Class = "NSMenuItem"; title = "Распаковать на Рабочий стол"; ObjectID = "440"; */
+"440.title" = "Распаковать на Рабочий стол";
+
+/* Class = "NSMenuItem"; title = "Форум поддержки…"; ObjectID = "443"; */
+"443.title" = "Форум поддержки…";
+
+/* Class = "NSMenuItem"; title = "Домашняя страница…"; ObjectID = "444"; */
+"444.title" = "Домашняя страница…";
+
+/* Class = "NSMenuItem"; title = "Сообщить об ошибке…"; ObjectID = "445"; */
+"445.title" = "Сообщить об ошибке…";
+
+/* Class = "NSButtonCell"; title = "Всегда"; ObjectID = "475"; */
+"475.title" = "Всегда";
+
+/* Class = "NSButtonCell"; title = "Support The Unarchiver! Make a donation on the home page!"; ObjectID = "482"; */
+"482.title" = "Support The Unarchiver! Make a donation on the home page!";

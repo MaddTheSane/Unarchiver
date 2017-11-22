@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Изведи на преден план"; ObjectID = "5"; */
+"5.title" = "Изведи на преден план";
+
+/* Class = "NSMenuItem"; title = "Прозорец"; ObjectID = "19"; */
+"19.title" = "Прозорец";
+
+/* Class = "NSWindow"; title = "Разархиваторът"; ObjectID = "21"; */
+"21.title" = "Разархиваторът";
+
+/* Class = "NSMenuItem"; title = "Намали"; ObjectID = "23"; */
+"23.title" = "Намали";
+
+/* Class = "NSMenu"; title = "Прозорец"; ObjectID = "24"; */
+"24.title" = "Прозорец";
+
+/* Class = "NSMenu"; title = "ОсновноМеню"; ObjectID = "29"; */
+"29.title" = "ОсновноМеню";
+
+/* Class = "NSMenuItem"; title = "Разархиваторът"; ObjectID = "56"; */
+"56.title" = "Разархиваторът";
+
+/* Class = "NSMenu"; title = "Разархиваторът"; ObjectID = "57"; */
+"57.title" = "Разархиваторът";
+
+/* Class = "NSMenuItem"; title = "За Разархиватора"; ObjectID = "58"; */
+"58.title" = "За Разархиватора";
+
+/* Class = "NSMenuItem"; title = "Разархивирай в папката…"; ObjectID = "72"; */
+"72.title" = "Разархивирай в папката…";
+
+/* Class = "NSMenu"; title = "Файл"; ObjectID = "81"; */
+"81.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Файл"; ObjectID = "83"; */
+"83.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Помощ"; ObjectID = "103"; */
+"103.title" = "Помощ";
+
+/* Class = "NSMenu"; title = "Помощ"; ObjectID = "106"; */
+"106.title" = "Помощ";
+
+/* Class = "NSMenuItem"; title = "Настройки…"; ObjectID = "129"; */
+"129.title" = "Настройки…";
+
+/* Class = "NSMenu"; title = "Услуги"; ObjectID = "130"; */
+"130.title" = "Услуги";
+
+/* Class = "NSMenuItem"; title = "Услуги"; ObjectID = "131"; */
+"131.title" = "Услуги";
+
+/* Class = "NSMenuItem"; title = "Скрий Разархиватора"; ObjectID = "134"; */
+"134.title" = "Скрий Разархиватора";
+
+/* Class = "NSMenuItem"; title = "Изход от Разархиватора"; ObjectID = "136"; */
+"136.title" = "Изход от Разархиватора";
+
+/* Class = "NSMenuItem"; title = "Скрий другите"; ObjectID = "145"; */
+"145.title" = "Скрий другите";
+
+/* Class = "NSMenuItem"; title = "Покажи всички"; ObjectID = "150"; */
+"150.title" = "Покажи всички";
+
+/* Class = "NSMenuItem"; title = "Копирай"; ObjectID = "157"; */
+"157.title" = "Копирай";
+
+/* Class = "NSMenuItem"; title = "Отмени"; ObjectID = "158"; */
+"158.title" = "Отмени";
+
+/* Class = "NSMenuItem"; title = "Изрежи"; ObjectID = "160"; */
+"160.title" = "Изрежи";
+
+/* Class = "NSMenuItem"; title = "Редактиране"; ObjectID = "163"; */
+"163.title" = "Редактиране";
+
+/* Class = "NSMenuItem"; title = "Изтрий"; ObjectID = "164"; */
+"164.title" = "Изтрий";
+
+/* Class = "NSMenu"; title = "Редактиране"; ObjectID = "169"; */
+"169.title" = "Редактиране";
+
+/* Class = "NSMenuItem"; title = "Постави"; ObjectID = "171"; */
+"171.title" = "Постави";
+
+/* Class = "NSMenuItem"; title = "Избери всичко"; ObjectID = "172"; */
+"172.title" = "Избери всичко";
+
+/* Class = "NSMenuItem"; title = "Повтори"; ObjectID = "173"; */
+"173.title" = "Повтори";
+
+/* Class = "NSMenuItem"; title = "Увеличи"; ObjectID = "197"; */
+"197.title" = "Увеличи";
+
+/* Class = "NSWindow"; title = "Настройки"; ObjectID = "231"; */
+"231.title" = "Настройки";
+
+/* Class = "NSTabViewItem"; label = "Формати"; ObjectID = "235"; */
+"235.label" = "Формати";
+
+/* Class = "NSTabViewItem"; label = "Разширени"; ObjectID = "237"; */
+"237.label" = "Разширени";
+
+/* Class = "NSTableColumn"; headerCell.title = "Файлов формат"; ObjectID = "241"; */
+"241.headerCell.title" = "Файлов формат";
+
+/* Class = "NSTableColumn"; headerCell.title = "Разширение"; ObjectID = "244"; */
+"244.headerCell.title" = "Разширение";
+
+/* Class = "NSBox"; title = "Автоматично откриване на кодирането (за имена на файлове)"; ObjectID = "263"; */
+"263.title" = "Автоматично откриване на кодирането (за имена на файлове)";
+
+/* Class = "NSMenu"; title = "ДругИзглед"; ObjectID = "266"; */
+"266.title" = "ДругИзглед";
+
+/* Class = "NSMenuItem"; title = "подставено"; ObjectID = "269"; */
+"269.title" = "подставено";
+
+/* Class = "NSTabViewItem"; label = "Извличане"; ObjectID = "291"; */
+"291.label" = "Извличане";
+
+/* Class = "NSMenu"; title = "ДругИзглед"; ObjectID = "317"; */
+"317.title" = "ДругИзглед";
+
+/* Class = "NSMenuItem"; title = "в…"; ObjectID = "318"; */
+"318.title" = "в…";
+
+/* Class = "NSMenuItem"; title = "в същата папка като архива"; ObjectID = "319"; */
+"319.title" = "в същата папка като архива";
+
+/* Class = "NSMenuItem"; title = "подставено"; ObjectID = "320"; */
+"320.title" = "подставено";
+
+/* Class = "NSMenuItem"; title = "в целева папка след запитване"; ObjectID = "328"; */
+"328.title" = "в целева папка след запитване";
+
+/* Class = "NSButtonCell"; title = "никога"; ObjectID = "356"; */
+"356.title" = "никога";
+
+/* Class = "NSButtonCell"; title = "само при повече от един вложен обект"; ObjectID = "357"; */
+"357.title" = "само при повече от един вложен обект";
+
+/* Class = "NSButtonCell"; title = "според текущата дата и час"; ObjectID = "362"; */
+"362.title" = "според текущата дата и час";
+
+/* Class = "NSButtonCell"; title = "според датата на промяна на файла с архив"; ObjectID = "363"; */
+"363.title" = "според датата на промяна на файла с архив";
+
+/* Class = "NSButtonCell"; title = "Избери всички"; ObjectID = "407"; */
+"407.title" = "Избери всички";
+
+/* Class = "NSButtonCell"; title = "Откажи всички"; ObjectID = "408"; */
+"408.title" = "Откажи всички";
+
+/* Class = "NSTextFieldCell"; title = "Разархиваторът ще отваря следните видове архиви:"; ObjectID = "409"; */
+"409.title" = "Разархиваторът ще отваря следните видове архиви:";
+
+/* Class = "NSTextFieldCell"; title = "Кодиране на имената:"; ObjectID = "411"; */
+"411.title" = "Кодиране на имената:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Автоматичен праг от:"; ObjectID = "414"; */
+"414.title" = "Автоматичен праг от:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "вероятност"; ObjectID = "416"; */
+"416.title" = "вероятност";
+
+/* Class = "NSTextFieldCell"; title = "(При ниво под посоченото програмата ще ви запита за кодиране вместо да използва автоматичния праг.)"; ObjectID = "417"; */
+"417.title" = "(При ниво под посоченото програмата ще ви запита за кодиране вместо да използва автоматичния праг.)";
+
+/* Class = "NSTextFieldCell"; title = "След успешното извличане на архива:"; ObjectID = "418"; */
+"418.title" = "След успешното извличане на архива:";
+
+/* Class = "NSButtonCell"; title = "Отваряй папката на извличане"; ObjectID = "419"; */
+"419.title" = "Отваряй папката на извличане";
+
+/* Class = "NSButtonCell"; title = "Премествай архива в кошчето"; ObjectID = "420"; */
+"420.title" = "Премествай архива в кошчето";
+
+/* Class = "NSTextFieldCell"; title = "Извличай архивите:"; ObjectID = "421"; */
+"421.title" = "Извличай архивите:";
+
+/* Class = "NSTextFieldCell"; title = "Създавай нова папка за извлечените файлове:"; ObjectID = "423"; */
+"423.title" = "Създавай нова папка за извлечените файлове:";
+
+/* Class = "NSTextFieldCell"; title = "Задавай дата на промяна за създадената папка:"; ObjectID = "424"; */
+"424.title" = "Задавай дата на промяна за създадената папка:";
+
+/* Class = "NSButtonCell"; title = "Задавай дата на промяна и за единично вложени обекти"; ObjectID = "425"; */
+"425.title" = "Задавай дата на промяна и за единично вложени обекти";
+
+/* Class = "NSButtonCell"; title = "Радио"; ObjectID = "426"; */
+"426.title" = "Радио";
+
+/* Class = "NSButtonCell"; title = "Радио"; ObjectID = "427"; */
+"427.title" = "Радио";
+
+/* Class = "NSMenuItem"; title = "Разархивирай в…"; ObjectID = "433"; */
+"433.title" = "Разархивирай в…";
+
+/* Class = "NSMenuItem"; title = "Затвори прозореца"; ObjectID = "435"; */
+"435.title" = "Затвори прозореца";
+
+/* Class = "NSMenuItem"; title = "Разархивирай в Десктоп…"; ObjectID = "440"; */
+"440.title" = "Разархивирай в Десктоп…";
+
+/* Class = "NSMenuItem"; title = "Табло за поддръжка…"; ObjectID = "443"; */
+"443.title" = "Табло за поддръжка…";
+
+/* Class = "NSMenuItem"; title = "Начална страница…"; ObjectID = "444"; */
+"444.title" = "Начална страница…";
+
+/* Class = "NSMenuItem"; title = "Доклад за грешка…"; ObjectID = "445"; */
+"445.title" = "Доклад за грешка…";
+
+/* Class = "NSButtonCell"; title = "винаги"; ObjectID = "475"; */
+"475.title" = "винаги";
+
+/* Class = "NSButtonCell"; title = "Подкрепете Разархиватора! Направете дарение в сайта!"; ObjectID = "482"; */
+"482.title" = "Подкрепете Разархиватора! Направете дарение в сайта!";

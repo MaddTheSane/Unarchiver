@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Norādītajā mapē nevar ierakstīt, tāpēc arhīvu tur nevar atpakot."; ObjectID = "50"; */
+"50.title" = "Norādītajā mapē nevar ierakstīt, tāpēc arhīvu tur nevar atpakot.";
+
+/* Class = "NSButtonCell"; title = "Atpakot uz darbvirsmas"; ObjectID = "51"; */
+"51.title" = "Atpakot uz darbvirsmas";
+
+/* Class = "NSButtonCell"; title = "Beigt"; ObjectID = "52"; */
+"52.title" = "Beigt";
+
+/* Class = "NSButtonCell"; title = "Atpakot mapē…"; ObjectID = "53"; */
+"53.title" = "Atpakot mapē…";

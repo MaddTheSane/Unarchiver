@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Parādīt visus"; ObjectID = "5"; */
+"5.title" = "Parādīt visus";
+
+/* Class = "NSMenuItem"; title = "Logs"; ObjectID = "19"; */
+"19.title" = "Logs";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Minimizēt"; ObjectID = "23"; */
+"23.title" = "Minimizēt";
+
+/* Class = "NSMenu"; title = "Logs"; ObjectID = "24"; */
+"24.title" = "Logs";
+
+/* Class = "NSMenu"; title = "Galvenā izvēlne"; ObjectID = "29"; */
+"29.title" = "Galvenā izvēlne";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Par The Unarchiver"; ObjectID = "58"; */
+"58.title" = "Par The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Atpakot tekošajā mapē…"; ObjectID = "72"; */
+"72.title" = "Atpakot tekošajā mapē…";
+
+/* Class = "NSMenu"; title = "Fails"; ObjectID = "81"; */
+"81.title" = "Fails";
+
+/* Class = "NSMenuItem"; title = "Fails"; ObjectID = "83"; */
+"83.title" = "Fails";
+
+/* Class = "NSMenuItem"; title = "Palīdzība"; ObjectID = "103"; */
+"103.title" = "Palīdzība";
+
+/* Class = "NSMenu"; title = "Palīdzība"; ObjectID = "106"; */
+"106.title" = "Palīdzība";
+
+/* Class = "NSMenuItem"; title = "Iestatījumi…"; ObjectID = "129"; */
+"129.title" = "Iestatījumi…";
+
+/* Class = "NSMenu"; title = "Pakalpojumi"; ObjectID = "130"; */
+"130.title" = "Pakalpojumi";
+
+/* Class = "NSMenuItem"; title = "Pakalpojumi"; ObjectID = "131"; */
+"131.title" = "Pakalpojumi";
+
+/* Class = "NSMenuItem"; title = "Slēpt The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Slēpt The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Aizvērt The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Aizvērt The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Slēpt citus"; ObjectID = "145"; */
+"145.title" = "Slēpt citus";
+
+/* Class = "NSMenuItem"; title = "Rādīt visus"; ObjectID = "150"; */
+"150.title" = "Rādīt visus";
+
+/* Class = "NSMenuItem"; title = "Kopēt"; ObjectID = "157"; */
+"157.title" = "Kopēt";
+
+/* Class = "NSMenuItem"; title = "Atsaukt"; ObjectID = "158"; */
+"158.title" = "Atsaukt";
+
+/* Class = "NSMenuItem"; title = "Izgriezt"; ObjectID = "160"; */
+"160.title" = "Izgriezt";
+
+/* Class = "NSMenuItem"; title = "Labot"; ObjectID = "163"; */
+"163.title" = "Labot";
+
+/* Class = "NSMenuItem"; title = "Dzēst"; ObjectID = "164"; */
+"164.title" = "Dzēst";
+
+/* Class = "NSMenu"; title = "Labot"; ObjectID = "169"; */
+"169.title" = "Labot";
+
+/* Class = "NSMenuItem"; title = "Ielīmēt"; ObjectID = "171"; */
+"171.title" = "Ielīmēt";
+
+/* Class = "NSMenuItem"; title = "Atlasīt visus"; ObjectID = "172"; */
+"172.title" = "Atlasīt visus";
+
+/* Class = "NSMenuItem"; title = "Atcelt atsaukšanu"; ObjectID = "173"; */
+"173.title" = "Atcelt atsaukšanu";
+
+/* Class = "NSMenuItem"; title = "Tālummaiņa"; ObjectID = "197"; */
+"197.title" = "Tālummaiņa";
+
+/* Class = "NSWindow"; title = "Iestatījumi"; ObjectID = "231"; */
+"231.title" = "Iestatījumi";
+
+/* Class = "NSTabViewItem"; label = "Arhīvu formāti"; ObjectID = "235"; */
+"235.label" = "Arhīvu formāti";
+
+/* Class = "NSTabViewItem"; label = "Zem pārsega"; ObjectID = "237"; */
+"237.label" = "Zem pārsega";
+
+/* Class = "NSTableColumn"; headerCell.title = "Datnes formāts"; ObjectID = "241"; */
+"241.headerCell.title" = "Datnes formāts";
+
+/* Class = "NSTableColumn"; headerCell.title = "Paplašinājumi"; ObjectID = "244"; */
+"244.headerCell.title" = "Paplašinājumi";
+
+/* Class = "NSBox"; title = "Datnes nosaukuma kodējuma automātiska noteikšana"; ObjectID = "263"; */
+"263.title" = "Datnes nosaukuma kodējuma automātiska noteikšana";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "imitācija"; ObjectID = "269"; */
+"269.title" = "imitācija";
+
+/* Class = "NSTabViewItem"; label = "Atpakošana"; ObjectID = "291"; */
+"291.label" = "Atpakošana";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "citā mapē…"; ObjectID = "318"; */
+"318.title" = "citā mapē…";
+
+/* Class = "NSMenuItem"; title = "turpat, kur atrodas arhīvs"; ObjectID = "319"; */
+"319.title" = "turpat, kur atrodas arhīvs";
+
+/* Class = "NSMenuItem"; title = "Imitācija"; ObjectID = "320"; */
+"320.title" = "Imitācija";
+
+/* Class = "NSMenuItem"; title = "norādīt mapi atpakotajām datnēm"; ObjectID = "328"; */
+"328.title" = "norādīt mapi atpakotajām datnēm";
+
+/* Class = "NSButtonCell"; title = "Nekad"; ObjectID = "356"; */
+"356.title" = "Nekad";
+
+/* Class = "NSButtonCell"; title = "Tikai tad, ja pamatmapē ir vairāk kā viena vienība"; ObjectID = "357"; */
+"357.title" = "Tikai tad, ja pamatmapē ir vairāk kā viena vienība";
+
+/* Class = "NSButtonCell"; title = "pašreizējo laiku"; ObjectID = "362"; */
+"362.title" = "pašreizējo laiku";
+
+/* Class = "NSButtonCell"; title = "arhīva modificēšanas laiku"; ObjectID = "363"; */
+"363.title" = "arhīva modificēšanas laiku";
+
+/* Class = "NSButtonCell"; title = "Atlasīt visus"; ObjectID = "407"; */
+"407.title" = "Atlasīt visus";
+
+/* Class = "NSButtonCell"; title = "Neatlasīt nevienu"; ObjectID = "408"; */
+"408.title" = "Neatlasīt nevienu";
+
+/* Class = "NSTextFieldCell"; title = "Atvērt ar The Unarchiver šos arhīvu tipus:"; ObjectID = "409"; */
+"409.title" = "Atvērt ar The Unarchiver šos arhīvu tipus:";
+
+/* Class = "NSTextFieldCell"; title = "Datnes nosaukuma kodējums:"; ObjectID = "411"; */
+"411.title" = "Datnes nosaukuma kodējums:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Slieksnis:"; ObjectID = "414"; */
+"414.title" = "Slieksnis:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "pārliecība"; ObjectID = "416"; */
+"416.title" = "pārliecība";
+
+/* Class = "NSTextFieldCell"; title = "(Zemāks pārliecības līmenis par norādīto liks programmai pieprasīt norādīt kodējumu, nevis izmantot automātiski noteikto.)"; ObjectID = "417"; */
+"417.title" = "(Zemāks pārliecības līmenis par norādīto liks programmai pieprasīt norādīt kodējumu, nevis izmantot automātiski noteikto.)";
+
+/* Class = "NSTextFieldCell"; title = "Pēc arhīva veiksmīgas atpakošanas:"; ObjectID = "418"; */
+"418.title" = "Pēc arhīva veiksmīgas atpakošanas:";
+
+/* Class = "NSButtonCell"; title = "Atvērt atpakoto mapi"; ObjectID = "419"; */
+"419.title" = "Atvērt atpakoto mapi";
+
+/* Class = "NSButtonCell"; title = "Pārvietot arhīvu uz miskasti"; ObjectID = "420"; */
+"420.title" = "Pārvietot arhīvu uz miskasti";
+
+/* Class = "NSTextFieldCell"; title = "Atpakot arhīvus:"; ObjectID = "421"; */
+"421.title" = "Atpakot arhīvus:";
+
+/* Class = "NSTextFieldCell"; title = "izveidot atpakotajām datnēm jaunu mapi"; ObjectID = "423"; */
+"423.title" = "izveidot atpakotajām datnēm jaunu mapi";
+
+/* Class = "NSTextFieldCell"; title = "Iestatīt izveidotās mapes modifikācijas laiku uz:"; ObjectID = "424"; */
+"424.title" = "Iestatīt izveidotās mapes modifikācijas laiku uz:";
+
+/* Class = "NSButtonCell"; title = "un norādīt atsevišķo pamatmapes vienību modifikācijas laiku"; ObjectID = "425"; */
+"425.title" = "un norādīt atsevišķo pamatmapes vienību modifikācijas laiku";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Atpakot mapē…"; ObjectID = "433"; */
+"433.title" = "Atpakot mapē…";
+
+/* Class = "NSMenuItem"; title = "Aizvērt logu"; ObjectID = "435"; */
+"435.title" = "Aizvērt logu";
+
+/* Class = "NSMenuItem"; title = "Atpakot uz darbvirsmas…"; ObjectID = "440"; */
+"440.title" = "Atpakot uz darbvirsmas…";
+
+/* Class = "NSMenuItem"; title = "Atbalsta forums…"; ObjectID = "443"; */
+"443.title" = "Atbalsta forums…";
+
+/* Class = "NSMenuItem"; title = "Tīmekļa vietne…"; ObjectID = "444"; */
+"444.title" = "Tīmekļa vietne…";
+
+/* Class = "NSMenuItem"; title = "Ziņot par kļūdu…"; ObjectID = "445"; */
+"445.title" = "Ziņot par kļūdu…";
+
+/* Class = "NSButtonCell"; title = "Vienmēr"; ObjectID = "475"; */
+"475.title" = "Vienmēr";
+
+/* Class = "NSButtonCell"; title = "Support The Unarchiver! Make a donation on the home page!"; ObjectID = "482"; */
+"482.title" = "Support The Unarchiver! Make a donation on the home page!";

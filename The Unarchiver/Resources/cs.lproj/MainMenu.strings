@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Přenést vše do popředí"; ObjectID = "5"; */
+"5.title" = "Přenést vše do popředí";
+
+/* Class = "NSMenuItem"; title = "Okno"; ObjectID = "19"; */
+"19.title" = "Okno";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Minimalizovat"; ObjectID = "23"; */
+"23.title" = "Minimalizovat";
+
+/* Class = "NSMenu"; title = "Okno"; ObjectID = "24"; */
+"24.title" = "Okno";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "O aplikaci The Unarchiver"; ObjectID = "58"; */
+"58.title" = "O aplikaci The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Rozbalit do aktuální složky..."; ObjectID = "72"; */
+"72.title" = "Rozbalit do aktuální složky...";
+
+/* Class = "NSMenu"; title = "Soubor"; ObjectID = "81"; */
+"81.title" = "Soubor";
+
+/* Class = "NSMenuItem"; title = "Soubor"; ObjectID = "83"; */
+"83.title" = "Soubor";
+
+/* Class = "NSMenuItem"; title = "Nápověda"; ObjectID = "103"; */
+"103.title" = "Nápověda";
+
+/* Class = "NSMenu"; title = "Nápověda"; ObjectID = "106"; */
+"106.title" = "Nápověda";
+
+/* Class = "NSMenuItem"; title = "Nastavení…"; ObjectID = "129"; */
+"129.title" = "Nastavení…";
+
+/* Class = "NSMenu"; title = "Služby"; ObjectID = "130"; */
+"130.title" = "Služby";
+
+/* Class = "NSMenuItem"; title = "Služby"; ObjectID = "131"; */
+"131.title" = "Služby";
+
+/* Class = "NSMenuItem"; title = "Skrýt The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Skrýt The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Ukončit The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Ukončit The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Skrýt ostatní"; ObjectID = "145"; */
+"145.title" = "Skrýt ostatní";
+
+/* Class = "NSMenuItem"; title = "Zobrazit vše"; ObjectID = "150"; */
+"150.title" = "Zobrazit vše";
+
+/* Class = "NSMenuItem"; title = "Kopírovat"; ObjectID = "157"; */
+"157.title" = "Kopírovat";
+
+/* Class = "NSMenuItem"; title = "Zpět"; ObjectID = "158"; */
+"158.title" = "Zpět";
+
+/* Class = "NSMenuItem"; title = "Vyjmout"; ObjectID = "160"; */
+"160.title" = "Vyjmout";
+
+/* Class = "NSMenuItem"; title = "Úpravy"; ObjectID = "163"; */
+"163.title" = "Úpravy";
+
+/* Class = "NSMenuItem"; title = "Smazat"; ObjectID = "164"; */
+"164.title" = "Smazat";
+
+/* Class = "NSMenu"; title = "Úpravy"; ObjectID = "169"; */
+"169.title" = "Úpravy";
+
+/* Class = "NSMenuItem"; title = "Vložit"; ObjectID = "171"; */
+"171.title" = "Vložit";
+
+/* Class = "NSMenuItem"; title = "Vybrat vše"; ObjectID = "172"; */
+"172.title" = "Vybrat vše";
+
+/* Class = "NSMenuItem"; title = "Opakovat"; ObjectID = "173"; */
+"173.title" = "Opakovat";
+
+/* Class = "NSMenuItem"; title = "Přiblížit"; ObjectID = "197"; */
+"197.title" = "Přiblížit";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "231"; */
+"231.title" = "Preferences";
+
+/* Class = "NSTabViewItem"; label = "Formáty"; ObjectID = "235"; */
+"235.label" = "Formáty";
+
+/* Class = "NSTabViewItem"; label = "Pokročilé"; ObjectID = "237"; */
+"237.label" = "Pokročilé";
+
+/* Class = "NSTableColumn"; headerCell.title = "File format"; ObjectID = "241"; */
+"241.headerCell.title" = "File format";
+
+/* Class = "NSTableColumn"; headerCell.title = "Extensions"; ObjectID = "244"; */
+"244.headerCell.title" = "Extensions";
+
+/* Class = "NSBox"; title = "Autodetekce kódování názvu souboru"; ObjectID = "263"; */
+"263.title" = "Autodetekce kódování názvu souboru";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "Rozbalování"; ObjectID = "291"; */
+"291.label" = "Rozbalování";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Other…"; ObjectID = "318"; */
+"318.title" = "Other…";
+
+/* Class = "NSMenuItem"; title = "Same folder as the archive"; ObjectID = "319"; */
+"319.title" = "Same folder as the archive";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "Ask for a destination folder"; ObjectID = "328"; */
+"328.title" = "Ask for a destination folder";
+
+/* Class = "NSButtonCell"; title = "Nikdy"; ObjectID = "356"; */
+"356.title" = "Nikdy";
+
+/* Class = "NSButtonCell"; title = "Pouze obsahuje-li více než jednu složku na nejvyšší úrovni"; ObjectID = "357"; */
+"357.title" = "Pouze obsahuje-li více než jednu složku na nejvyšší úrovni";
+
+/* Class = "NSButtonCell"; title = "Aktuální datum a čas"; ObjectID = "362"; */
+"362.title" = "Aktuální datum a čas";
+
+/* Class = "NSButtonCell"; title = "Datum změny archívu"; ObjectID = "363"; */
+"363.title" = "Datum změny archívu";
+
+/* Class = "NSButtonCell"; title = "Vybrat vše"; ObjectID = "407"; */
+"407.title" = "Vybrat vše";
+
+/* Class = "NSButtonCell"; title = "Zrušit vše"; ObjectID = "408"; */
+"408.title" = "Zrušit vše";
+
+/* Class = "NSTextFieldCell"; title = "Otevírat tyto druhy archivů pomocí The Unarchiver:"; ObjectID = "409"; */
+"409.title" = "Otevírat tyto druhy archivů pomocí The Unarchiver:";
+
+/* Class = "NSTextFieldCell"; title = "Kódování názvu:"; ObjectID = "411"; */
+"411.title" = "Kódování názvu:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Volnost:"; ObjectID = "414"; */
+"414.title" = "Volnost:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "jistota"; ObjectID = "416"; */
+"416.title" = "jistota";
+
+/* Class = "NSTextFieldCell"; title = "(Jistota nižší než tato hodnota má za následek, že se program zeptá na kódování místo použití detekovaného.)"; ObjectID = "417"; */
+"417.title" = "(Jistota nižší než tato hodnota má za následek, že se program zeptá na kódování místo použití detekovaného.)";
+
+/* Class = "NSTextFieldCell"; title = "Po úspěšném rozbalení archívu:"; ObjectID = "418"; */
+"418.title" = "Po úspěšném rozbalení archívu:";
+
+/* Class = "NSButtonCell"; title = "Otevřít složku s rozbaleným obsahem"; ObjectID = "419"; */
+"419.title" = "Otevřít složku s rozbaleným obsahem";
+
+/* Class = "NSButtonCell"; title = "Přesunout archív do koše"; ObjectID = "420"; */
+"420.title" = "Přesunout archív do koše";
+
+/* Class = "NSTextFieldCell"; title = "Rozbalit do:"; ObjectID = "421"; */
+"421.title" = "Rozbalit do:";
+
+/* Class = "NSTextFieldCell"; title = "Vytvořit novou složku pro rozbalené soubory:"; ObjectID = "423"; */
+"423.title" = "Vytvořit novou složku pro rozbalené soubory:";
+
+/* Class = "NSTextFieldCell"; title = "Nastavit datum změny na vytvořené složce na:"; ObjectID = "424"; */
+"424.title" = "Nastavit datum změny na vytvořené složce na:";
+
+/* Class = "NSButtonCell"; title = "Nastavit též datum změny pro položky na nejvyšší úrovni"; ObjectID = "425"; */
+"425.title" = "Nastavit též datum změny pro položky na nejvyšší úrovni";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Rozbalit do..."; ObjectID = "433"; */
+"433.title" = "Rozbalit do...";
+
+/* Class = "NSMenuItem"; title = "Zavřít okno"; ObjectID = "435"; */
+"435.title" = "Zavřít okno";
+
+/* Class = "NSMenuItem"; title = "Rozbalit na plochu..."; ObjectID = "440"; */
+"440.title" = "Rozbalit na plochu...";
+
+/* Class = "NSMenuItem"; title = "Diskusní fórum..."; ObjectID = "443"; */
+"443.title" = "Diskusní fórum...";
+
+/* Class = "NSMenuItem"; title = "Domovská stránka..."; ObjectID = "444"; */
+"444.title" = "Domovská stránka...";
+
+/* Class = "NSMenuItem"; title = "Nahlásit chybu..."; ObjectID = "445"; */
+"445.title" = "Nahlásit chybu...";
+
+/* Class = "NSButtonCell"; title = "Vždy"; ObjectID = "475"; */
+"475.title" = "Vždy";
+
+/* Class = "NSButtonCell"; title = "Podpořte The Unarchiver! Darujte libovolnou částku přes web!"; ObjectID = "482"; */
+"482.title" = "Podpořte The Unarchiver! Darujte libovolnou částku přes web!";

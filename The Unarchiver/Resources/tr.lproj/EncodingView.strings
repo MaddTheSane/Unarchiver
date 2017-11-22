@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "Bu arşivi çıkartabilmeniz için dosya adı kodlamasını seçmeniz gerekiyor"; ObjectID = "52"; */
+"52.title" = "Bu arşivi çıkartabilmeniz için dosya adı kodlamasını seçmeniz gerekiyor";
+
+/* Class = "NSButtonCell"; title = "Devam Et"; ObjectID = "53"; */
+"53.title" = "Devam Et";
+
+/* Class = "NSButtonCell"; title = "Durdur"; ObjectID = "54"; */
+"54.title" = "Durdur";
+
+/* Class = "NSTextFieldCell"; title = "Dosya adı kodlaması:"; ObjectID = "56"; */
+"56.title" = "Dosya adı kodlaması:";
+
+/* Class = "NSTextFieldCell"; title = "Sonuç:"; ObjectID = "57"; */
+"57.title" = "Sonuç:";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Alles op voorgrond"; ObjectID = "5"; */
+"5.title" = "Alles op voorgrond";
+
+/* Class = "NSMenuItem"; title = "Venster"; ObjectID = "19"; */
+"19.title" = "Venster";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Minimaliseer"; ObjectID = "23"; */
+"23.title" = "Minimaliseer";
+
+/* Class = "NSMenu"; title = "Venster"; ObjectID = "24"; */
+"24.title" = "Venster";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Over The Unarchiver"; ObjectID = "58"; */
+"58.title" = "Over The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Pak archief uit in dezelfde map..."; ObjectID = "72"; */
+"72.title" = "Pak archief uit in dezelfde map...";
+
+/* Class = "NSMenu"; title = "Archief"; ObjectID = "81"; */
+"81.title" = "Archief";
+
+/* Class = "NSMenuItem"; title = "Archief"; ObjectID = "83"; */
+"83.title" = "Archief";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "103"; */
+"103.title" = "Help";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "106"; */
+"106.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Voorkeuren…"; ObjectID = "129"; */
+"129.title" = "Voorkeuren…";
+
+/* Class = "NSMenu"; title = "Voorzieningen"; ObjectID = "130"; */
+"130.title" = "Voorzieningen";
+
+/* Class = "NSMenuItem"; title = "Voorzieningen"; ObjectID = "131"; */
+"131.title" = "Voorzieningen";
+
+/* Class = "NSMenuItem"; title = "Verberg The Unarchiver"; ObjectID = "134"; */
+"134.title" = "Verberg The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Stop The Unarchiver"; ObjectID = "136"; */
+"136.title" = "Stop The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Verberg andere"; ObjectID = "145"; */
+"145.title" = "Verberg andere";
+
+/* Class = "NSMenuItem"; title = "Toon alles"; ObjectID = "150"; */
+"150.title" = "Toon alles";
+
+/* Class = "NSMenuItem"; title = "Kopieer"; ObjectID = "157"; */
+"157.title" = "Kopieer";
+
+/* Class = "NSMenuItem"; title = "Herstel"; ObjectID = "158"; */
+"158.title" = "Herstel";
+
+/* Class = "NSMenuItem"; title = "Knip"; ObjectID = "160"; */
+"160.title" = "Knip";
+
+/* Class = "NSMenuItem"; title = "Wijzig"; ObjectID = "163"; */
+"163.title" = "Wijzig";
+
+/* Class = "NSMenuItem"; title = "Verwijder"; ObjectID = "164"; */
+"164.title" = "Verwijder";
+
+/* Class = "NSMenu"; title = "Wijzig"; ObjectID = "169"; */
+"169.title" = "Wijzig";
+
+/* Class = "NSMenuItem"; title = "Plak"; ObjectID = "171"; */
+"171.title" = "Plak";
+
+/* Class = "NSMenuItem"; title = "Selecteer alles"; ObjectID = "172"; */
+"172.title" = "Selecteer alles";
+
+/* Class = "NSMenuItem"; title = "Opnieuw"; ObjectID = "173"; */
+"173.title" = "Opnieuw";
+
+/* Class = "NSMenuItem"; title = "Vergroot/verklein"; ObjectID = "197"; */
+"197.title" = "Vergroot/verklein";
+
+/* Class = "NSWindow"; title = "Voorkeuren"; ObjectID = "231"; */
+"231.title" = "Voorkeuren";
+
+/* Class = "NSTabViewItem"; label = "Bestandssoorten"; ObjectID = "235"; */
+"235.label" = "Bestandssoorten";
+
+/* Class = "NSTabViewItem"; label = "Geavanceerd"; ObjectID = "237"; */
+"237.label" = "Geavanceerd";
+
+/* Class = "NSTableColumn"; headerCell.title = "Bestandssoort"; ObjectID = "241"; */
+"241.headerCell.title" = "Bestandssoort";
+
+/* Class = "NSTableColumn"; headerCell.title = "Extensies"; ObjectID = "244"; */
+"244.headerCell.title" = "Extensies";
+
+/* Class = "NSBox"; title = "Automatische herkenning van bestandscodering"; ObjectID = "263"; */
+"263.title" = "Automatische herkenning van bestandscodering";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "Uitpakken"; ObjectID = "291"; */
+"291.label" = "Uitpakken";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "In…"; ObjectID = "318"; */
+"318.title" = "In…";
+
+/* Class = "NSMenuItem"; title = "In dezelfde map als archief"; ObjectID = "319"; */
+"319.title" = "In dezelfde map als archief";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "Vraag bij het uitpakken"; ObjectID = "328"; */
+"328.title" = "Vraag bij het uitpakken";
+
+/* Class = "NSButtonCell"; title = "Nooit"; ObjectID = "356"; */
+"356.title" = "Nooit";
+
+/* Class = "NSButtonCell"; title = "Als archief meerdere onderdelen bevat"; ObjectID = "357"; */
+"357.title" = "Als archief meerdere onderdelen bevat";
+
+/* Class = "NSButtonCell"; title = "Huidige tijd en datum"; ObjectID = "362"; */
+"362.title" = "Huidige tijd en datum";
+
+/* Class = "NSButtonCell"; title = "Bewerkingsdatum van archief"; ObjectID = "363"; */
+"363.title" = "Bewerkingsdatum van archief";
+
+/* Class = "NSButtonCell"; title = "Selecteer alle"; ObjectID = "407"; */
+"407.title" = "Selecteer alle";
+
+/* Class = "NSButtonCell"; title = "Hef selectie op"; ObjectID = "408"; */
+"408.title" = "Hef selectie op";
+
+/* Class = "NSTextFieldCell"; title = "Open deze archieven met The Unarchiver:"; ObjectID = "409"; */
+"409.title" = "Open deze archieven met The Unarchiver:";
+
+/* Class = "NSTextFieldCell"; title = "Codering:"; ObjectID = "411"; */
+"411.title" = "Codering:";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Drempel:"; ObjectID = "414"; */
+"414.title" = "Drempel:";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "vertrouwen"; ObjectID = "416"; */
+"416.title" = "vertrouwen";
+
+/* Class = "NSTextFieldCell"; title = "Bij een vertrouwenswaarde van minder dan het gekozen percentage wordt naar de codering gevraagd, in plaats van haar automatisch te herkennen."; ObjectID = "417"; */
+"417.title" = "Bij een vertrouwenswaarde van minder dan het gekozen percentage wordt naar de codering gevraagd, in plaats van haar automatisch te herkennen.";
+
+/* Class = "NSTextFieldCell"; title = "Na uitpakken:"; ObjectID = "418"; */
+"418.title" = "Na uitpakken:";
+
+/* Class = "NSButtonCell"; title = "Toon uitgepakte onderdelen in Finder"; ObjectID = "419"; */
+"419.title" = "Toon uitgepakte onderdelen in Finder";
+
+/* Class = "NSButtonCell"; title = "Verplaats archief naar prullenmand"; ObjectID = "420"; */
+"420.title" = "Verplaats archief naar prullenmand";
+
+/* Class = "NSTextFieldCell"; title = "Bewaar uitgepakte bestanden:"; ObjectID = "421"; */
+"421.title" = "Bewaar uitgepakte bestanden:";
+
+/* Class = "NSTextFieldCell"; title = "Maak nieuwe map aan voor uitgepakte bestanden:"; ObjectID = "423"; */
+"423.title" = "Maak nieuwe map aan voor uitgepakte bestanden:";
+
+/* Class = "NSTextFieldCell"; title = "Bewerkingsdatum van nieuwe map:"; ObjectID = "424"; */
+"424.title" = "Bewerkingsdatum van nieuwe map:";
+
+/* Class = "NSButtonCell"; title = "Verander bewerkingsdatum van enkel bestand"; ObjectID = "425"; */
+"425.title" = "Verander bewerkingsdatum van enkel bestand";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Pak archief uit..."; ObjectID = "433"; */
+"433.title" = "Pak archief uit...";
+
+/* Class = "NSMenuItem"; title = "Sluit venster"; ObjectID = "435"; */
+"435.title" = "Sluit venster";
+
+/* Class = "NSMenuItem"; title = "Pak archief uit op bureaublad..."; ObjectID = "440"; */
+"440.title" = "Pak archief uit op bureaublad...";
+
+/* Class = "NSMenuItem"; title = "Ga naar hulpforum"; ObjectID = "443"; */
+"443.title" = "Ga naar hulpforum";
+
+/* Class = "NSMenuItem"; title = "Ga naar homepage"; ObjectID = "444"; */
+"444.title" = "Ga naar homepage";
+
+/* Class = "NSMenuItem"; title = "Meld een fout"; ObjectID = "445"; */
+"445.title" = "Meld een fout";
+
+/* Class = "NSButtonCell"; title = "Altijd"; ObjectID = "475"; */
+"475.title" = "Altijd";
+
+/* Class = "NSButtonCell"; title = "Ondersteun The Unarchiver en doneer op de homepage!"; ObjectID = "482"; */
+"482.title" = "Ondersteun The Unarchiver en doneer op de homepage!";

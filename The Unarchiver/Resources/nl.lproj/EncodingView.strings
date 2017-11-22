@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "Een bestandsnaamcodering is vereist om dit archief te openen."; ObjectID = "52"; */
+"52.title" = "Een bestandsnaamcodering is vereist om dit archief te openen.";
+
+/* Class = "NSButtonCell"; title = "Ga door"; ObjectID = "53"; */
+"53.title" = "Ga door";
+
+/* Class = "NSButtonCell"; title = "Annuleer"; ObjectID = "54"; */
+"54.title" = "Annuleer";
+
+/* Class = "NSTextFieldCell"; title = "Codering:"; ObjectID = "56"; */
+"56.title" = "Codering:";
+
+/* Class = "NSTextFieldCell"; title = "Resultaat:"; ObjectID = "57"; */
+"57.title" = "Resultaat:";
+
+/* Class = "NSTextFieldCell"; title = "Bestandsnaam.txt"; ObjectID = "58"; */
+"58.title" = "Bestandsnaam.txt";

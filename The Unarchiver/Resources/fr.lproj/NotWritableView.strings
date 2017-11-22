@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Le dossier n'est pas accessible en écriture, l'archive ne peut donc pas être extraite ici."; ObjectID = "50"; */
+"50.title" = "Le dossier n'est pas accessible en écriture, l'archive ne peut donc pas être extraite ici.";
+
+/* Class = "NSButtonCell"; title = "Extraire dans le bureau"; ObjectID = "51"; */
+"51.title" = "Extraire dans le bureau";
+
+/* Class = "NSButtonCell"; title = "Arrêter"; ObjectID = "52"; */
+"52.title" = "Arrêter";
+
+/* Class = "NSButtonCell"; title = "Extraire autre part..."; ObjectID = "53"; */
+"53.title" = "Extraire autre part...";

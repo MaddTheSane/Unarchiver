@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Папката не е за писане и архивът не може да бъде извлечен в нея."; ObjectID = "50"; */
+"50.title" = "Папката не е за писане и архивът не може да бъде извлечен в нея.";
+
+/* Class = "NSButtonCell"; title = "Извлечи в Десктоп"; ObjectID = "51"; */
+"51.title" = "Извлечи в Десктоп";
+
+/* Class = "NSButtonCell"; title = "Стоп"; ObjectID = "52"; */
+"52.title" = "Стоп";
+
+/* Class = "NSButtonCell"; title = "Извлечи другаде…"; ObjectID = "53"; */
+"53.title" = "Извлечи другаде…";

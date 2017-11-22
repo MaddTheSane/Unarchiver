@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Denne mappen kan ikke skrives til så arkivfilen kan ikke pakkes ut hit."; ObjectID = "50"; */
+"50.title" = "Denne mappen kan ikke skrives til så arkivfilen kan ikke pakkes ut hit.";
+
+/* Class = "NSButtonCell"; title = "Pakk ut til skrivebordet"; ObjectID = "51"; */
+"51.title" = "Pakk ut til skrivebordet";
+
+/* Class = "NSButtonCell"; title = "Stopp"; ObjectID = "52"; */
+"52.title" = "Stopp";
+
+/* Class = "NSButtonCell"; title = "Pakk ut til…"; ObjectID = "53"; */
+"53.title" = "Pakk ut til…";

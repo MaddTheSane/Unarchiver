@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Bu klasör yazılabilir değil. Bu yüzden arşiv, bu klasöre çıkartılamıyor."; ObjectID = "50"; */
+"50.title" = "Bu klasör yazılabilir değil. Bu yüzden arşiv, bu klasöre çıkartılamıyor.";
+
+/* Class = "NSButtonCell"; title = "Masaüstüne Çıkar"; ObjectID = "51"; */
+"51.title" = "Masaüstüne Çıkar";
+
+/* Class = "NSButtonCell"; title = "Durdur"; ObjectID = "52"; */
+"52.title" = "Durdur";
+
+/* Class = "NSButtonCell"; title = "Başka Biryere Çıkar…"; ObjectID = "53"; */
+"53.title" = "Başka Biryere Çıkar…";

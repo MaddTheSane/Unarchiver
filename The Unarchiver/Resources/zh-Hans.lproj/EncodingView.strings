@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "你需要提供文件名编码来打开此归档."; ObjectID = "52"; */
+"52.title" = "你需要提供文件名编码来打开此归档.";
+
+/* Class = "NSButtonCell"; title = "继续"; ObjectID = "53"; */
+"53.title" = "继续";
+
+/* Class = "NSButtonCell"; title = "停止"; ObjectID = "54"; */
+"54.title" = "停止";
+
+/* Class = "NSTextFieldCell"; title = "文件名编码:"; ObjectID = "56"; */
+"56.title" = "文件名编码:";
+
+/* Class = "NSTextFieldCell"; title = "结果:"; ObjectID = "57"; */
+"57.title" = "结果:";
+
+/* Class = "NSTextFieldCell"; title = "文件名.txt"; ObjectID = "58"; */
+"58.title" = "文件名.txt";

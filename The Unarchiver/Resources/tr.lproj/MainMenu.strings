@@ -1,0 +1,225 @@
+
+/* Class = "NSMenuItem"; title = "Hepsini Öne Çıkar"; ObjectID = "5"; */
+"5.title" = "Hepsini Öne Çıkar";
+
+/* Class = "NSMenuItem"; title = "Pencere"; ObjectID = "19"; */
+"19.title" = "Pencere";
+
+/* Class = "NSWindow"; title = "The Unarchiver"; ObjectID = "21"; */
+"21.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "Küçült"; ObjectID = "23"; */
+"23.title" = "Küçült";
+
+/* Class = "NSMenu"; title = "Pencere"; ObjectID = "24"; */
+"24.title" = "Pencere";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver"; ObjectID = "56"; */
+"56.title" = "The Unarchiver";
+
+/* Class = "NSMenu"; title = "The Unarchiver"; ObjectID = "57"; */
+"57.title" = "The Unarchiver";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver Hakkında"; ObjectID = "58"; */
+"58.title" = "The Unarchiver Hakkında";
+
+/* Class = "NSMenuItem"; title = "Seçili Olan Klasöre Çıkar..."; ObjectID = "72"; */
+"72.title" = "Seçili Olan Klasöre Çıkar...";
+
+/* Class = "NSMenu"; title = "Dosya"; ObjectID = "81"; */
+"81.title" = "Dosya";
+
+/* Class = "NSMenuItem"; title = "Dosya"; ObjectID = "83"; */
+"83.title" = "Dosya";
+
+/* Class = "NSMenuItem"; title = "Yardım"; ObjectID = "103"; */
+"103.title" = "Yardım";
+
+/* Class = "NSMenu"; title = "Yardım"; ObjectID = "106"; */
+"106.title" = "Yardım";
+
+/* Class = "NSMenuItem"; title = "Ayarlar"; ObjectID = "129"; */
+"129.title" = "Ayarlar";
+
+/* Class = "NSMenu"; title = "Servisler"; ObjectID = "130"; */
+"130.title" = "Servisler";
+
+/* Class = "NSMenuItem"; title = "Servisler"; ObjectID = "131"; */
+"131.title" = "Servisler";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver'ı Gizle"; ObjectID = "134"; */
+"134.title" = "The Unarchiver'ı Gizle";
+
+/* Class = "NSMenuItem"; title = "The Unarchiver'dan Çık"; ObjectID = "136"; */
+"136.title" = "The Unarchiver'dan Çık";
+
+/* Class = "NSMenuItem"; title = "Diğerlerini Gizle"; ObjectID = "145"; */
+"145.title" = "Diğerlerini Gizle";
+
+/* Class = "NSMenuItem"; title = "Hepsini Göster"; ObjectID = "150"; */
+"150.title" = "Hepsini Göster";
+
+/* Class = "NSMenuItem"; title = "Kopyala"; ObjectID = "157"; */
+"157.title" = "Kopyala";
+
+/* Class = "NSMenuItem"; title = "Geri Al"; ObjectID = "158"; */
+"158.title" = "Geri Al";
+
+/* Class = "NSMenuItem"; title = "Kes"; ObjectID = "160"; */
+"160.title" = "Kes";
+
+/* Class = "NSMenuItem"; title = "Düzenle"; ObjectID = "163"; */
+"163.title" = "Düzenle";
+
+/* Class = "NSMenuItem"; title = "Sil"; ObjectID = "164"; */
+"164.title" = "Sil";
+
+/* Class = "NSMenu"; title = "Düzenle"; ObjectID = "169"; */
+"169.title" = "Düzenle";
+
+/* Class = "NSMenuItem"; title = "Yapıştır"; ObjectID = "171"; */
+"171.title" = "Yapıştır";
+
+/* Class = "NSMenuItem"; title = "Hepsini Seç"; ObjectID = "172"; */
+"172.title" = "Hepsini Seç";
+
+/* Class = "NSMenuItem"; title = "Yeniden Yap"; ObjectID = "173"; */
+"173.title" = "Yeniden Yap";
+
+/* Class = "NSMenuItem"; title = "Büyüt"; ObjectID = "197"; */
+"197.title" = "Büyüt";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "231"; */
+"231.title" = "Preferences";
+
+/* Class = "NSTabViewItem"; label = "Arşiv Formatları"; ObjectID = "235"; */
+"235.label" = "Arşiv Formatları";
+
+/* Class = "NSTabViewItem"; label = "Gelişmiş"; ObjectID = "237"; */
+"237.label" = "Gelişmiş";
+
+/* Class = "NSTableColumn"; headerCell.title = "Dosya Formatı"; ObjectID = "241"; */
+"241.headerCell.title" = "Dosya Formatı";
+
+/* Class = "NSTableColumn"; headerCell.title = "Uzantılar"; ObjectID = "244"; */
+"244.headerCell.title" = "Uzantılar";
+
+/* Class = "NSBox"; title = "Dosya Adı kodlaması algılayıcısı otomasyonu"; ObjectID = "263"; */
+"263.title" = "Dosya Adı kodlaması algılayıcısı otomasyonu";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "266"; */
+"266.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "269"; */
+"269.title" = "dummy";
+
+/* Class = "NSTabViewItem"; label = "Çıkartma"; ObjectID = "291"; */
+"291.label" = "Çıkartma";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "317"; */
+"317.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Other…"; ObjectID = "318"; */
+"318.title" = "Other…";
+
+/* Class = "NSMenuItem"; title = "Same folder as the archive"; ObjectID = "319"; */
+"319.title" = "Same folder as the archive";
+
+/* Class = "NSMenuItem"; title = "Dummy"; ObjectID = "320"; */
+"320.title" = "Dummy";
+
+/* Class = "NSMenuItem"; title = "Ask for a destination folder"; ObjectID = "328"; */
+"328.title" = "Ask for a destination folder";
+
+/* Class = "NSButtonCell"; title = "Hiçbir zaman"; ObjectID = "356"; */
+"356.title" = "Hiçbir zaman";
+
+/* Class = "NSButtonCell"; title = "Sadece birden fazla üst-derece öğe varsa"; ObjectID = "357"; */
+"357.title" = "Sadece birden fazla üst-derece öğe varsa";
+
+/* Class = "NSButtonCell"; title = "Şu andaki saat ve tarih ile degiştir"; ObjectID = "362"; */
+"362.title" = "Şu andaki saat ve tarih ile degiştir";
+
+/* Class = "NSButtonCell"; title = "Arşivin kendi modifiye zamanı kalsın"; ObjectID = "363"; */
+"363.title" = "Arşivin kendi modifiye zamanı kalsın";
+
+/* Class = "NSButtonCell"; title = "Hepsini Seç"; ObjectID = "407"; */
+"407.title" = "Hepsini Seç";
+
+/* Class = "NSButtonCell"; title = "Hiçbirini Seçme"; ObjectID = "408"; */
+"408.title" = "Hiçbirini Seçme";
+
+/* Class = "NSTextFieldCell"; title = "Seçili olan arşiv tiplerini The Unarchiver ile çıkar:"; ObjectID = "409"; */
+"409.title" = "Seçili olan arşiv tiplerini The Unarchiver ile çıkar:";
+
+/* Class = "NSTextFieldCell"; title = "Dosya Adı Kodlaması"; ObjectID = "411"; */
+"411.title" = "Dosya Adı Kodlaması";
+
+/* Class = "NSTextFieldCell"; title = "80"; ObjectID = "413"; */
+"413.title" = "80";
+
+/* Class = "NSTextFieldCell"; title = "Eşik"; ObjectID = "414"; */
+"414.title" = "Eşik";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
+"415.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "duyarlılık"; ObjectID = "416"; */
+"416.title" = "duyarlılık";
+
+/* Class = "NSTextFieldCell"; title = "(Duyarlılık değerinin daha düşük olması, programın dosya adı kodlamasını otomatik algılaması yerine tek tek size sormasına neden olur)"; ObjectID = "417"; */
+"417.title" = "(Duyarlılık değerinin daha düşük olması, programın dosya adı kodlamasını otomatik algılaması yerine tek tek size sormasına neden olur)";
+
+/* Class = "NSTextFieldCell"; title = "Başarılı bir arşivden çıkartma işleminden sonra:"; ObjectID = "418"; */
+"418.title" = "Başarılı bir arşivden çıkartma işleminden sonra:";
+
+/* Class = "NSButtonCell"; title = "Çıkartlan klasörü aç"; ObjectID = "419"; */
+"419.title" = "Çıkartlan klasörü aç";
+
+/* Class = "NSButtonCell"; title = "Arşivi çöpe at"; ObjectID = "420"; */
+"420.title" = "Arşivi çöpe at";
+
+/* Class = "NSTextFieldCell"; title = "Arşivlerin Çıkartılacağı yer:"; ObjectID = "421"; */
+"421.title" = "Arşivlerin Çıkartılacağı yer:";
+
+/* Class = "NSTextFieldCell"; title = "Arşivleri çıkartırken yeni klasör oluştur:"; ObjectID = "423"; */
+"423.title" = "Arşivleri çıkartırken yeni klasör oluştur:";
+
+/* Class = "NSTextFieldCell"; title = "Oluşturulan klasörün modifiye zamanlarını:"; ObjectID = "424"; */
+"424.title" = "Oluşturulan klasörün modifiye zamanlarını:";
+
+/* Class = "NSButtonCell"; title = "Ayrıca tekil üst-derece öğelerin modifiye zamanınıda ayarla"; ObjectID = "425"; */
+"425.title" = "Ayrıca tekil üst-derece öğelerin modifiye zamanınıda ayarla";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "426"; */
+"426.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "427"; */
+"427.title" = "Radio";
+
+/* Class = "NSMenuItem"; title = "Şuraya Çıkar..."; ObjectID = "433"; */
+"433.title" = "Şuraya Çıkar...";
+
+/* Class = "NSMenuItem"; title = "Pencereyi Kapat"; ObjectID = "435"; */
+"435.title" = "Pencereyi Kapat";
+
+/* Class = "NSMenuItem"; title = "Masaüstüne Çıkar..."; ObjectID = "440"; */
+"440.title" = "Masaüstüne Çıkar...";
+
+/* Class = "NSMenuItem"; title = "Destek Panosu..."; ObjectID = "443"; */
+"443.title" = "Destek Panosu...";
+
+/* Class = "NSMenuItem"; title = "Ana Sayfa..."; ObjectID = "444"; */
+"444.title" = "Ana Sayfa...";
+
+/* Class = "NSMenuItem"; title = "Hata Bildirimi..."; ObjectID = "445"; */
+"445.title" = "Hata Bildirimi...";
+
+/* Class = "NSButtonCell"; title = "Her zaman"; ObjectID = "475"; */
+"475.title" = "Her zaman";
+
+/* Class = "NSButtonCell"; title = "Support The Unarchiver! Make a donation on the home page!"; ObjectID = "482"; */
+"482.title" = "Support The Unarchiver! Make a donation on the home page!";

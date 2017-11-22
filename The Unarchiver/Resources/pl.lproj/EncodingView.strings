@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "dummy"; ObjectID = "42"; */
+"42.title" = "dummy";
+
+/* Class = "NSTextFieldCell"; title = "Musisz podać kodowanie nazw plików do otwarcia tego archiwum."; ObjectID = "52"; */
+"52.title" = "Musisz podać kodowanie nazw plików do otwarcia tego archiwum.";
+
+/* Class = "NSButtonCell"; title = "Kontynuuj"; ObjectID = "53"; */
+"53.title" = "Kontynuuj";
+
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "54"; */
+"54.title" = "Stop";
+
+/* Class = "NSTextFieldCell"; title = "Kodowanie nazw:"; ObjectID = "56"; */
+"56.title" = "Kodowanie nazw:";
+
+/* Class = "NSTextFieldCell"; title = "Wynik:"; ObjectID = "57"; */
+"57.title" = "Wynik:";
+
+/* Class = "NSTextFieldCell"; title = "filename.txt"; ObjectID = "58"; */
+"58.title" = "filename.txt";

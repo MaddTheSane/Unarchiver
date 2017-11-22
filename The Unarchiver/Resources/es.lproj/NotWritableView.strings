@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "No se puede escribir en esta carpeta, el archivo no se puede extraer aquí."; ObjectID = "50"; */
+"50.title" = "No se puede escribir en esta carpeta, el archivo no se puede extraer aquí.";
+
+/* Class = "NSButtonCell"; title = "Extraer en el escritorio"; ObjectID = "51"; */
+"51.title" = "Extraer en el escritorio";
+
+/* Class = "NSButtonCell"; title = "Detener"; ObjectID = "52"; */
+"52.title" = "Detener";
+
+/* Class = "NSButtonCell"; title = "Extraer en otro sitio"; ObjectID = "53"; */
+"53.title" = "Extraer en otro sitio";

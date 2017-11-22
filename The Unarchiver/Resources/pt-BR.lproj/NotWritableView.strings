@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Não há permissões de escrita para este diretório. O arquivo não pode ser extraido aqui."; ObjectID = "60"; */
+"50.title" = "Não há permissões de escrita para este diretório. O arquivo não pode ser extraido aqui.";
+
+/* Class = "NSButtonCell"; title = "Extrair Para a Área de Trabalho"; ObjectID = "62"; */
+"51.title" = "Extrair Para a Área de Trabalho";
+
+/* Class = "NSButtonCell"; title = "Extrair Para Outro Local"; ObjectID = "64"; */
+"52.title" = "Extrair Para Outro Local";
+
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "66"; */
+"53.title" = "Cancelar";

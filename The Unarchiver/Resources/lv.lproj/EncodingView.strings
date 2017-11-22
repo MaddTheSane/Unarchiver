@@ -1,0 +1,24 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "39"; */
+"39.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "imitācija"; ObjectID = "42"; */
+"42.title" = "imitācija";
+
+/* Class = "NSTextFieldCell"; title = "Lai atvērtu arhīvu, jānorāda datņu nosaukumu kodējums."; ObjectID = "52"; */
+"52.title" = "Lai atvērtu arhīvu, jānorāda datņu nosaukumu kodējums.";
+
+/* Class = "NSButtonCell"; title = "Turpināt"; ObjectID = "53"; */
+"53.title" = "Turpināt";
+
+/* Class = "NSButtonCell"; title = "Beigt"; ObjectID = "54"; */
+"54.title" = "Beigt";
+
+/* Class = "NSTextFieldCell"; title = "Datņu nosaukumu kodējums:"; ObjectID = "56"; */
+"56.title" = "Datņu nosaukumu kodējums:";
+
+/* Class = "NSTextFieldCell"; title = "Rezultāts:"; ObjectID = "57"; */
+"57.title" = "Rezultāts:";
+
+/* Class = "NSTextFieldCell"; title = "datnes nosaukums.txt"; ObjectID = "58"; */
+"58.title" = "datnes nosaukums.txt";

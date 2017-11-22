@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "这个文件夹不可写入, 所以归档不能解压到此处."; ObjectID = "50"; */
+"50.title" = "这个文件夹不可写入, 所以归档不能解压到此处.";
+
+/* Class = "NSButtonCell"; title = "解压到桌面"; ObjectID = "51"; */
+"51.title" = "解压到桌面";
+
+/* Class = "NSButtonCell"; title = "停止"; ObjectID = "52"; */
+"52.title" = "停止";
+
+/* Class = "NSButtonCell"; title = "解压到别处…"; ObjectID = "53"; */
+"53.title" = "解压到别处…";
