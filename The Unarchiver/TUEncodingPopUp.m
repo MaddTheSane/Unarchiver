@@ -4,27 +4,31 @@ static BOOL SanityCheckString(NSString *string);
 
 static BOOL IsSurrogateHighCharacter(unichar c)
 {
-    return c>=0xd800 && c<=0xdbff; 
+	return c >= 0xd800 && c <= 0xdbff;
 }
 
 static BOOL IsSurrogateLowCharacter(unichar c)
 {
-    return c>=0xdc00 && c<=0xdfff; 
+	return c >= 0xdc00 && c <= 0xdfff;
 }
 
 static BOOL SanityCheckString(NSString *string)
 {
-	NSInteger length=string.length;
-	for(int i=0;i<length;i++)
-	{
-		unichar c=[string characterAtIndex:i];
-		if(IsSurrogateHighCharacter(c)) return NO;
-		if(IsSurrogateLowCharacter(c))
-		{
+	NSInteger length = string.length;
+	for (int i = 0; i < length; i++) {
+		unichar c = [string characterAtIndex:i];
+		if (IsSurrogateHighCharacter(c)) {
+			return NO;
+		}
+		if (IsSurrogateLowCharacter(c)) {
 			i++;
-			if(i>=length) return NO;
-			unichar c2=[string characterAtIndex:i];
-			if(!IsSurrogateHighCharacter(c2)) return NO;
+			if (i >= length) {
+				return NO;
+			}
+			unichar c2 = [string characterAtIndex:i];
+			if (!IsSurrogateHighCharacter(c2)) {
+				return NO;
+			}
 		}
 	}
 	return YES;

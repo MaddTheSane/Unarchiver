@@ -6,8 +6,7 @@
 @class TUArchiveController;
 @class TUEncodingPopUp;
 
-@interface TUArchiveTaskView:TUMultiTaskView
-{
+@interface TUArchiveTaskView : TUMultiTaskView {
 	TUArchiveController *__weak archive;
 
 	id canceltarget;
@@ -55,51 +54,49 @@
 	IBOutlet NSImageView *encodingicon;
 }
 
--(instancetype)init;
+- (instancetype)init;
 
 @property (weak) TUArchiveController *archiveController;
 
--(void)setCancelAction:(SEL)selector target:(id)target;
+- (void)setCancelAction:(SEL)selector target:(id)target;
 
--(void)setName:(NSString *)name;
--(void)setProgress:(double)fraction;
--(void)_setProgress:(NSNumber *)fraction;
+- (void)setName:(NSString *)name;
+- (void)setProgress:(double)fraction;
+- (void)_setProgress:(NSNumber *)fraction;
 
+- (void)displayNotWritableErrorWithResponseAction:(SEL)selector target:(id)target;
+- (BOOL)displayError:(NSString *)error ignoreAll:(BOOL *)ignoreall;
+- (void)displayOpenError:(NSString *)error;
+- (NSStringEncoding)displayEncodingSelectorForXADString:(id<XADString>)string;
+- (NSString *)displayPasswordInputWithApplyToAllPointer:(BOOL *)applyall encodingPointer:(NSStringEncoding *)encoding;
 
--(void)displayNotWritableErrorWithResponseAction:(SEL)selector target:(id)target;
--(BOOL)displayError:(NSString *)error ignoreAll:(BOOL *)ignoreall;
--(void)displayOpenError:(NSString *)error;
--(NSStringEncoding)displayEncodingSelectorForXADString:(id <XADString>)string;
--(NSString *)displayPasswordInputWithApplyToAllPointer:(BOOL *)applyall encodingPointer:(NSStringEncoding *)encoding;
+- (void)setupWaitView;
+- (void)updateWaitView;
+- (void)setupProgressViewInPreparingMode;
+- (void)setupNotWritableView;
+- (void)setupErrorView:(NSString *)error;
+- (void)setupOpenErrorView:(NSString *)error;
+- (void)setupPasswordView;
+- (void)setupEncodingViewForXADString:(id<XADString>)string;
 
--(void)setupWaitView;
--(void)updateWaitView;
--(void)setupProgressViewInPreparingMode;
--(void)setupNotWritableView;
--(void)setupErrorView:(NSString *)error;
--(void)setupOpenErrorView:(NSString *)error;
--(void)setupPasswordView;
--(void)setupEncodingViewForXADString:(id <XADString>)string;
+- (void)getUserAttention;
 
--(void)getUserAttention;
+- (IBAction)cancelExtraction:(id)sender;
+- (IBAction)cancelWait:(id)sender;
+- (IBAction)stopAfterNotWritable:(id)sender;
+- (IBAction)extractToDesktopAfterNotWritable:(id)sender;
+- (IBAction)extractElsewhereAfterNotWritable:(id)sender;
+- (IBAction)stopAfterError:(id)sender;
+- (IBAction)continueAfterError:(id)sender;
+- (IBAction)okAfterOpenError:(id)sender;
+- (IBAction)stopAfterPassword:(id)sender;
+- (IBAction)continueAfterPassword:(id)sender;
+- (IBAction)stopAfterEncoding:(id)sender;
+- (IBAction)continueAfterEncoding:(id)sender;
+- (IBAction)selectEncoding:(id)sender;
 
--(IBAction)cancelExtraction:(id)sender;
--(IBAction)cancelWait:(id)sender;
--(IBAction)stopAfterNotWritable:(id)sender;
--(IBAction)extractToDesktopAfterNotWritable:(id)sender;
--(IBAction)extractElsewhereAfterNotWritable:(id)sender;
--(IBAction)stopAfterError:(id)sender;
--(IBAction)continueAfterError:(id)sender;
--(IBAction)okAfterOpenError:(id)sender;
--(IBAction)stopAfterPassword:(id)sender;
--(IBAction)continueAfterPassword:(id)sender;
--(IBAction)stopAfterEncoding:(id)sender;
--(IBAction)continueAfterEncoding:(id)sender;
--(IBAction)selectEncoding:(id)sender;
-
-
--(int)waitForResponseFromUI;
--(void)setUIResponseAction:(SEL)selector target:(id)target;
--(void)provideResponseFromUI:(int)response;
+- (int)waitForResponseFromUI;
+- (void)setUIResponseAction:(SEL)selector target:(id)target;
+- (void)provideResponseFromUI:(int)response;
 
 @end

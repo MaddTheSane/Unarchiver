@@ -2,13 +2,13 @@
 
 @interface TUUnarchiveScriptCommand : NSScriptCommand
 
--(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef;
--(id)performDefaultImplementation;
+- (instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef;
+- (id)performDefaultImplementation;
 
--(BOOL)evalBooleanParameterForKey:(NSString *)parameterKey;
--(id)errorFileDontExist:(NSString *)file;
+- (BOOL)evalBooleanParameterForKey:(NSString *)parameterKey;
+- (id)errorFileDontExist:(NSString *)file;
 
--(void)unarchiveFile:(NSString *)fileName;
--(void)quitIfPossible;
+- (void)unarchiveFile:(NSString *)fileName;
+- (void)quitIfPossible;
 
 @end

@@ -4,31 +4,30 @@
 @synthesize running;
 @synthesize stalled;
 
--(instancetype)init
+- (instancetype)init
 {
-	if((self=[super init]))
-	{
-		tasks=[NSMutableArray new];
-		running=NO;
-		stalled=NO;
-		finishtarget=nil;
-		finishselector=NULL;
+	if ((self = [super init])) {
+		tasks = [NSMutableArray new];
+		running = NO;
+		stalled = NO;
+		finishtarget = nil;
+		finishselector = NULL;
 	}
 	return self;
 }
 
--(void)setFinishAction:(SEL)selector target:(id)target
+- (void)setFinishAction:(SEL)selector target:(id)target
 {
-	finishtarget=target;
-	finishselector=selector;
+	finishtarget = target;
+	finishselector = selector;
 }
 
--(id)taskWithTarget:(id)target
+- (id)taskWithTarget:(id)target
 {
 	return [[TUTaskTrampoline alloc] initWithTarget:target queue:self];
 }
 
--(void)newTaskWithTarget:(id)target invocation:(NSInvocation *)invocation
+- (void)newTaskWithTarget:(id)target invocation:(NSInvocation *)invocation
 {
 	[invocation retainArguments];
 
@@ -38,72 +37,75 @@
 	[self restart];
 }
 
--(void)stallCurrentTask
+- (void)stallCurrentTask
 {
-	if(!running) return;
+	if (!running) {
+		return;
+	}
 
-	stalled=YES;
-	running=NO;
+	stalled = YES;
+	running = NO;
 }
 
--(void)finishCurrentTask
+- (void)finishCurrentTask
 {
-	if(!running) return;
+	if (!running) {
+		return;
+	}
 
 	[tasks removeObjectAtIndex:0];
 	[tasks removeObjectAtIndex:0];
-	running=NO;
+	running = NO;
 
 	[self restart];
 }
 
--(BOOL)isEmpty
+- (BOOL)isEmpty
 {
-	return !running&&!stalled;
+	return !running && !stalled;
 }
 
--(void)restart
+- (void)restart
 {
-	if(running) return;
-	if(!tasks.count)
-	{
+	if (running) {
+		return;
+	}
+	if (!tasks.count) {
 		[finishtarget performSelector:finishselector withObject:self];
 		return;
 	}
 
-	running=YES;
-	stalled=NO;
+	running = YES;
+	stalled = NO;
 
 	[self performSelector:@selector(startTask) withObject:nil afterDelay:0];
 }
 
--(void)startTask
+- (void)startTask
 {
-	id target=tasks[0];
-	NSInvocation *invocation=tasks[1];
+	id target = tasks[0];
+	NSInvocation *invocation = tasks[1];
 
 	[invocation invokeWithTarget:target];
 }
 
 @end
 
-
 @implementation TUTaskTrampoline
 
--(instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
+- (instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
 {
-	actual=target;
-	parent=queue;
+	actual = target;
+	parent = queue;
 	return self;
 }
 
-
--(NSMethodSignature *)methodSignatureForSelector:(SEL)sel
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel
 {
-	return [actual methodSignatureForSelector:sel]; 
+	return [actual methodSignatureForSelector:sel];
 }
 
--(void)forwardInvocation:(NSInvocation *)invocation
+- (void)forwardInvocation:(NSInvocation *)invocation
 {
 	[parent newTaskWithTarget:actual invocation:invocation];
 }

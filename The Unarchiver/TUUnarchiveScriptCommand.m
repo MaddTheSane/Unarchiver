@@ -3,7 +3,7 @@
 
 //keys for the parameters of the command
 #define PKdestination @"destination"
-#define PKdeleting  @"deletingOriginal"
+#define PKdeleting @"deletingOriginal"
 #define PKopening @"opening"
 #define PKcreatingFolder @"creatingFolder"
 #define PKwaitUntilFinished @"waitUntilFinished"
@@ -23,22 +23,21 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 	creatingFolderAlways = 'AlwA'
 };
 
-@implementation TUUnarchiveScriptCommand
-{
+@implementation TUUnarchiveScriptCommand {
 	NSTimer *restoringTimer;
-	TUController * appController; //!< Needed for calling the unarchaving methods
+	TUController *appController; //!< Needed for calling the unarchaving methods
 	BOOL deleteOriginals;
 	BOOL openFolders; //!< currently not used (at least in Not Legacy)
 	BOOL waitUntilFinished;
 	TUCreateEnclosingDirectory creatingFolder;
 	UDKDestinationType desttype;
-	NSString * extractDestination;
+	NSString *extractDestination;
 }
 
 #pragma mark Overriding methods:
--(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef
+- (instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef
 {
-	self=[super initWithCommandDescription:commandDef];
+	self = [super initWithCommandDescription:commandDef];
 	if (self) {
 		extractDestination = [[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 		appController = [NSApplication sharedApplication].delegate;
@@ -46,45 +45,39 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 	return self;
 }
 
--(id)performDefaultImplementation
+- (id)performDefaultImplementation
 {
-	/*
+/*
 	 The commands will be something like:
 	 unarchive listOfArchives(orPaths?) [to destination] [deleting yes] [opening yes]
 	 */
 #ifdef DEBUG
 	NSLog(@"Running default implementation of command \"unarchive\"");
 #endif
-	
+
 	//Get the files to unarchive (an array) and the arguments
-	NSArray *files=self.directParameter;
+	NSArray *files = self.directParameter;
 	NSDictionary *evaluatedArgs = self.evaluatedArguments;
 
 	//We check that all the files exists
-	NSFileManager *fileManager=[NSFileManager defaultManager];
-	NSEnumerator *enumerator=[files objectEnumerator];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSEnumerator *enumerator = [files objectEnumerator];
 	NSString *file;
-	while((file=[enumerator nextObject])) {
-		if (![fileManager fileExistsAtPath:file])
-		{
+	while ((file = [enumerator nextObject])) {
+		if (![fileManager fileExistsAtPath:file]) {
 			return [self errorFileDontExist:file];
 		}
 	}
 	//Check and evaluate the parameter "destination"
-	id destination=evaluatedArgs[PKdestination];
+	id destination = evaluatedArgs[PKdestination];
 	UDKDestinationType destinationIntValue;
-	if (destination)
-	{
-		if ([destination isKindOfClass:[NSString class]] && [fileManager fileExistsAtPath:destination])
-		{
+	if (destination) {
+		if ([destination isKindOfClass:[NSString class]] && [fileManager fileExistsAtPath:destination]) {
 			extractDestination = destination;
 			destinationIntValue = UDKDestinationCustomPath;
-		}
-		else
-		{
-			destinationFolder destinationLongValue=[destination unsignedIntValue];
-			switch (destinationLongValue)
-			{
+		} else {
+			destinationFolder destinationLongValue = [destination unsignedIntValue];
+			switch (destinationLongValue) {
 				case destinationFolderDesktop:
 					destinationIntValue = UDKDestinationCustomPath;
 					extractDestination = (@"~/Desktop").stringByExpandingTildeInPath;
@@ -104,18 +97,17 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 					break;
 			}
 		}
-	}
-	else {
+	} else {
 		destinationIntValue = [[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination];
 	}
-	desttype=destinationIntValue;
-	
+	desttype = destinationIntValue;
+
 	//Get the rest of optional parameters
 	deleteOriginals = [self evalBooleanParameterForKey:PKdeleting];
 	openFolders = [self evalBooleanParameterForKey:PKopening];
-	waitUntilFinished =[self evalBooleanParameterForKey:PKwaitUntilFinished];
-	
-	creatingFolderEnum creatingFolderValue  = [evaluatedArgs[PKcreatingFolder] unsignedIntValue];
+	waitUntilFinished = [self evalBooleanParameterForKey:PKwaitUntilFinished];
+
+	creatingFolderEnum creatingFolderValue = [evaluatedArgs[PKcreatingFolder] unsignedIntValue];
 	switch (creatingFolderValue) {
 		case creatingFolderNever:
 			creatingFolder = TUCreateEnclosingDirectoryNever;
@@ -130,16 +122,16 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 			creatingFolder = [[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
 			break;
 	}
-	
-	enumerator=[files objectEnumerator];
+
+	enumerator = [files objectEnumerator];
 	NSString *filename;
-	while((filename=[enumerator nextObject])) {
+	while ((filename = [enumerator nextObject])) {
 		[self unarchiveFile:filename];
 	}
-	
+
 	if (waitUntilFinished) {
-		restoringTimer=[[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:0.5] interval:0.5 target:self selector:@selector(quitIfPossible) userInfo:nil repeats:YES];
-		NSRunLoop *mainLoop =[NSRunLoop currentRunLoop];
+		restoringTimer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:0.5] interval:0.5 target:self selector:@selector(quitIfPossible) userInfo:nil repeats:YES];
+		NSRunLoop *mainLoop = [NSRunLoop currentRunLoop];
 		[mainLoop addTimer:restoringTimer forMode:NSDefaultRunLoopMode];
 		[self suspendExecution];
 	}
@@ -148,11 +140,11 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 
 #pragma mark Custom methods
 
--(BOOL)evalBooleanParameterForKey:(NSString *)parameterKey
+- (BOOL)evalBooleanParameterForKey:(NSString *)parameterKey
 {
 	NSDictionary *evaluatedArgs = self.evaluatedArguments;
 	id parameter = evaluatedArgs[parameterKey];
-	if (! parameter) {
+	if (!parameter) {
 		if ([parameterKey isEqualToString:PKdeleting]) {
 			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKDelete];
 		}
@@ -166,15 +158,15 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 	return [parameter boolValue];
 }
 
--(id)errorFileDontExist:(NSString *)file
+- (id)errorFileDontExist:(NSString *)file
 {
 	self.scriptErrorNumber = fnfErr;
-	NSString *errorMessage = [NSString stringWithFormat:@"The file %@ doesn't exist.",file];
+	NSString *errorMessage = [NSString stringWithFormat:@"The file %@ doesn't exist.", file];
 	self.scriptErrorString = errorMessage;
 	return nil;
 }
 
--(void)quitIfPossible
+- (void)quitIfPossible
 {
 	if ([appController hasRunningExtractions]) {
 		return;
@@ -182,23 +174,23 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 	[self resumeExecutionWithResult:nil];
 }
 
--(void)unarchiveFile:(NSString *)fileName
+- (void)unarchiveFile:(NSString *)fileName
 {
 	NSString *destination;
 	switch (desttype) {
 		default:
 		case UDKDestinationCurrentFolder:
-			destination=fileName.stringByDeletingLastPathComponent;
+			destination = fileName.stringByDeletingLastPathComponent;
 			break;
 		case UDKDestinationDesktop:
-			destination=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
+			destination = [[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 			break;
 		case UDKDestinationCustomPath:
-			destination=extractDestination;
+			destination = extractDestination;
 			break;
 	}
 
-	TUArchiveController *archiveController=[[TUArchiveController alloc] initWithFilename:fileName];
+	TUArchiveController *archiveController = [[TUArchiveController alloc] initWithFilename:fileName];
 	archiveController.destination = destination;
 	archiveController.deleteArchive = deleteOriginals;
 	archiveController.folderCreationMode = creatingFolder;

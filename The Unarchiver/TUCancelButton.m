@@ -1,70 +1,75 @@
 #import "TUCancelButton.h"
 
-
 @implementation TUCancelButton
 
--(instancetype)initWithCoder:(NSCoder *)coder
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-	if((self=[super initWithCoder:coder]))
-	{
-		normal=[NSImage imageNamed:@"close_normal"];
-		hover=[NSImage imageNamed:@"close_hover"];
-		press=[NSImage imageNamed:@"close_press"];
+	if ((self = [super initWithCoder:coder])) {
+		normal = [NSImage imageNamed:@"close_normal"];
+		hover = [NSImage imageNamed:@"close_hover"];
+		press = [NSImage imageNamed:@"close_press"];
 		self.image = normal;
 		self.alternateImage = press;
 		[self setShowsBorderOnlyWhileMouseInside:YES];
-		((NSButtonCell*)self.cell).highlightsBy = NSContentsCellMask;
+		((NSButtonCell *)self.cell).highlightsBy = NSContentsCellMask;
 	}
 	return self;
 }
 
-
--(void)mouseEntered:(NSEvent *)event
+- (void)mouseEntered:(NSEvent *)event
 {
-	if(self.enabled) self.image = hover;
+	if (self.enabled)
+		self.image = hover;
 	[super mouseEntered:event];
 }
 
--(void)mouseExited:(NSEvent *)event
+- (void)mouseExited:(NSEvent *)event
 {
 	self.image = normal;
 	[super mouseExited:event];
 }
 
-
-
--(BOOL)acceptsFirstResponder { return YES; }
-
--(BOOL)becomeFirstResponder { return YES; }
-
--(void)setTrackingRect
+- (BOOL)acceptsFirstResponder
 {
-	NSPoint loc=[self convertPoint:self.window.mouseLocationOutsideOfEventStream fromView:nil];
-	BOOL inside=([self hitTest:loc]==self);
-	if(inside) [self.window makeFirstResponder:self];
-	trackingtag=[self addTrackingRect:self.visibleRect owner:self userData:nil assumeInside:inside];
+	return YES;
 }
 
--(void)clearTrackingRect
+- (BOOL)becomeFirstResponder
+{
+	return YES;
+}
+
+- (void)setTrackingRect
+{
+	NSPoint loc = [self convertPoint:self.window.mouseLocationOutsideOfEventStream fromView:nil];
+	BOOL inside = ([self hitTest:loc] == self);
+	if (inside)
+		[self.window makeFirstResponder:self];
+	trackingtag = [self addTrackingRect:self.visibleRect owner:self userData:nil assumeInside:inside];
+}
+
+- (void)clearTrackingRect
 {
 	[self removeTrackingRect:trackingtag];
 }
 
--(void)resetCursorRects
+- (void)resetCursorRects
 {
 	[super resetCursorRects];
 	[self clearTrackingRect];
 	[self setTrackingRect];
 }
 
--(void)viewWillMoveToWindow:(NSWindow *)win
+- (void)viewWillMoveToWindow:(NSWindow *)win
 {
-	if(!win&&self.window) [self clearTrackingRect];
+	if (!win && self.window)
+		[self clearTrackingRect];
 }
 
--(void)viewDidMoveToWindow
+- (void)viewDidMoveToWindow
 {
-	if(self.window) [self setTrackingRect];
+	if (self.window)
+		[self setTrackingRect];
 }
 
 @end

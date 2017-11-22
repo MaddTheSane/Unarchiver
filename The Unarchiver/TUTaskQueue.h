@@ -1,41 +1,39 @@
 #import <Cocoa/Cocoa.h>
 
-@interface TUTaskQueue:NSObject
-{
+@interface TUTaskQueue : NSObject {
 	NSMutableArray *tasks;
-	BOOL running,stalled;
+	BOOL running, stalled;
 
 	id finishtarget;
 	SEL finishselector;
 }
 
--(instancetype)init;
+- (instancetype)init;
 
--(void)setFinishAction:(SEL)selector target:(id)target;
+- (void)setFinishAction:(SEL)selector target:(id)target;
 
--(id)taskWithTarget:(id)target;
--(void)newTaskWithTarget:(id)target invocation:(NSInvocation *)invocation;
+- (id)taskWithTarget:(id)target;
+- (void)newTaskWithTarget:(id)target invocation:(NSInvocation *)invocation;
 
--(void)stallCurrentTask;
--(void)finishCurrentTask;
+- (void)stallCurrentTask;
+- (void)finishCurrentTask;
 
 @property (readonly, getter=isRunning) BOOL running;
 @property (readonly, getter=isStalled) BOOL stalled;
 @property (readonly, getter=isEmpty) BOOL empty;
 
--(void)restart;
+- (void)restart;
 
 @end
 
-@interface TUTaskTrampoline:NSProxy
-{
+@interface TUTaskTrampoline : NSProxy {
 	id actual;
 	TUTaskQueue *parent;
 }
 
--(instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
+- (instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
 
--(NSMethodSignature *)methodSignatureForSelector:(SEL)sel;
--(void)forwardInvocation:(NSInvocation *)invocation;
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel;
+- (void)forwardInvocation:(NSInvocation *)invocation;
 
 @end

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-//User defaults keys:
+// User defaults keys:
 
 /*
  Keys -> type
@@ -15,7 +15,7 @@
  @"deleteExtractedArchive"
  @"openExtractedArchive"
  @"extractionDestinationPath" string
- 
+
  @"createFolder" integer:
 	1 : only …
 	2 : always
@@ -36,14 +36,16 @@ extern NSString *const UDKModifyFileDates;
 
 typedef NS_ENUM(NSInteger, UDKDestinationType) {
 	UDKDestinationCurrentFolder = 1,
-	UDKDestinationDesktop, //!< //selected by user at pref panel, may be other than ~/Desktop
+	UDKDestinationDesktop, //!< //selected by user at pref panel, may be other
+						   //! than ~/Desktop
 	UDKDestinationSelected,
 	UDKDestinationUninitialized,
 	UDKDestinationCustomPath = 10
 };
 
 typedef NS_ENUM(NSInteger, TUCreateEnclosingDirectory) {
-	TUCreateEnclosingDirectoryMutlipleFilesOnly = 1, //!< Enclose multiple items.
+	TUCreateEnclosingDirectoryMutlipleFilesOnly =
+		1,							  //!< Enclose multiple items.
 	TUCreateEnclosingDirectoryAlways, //!< Always enclose.
-	TUCreateEnclosingDirectoryNever //!< Never enclose.
+	TUCreateEnclosingDirectoryNever   //!< Never enclose.
 };

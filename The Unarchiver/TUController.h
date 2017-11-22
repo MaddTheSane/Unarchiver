@@ -9,9 +9,8 @@
 #import "TUDockTileView.h"
 #import "UserDefaultKeys.h"
 
-@interface TUController:NSObject <NSApplicationDelegate>
-{
-	TUTaskQueue *addtasks,*extracttasks;
+@interface TUController : NSObject <NSApplicationDelegate> {
+	TUTaskQueue *addtasks, *extracttasks;
 	NSMutableArray *archivecontrollers;
 
 	TUDockTileView *docktile;
@@ -32,67 +31,70 @@
 
 	IBOutlet NSButton *singlefilecheckbox;
 
-//	NSMutableDictionary *filesyslocks;
-//	NSLock *metalock;
+	//	NSMutableDictionary *filesyslocks;
+	//	NSLock *metalock;
 }
 
--(instancetype)init;
+- (instancetype)init;
 
--(void)cleanupOrphanedTempDirectories;
+- (void)cleanupOrphanedTempDirectories;
 
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) NSWindow *window;
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasRunningExtractions;
 
--(void)applicationDidFinishLaunching:(NSNotification *)notification;
--(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)app;
--(BOOL)application:(NSApplication *)app openFile:(NSString *)filename;
+- (void)applicationDidFinishLaunching:(NSNotification *)notification;
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)app;
+- (BOOL)application:(NSApplication *)app openFile:(NSString *)filename;
 
--(void)addArchiveControllersForFiles:(NSArray<NSString*> *)filenames destinationType:(UDKDestinationType)desttype;
--(void)addArchiveControllersForURLs:(NSArray<NSURL*> *)urls destinationType:(UDKDestinationType)desttype;
--(void)addArchiveControllerForFile:(NSString *)filename destinationType:(UDKDestinationType)desttype;
--(void)addArchiveController:(TUArchiveController *)archive;
--(void)actuallyAddArchiveController:(TUArchiveController *)archive;
--(TUArchiveController *)archiveControllerForFilename:(NSString *)filename;
+- (void)addArchiveControllersForFiles:(NSArray<NSString *> *)filenames destinationType:(UDKDestinationType)desttype;
+- (void)addArchiveControllersForURLs:(NSArray<NSURL *> *)urls destinationType:(UDKDestinationType)desttype;
+- (void)addArchiveControllerForFile:(NSString *)filename destinationType:(UDKDestinationType)desttype;
+- (void)addArchiveController:(TUArchiveController *)archive;
+- (void)actuallyAddArchiveController:(TUArchiveController *)archive;
+- (TUArchiveController *)archiveControllerForFilename:(NSString *)filename;
 
--(void)findDestinationForArchiveController:(TUArchiveController *)archive;
--(void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive;
--(void)checkDestinationForArchiveController:(TUArchiveController *)archive;
--(void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)info;
--(void)archiveTaskView:(TUArchiveTaskView *)taskview notWritableResponse:(int)response;
--(void)prepareArchiveController:(TUArchiveController *)archive;
--(void)finishSetupForArchiveController:(TUArchiveController *)archive;
--(void)cancelSetupForArchiveController:(TUArchiveController *)archive;
--(void)addQueueEmpty:(TUTaskQueue *)queue;
--(void)archiveTaskViewCancelledBeforeExtract:(TUArchiveTaskView *)taskview;
+- (void)findDestinationForArchiveController:(TUArchiveController *)archive;
+- (void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive;
+- (void)checkDestinationForArchiveController:(TUArchiveController *)archive;
+- (void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void *)info;
+- (void)archiveTaskView:(TUArchiveTaskView *)taskview notWritableResponse:(int)response;
+- (void)prepareArchiveController:(TUArchiveController *)archive;
+- (void)finishSetupForArchiveController:(TUArchiveController *)archive;
+- (void)cancelSetupForArchiveController:(TUArchiveController *)archive;
+- (void)addQueueEmpty:(TUTaskQueue *)queue;
+- (void)archiveTaskViewCancelledBeforeExtract:(TUArchiveTaskView *)taskview;
 
--(void)startExtractionForArchiveController:(TUArchiveController *)archive;
--(void)archiveControllerFinished:(TUArchiveController *)archive;
+- (void)startExtractionForArchiveController:(TUArchiveController *)archive;
+- (void)archiveControllerFinished:(TUArchiveController *)archive;
 
--(void)listResized:(id)sender;
+- (void)listResized:(id)sender;
 
--(void)updateDestinationPopup;
--(IBAction)changeDestination:(id)sender;
--(void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void  *)context;
+- (void)updateDestinationPopup;
+- (IBAction)changeDestination:(id)sender;
+- (void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void *)context;
 
--(void)unarchiveToCurrentFolderWithPasteboard:(NSPasteboard *)pboard
-userData:(NSString *)data error:(NSString **)error;
--(void)unarchiveToDesktopWithPasteboard:(NSPasteboard *)pboard
-userData:(NSString *)data error:(NSString **)error;
--(void)unarchiveToWithPasteboard:(NSPasteboard *)pboard
-userData:(NSString *)data error:(NSString **)error;
+- (void)unarchiveToCurrentFolderWithPasteboard:(NSPasteboard *)pboard
+									  userData:(NSString *)data
+										 error:(NSString **)error;
+- (void)unarchiveToDesktopWithPasteboard:(NSPasteboard *)pboard
+								userData:(NSString *)data
+								   error:(NSString **)error;
+- (void)unarchiveToWithPasteboard:(NSPasteboard *)pboard
+						 userData:(NSString *)data
+							error:(NSString **)error;
 
--(IBAction)unarchiveToCurrentFolder:(id)sender;
--(IBAction)unarchiveToDesktop:(id)sender;
--(IBAction)unarchiveTo:(id)sender;
--(void)selectAndUnarchiveFilesWithDestination:(int)desttype;
+- (IBAction)unarchiveToCurrentFolder:(id)sender;
+- (IBAction)unarchiveToDesktop:(id)sender;
+- (IBAction)unarchiveTo:(id)sender;
+- (void)selectAndUnarchiveFilesWithDestination:(int)desttype;
 
--(IBAction)changeCreateFolder:(id)sender;
+- (IBAction)changeCreateFolder:(id)sender;
 
--(IBAction)openSupportBoard:(id)sender;
--(IBAction)openBugReport:(id)sender;
--(IBAction)openHomePage:(id)sender;
+- (IBAction)openSupportBoard:(id)sender;
+- (IBAction)openBugReport:(id)sender;
+- (IBAction)openHomePage:(id)sender;
 
-+(NSImage *)iconForPath:(NSString *)path;
++ (NSImage *)iconForPath:(NSString *)path;
 
 /*-(void)lockFileSystem:(NSString *)filename;
 -(BOOL)tryFileSystemLock:(NSString *)filename;

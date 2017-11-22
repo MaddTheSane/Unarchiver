@@ -4,36 +4,35 @@
 #import "TUDockTileView.h"
 #import "UserDefaultKeys.h"
 
-@class TUController,TUEncodingPopUp;
+@class TUController, TUEncodingPopUp;
 
-@interface TUArchiveController:NSObject <XADSimpleUnarchiverDelegate>
-{
+@interface TUArchiveController : NSObject <XADSimpleUnarchiverDelegate> {
 	TUArchiveTaskView *view;
 	TUDockTileView *docktile;
 	XADSimpleUnarchiver *unarchiver;
 
-	NSString *archivename,*destination,*tmpdest;
+	NSString *archivename, *destination, *tmpdest;
 	NSStringEncoding selected_encoding;
 
 	id finishtarget;
 	SEL finishselector;
 
 	TUCreateEnclosingDirectory foldermodeoverride;
-	int copydateoverride,changefilesoverride;
-	int deletearchiveoverride,openextractedoverride;
+	int copydateoverride, changefilesoverride;
+	int deletearchiveoverride, openextractedoverride;
 
-	BOOL cancelled,ignoreall,haderrors;
+	BOOL cancelled, ignoreall, haderrors;
 
-	#ifndef IsLegacyVersion
-	NSMutableArray<NSURL*> *scopedurls;
-	#endif
+#ifndef IsLegacyVersion
+	NSMutableArray<NSURL *> *scopedurls;
+#endif
 }
 
-+(void)clearGlobalPassword;
++ (void)clearGlobalPassword;
 
--(instancetype)init UNAVAILABLE_ATTRIBUTE;
--(instancetype)initWithFilename:(NSString *)filename NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithURL:(NSURL *)url;
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithFilename:(NSString *)filename NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithURL:(NSURL *)url;
 
 @property (strong) TUArchiveTaskView *taskView;
 @property (strong) TUDockTileView *dockTileView;
@@ -47,28 +46,28 @@
 @property BOOL isCancelled;
 
 #ifdef UseSandbox
--(void)useSecurityScopedURL:(NSURL *)url;
+- (void)useSecurityScopedURL:(NSURL *)url;
 #endif
 
 @property (readonly, copy) NSString *filename;
-@property (readonly, copy) NSArray<NSString*> *allFilenames;
+@property (readonly, copy) NSArray<NSString *> *allFilenames;
 @property (readonly) BOOL volumeScanningFailed;
 @property (readonly) BOOL caresAboutPasswordEncoding;
 
 @property (readonly, copy) NSString *currentArchiveName;
--(NSString *)localizedDescriptionOfError:(XADError)error;
--(NSString *)stringForXADPath:(XADPath *)path;
+- (NSString *)localizedDescriptionOfError:(XADError)error;
+- (NSString *)stringForXADPath:(XADPath *)path;
 
--(void)prepare;
--(void)runWithFinishAction:(SEL)selector target:(id)target;
+- (void)prepare;
+- (void)runWithFinishAction:(SEL)selector target:(id)target;
 
--(void)extractThreadEntry;
--(void)extract;
--(void)extractFinished;
--(void)extractFailed;
--(void)rememberTempDirectory:(NSString *)tmpdir;
--(void)forgetTempDirectory:(NSString *)tmpdir;
+- (void)extractThreadEntry;
+- (void)extract;
+- (void)extractFinished;
+- (void)extractFailed;
+- (void)rememberTempDirectory:(NSString *)tmpdir;
+- (void)forgetTempDirectory:(NSString *)tmpdir;
 
--(void)archiveTaskViewCancelled:(TUArchiveTaskView *)taskview;
+- (void)archiveTaskViewCancelled:(TUArchiveTaskView *)taskview;
 
 @end
