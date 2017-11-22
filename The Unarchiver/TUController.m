@@ -810,8 +810,8 @@ userData:(NSString *)data error:(NSString **)error
 
 -(IBAction)changeCreateFolder:(id)sender
 {
-	int createfolder=(int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
-	singlefilecheckbox.enabled = createfolder==1;
+	TUCreateEnclosingDirectory createfolder=[[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
+	singlefilecheckbox.enabled = createfolder==TUCreateEnclosingDirectoryMutlipleFilesOnly;
 }
 
 
