@@ -430,15 +430,9 @@
 		1BBC510215388816002A1615 /* lv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BBC510315388816002A1615 /* lv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1BBEFA6214F5A65800790E4B /* The Unarchiver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "The Unarchiver.entitlements"; sourceTree = "<group>"; };
-		1BE83CD1151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PasswordView.xib; sourceTree = "<group>"; };
-		1BE83CD2151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EncodingView.xib; sourceTree = "<group>"; };
 		1BE83CD3151E303E002C542F /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
-		1BE83CD4151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1BE83CD5151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NotWritableView.xib; sourceTree = "<group>"; };
 		1BE83CD6151E303E002C542F /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BE83CD7151E303E002C542F /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1BE83CD8151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OpenErrorView.xib; sourceTree = "<group>"; };
-		1BE83CD9151E303E002C542F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ErrorView.xib; sourceTree = "<group>"; };
 		1BE83CE3151E3093002C542F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/PasswordView.xib; sourceTree = "<group>"; };
 		1BE83CE4151E3093002C542F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/EncodingView.xib; sourceTree = "<group>"; };
 		1BE83CE5151E3093002C542F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
@@ -504,6 +498,18 @@
 		551F2AA91FC57AA800CE4E5A /* TUEncodingPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEncodingPopUp.swift; sourceTree = "<group>"; };
 		5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultKeys.m; sourceTree = "<group>"; };
 		5559ABA71FC5E52E002CB79D /* UserDefaultKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultKeys.h; sourceTree = "<group>"; };
+		5559ABA81FC62A95002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5559ABA91FC62A96002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ErrorView.xib; sourceTree = "<group>"; };
+		5559ABAA1FC62A96002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NotWritableView.xib; sourceTree = "<group>"; };
+		5559ABAB1FC62A96002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OpenErrorView.xib; sourceTree = "<group>"; };
+		5559ABAC1FC62A96002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PasswordView.xib; sourceTree = "<group>"; };
+		5559ABAD1FC62A96002CB79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EncodingView.xib; sourceTree = "<group>"; };
+		5559ABAF1FC62AB3002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5559ABB11FC62ABB002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ErrorView.strings; sourceTree = "<group>"; };
+		5559ABB31FC62AC2002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NotWritableView.strings; sourceTree = "<group>"; };
+		5559ABB51FC62AC7002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OpenErrorView.strings; sourceTree = "<group>"; };
+		5559ABB71FC62ACB002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PasswordView.strings; sourceTree = "<group>"; };
+		5559ABB91FC62ACF002CB79D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EncodingView.strings; sourceTree = "<group>"; };
 		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XADMaster.xcodeproj; path = ../XADMaster/XADMaster/XADMaster.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -784,6 +790,7 @@
 				bg,
 				"pt-BR",
 				hu,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* The Unarchiver */;
 			projectDirPath = "";
@@ -1155,7 +1162,6 @@
 		1B1D47B90AFCBE94009AA7EB /* ErrorView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD9151E303E002C542F /* en */,
 				1BE83CEB151E3093002C542F /* de */,
 				1BE83CF4151E3097002C542F /* fr */,
 				1BE83CFD151E309A002C542F /* it */,
@@ -1175,6 +1181,8 @@
 				1B738CBE17DE856C00481D43 /* nl */,
 				1B61E9391B5D8149005AE72C /* hu */,
 				551F2A6C1FC4D4A800CE4E5A /* sv */,
+				5559ABA91FC62A96002CB79D /* Base */,
+				5559ABB11FC62ABB002CB79D /* en */,
 			);
 			name = ErrorView.xib;
 			sourceTree = "<group>";
@@ -1182,7 +1190,6 @@
 		1B1D47BB0AFCBE94009AA7EB /* OpenErrorView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD8151E303E002C542F /* en */,
 				1BE83CEA151E3093002C542F /* de */,
 				1BE83CF3151E3097002C542F /* fr */,
 				1BE83CFC151E309A002C542F /* it */,
@@ -1202,6 +1209,8 @@
 				1B738CBF17DE856C00481D43 /* nl */,
 				1B61E93A1B5D8149005AE72C /* hu */,
 				551F2A6E1FC4D4B500CE4E5A /* sv */,
+				5559ABAB1FC62A96002CB79D /* Base */,
+				5559ABB51FC62AC7002CB79D /* en */,
 			);
 			name = OpenErrorView.xib;
 			sourceTree = "<group>";
@@ -1209,7 +1218,6 @@
 		1B1D47BD0AFCBE94009AA7EB /* PasswordView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD1151E303E002C542F /* en */,
 				1BE83CE3151E3093002C542F /* de */,
 				1BE83CEC151E3097002C542F /* fr */,
 				1BE83CF5151E309A002C542F /* it */,
@@ -1229,6 +1237,8 @@
 				1B738CC017DE856C00481D43 /* nl */,
 				1B61E93B1B5D8149005AE72C /* hu */,
 				551F2A6F1FC4D4BA00CE4E5A /* sv */,
+				5559ABAC1FC62A96002CB79D /* Base */,
+				5559ABB71FC62ACB002CB79D /* en */,
 			);
 			name = PasswordView.xib;
 			sourceTree = "<group>";
@@ -1236,7 +1246,6 @@
 		1B1D47BF0AFCBE94009AA7EB /* EncodingView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD2151E303E002C542F /* en */,
 				1BE83CE4151E3093002C542F /* de */,
 				1BE83CED151E3097002C542F /* fr */,
 				1BE83CF6151E309A002C542F /* it */,
@@ -1256,6 +1265,8 @@
 				1B738CC117DE856C00481D43 /* nl */,
 				1B61E9331B5D8149005AE72C /* hu */,
 				551F2A701FC4D4BF00CE4E5A /* sv */,
+				5559ABAD1FC62A96002CB79D /* Base */,
+				5559ABB91FC62ACF002CB79D /* en */,
 			);
 			name = EncodingView.xib;
 			sourceTree = "<group>";
@@ -1290,7 +1301,6 @@
 		1B81DBD00FF98BF9005C5B23 /* NotWritableView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD5151E303E002C542F /* en */,
 				1BE83CE7151E3093002C542F /* de */,
 				1BE83CF0151E3097002C542F /* fr */,
 				1BE83CF9151E309A002C542F /* it */,
@@ -1310,6 +1320,8 @@
 				1B738CBD17DE856C00481D43 /* nl */,
 				1B61E9381B5D8149005AE72C /* hu */,
 				551F2A6D1FC4D4AF00CE4E5A /* sv */,
+				5559ABAA1FC62A96002CB79D /* Base */,
+				5559ABB31FC62AC2002CB79D /* en */,
 			);
 			name = NotWritableView.xib;
 			sourceTree = "<group>";
@@ -1317,7 +1329,6 @@
 		29B97318FDCFA39411CA2CEA /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1BE83CD4151E303E002C542F /* en */,
 				1BE83CE6151E3093002C542F /* de */,
 				1BE83CEF151E3097002C542F /* fr */,
 				1BE83CF8151E309A002C542F /* it */,
@@ -1337,6 +1348,8 @@
 				1B738CBC17DE856C00481D43 /* nl */,
 				1B61E9371B5D8149005AE72C /* hu */,
 				551F2A6B1FC4D49F00CE4E5A /* sv */,
+				5559ABA81FC62A95002CB79D /* Base */,
+				5559ABAF1FC62AB3002CB79D /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

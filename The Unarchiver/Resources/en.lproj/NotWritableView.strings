@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "This folder is not writable, so the archive can not be extracted here."; ObjectID = "50"; */
+"50.title" = "This folder is not writable, so the archive can not be extracted here.";
+
+/* Class = "NSButtonCell"; title = "Extract to Desktop"; ObjectID = "51"; */
+"51.title" = "Extract to Desktop";
+
+/* Class = "NSButtonCell"; title = "Stop"; ObjectID = "52"; */
+"52.title" = "Stop";
+
+/* Class = "NSButtonCell"; title = "Extract Elsewhere…"; ObjectID = "53"; */
+"53.title" = "Extract Elsewhere…";
