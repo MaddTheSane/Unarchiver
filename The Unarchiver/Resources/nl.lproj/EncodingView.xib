@@ -47,7 +47,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton verticalHuggingPriority="750" id="38" customClass="TUEncodingPopUp">
+                <popUpButton verticalHuggingPriority="750" id="38" customClass="TUEncodingPopUp" customModule="The_Unarchiver" customModuleProvider="target">
                     <rect key="frame" x="115" y="52" width="313" height="26"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="55">

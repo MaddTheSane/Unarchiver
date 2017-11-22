@@ -236,14 +236,14 @@
                             <tabViewItem label="Formatos de arquivo" identifier="1" id="569">
                                 <view key="view" id="570">
                                     <rect key="frame" x="10" y="33" width="450" height="309"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="574">
                                             <rect key="frame" x="20" y="43" width="413" height="241"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="exz-qM-uRL">
                                                 <rect key="frame" x="1" y="0.0" width="411" height="240"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" headerView="575" id="578" customClass="CSFileTypeList">
                                                         <rect key="frame" x="0.0" y="0.0" width="411" height="217"/>
@@ -503,7 +503,7 @@
                             <tabViewItem label="Avançadas" identifier="2" id="568">
                                 <view key="view" id="588">
                                     <rect key="frame" x="10" y="33" width="450" height="309"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Detecção automática da codifiação de nomes de ficheiro" id="589">
                                             <rect key="frame" x="8" y="171" width="434" height="128"/>
@@ -512,7 +512,7 @@
                                                 <rect key="frame" x="2" y="2" width="430" height="111"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="597" customClass="TUEncodingPopUp">
+                                                    <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="597" customClass="TUEncodingPopUp" customModule="The_Unarchiver" customModuleProvider="target">
                                                         <rect key="frame" x="142" y="76" width="275" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="598">

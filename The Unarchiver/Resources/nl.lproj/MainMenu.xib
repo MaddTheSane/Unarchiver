@@ -245,7 +245,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="aQQ-SA-eYq">
                                                 <rect key="frame" x="1" y="0.0" width="411" height="240"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" headerView="432" id="240" customClass="CSFileTypeList">
                                                         <rect key="frame" x="0.0" y="0.0" width="411" height="217"/>
@@ -514,7 +514,7 @@
                                                 <rect key="frame" x="2" y="2" width="430" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <popUpButton verticalHuggingPriority="750" id="265" customClass="TUEncodingPopUp">
+                                                    <popUpButton verticalHuggingPriority="750" id="265" customClass="TUEncodingPopUp" customModule="The_Unarchiver" customModuleProvider="target">
                                                         <rect key="frame" x="142" y="85" width="275" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <popUpButtonCell key="cell" type="push" title="dummy" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="269" id="410">

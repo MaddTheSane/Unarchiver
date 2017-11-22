@@ -505,7 +505,7 @@
                             <tabViewItem label="Advanced" identifier="2" id="237">
                                 <view key="view" id="238">
                                     <rect key="frame" x="10" y="33" width="450" height="309"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box title="Filename encoding autodetection" id="263">
                                             <rect key="frame" x="8" y="171" width="434" height="128"/>
@@ -514,7 +514,7 @@
                                                 <rect key="frame" x="2" y="2" width="430" height="111"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <popUpButton verticalHuggingPriority="750" id="265" customClass="TUEncodingPopUp">
+                                                    <popUpButton verticalHuggingPriority="750" id="265" customClass="TUEncodingPopUp" customModule="The_Unarchiver" customModuleProvider="target">
                                                         <rect key="frame" x="142" y="76" width="275" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <popUpButtonCell key="cell" type="push" title="dummy" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="269" id="410">
