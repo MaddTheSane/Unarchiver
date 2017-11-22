@@ -86,7 +86,7 @@
 - (IBAction)unarchiveToCurrentFolder:(id)sender;
 - (IBAction)unarchiveToDesktop:(id)sender;
 - (IBAction)unarchiveTo:(id)sender;
-- (void)selectAndUnarchiveFilesWithDestination:(int)desttype;
+- (void)selectAndUnarchiveFilesWithDestination:(UDKDestinationType)desttype;
 
 - (IBAction)changeCreateFolder:(id)sender;
 

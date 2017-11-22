@@ -286,7 +286,7 @@
 
 	[encodingpopup buildEncodingListMatchingXADString:string];
 	if (encoding) {
-		int index = (int)[encodingpopup indexOfItemWithTag:encoding];
+		NSInteger index = [encodingpopup indexOfItemWithTag:encoding];
 		if (index >= 0)
 			[encodingpopup selectItemAtIndex:index];
 		else

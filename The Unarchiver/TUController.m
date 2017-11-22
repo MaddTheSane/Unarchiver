@@ -272,7 +272,7 @@ static BOOL IsPathWritable(NSString *path);
 	archive.dockTileView = docktile;
 
 	[archivecontrollers addObject:archive];
-	[docktile setCount:(int)archivecontrollers.count];
+	[docktile setCount:archivecontrollers.count];
 
 	[NSApp activateIgnoringOtherApps:YES];
 	[mainwindow makeKeyAndOrderFront:nil];
@@ -561,7 +561,7 @@ static BOOL IsPathWritable(NSString *path);
 - (void)cancelSetupForArchiveController:(TUArchiveController *)archive
 {
 	[archivecontrollers removeObjectIdenticalTo:archive];
-	[docktile setCount:(int)archivecontrollers.count];
+	[docktile setCount:archivecontrollers.count];
 	[mainlist removeTaskView:archive.taskView];
 	[addtasks finishCurrentTask];
 }
@@ -588,7 +588,7 @@ static BOOL IsPathWritable(NSString *path);
 {
 	if (archive.isCancelled) {
 		[archivecontrollers removeObjectIdenticalTo:archive];
-		[docktile setCount:(int)archivecontrollers.count];
+		[docktile setCount:archivecontrollers.count];
 		[extracttasks finishCurrentTask];
 		return;
 	}
@@ -601,7 +601,7 @@ static BOOL IsPathWritable(NSString *path);
 - (void)archiveControllerFinished:(TUArchiveController *)archive
 {
 	[archivecontrollers removeObjectIdenticalTo:archive];
-	[docktile setCount:(int)archivecontrollers.count];
+	[docktile setCount:archivecontrollers.count];
 	[mainlist removeTaskView:archive.taskView];
 	[extracttasks finishCurrentTask];
 }
@@ -752,7 +752,7 @@ static BOOL IsPathWritable(NSString *path);
 	[self selectAndUnarchiveFilesWithDestination:UDKDestinationSelected];
 }
 
-- (void)selectAndUnarchiveFilesWithDestination:(int)desttype
+- (void)selectAndUnarchiveFilesWithDestination:(UDKDestinationType)desttype
 {
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
 
@@ -761,7 +761,7 @@ static BOOL IsPathWritable(NSString *path);
 	[panel setTitle:NSLocalizedString(@"Select files to unarchive", @"Panel title when choosing archives to extract")];
 	[panel setPrompt:NSLocalizedString(@"Unarchive", @"Panel OK button title when choosing archives to extract")];
 
-	int res = (int)[panel runModal];
+	NSInteger res = [panel runModal];
 
 	if (res == NSOKButton) {
 #ifdef IsLegacyVersion
