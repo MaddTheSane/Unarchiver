@@ -88,7 +88,7 @@ static BOOL HasPathPrefix(NSString *_Nonnull path,NSString *_Nonnull prefix);
 {
 	path=path.stringByResolvingSymlinksInPath;
 
-	for(NSObject <CSURLCacheProvider> *provider in providers)
+	for(id<CSURLCacheProvider> provider in providers)
 	{
 		for(NSString *urlpath in provider.availablePaths)
 		{

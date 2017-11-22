@@ -9,7 +9,7 @@
 #import "TUDockTileView.h"
 #import "UserDefaultKeys.h"
 
-@interface TUController:NSObject
+@interface TUController:NSObject <NSApplicationDelegate>
 {
 	TUTaskQueue *addtasks,*extracttasks;
 	NSMutableArray *archivecontrollers;

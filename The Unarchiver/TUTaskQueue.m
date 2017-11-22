@@ -1,6 +1,8 @@
 #import "TUTaskQueue.h"
 
 @implementation TUTaskQueue
+@synthesize running;
+@synthesize stalled;
 
 -(instancetype)init
 {
@@ -53,16 +55,6 @@
 	running=NO;
 
 	[self restart];
-}
-
--(BOOL)isRunning
-{
-	return running;
-}
-
--(BOOL)isStalled
-{
-	return stalled;
 }
 
 -(BOOL)isEmpty

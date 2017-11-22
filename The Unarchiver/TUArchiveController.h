@@ -6,7 +6,7 @@
 
 @class TUController,TUEncodingPopUp;
 
-@interface TUArchiveController:NSObject
+@interface TUArchiveController:NSObject <XADSimpleUnarchiverDelegate>
 {
 	TUArchiveTaskView *view;
 	TUDockTileView *docktile;
@@ -33,6 +33,7 @@
 
 -(instancetype)init UNAVAILABLE_ATTRIBUTE;
 -(instancetype)initWithFilename:(NSString *)filename NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithURL:(NSURL *)url;
 
 @property (strong) TUArchiveTaskView *taskView;
 @property (strong) TUDockTileView *dockTileView;

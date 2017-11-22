@@ -8,7 +8,7 @@
 	NSView *blockerview;
 }
 
-+(void)setDisabledInSandbox:(BOOL)disabled;
+@property (class) BOOL disabledInSandbox;
 
 -(instancetype)initWithCoder:(NSCoder *)coder;
 -(instancetype)initWithFrame:(NSRect)frame;
@@ -31,7 +31,7 @@
 	NSArray *filetypes;
 }
 
--(instancetype)init;
+-(instancetype)init NS_DESIGNATED_INITIALIZER;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray<NSString *> *readFileTypes;
 
 -(void)claimAllTypesExceptAlternate;

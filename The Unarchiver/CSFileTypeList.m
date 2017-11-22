@@ -20,6 +20,11 @@ static BOOL DisabledInSandbox=YES;
 	DisabledInSandbox=disabled;
 }
 
++(BOOL)disabledInSandbox
+{
+	return DisabledInSandbox;
+}
+
 -(instancetype)initWithCoder:(NSCoder *)coder
 {
 	if((self=[super initWithCoder:coder]))
@@ -230,9 +235,7 @@ static BOOL DisabledInSandbox=YES;
 
 -(void)claimAllTypesExceptAlternate
 {
-	NSEnumerator *enumerator=[filetypes objectEnumerator];
-	NSDictionary *type;
-	while((type=[enumerator nextObject]))
+	for(NSDictionary *type in filetypes)
 	{
 		if([type[@"alternate"] boolValue]) [self surrenderType:type[@"type"]];
 		else [self claimType:type[@"type"]];
@@ -241,9 +244,7 @@ static BOOL DisabledInSandbox=YES;
 
 -(void)surrenderAllTypes
 {
-	NSEnumerator *enumerator=[filetypes objectEnumerator];
-	NSDictionary *type;
-	while((type=[enumerator nextObject])) [self surrenderType:type[@"type"]];
+	for(NSDictionary *type in filetypes) [self surrenderType:type[@"type"]];
 }
 
 -(void)claimType:(NSString *)type

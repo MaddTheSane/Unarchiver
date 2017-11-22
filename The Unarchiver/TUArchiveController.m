@@ -11,10 +11,6 @@
 static NSString *globalpassword=nil;
 NSStringEncoding globalpasswordencoding=0;
 
-@interface TUArchiveController () <XADSimpleUnarchiverDelegate>
-
-@end
-
 @implementation TUArchiveController
 @synthesize taskView = view;
 @synthesize dockTileView = docktile;
@@ -59,9 +55,16 @@ NSStringEncoding globalpasswordencoding=0;
 	return self;
 }
 
+-(instancetype)initWithURL:(NSURL *)url
+{
+	if (!url.fileURL) {
+		return nil;
+	}
+	return self = [self initWithFilename:url.path];
+}
+
 -(void)dealloc
 {
-
 	#ifdef UseSandbox
 	for(NSURL *scopedurl in scopedurls)
 	{
