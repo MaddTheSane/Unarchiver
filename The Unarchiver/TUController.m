@@ -1,3 +1,7 @@
+#include <unistd.h>
+#include <sys/stat.h>
+#include <Carbon/Carbon.h>
+
 #import "TUController.h"
 #import "TUArchiveController.h"
 #import "TUTaskListView.h"
@@ -14,10 +18,6 @@
 #ifdef UseSparkle
 #import <Sparkle/Sparkle.h>
 #endif
-
-#import <unistd.h>
-#import <sys/stat.h>
-#import <Carbon/Carbon.h>
 
 
 static BOOL IsPathWritable(NSString *path);
@@ -44,9 +44,9 @@ static BOOL IsPathWritable(NSString *path);
 		[addtasks setFinishAction:@selector(addQueueEmpty:) target:self];
 		[extracttasks setFinishAction:@selector(extractQueueEmpty:) target:self];
 
-		#ifdef UseSparkle
+#ifdef UseSparkle
 		[SUUpdater new];
-		#endif
+#endif
 	}
 	return self;
 }
@@ -68,7 +68,7 @@ static BOOL IsPathWritable(NSString *path);
 	if(floor(NSAppKitVersionNumber)<=NSAppKitVersionNumber10_3)
 	[prefstabs removeTabViewItem:formattab];
 
-	#ifdef UseSparkle
+#ifdef UseSparkle
 	NSMenu *mainmenu=[[NSApplication sharedApplication] mainMenu];
 	NSMenu *appmenu=[[mainmenu itemAtIndex:0] submenu];
 
@@ -78,7 +78,7 @@ static BOOL IsPathWritable(NSString *path);
 	item.action=@selector(checkForUpdates:);
 
 	[appmenu insertItem:item atIndex:1];
-	#endif
+#endif
 
 	[encodingpopup buildEncodingListWithAutoDetect];
 	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:UDKFileNameEncoding];
@@ -103,22 +103,22 @@ static BOOL IsPathWritable(NSString *path);
 	NSString *tmpdir;
 	while((tmpdir=[enumerator nextObject]))
 	{
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 		[fm removeFileAtPath:tmpdir handler:nil];
-		#else
+#else
 
-		#ifdef UseSandbox
+#ifdef UseSandbox
 		NSURL *url=[[CSURLCache defaultCache] securityScopedURLAllowingAccessToPath:tmpdir];
 		[url startAccessingSecurityScopedResource];
-		#endif
+#endif
 
 		[fm removeItemAtPath:tmpdir error:nil];
 
-		#ifdef UseSandbox
+#ifdef UseSandbox
 		[url stopAccessingSecurityScopedResource];
-		#endif
+#endif
 
-		#endif
+#endif
 	}
 
 	[defs setObject:@[] forKey:@"orphanedTempDirectories"];
@@ -127,8 +127,6 @@ static BOOL IsPathWritable(NSString *path);
 
 
 
-
--(NSWindow *)window { return mainwindow; }
 
 -(BOOL)hasRunningExtractions
 {
@@ -142,7 +140,7 @@ static BOOL IsPathWritable(NSString *path);
 	NSApp.servicesProvider = self;
 	[self performSelector:@selector(delayedAfterLaunch) withObject:nil afterDelay:0.3];
 
-	#ifdef UseSandbox
+#ifdef UseSandbox
 	if([[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination]==UDKDestinationUninitialized)
 	{
 		NSArray *array=[NSBundle mainBundle].preferredLocalizations;
@@ -171,7 +169,7 @@ static BOOL IsPathWritable(NSString *path);
 			setInteger:UDKDestinationCurrentFolder forKey:UDKDestination];
 		}
 	}
-	#endif
+#endif
 }
 
 -(void)delayedAfterLaunch
@@ -202,10 +200,10 @@ static BOOL IsPathWritable(NSString *path);
 {
 	opened=YES;
 
-	#ifdef UseSandbox
+#ifdef UseSandbox
 	// Get rid of sandbox junk.
 	filename=filename.stringByResolvingSymlinksInPath;
-	#endif
+#endif
 
 	UDKDestinationType desttype;
 	if(GetCurrentKeyModifiers()&(optionKey|shiftKey)) desttype=UDKDestinationSelected;
@@ -236,15 +234,15 @@ static BOOL IsPathWritable(NSString *path);
 		default:
 		case UDKDestinationCurrentFolder:
 			destination=filename.stringByDeletingLastPathComponent;
-		break;
+			break;
 
 		case UDKDestinationDesktop:
 			destination=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
-		break;
+			break;
 
 		case UDKDestinationSelected:
 			destination=selecteddestination;
-		break;
+			break;
 	}
 
 	TUArchiveController *archive=[[TUArchiveController alloc] initWithFilename:filename];
@@ -316,7 +314,7 @@ static BOOL IsPathWritable(NSString *path);
 
 		NSString *rememberedpath=[[NSUserDefaults standardUserDefaults] stringForKey:@"lastDestination"];
 
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 
 		if(rememberedpath) [panel setDirectory:rememberedpath];
 
@@ -324,7 +322,7 @@ static BOOL IsPathWritable(NSString *path);
 		modalDelegate:self didEndSelector:@selector(archiveDestinationPanelDidEnd:returnCode:contextInfo:)
 		contextInfo:archive];
 
-		#else
+#else
 
 		if(rememberedpath) panel.directoryURL = [NSURL fileURLWithPath:rememberedpath];
 
@@ -332,7 +330,7 @@ static BOOL IsPathWritable(NSString *path);
 			[self archiveDestinationPanelDidEnd:panel returnCode:result contextInfo:(__bridge void *)(archive)];
 		}];
 
-		#endif
+#endif
 
 		return;
 	}
@@ -342,11 +340,11 @@ static BOOL IsPathWritable(NSString *path);
 
 -(void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive
 {
-	#ifndef UseSandbox
+#ifndef UseSandbox
 
 	[self checkDestinationForArchiveController:archive];
 
-	#else
+#else
 
 	NSString *destination=archive.destination;
 
@@ -407,7 +405,7 @@ static BOOL IsPathWritable(NSString *path);
 		}];
 	}
 
-	#endif
+#endif
 }
 
 -(void)checkDestinationForArchiveController:(TUArchiveController *)archive
@@ -434,15 +432,15 @@ static BOOL IsPathWritable(NSString *path);
 	if(res==NSOKButton)
 	{
 
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 		selecteddestination=[[panel directory] retain];
-		#else
+#else
 		NSURL *url=panel.URL;
-		#ifdef UseSandbox
+#ifdef UseSandbox
 		[[CSURLCache defaultCache] cacheSecurityScopedURL:url];
-		#endif
+#endif
 		selecteddestination=url.path;
-		#endif
+#endif
 
 		[[NSUserDefaults standardUserDefaults] setObject:selecteddestination forKey:@"lastDestination"];
 
@@ -463,7 +461,7 @@ static BOOL IsPathWritable(NSString *path);
 	{
 		case 0: // Cancel.
 			[self cancelSetupForArchiveController:archive];
-		break;
+			break;
 
 		case 1: // To desktop.
 		{
@@ -473,25 +471,25 @@ static BOOL IsPathWritable(NSString *path);
 			[archive.taskView setupWaitView];
 			[self gainAccessToDestinationForArchiveController:archive];
 		}
-		break;
+			break;
 
 		case 2: // Elsewhere.
 			[archive setDestination:nil];
 			[archive.taskView setupWaitView];
 			[self findDestinationForArchiveController:archive];
-		break;
+			break;
 	}
 }
 
 -(void)prepareArchiveController:(TUArchiveController *)archive
 {
-	#ifndef UseSandbox
+#ifndef UseSandbox
 
 	// With no sandbox, this is easy.
 	[archive prepare];
 	[self finishSetupForArchiveController:archive];
 
-	#else
+#else
 
 	// With the sandbox, on the other hand...
 
@@ -566,7 +564,7 @@ static BOOL IsPathWritable(NSString *path);
 		}
 	}
 
-	#endif
+#endif
 }
 
 -(void)finishSetupForArchiveController:(TUArchiveController *)archive
@@ -696,18 +694,18 @@ static BOOL IsPathWritable(NSString *path);
 		[panel setCanChooseFiles:NO];
 		[panel setPrompt:NSLocalizedString(@"Select",@"Panel OK button title when choosing a default unarchiving destination")];
 
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 		[panel beginSheetForDirectory:oldpath file:@"" types:nil
 		modalForWindow:prefswindow modalDelegate:self
 		didEndSelector:@selector(destinationPanelDidEnd:returnCode:contextInfo:)
 		contextInfo:nil];
-		#else
+#else
 		panel.directoryURL = [NSURL fileURLWithPath:oldpath];
 		[panel setAllowedFileTypes:nil];
 		[panel beginSheetModalForWindow:prefswindow completionHandler:^(NSInteger result) {
 			[self destinationPanelDidEnd:panel returnCode:result contextInfo:nil];
 		}];
-		#endif
+#endif
 	}
 }
 
@@ -715,15 +713,15 @@ static BOOL IsPathWritable(NSString *path);
 {
 	if(res==NSOKButton)
 	{
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 		NSString *directory=[panel directory];
-		#else
+#else
 		NSURL *url=panel.URL;
-		#ifdef UseSandbox
+#ifdef UseSandbox
 		[[CSURLCache defaultCache] cacheSecurityScopedURL:url];
-		#endif
+#endif
 		NSString *directory=url.path;
-		#endif
+#endif
 
 		[[NSUserDefaults standardUserDefaults] setObject:directory forKey:UDKDestinationPath];
 		[self updateDestinationPopup];
@@ -798,11 +796,11 @@ userData:(NSString *)data error:(NSString **)error
 
 	if(res==NSOKButton)
 	{
-		#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 		[self addArchiveControllersForFiles:[panel filenames] destinationType:desttype];
-		#else
+#else
 		[self addArchiveControllersForURLs:panel.URLs destinationType:desttype];
-		#endif
+#endif
 	}
 }
 
@@ -842,22 +840,34 @@ userData:(NSString *)data error:(NSString **)error
 {
 	NSString *usernameregex=NSUserName().escapedPattern;
 
-	#define regexForUserPath(path) [NSString stringWithFormat:@"/%@/%@$",usernameregex,path,nil]
-	#define folderIconNamed(iconName) [[NSImage alloc] initWithContentsOfFile:@"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/" iconName]
+#define regexForUserPath(path) [NSString stringWithFormat:@"/%@/%@$",usernameregex,path,nil]
+#define folderIconNamed(iconName) [[NSImage alloc] initWithContentsOfFile:@"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/" iconName]
 
 	NSImage *icon=nil;
 
-	if([path matchedByPattern:[NSString stringWithFormat:@"/%@$",usernameregex,nil]]) icon=folderIconNamed(@"HomeFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Desktop")]) icon=folderIconNamed(@"DesktopFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Documents")]) icon=folderIconNamed(@"DocumentsFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Public")]) icon=folderIconNamed(@"PublicFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Pictures")]) icon=folderIconNamed(@"PicturesFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Downloads")]) icon=folderIconNamed(@"DownloadsFolder.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Movies")]) icon=folderIconNamed(@"MovieFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Music")]) icon=folderIconNamed(@"MusicFolderIcon.icns");
-	else if([path matchedByPattern:regexForUserPath(@"Sites")]) icon=folderIconNamed(@"SitesFolderIcon.icns");
+	if ([path matchedByPattern:[NSString stringWithFormat:@"/%@$",usernameregex,nil]]) {
+		icon=folderIconNamed(@"HomeFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Desktop")]) {
+		icon=folderIconNamed(@"DesktopFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Documents")]) {
+		icon=folderIconNamed(@"DocumentsFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Public")]) {
+		icon=folderIconNamed(@"PublicFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Pictures")]) {
+		icon=folderIconNamed(@"PicturesFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Downloads")]) {
+		icon=folderIconNamed(@"DownloadsFolder.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Movies")]) {
+		icon=folderIconNamed(@"MovieFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Music")]) {
+		icon=folderIconNamed(@"MusicFolderIcon.icns");
+	} else if ([path matchedByPattern:regexForUserPath(@"Sites")]) {
+		icon=folderIconNamed(@"SitesFolderIcon.icns");
+	}
 
-	if(!icon) icon=[[NSWorkspace sharedWorkspace] iconForFile:path];
+	if (!icon) {
+		icon=[[NSWorkspace sharedWorkspace] iconForFile:path];
+	}
 
 	return icon;
 }

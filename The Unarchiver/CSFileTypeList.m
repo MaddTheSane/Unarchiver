@@ -291,11 +291,11 @@ static BOOL DisabledInSandbox=YES;
 	[[NSFileManager defaultManager] createFileAtPath:filename contents:nil attributes:nil];
 	NSArray *apps=(NSArray *)CFBridgingRelease(LSCopyApplicationURLsForURL((__bridge CFURLRef)fileURL,kLSRolesAll));
 
-	#ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 	[[NSFileManager defaultManager] removeFileAtPath:filename handler:nil];
-	#else
+#else
 	[[NSFileManager defaultManager] removeItemAtURL:fileURL error:NULL];
-	#endif
+#endif
 
 	for(NSURL *url in apps)
 	{

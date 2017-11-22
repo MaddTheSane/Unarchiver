@@ -7,23 +7,23 @@ int main(int argc,const char **argv)
 
         NSString *desktop;
 
-        #if MAC_OS_X_VERSION_MIN_REQUIRED>=MAC_OS_X_VERSION_10_4
+#if MAC_OS_X_VERSION_MIN_REQUIRED>=MAC_OS_X_VERSION_10_4
         NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDesktopDirectory,NSUserDomainMask,YES);
         if(paths.count) desktop=paths[0];
         else desktop=[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
-        #else
+#else
         desktop=[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
-        #endif
+#endif
 
         [[NSUserDefaults standardUserDefaults] registerDefaults:@{UDKDetectionThreshold: @80,
             UDKFileNameEncoding: @0,
             UDKDelete: @NO,
             UDKOpen: @NO,
-            #ifdef IsLegacyVersion
+#ifdef IsLegacyVersion
 			UDKDestination: @(UDKDestinationCurrentFolder),
-            #else
+#else
             UDKDestination: @(UDKDestinationUninitialized),
-            #endif
+#endif
             UDKCreateFolderMode: @(TUCreateEnclosingDirectoryMutlipleFilesOnly),
             UDKModifyFolderDates: @1,
             UDKModifyFileDates: @NO,

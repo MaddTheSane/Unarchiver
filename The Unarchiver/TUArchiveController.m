@@ -48,9 +48,9 @@ NSStringEncoding globalpasswordencoding=0;
 		ignoreall=NO;
 		haderrors=NO;
 
-		#ifdef UseSandbox
+#ifdef UseSandbox
 		scopedurls=[NSMutableArray new];
-		#endif
+#endif
 	}
 	return self;
 }
@@ -65,12 +65,12 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)dealloc
 {
-	#ifdef UseSandbox
+#ifdef UseSandbox
 	for(NSURL *scopedurl in scopedurls)
 	{
 		[scopedurl stopAccessingSecurityScopedResource];
 	}
-	#endif
+#endif
 }
 
 -(TUCreateEnclosingDirectory)folderCreationMode
@@ -254,18 +254,18 @@ NSStringEncoding globalpasswordencoding=0;
 			unarchiver.destination = tmpdest;
 			[unarchiver setRemovesEnclosingDirectoryForSoloItems:YES];
 			[self rememberTempDirectory:tmpdest];
-		break;
+			break;
 
 		case TUCreateEnclosingDirectoryAlways: // Always enclose.
 			unarchiver.destination = tmpdest;
 			[unarchiver setRemovesEnclosingDirectoryForSoloItems:NO];
 			[self rememberTempDirectory:tmpdest];
-		break;
+			break;
 
 		case TUCreateEnclosingDirectoryNever: // Never enclose.
 			unarchiver.destination = destination;
 			[unarchiver setEnclosingDirectoryName:nil];
-		break;
+			break;
 	}
 
 	error=[unarchiver unarchive];
