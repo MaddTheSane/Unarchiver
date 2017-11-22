@@ -4,6 +4,7 @@
 #import "TUEncodingPopUp.h"
 
 @class TUArchiveController;
+@class TUEncodingPopUp;
 
 @interface TUArchiveTaskView:TUMultiTaskView
 {

@@ -36,7 +36,7 @@ NSStringEncoding globalpasswordencoding=0;
 		docktile=nil;
 		unarchiver=nil;
 
-		archivename=filename;
+		archivename=[filename copy];
 		destination=nil;
 		tmpdest=nil;
 

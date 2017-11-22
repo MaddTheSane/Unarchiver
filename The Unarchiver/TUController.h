@@ -5,7 +5,7 @@
 #import "TUArchiveController.h"
 #import "TUArchiveTaskView.h"
 #import "TUTaskListView.h"
-#import "TUEncodingPopUp.h"
+@class TUEncodingPopUp;
 #import "TUDockTileView.h"
 
 @interface TUController:NSObject

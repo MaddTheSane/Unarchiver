@@ -2,8 +2,9 @@
 #import "TUArchiveController.h"
 #import "TUTaskListView.h"
 #import "TUEncodingPopUp.h"
-#import "XADMaster/XADPlatform.h"
+#import <XADMaster/XADPlatform.h>
 #import "TUDockTileView.h"
+#import "The_Unarchiver-Swift.h"
 
 #ifdef UseSandbox
 #import "CSURLCache.h"

@@ -1,5 +1,6 @@
 #import "TUArchiveTaskView.h"
 #import "TUArchiveController.h"
+#import "The_Unarchiver-Swift.h"
 
 
 @implementation TUArchiveTaskView
