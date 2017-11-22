@@ -28,7 +28,7 @@ NSStringEncoding globalpasswordencoding=0;
 	globalpasswordencoding=0;
 }
 
--(id)initWithFilename:(NSString *)filename
+-(instancetype)initWithFilename:(NSString *)filename
 {
 	if((self=[super init]))
 	{
@@ -70,7 +70,7 @@ NSStringEncoding globalpasswordencoding=0;
 	#endif
 }
 
--(int)folderCreationMode
+-(TUCreateEnclosingDirectory)folderCreationMode
 {
 	if(foldermodeoverride>=0) return foldermodeoverride;
 	else return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"createFolder"];
@@ -125,31 +125,31 @@ NSStringEncoding globalpasswordencoding=0;
 -(NSString *)filename
 {
 	if(!unarchiver) return archivename;
-	else return [[unarchiver outerArchiveParser] filename];
+	else return unarchiver.outerArchiveParser.filename;
 }
 
 -(NSArray *)allFilenames
 {
 	if(!unarchiver) return nil;
-	return [[unarchiver outerArchiveParser] allFilenames];
+	return unarchiver.outerArchiveParser.allFilenames;
 }
 
 -(BOOL)volumeScanningFailed
 {
-	NSNumber *failed=[[[unarchiver archiveParser] properties] objectForKey:XADVolumeScanningFailedKey];
-	return failed && [failed boolValue];
+	NSNumber *failed=unarchiver.archiveParser.properties[XADVolumeScanningFailedKey];
+	return failed && failed.boolValue;
 }
 
--(BOOL)caresAboutPasswordEncoding { return [[unarchiver archiveParser] caresAboutPasswordEncoding]; }
+-(BOOL)caresAboutPasswordEncoding { return unarchiver.archiveParser.caresAboutPasswordEncoding; }
 
 
 
 
 -(NSString *)currentArchiveName
 {
-	NSString *currfilename=[[unarchiver archiveParser] currentFilename];
-	if(!currfilename) currfilename=[[unarchiver outerArchiveParser] currentFilename];
-	return [currfilename lastPathComponent];
+	NSString *currfilename=unarchiver.archiveParser.currentFilename;
+	if(!currfilename) currfilename=unarchiver.outerArchiveParser.currentFilename;
+	return currfilename.lastPathComponent;
 }
 
 -(NSString *)localizedDescriptionOfError:(XADError)error
@@ -163,7 +163,7 @@ NSStringEncoding globalpasswordencoding=0;
 {
 	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
 	if(!encoding) encoding=selected_encoding;
-	if(!encoding) encoding=[path encoding];
+	if(!encoding) encoding=path.encoding;
 	return [path stringWithEncoding:encoding];
 }
 
@@ -204,22 +204,22 @@ NSStringEncoding globalpasswordencoding=0;
 	{
 		[view displayOpenError:[NSString stringWithFormat:
 		NSLocalizedString(@"The contents of the file \"%@\" can not be extracted with this program.",@"Error message for files not extractable by The Unarchiver"),
-		[archivename lastPathComponent]]];
+		archivename.lastPathComponent]];
 
 		[self performSelectorOnMainThread:@selector(extractFailed) withObject:nil waitUntilDone:NO];
 		return;
 	}
 
-	int foldermode=[self folderCreationMode];
-	BOOL copydatepref=[self copyArchiveDateToExtractedFolder];
-	BOOL changefilespref=[self changeDateOfExtractedSingleItems];
+	TUCreateEnclosingDirectory foldermode=self.folderCreationMode;
+	BOOL copydatepref=self.copyArchiveDateToExtractedFolder;
+	BOOL changefilespref=self.changeDateOfExtractedSingleItems;
 
-	[unarchiver setDelegate:self];
+	unarchiver.delegate = self;
 	[unarchiver setPropagatesRelevantMetadata:YES];
 	[unarchiver setAlwaysRenamesFiles:YES];
-	[unarchiver setCopiesArchiveModificationTimeToEnclosingDirectory:copydatepref];
-	[unarchiver setCopiesArchiveModificationTimeToSoloItems:copydatepref && changefilespref];
-	[unarchiver setResetsDateForSoloItems:!copydatepref && changefilespref];
+	unarchiver.copiesArchiveModificationTimeToEnclosingDirectory = copydatepref;
+	unarchiver.copiesArchiveModificationTimeToSoloItems = copydatepref && changefilespref;
+	unarchiver.resetsDateForSoloItems = !copydatepref && changefilespref;
 
 	XADError error=[unarchiver parse];
 	if(error==XADErrorBreak)
@@ -231,7 +231,7 @@ NSStringEncoding globalpasswordencoding=0;
 	{
 		if(![view displayError:[NSString stringWithFormat:
 			NSLocalizedString(@"There was a problem while reading the contents of the file \"%@\": %@",@"Error message when encountering an error while parsing an archive"),
-			[self currentArchiveName],
+			self.currentArchiveName,
 			[self localizedDescriptionOfError:error]]
 		ignoreAll:&ignoreall])
 		{
@@ -246,21 +246,21 @@ NSStringEncoding globalpasswordencoding=0;
 
 	switch(foldermode)
 	{
-		case 1: // Enclose multiple items.
+		case TUCreateEnclosingDirectoryMutlipleFilesOnly: // Enclose multiple items.
 		default:
-			[unarchiver setDestination:tmpdest];
+			unarchiver.destination = tmpdest;
 			[unarchiver setRemovesEnclosingDirectoryForSoloItems:YES];
 			[self rememberTempDirectory:tmpdest];
 		break;
 
-		case 2: // Always enclose.
-			[unarchiver setDestination:tmpdest];
+		case TUCreateEnclosingDirectoryAlways: // Always enclose.
+			unarchiver.destination = tmpdest;
 			[unarchiver setRemovesEnclosingDirectoryForSoloItems:NO];
 			[self rememberTempDirectory:tmpdest];
 		break;
 
-		case 3: // Never enclose.
-			[unarchiver setDestination:destination];
+		case TUCreateEnclosingDirectoryNever: // Never enclose.
+			unarchiver.destination = destination;
 			[unarchiver setEnclosingDirectoryName:nil];
 		break;
 	}
@@ -271,7 +271,7 @@ NSStringEncoding globalpasswordencoding=0;
 		if(error!=XADErrorBreak)
 		[view displayOpenError:[NSString stringWithFormat:
 			NSLocalizedString(@"There was a problem while extracting the contents of the file \"%@\": %@",@"Error message when encountering an error while extracting entries"),
-			[self currentArchiveName],
+			self.currentArchiveName,
 			[self localizedDescriptionOfError:error]]];
 
 		[self performSelectorOnMainThread:@selector(extractFailed) withObject:nil waitUntilDone:NO];
@@ -283,17 +283,17 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)extractFinished
 {
-	BOOL deletearchivepref=[self deleteArchive];
-	BOOL openfolderpref=[self openExtractedItem];
+	BOOL deletearchivepref=self.deleteArchive;
+	BOOL openfolderpref=self.openExtractedItem;
 
-	BOOL soloitem=[unarchiver wasSoloItem];
+	BOOL soloitem=unarchiver.wasSoloItem;
 
 	// Move files out of temporary directory, if we used one.
 	NSString *newpath=nil;
-	if([unarchiver enclosingDirectoryName])
+	if(unarchiver.enclosingDirectoryName)
 	{
-		NSString *path=[unarchiver createdItem];
-		NSString *filename=[path lastPathComponent];
+		NSString *path=unarchiver.createdItem;
+		NSString *filename=path.lastPathComponent;
 
 		newpath=[destination stringByAppendingPathComponent:filename];
 
@@ -301,7 +301,7 @@ NSStringEncoding globalpasswordencoding=0;
 		if(!soloitem)
 		if([[NSWorkspace sharedWorkspace] isFilePackageAtPath:path])
 		{
-			newpath=[newpath stringByDeletingPathExtension];
+			newpath=newpath.stringByDeletingPathExtension;
 		}
 
 		// Avoid collisions.
@@ -318,15 +318,15 @@ NSStringEncoding globalpasswordencoding=0;
 	// Delete archive if requested, but only if no errors were encountered.
 	if(deletearchivepref && !haderrors)
 	{
-		NSString *directory=[archivename stringByDeletingLastPathComponent];
-		NSArray *allpaths=[[unarchiver outerArchiveParser] allFilenames];
-		NSMutableArray *allfiles=[NSMutableArray arrayWithCapacity:[allpaths count]];
+		NSString *directory=archivename.stringByDeletingLastPathComponent;
+		NSArray *allpaths=unarchiver.outerArchiveParser.allFilenames;
+		NSMutableArray *allfiles=[NSMutableArray arrayWithCapacity:allpaths.count];
 		NSEnumerator *enumerator=[allpaths objectEnumerator];
 		NSString *path;
 		while((path=[enumerator nextObject]))
 		{
-			if([[path stringByDeletingLastPathComponent] isEqual:directory])
-			[allfiles addObject:[path lastPathComponent]];
+			if([path.stringByDeletingLastPathComponent isEqual:directory])
+			[allfiles addObject:path.lastPathComponent];
 		}
 
 		[[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
@@ -422,7 +422,7 @@ NSStringEncoding globalpasswordencoding=0;
 
 	NSStringEncoding encoding=0;
 	if(selected_encoding) encoding=selected_encoding;
-	else if([string confidence]*100>=threshold) encoding=[string encoding];
+	else if(string.confidence*100>=threshold) encoding=string.encoding;
 
 	// If we have an encoding we trust, and it can decode the string, use it.
 	if(encoding && [string canDecodeWithEncoding:encoding])
@@ -442,11 +442,10 @@ NSStringEncoding globalpasswordencoding=0;
 {
 	if(globalpassword)
 	{
-		[sender setPassword:globalpassword];
+		sender.password = globalpassword;
 		if(globalpasswordencoding)
 		{
-			[[sender archiveParser] setPasswordEncodingName:
-			[XADString encodingNameForEncoding:globalpasswordencoding]];
+			sender.archiveParser.passwordEncodingName =	[XADString encodingNameForEncoding:globalpasswordencoding];
 		}
 	}
 	else
@@ -458,11 +457,10 @@ NSStringEncoding globalpasswordencoding=0;
 
 		if(password)
 		{
-			[sender setPassword:password];
+			sender.password = password;
 			if(encoding)
 			{
-				[[sender archiveParser] setPasswordEncodingName:
-				[XADString encodingNameForEncoding:encoding]];
+				sender.archiveParser.passwordEncodingName =	[XADString encodingNameForEncoding:encoding];
 			}
 
 			if(applytoall)
@@ -480,12 +478,12 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(void)simpleUnarchiver:(XADSimpleUnarchiver *)sender willExtractEntryWithDictionary:(NSDictionary *)dict to:(NSString *)path
 {
-	XADPath *name=[dict objectForKey:XADFileNameKey];
+	XADPath *name=dict[XADFileNameKey];
 
 	// TODO: Do something prettier here.
 	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
 	if(!encoding) encoding=selected_encoding;
-	if(!encoding) encoding=[name encoding];
+	if(!encoding) encoding=name.encoding;
 
 	NSString *namestring=[name stringWithEncoding:encoding];
 
@@ -520,15 +518,15 @@ fileProgress:(double)fileprogress totalProgress:(double)totalprogress
 
 	if(error)
 	{
-		XADPath *filename=[dict objectForKey:XADFileNameKey];
+		XADPath *filename=dict[XADFileNameKey];
 
-		NSNumber *isresfork=[dict objectForKey:XADIsResourceForkKey];
-		if(isresfork&&[isresfork boolValue])
+		NSNumber *isresfork=dict[XADIsResourceForkKey];
+		if(isresfork&&isresfork.boolValue)
 		{
 			cancelled=![view displayError:[NSString stringWithFormat:
 				NSLocalizedString(@"Could not extract the resource fork for the file \"%@\" from the archive \"%@\":\n%@",@"Error message string. The first %@ is the file name, the second the archive name, the third is error message"),
 				[self stringForXADPath:filename],
-				[self currentArchiveName],
+				self.currentArchiveName,
 				[self localizedDescriptionOfError:error]]
 			ignoreAll:&ignoreall];
 		}
@@ -537,7 +535,7 @@ fileProgress:(double)fileprogress totalProgress:(double)totalprogress
 			cancelled=![view displayError:[NSString stringWithFormat:
 				NSLocalizedString(@"Could not extract the file \"%@\" from the archive \"%@\": %@",@"Error message string. The first %@ is the file name, the second the archive name, the third is error message"),
 				[self stringForXADPath:filename],
-				[self currentArchiveName],
+				self.currentArchiveName,
 				[self localizedDescriptionOfError:error]]
 			ignoreAll:&ignoreall];
 		}

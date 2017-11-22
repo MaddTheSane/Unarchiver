@@ -3,7 +3,7 @@
 
 @implementation TUTaskListView
 
--(id)initWithFrame:(NSRect)frame
+-(instancetype)initWithFrame:(NSRect)frame
 {
 	if((self=[super initWithFrame:frame]))
 	{
@@ -16,7 +16,7 @@
 
 -(void)addTaskView:(TUTaskView *)taskview
 {
-	[taskview setAutoresizingMask:NSViewWidthSizable|NSViewMinYMargin];
+	taskview.autoresizingMask = NSViewWidthSizable|NSViewMinYMargin;
 	[self addSubview:taskview];
 	[self _layoutSubviews];
 }
@@ -32,14 +32,14 @@
 
 -(BOOL)containsTaskView:(TUTaskView *)taskview
 {
-	return [[self subviews] indexOfObjectIdenticalTo:taskview]!=NSNotFound;
+	return [self.subviews indexOfObjectIdenticalTo:taskview]!=NSNotFound;
 }
 
 -(void)setHeight:(CGFloat)height forView:(NSView *)view
 {
-	NSRect frame=[view frame];
+	NSRect frame=view.frame;
 	frame.size.height=height;
-	[view setFrame:frame];
+	view.frame = frame;
 	[self _layoutSubviews];
 }
 
@@ -48,21 +48,21 @@
 	CGFloat oldheight=totalheight;
 
 	totalheight=0;
-	for(NSView *subview in [[self subviews] reverseObjectEnumerator]) totalheight+=[subview frame].size.height+1;
+	for(NSView *subview in [self.subviews reverseObjectEnumerator]) totalheight+=subview.frame.size.height+1;
 	if(totalheight) totalheight-=1;
 
-	NSRect listframe=[self frame];
+	NSRect listframe=self.frame;
 	CGFloat y=listframe.size.height-totalheight;
 
-	for(NSView *subview in [[self subviews] reverseObjectEnumerator])
+	for(NSView *subview in [self.subviews reverseObjectEnumerator])
 	{
-		NSRect frame=[subview frame];
+		NSRect frame=subview.frame;
 
 		frame.origin.x=0;
 		frame.origin.y=y;
 		frame.size.width=listframe.size.width;
 
-		[subview setFrame:frame];
+		subview.frame = frame;
 
 		y+=frame.size.height+1;
 	}
@@ -87,7 +87,7 @@
 
 	for(NSView *subview in self.subviews)
 	{
-		NSRect frame=[subview frame];
+		NSRect frame=subview.frame;
 
 		if(isblue) [bluecol set];
 		else [whitecol set];
@@ -108,7 +108,7 @@
 
 -(NSSize)preferredSize
 {
-	return NSMakeSize([self frame].size.width,totalheight);
+	return NSMakeSize(self.frame.size.width,totalheight);
 }
 
 @end
@@ -117,7 +117,7 @@
 
 @implementation TUTaskView
 
--(id)init
+-(instancetype)init
 {
 	if((self=[super init]))
 	{
@@ -127,7 +127,7 @@
 
 -(TUTaskListView *)taskListView
 {
-	id superview=[self superview];
+	id superview=self.superview;
 	if(!superview) return nil;
 	if(![superview isKindOfClass:[TUTaskListView class]]) return nil;
 
@@ -140,7 +140,7 @@
 
 @implementation TUMultiTaskView
 
--(id)init
+-(instancetype)init
 {
 	if((self=[super init]))
 	{
@@ -153,17 +153,17 @@
 {
 	for(NSView *subview in self.subviews) [subview removeFromSuperview];
 
-	NSSize viewsize=[dispview frame].size;
-	NSSize selfsize=[self frame].size;
+	NSSize viewsize=dispview.frame.size;
+	NSSize selfsize=self.frame.size;
 
 	if(!selfsize.height)
 	{
 		selfsize=viewsize;
-		[self setFrame:NSMakeRect(0,0,selfsize.width,selfsize.height)];
+		self.frame = NSMakeRect(0,0,selfsize.width,selfsize.height);
 	}
 
-	[dispview setAutoresizingMask:NSViewWidthSizable|NSViewMaxYMargin];
-	[dispview setFrame:NSMakeRect(0,0,selfsize.width,viewsize.height)];
+	dispview.autoresizingMask = NSViewWidthSizable|NSViewMaxYMargin;
+	dispview.frame = NSMakeRect(0,0,selfsize.width,viewsize.height);
 	[self addSubview:dispview];
 
 	[[self taskListView] setHeight:viewsize.height forView:self];

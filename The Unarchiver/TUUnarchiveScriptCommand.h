@@ -13,7 +13,7 @@
 }
 
 -(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef;
--(instancetype)performDefaultImplementation;
+-(id)performDefaultImplementation;
 
 -(BOOL)evalBooleanParameterForKey:(NSString *)parameterKey;
 -(id)errorFileDontExist:(NSString *)file;

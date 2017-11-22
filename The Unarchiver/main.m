@@ -8,27 +8,25 @@ int main(int argc,const char **argv)
 
         #if MAC_OS_X_VERSION_MIN_REQUIRED>=MAC_OS_X_VERSION_10_4
         NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDesktopDirectory,NSUserDomainMask,YES);
-        if([paths count]) desktop=[paths objectAtIndex:0];
+        if(paths.count) desktop=paths[0];
         else desktop=[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
         #else
         desktop=[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
         #endif
 
-        [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"80",@"autoDetectionThreshold",
-            @"0",@"filenameEncoding",
-            @"0",@"deleteExtractedArchive",
-            @"0",@"openExtractedFolder",
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"autoDetectionThreshold": @"80",
+            @"filenameEncoding": @"0",
+            @"deleteExtractedArchive": @"0",
+            @"openExtractedFolder": @"0",
             #ifdef IsLegacyVersion
             @"1",@"extractionDestination",
             #else
-            @"4",@"extractionDestination",
+            @"extractionDestination": @"4",
             #endif
-            @"1",@"createFolder",
-            @"1",@"folderModifiedDate",
-            @"0",@"changeDateOfFiles",
-            desktop,@"extractionDestinationPath",
-        nil]];
+            @"createFolder": @"1",
+            @"folderModifiedDate": @"1",
+            @"changeDateOfFiles": @"0",
+            @"extractionDestinationPath": desktop}];
 
 	}
 

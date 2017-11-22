@@ -2,7 +2,7 @@
 
 @implementation TUTaskQueue
 
--(id)init
+-(instancetype)init
 {
 	if((self=[super init]))
 	{
@@ -73,7 +73,7 @@
 -(void)restart
 {
 	if(running) return;
-	if(![tasks count])
+	if(!tasks.count)
 	{
 		[finishtarget performSelector:finishselector withObject:self];
 		return;
@@ -87,8 +87,8 @@
 
 -(void)startTask
 {
-	id target=[tasks objectAtIndex:0];
-	NSInvocation *invocation=[tasks objectAtIndex:1];
+	id target=tasks[0];
+	NSInvocation *invocation=tasks[1];
 
 	[invocation invokeWithTarget:target];
 }
@@ -98,7 +98,7 @@
 
 @implementation TUTaskTrampoline
 
--(id)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
+-(instancetype)initWithTarget:(id)target queue:(TUTaskQueue *)queue;
 {
 	actual=target;
 	parent=queue;

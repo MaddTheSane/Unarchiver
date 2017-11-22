@@ -4,7 +4,7 @@ static BOOL SanityCheckString(NSString *string);
 
 @implementation TUEncodingPopUp
 
--(id)initWithFrame:(NSRect)frame
+-(instancetype)initWithFrame:(NSRect)frame
 {
 	if((self=[super initWithFrame:frame]))
 	{
@@ -13,7 +13,7 @@ static BOOL SanityCheckString(NSString *string);
 	return self;
 }
 
--(id)initWithCoder:(NSCoder *)coder
+-(instancetype)initWithCoder:(NSCoder *)coder
 {
 	if((self=[super initWithCoder:coder]))
 	{
@@ -31,24 +31,24 @@ static BOOL SanityCheckString(NSString *string);
 {
 	[self buildEncodingListMatchingXADString:nil];
 
-	[[self menu] addItem:[NSMenuItem separatorItem]];
+	[self.menu addItem:[NSMenuItem separatorItem]];
 
 	NSMenuItem *item=[[NSMenuItem alloc] init];
 	[item setTitle:NSLocalizedString(@"Detect automatically",@"Option in the encoding pop-up to detect the encoding automatically")];
-	[item setTag:0];
-	[[self menu] addItem:item];
+	item.tag = 0;
+	[self.menu addItem:item];
 }
 
 -(void)buildEncodingListWithDefaultEncoding
 {
 	[self buildEncodingListMatchingXADString:nil];
 
-	[[self menu] insertItem:[NSMenuItem separatorItem] atIndex:0];
+	[self.menu insertItem:[NSMenuItem separatorItem] atIndex:0];
 
 	NSMenuItem *item=[[NSMenuItem alloc] init];
 	[item setTitle:NSLocalizedString(@"Default encoding",@"Option in the password encoding pop-up to use the default encoding")];
-	[item setTag:0];
-	[[self menu] insertItem:item atIndex:0];
+	item.tag = 0;
+	[self.menu insertItem:item atIndex:0];
 }
 
 -(void)buildEncodingListMatchingXADString:(id <XADString>)string
@@ -68,21 +68,19 @@ static BOOL SanityCheckString(NSString *string);
 		CGFloat maxwidth=[[self class] maximumEncodingNameWidthWithAttributes:normalattrs];
 
 		NSMutableParagraphStyle *parastyle=[NSMutableParagraphStyle new];
-		[parastyle setTabStops:[NSArray arrayWithObjects:
-			[[NSTextTab alloc] initWithType:NSLeftTabStopType location:maxwidth+10],
-		nil]];
+		parastyle.tabStops = @[[[NSTextTab alloc] initWithType:NSLeftTabStopType location:maxwidth+10]];
 
-		[normalattrs setObject:parastyle forKey:NSParagraphStyleAttributeName];
-		[smallattrs setObject:parastyle forKey:NSParagraphStyleAttributeName];
+		normalattrs[NSParagraphStyleAttributeName] = parastyle;
+		smallattrs[NSParagraphStyleAttributeName] = parastyle;
 	}
 
 	for(NSDictionary *encdict in [[self class] encodings])
 	{
-		NSStringEncoding encoding=[[encdict objectForKey:@"Encoding"] longValue];
+		NSStringEncoding encoding=[encdict[@"Encoding"] longValue];
 
 		if(string && ![string canDecodeWithEncoding:encoding]) continue;
 
-		NSString *encodingname=[encdict objectForKey:@"Name"];
+		NSString *encodingname=encdict[@"Name"];
 		NSMenuItem *item=[NSMenuItem new];
 
 		if(string)
@@ -94,25 +92,25 @@ static BOOL SanityCheckString(NSString *string);
 			initWithString:[NSString stringWithFormat:@"%@\t%C %@",encodingname,(unichar)0x27a4,decoded]
 			attributes:normalattrs];
 
-			[attrstr setAttributes:smallattrs range:NSMakeRange([encodingname length],[decoded length]+3)];
+			[attrstr setAttributes:smallattrs range:NSMakeRange(encodingname.length,decoded.length+3)];
 
-			[item setAttributedTitle:attrstr];
+			item.attributedTitle = attrstr;
 		}
 		else
 		{
-			[item setTitle:encodingname];
+			item.title = encodingname;
 		}
 
-		[item setTag:encoding];
-		[[self menu] addItem:item];
+		item.tag = encoding;
+		[self.menu addItem:item];
 	}
 }
 
 
 NSComparisonResult encoding_sort(NSDictionary *enc1,NSDictionary *enc2,void *dummy)
 {
-	NSString *name1=[enc1 objectForKey:@"Name"];
-	NSString *name2=[enc2 objectForKey:@"Name"];
+	NSString *name1=enc1[@"Name"];
+	NSString *name2=enc2[@"Name"];
 	/*BOOL isunicode1=[name1 hasPrefix:@"Unicode"];
 	BOOL isunicode2=[name2 hasPrefix:@"Unicode"];
 
@@ -135,10 +133,8 @@ NSComparisonResult encoding_sort(NSDictionary *enc1,NSDictionary *enc2,void *dum
 		if(!name) continue;
 		if(encoding==NSUnicodeStringEncoding) continue;
 
-		[encodingarray addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-			name,@"Name",
-			@(encoding),@"Encoding",
-		nil]];
+		[encodingarray addObject:@{@"Name": name,
+			@"Encoding": @(encoding)}];
 	}
 
 	return [encodingarray sortedArrayUsingFunction:encoding_sort context:nil];
@@ -150,7 +146,7 @@ NSComparisonResult encoding_sort(NSDictionary *enc1,NSDictionary *enc2,void *dum
 
 	for(NSDictionary *encdict in [[self class] encodings])
 	{
-		NSString *name=[encdict objectForKey:@"Name"];
+		NSString *name=encdict[@"Name"];
 		CGFloat width=[name sizeWithAttributes:attrs].width;
 		if(width>maxwidth) maxwidth=width;
 	}
@@ -171,7 +167,7 @@ static BOOL IsSurrogateLowCharacter(unichar c)
 
 static BOOL SanityCheckString(NSString *string)
 {
-	NSInteger length=[string length];
+	NSInteger length=string.length;
 	for(int i=0;i<length;i++)
 	{
 		unichar c=[string characterAtIndex:i];

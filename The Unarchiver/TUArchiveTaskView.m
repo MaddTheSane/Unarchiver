@@ -8,7 +8,7 @@
 }
 @synthesize archiveController = archive;
 
--(id)init
+-(instancetype)init
 {
 	if((self=[super init]))
 	{
@@ -45,23 +45,23 @@
 -(void)setProgress:(double)fraction
 {
 	[self performSelectorOnMainThread:@selector(_setProgress:)
-	withObject:[NSNumber numberWithDouble:fraction] waitUntilDone:NO];
+	withObject:@(fraction) waitUntilDone:NO];
 }
 
 -(void)_setProgress:(NSNumber *)fraction
 {
-	if([progressindicator isIndeterminate])
+	if(progressindicator.indeterminate)
 	{
-		[actionfield setStringValue:[NSString stringWithFormat:
+		actionfield.stringValue = [NSString stringWithFormat:
 		NSLocalizedString(@"Extracting \"%@\"",@"Status text while extracting an archive"),
-		[[archive filename] lastPathComponent]]];
-		[progressindicator setDoubleValue:0];
-		[progressindicator setMaxValue:1];
+		archive.filename.lastPathComponent];
+		progressindicator.doubleValue = 0;
+		progressindicator.maxValue = 1;
 		[progressindicator setIndeterminate:NO];
 		// TODO: Update dock
 	}
 
-	[progressindicator setDoubleValue:[fraction doubleValue]];
+	progressindicator.doubleValue = fraction.doubleValue;
 	// TODO: Update dock
 }
 
@@ -84,7 +84,7 @@
 
 	if(res && ignoreall)
 	{
-		if([errorapplyallcheck state]==NSOnState) *ignoreall=YES;
+		if(errorapplyallcheck.state==NSOnState) *ignoreall=YES;
 		else *ignoreall=NO;
 	}
 
@@ -106,7 +106,7 @@
 
 	[self performSelectorOnMainThread:@selector(setDisplayedView:) withObject:progressview waitUntilDone:NO];
 
-	if(res) return [encodingpopup selectedTag];
+	if(res) return encodingpopup.selectedTag;
 	else return 0;
 }
 
@@ -118,16 +118,16 @@
 
 	[self performSelectorOnMainThread:@selector(setDisplayedView:) withObject:progressview waitUntilDone:NO];
 
-	if([archive caresAboutPasswordEncoding]) *encoding=[passwordpopup selectedTag];
+	if(archive.caresAboutPasswordEncoding) *encoding=passwordpopup.selectedTag;
 	else *encoding=0;
 
 	if(res && applyall)
 	{
-		if([passwordapplyallcheck state]==NSOnState) *applyall=YES;
+		if(passwordapplyallcheck.state==NSOnState) *applyall=YES;
 		else *applyall=NO;
 	}
 
-	if(res) return [passwordfield stringValue];
+	if(res) return passwordfield.stringValue;
 	else return nil;
 }
 
@@ -145,26 +145,26 @@
 
 	[self updateWaitView];
 
-	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:[archive filename]];
-	[icon setSize:[waiticon frame].size];
-	[waiticon setImage:icon];
+	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:archive.filename];
+	icon.size = waiticon.frame.size;
+	waiticon.image = icon;
 
 	[self setDisplayedView:waitview];
 }
 
 -(void)updateWaitView
 {
-	NSString *filename=[[archive filename] lastPathComponent];
-	NSArray *allfilenames=[archive allFilenames];
-	if(allfilenames && [allfilenames count]>1)
+	NSString *filename=archive.filename.lastPathComponent;
+	NSArray *allfilenames=archive.allFilenames;
+	if(allfilenames && allfilenames.count>1)
 	{
-		[waitfield setStringValue:[NSString stringWithFormat:
+		waitfield.stringValue = [NSString stringWithFormat:
 		NSLocalizedString(@"%@ (+%d more)",@"Status text for queued multi-part archives"),
-		filename,[allfilenames count]-1]];
+		filename,allfilenames.count-1];
 	}
 	else
 	{
-		[waitfield setStringValue:filename];
+		waitfield.stringValue = filename;
 	}
 }
 
@@ -178,15 +178,15 @@
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
 
-	[actionfield setStringValue:[NSString stringWithFormat:
+	actionfield.stringValue = [NSString stringWithFormat:
 	NSLocalizedString(@"Preparing to extract \"%@\"",@"Status text when preparing to extract an archive"),
-	[[archive filename] lastPathComponent]]];
+	archive.filename.lastPathComponent];
 
-	[namefield setStringValue:@""];
+	namefield.stringValue = @"";
 
-	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:[archive filename]];
-	[icon setSize:[progressicon frame].size];
-	[progressicon setImage:icon];
+	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:archive.filename];
+	icon.size = progressicon.frame.size;
+	progressicon.image = icon;
 
 	[progressindicator setIndeterminate:YES];
 	[progressindicator startAnimation:self];
@@ -218,7 +218,7 @@
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
 
-	[errorfield setStringValue:error];
+	errorfield.stringValue = error;
 	[self setDisplayedView:errorview];
 	[self getUserAttention];
 }
@@ -233,7 +233,7 @@
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
 
-	[openerrorfield setStringValue:error];
+	openerrorfield.stringValue = error;
 	[self setDisplayedView:openerrorview];
 	[self getUserAttention];
 }
@@ -248,35 +248,35 @@
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
 
-	[passwordmessagefield setStringValue:[NSString stringWithFormat:
+	passwordmessagefield.stringValue = [NSString stringWithFormat:
 	NSLocalizedString(@"You need to supply a password to open the archive \"%@\".",@"Status text when asking for a password"),
-	[[archive filename] lastPathComponent]]];
+	archive.filename.lastPathComponent];
 
-	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:[archive filename]];
-	[icon setSize:[passwordicon frame].size];
-	[passwordicon setImage:icon];
+	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:archive.filename];
+	icon.size = passwordicon.frame.size;
+	passwordicon.image = icon;
 
-	if([archive caresAboutPasswordEncoding])
+	if(archive.caresAboutPasswordEncoding)
 	{
-		NSRect frame=[passwordview frame];
+		NSRect frame=passwordview.frame;
 		frame.size.height=106;
-		[passwordview setFrame:frame];
+		passwordview.frame = frame;
 
 		[passwordpopup buildEncodingListWithDefaultEncoding];
 		[passwordpopup selectItemWithTag:0];
 	}
 	else
 	{
-		NSRect frame=[passwordview frame];
+		NSRect frame=passwordview.frame;
 		frame.size.height=86;
-		[passwordview setFrame:frame];
+		passwordview.frame = frame;
 
 		[passwordpopuplabel setHidden:YES];
 		[passwordpopup setHidden:YES];
 	}
 
 	[self setDisplayedView:passwordview];
-	[[passwordfield window] makeFirstResponder:passwordfield];
+	[passwordfield.window makeFirstResponder:passwordfield];
 	[self getUserAttention];
 }
 
@@ -292,11 +292,11 @@
 		[nibObjects addObjectsFromArray:nibObjs];
 	}
 
-	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:[archive filename]];
-	[icon setSize:[encodingicon frame].size];
-	[encodingicon setImage:icon];
+	NSImage *icon=[[NSWorkspace sharedWorkspace] iconForFile:archive.filename];
+	icon.size = encodingicon.frame.size;
+	encodingicon.image = icon;
 
-	NSStringEncoding encoding=[string encoding];
+	NSStringEncoding encoding=string.encoding;
 
 	[encodingpopup buildEncodingListMatchingXADString:string];
 	if(encoding)
@@ -309,7 +309,7 @@
 	[self selectEncoding:self];
 
 	[self setDisplayedView:encodingview];
-	[[passwordfield window] makeFirstResponder:passwordfield];
+	[passwordfield.window makeFirstResponder:passwordfield];
 	[self getUserAttention];
 }
 
@@ -324,7 +324,7 @@
 -(void)getUserAttentionOnMainThread
 {
 	[NSApp activateIgnoringOtherApps:YES];
-	[[self window] makeKeyAndOrderFront:self];
+	[self.window makeKeyAndOrderFront:self];
 }
 
 
@@ -394,9 +394,9 @@
 
 -(IBAction)selectEncoding:(id)sender
 {
-	NSStringEncoding encoding=[encodingpopup selectedTag];
-	if([namestring canDecodeWithEncoding:encoding]) [encodingfield setStringValue:[namestring stringWithEncoding:encoding]];
-	else [encodingfield setStringValue:@""]; // Can't happen, probably.
+	NSStringEncoding encoding=encodingpopup.selectedTag;
+	if([namestring canDecodeWithEncoding:encoding]) encodingfield.stringValue = [namestring stringWithEncoding:encoding];
+	else encodingfield.stringValue = @""; // Can't happen, probably.
 }
 
 
@@ -423,8 +423,8 @@
 		NSInvocation *invocation=[NSInvocation invocationWithMethodSignature:
 		[responsetarget methodSignatureForSelector:responseselector]];
 
-		[invocation setTarget:responsetarget];
-		[invocation setSelector:responseselector];
+		invocation.target = responsetarget;
+		invocation.selector = responseselector;
 		__unsafe_unretained id aSelf = self;
 		[invocation setArgument:&aSelf atIndex:2];
 		[invocation setArgument:&response atIndex:3];

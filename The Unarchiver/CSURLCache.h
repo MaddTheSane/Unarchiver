@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CSURLCacheProvider
 
--(NSArray<NSString*> *)availablePaths;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray<NSString *> * _Nonnull availablePaths;
 -(nullable NSURL *)securityScopedURLForPath:(NSString *)path;
 
 @end

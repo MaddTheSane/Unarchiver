@@ -32,7 +32,7 @@
 }
 
 -(instancetype)init;
--(NSArray<NSString*> *)readFileTypes;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray<NSString *> *readFileTypes;
 
 -(void)claimAllTypesExceptAlternate;
 -(void)surrenderAllTypes;

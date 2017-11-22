@@ -39,8 +39,8 @@
 
 -(void)cleanupOrphanedTempDirectories;
 
--(NSWindow *)window;
--(BOOL)hasRunningExtractions;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) NSWindow *window;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasRunningExtractions;
 
 -(void)applicationDidFinishLaunching:(NSNotification *)notification;
 -(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)app;

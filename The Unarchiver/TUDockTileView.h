@@ -13,7 +13,7 @@
 
 -(void)drawRect:(NSRect)rect;
 
--(NSRect)progressBarOuterFrame;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSRect progressBarOuterFrame;
 -(NSRect)progressBarFrameForFraction:(double)fraction;
 
 @end

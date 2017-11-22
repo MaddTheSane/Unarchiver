@@ -3,7 +3,7 @@
 
 @implementation TUDockTileView
 
--(id)initWithFrame:(NSRect)frame
+-(instancetype)initWithFrame:(NSRect)frame
 {
 	if((self=[super initWithFrame:frame]))
 	{
@@ -16,9 +16,9 @@
 
 -(void)setCount:(NSInteger)count
 {
-	NSDockTile *dock=[NSApp dockTile];
+	NSDockTile *dock=NSApp.dockTile;
 
-	if(count) [dock setBadgeLabel:[NSString stringWithFormat:@"%ld",(long)count]];
+	if(count) dock.badgeLabel = [NSString stringWithFormat:@"%ld",(long)count];
 	else [dock setBadgeLabel:nil];
 
 	[dock display];
@@ -38,7 +38,7 @@
 	NSRect progressrect=[self progressBarFrameForFraction:progress];
 	if(progressrect.size.width==lastwidth) return;
 
-	[[NSApp dockTile] performSelectorOnMainThread:@selector(display) withObject:nil waitUntilDone:YES];
+	[NSApp.dockTile performSelectorOnMainThread:@selector(display) withObject:nil waitUntilDone:YES];
 
 	lastupdate=currtime;
 	lastwidth=progressrect.size.width;
@@ -47,14 +47,14 @@
 -(void)hideProgress
 {
 	progress=-1;
-	[[NSApp dockTile] display];
+	[NSApp.dockTile display];
 }
 
 -(void)drawRect:(NSRect)rect
 {
-	NSImage *icon=[NSApp applicationIconImage];
-	NSSize size=[icon size];
-	[icon drawInRect:[self bounds] fromRect:NSMakeRect(0,0,size.width,size.height)
+	NSImage *icon=NSApp.applicationIconImage;
+	NSSize size=icon.size;
+	[icon drawInRect:self.bounds fromRect:NSMakeRect(0,0,size.width,size.height)
 	operation:NSCompositeCopy fraction:1];
 
 	if(progress<0) return;
@@ -82,7 +82,7 @@
 
 -(NSRect)progressBarOuterFrame
 {
-	NSRect rect=[self bounds];
+	NSRect rect=self.bounds;
 	rect.origin.y+=16;
 	rect.size.height=16;
 	return rect;

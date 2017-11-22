@@ -62,12 +62,12 @@ enum extracionDestination {
 @implementation TUUnarchiveScriptCommand
 
 #pragma mark Overriding methods:
--(id)initWithCommandDescription:(NSScriptCommandDescription *)commandDef
+-(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef
 {
 	self=[super initWithCommandDescription:commandDef];
 	if (self) {
 		extractDestination = [[NSUserDefaults standardUserDefaults] stringForKey:UDKdestinationPath];
-		appController = [[NSApplication sharedApplication] delegate];
+		appController = [NSApplication sharedApplication].delegate;
 	}
 	return self;
 }
@@ -83,8 +83,8 @@ enum extracionDestination {
 #endif
 	
 	//Get the files to unarchive (an array) and the arguments
-	NSArray *files=[self directParameter];
-	NSDictionary *evaluatedArgs = [self evaluatedArguments];
+	NSArray *files=self.directParameter;
+	NSDictionary *evaluatedArgs = self.evaluatedArguments;
 
 	//We check that all the files exists
 	NSFileManager *fileManager=[NSFileManager defaultManager];
@@ -97,7 +97,7 @@ enum extracionDestination {
 		}
 	}
 	//Check and evaluate the parameter "destination"
-	id destination=[evaluatedArgs objectForKey:PKdestination];
+	id destination=evaluatedArgs[PKdestination];
 	int destinationIntValue;
 	if (destination)
 	{
@@ -113,7 +113,7 @@ enum extracionDestination {
 			{
 				case destinationFolderDesktop:
 					destinationIntValue = extractionDestinationCustomPath;
-					extractDestination = [@"~/Desktop" stringByExpandingTildeInPath];
+					extractDestination = (@"~/Desktop").stringByExpandingTildeInPath;
 					break;
 				case destinationFolderOriginal:
 					destinationIntValue = extractionDestinationCurrentFolderDestination;
@@ -141,7 +141,7 @@ enum extracionDestination {
 	openFolders = [self evalBooleanParameterForKey:PKopening];
 	waitUntilFinished =[self evalBooleanParameterForKey:PKwaitUntilFinished];
 	
-	unsigned long creatingFolderValue  = [[evaluatedArgs objectForKey:PKcreatingFolder] unsignedLongValue];
+	unsigned long creatingFolderValue  = [evaluatedArgs[PKcreatingFolder] unsignedLongValue];
 	switch (creatingFolderValue) {
 		case creatingFolderNever:
 			creatingFolder = creatingFolderUDNever;
@@ -176,8 +176,8 @@ enum extracionDestination {
 
 -(BOOL)evalBooleanParameterForKey:(NSString *)parameterKey
 {
-	NSDictionary *evaluatedArgs = [self evaluatedArguments];
-	id parameter = [evaluatedArgs objectForKey:parameterKey];
+	NSDictionary *evaluatedArgs = self.evaluatedArguments;
+	id parameter = evaluatedArgs[parameterKey];
 	if (! parameter) {
 		if ([parameterKey isEqualToString:PKdeleting]) {
 			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKdelete];
@@ -195,9 +195,9 @@ enum extracionDestination {
 -(id)errorFileDontExist:(NSString *)file
 {
 	// TODO: choose a correct error number
-	[self setScriptErrorNumber:1];
+	self.scriptErrorNumber = 1;
 	NSString *errorMessage = [NSString stringWithFormat:@"The file %@ doesn't exist.",file];
-	[self setScriptErrorString:errorMessage];
+	self.scriptErrorString = errorMessage;
 	return nil;
 }
 
@@ -215,7 +215,7 @@ enum extracionDestination {
 	switch (desttype) {
 		default:
 		case extractionDestinationCurrentFolderDestination:
-			destination=[fileName stringByDeletingLastPathComponent];
+			destination=fileName.stringByDeletingLastPathComponent;
 			break;
 		case extractionDestinationDesktopDestination:
 			destination=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
@@ -226,10 +226,10 @@ enum extracionDestination {
 	}
 
 	TUArchiveController *archiveController=[[TUArchiveController alloc] initWithFilename:fileName];
-	[archiveController setDestination:destination];
-	[archiveController setDeleteArchive:deleteOriginals];
-	[archiveController setFolderCreationMode:creatingFolder];
-	[archiveController setOpenExtractedItem:openFolders];
+	archiveController.destination = destination;
+	archiveController.deleteArchive = deleteOriginals;
+	archiveController.folderCreationMode = creatingFolder;
+	archiveController.openExtractedItem = openFolders;
 	[appController addArchiveController:archiveController];
 }
 

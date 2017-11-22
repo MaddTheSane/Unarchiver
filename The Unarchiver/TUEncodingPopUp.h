@@ -7,8 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 {
 }
 
--(instancetype)initWithFrame:(NSRect)frame;
--(nullable instancetype)initWithCoder:(NSCoder *)aDecoder;
+-(instancetype)initWithFrame:(NSRect)frame NS_DESIGNATED_INITIALIZER;
+-(nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 -(void)buildEncodingList;
 -(void)buildEncodingListWithAutoDetect;

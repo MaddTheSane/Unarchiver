@@ -27,7 +27,7 @@
 @interface TUTaskView:NSView
 
 -(instancetype)init;
--(TUTaskListView *)taskListView;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) TUTaskListView *taskListView;
 
 @end
 

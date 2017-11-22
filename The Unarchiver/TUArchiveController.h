@@ -5,6 +5,12 @@
 
 @class TUController,TUEncodingPopUp;
 
+typedef NS_ENUM(int, TUCreateEnclosingDirectory) {
+	TUCreateEnclosingDirectoryMutlipleFilesOnly = 1, //!< Enclose multiple items.
+	TUCreateEnclosingDirectoryAlways, //!< Always enclose.
+	TUCreateEnclosingDirectoryNever //!< Never enclose.
+};
+
 @interface TUArchiveController:NSObject
 {
 	TUArchiveTaskView *view;
@@ -17,7 +23,8 @@
 	id finishtarget;
 	SEL finishselector;
 
-	int foldermodeoverride,copydateoverride,changefilesoverride;
+	TUCreateEnclosingDirectory foldermodeoverride;
+	int copydateoverride,changefilesoverride;
 	int deletearchiveoverride,openextractedoverride;
 
 	BOOL cancelled,ignoreall,haderrors;
@@ -29,12 +36,13 @@
 
 +(void)clearGlobalPassword;
 
--(instancetype)initWithFilename:(NSString *)filename;
+-(instancetype)init UNAVAILABLE_ATTRIBUTE;
+-(instancetype)initWithFilename:(NSString *)filename NS_DESIGNATED_INITIALIZER;
 
 @property (strong) TUArchiveTaskView *taskView;
 @property (strong) TUDockTileView *dockTileView;
 @property (copy) NSString *destination;
-@property (nonatomic) int folderCreationMode;
+@property (nonatomic) TUCreateEnclosingDirectory folderCreationMode;
 @property (nonatomic) BOOL copyArchiveDateToExtractedFolder;
 @property BOOL changeDateOfExtractedSingleItems;
 @property (nonatomic) BOOL deleteArchive;
