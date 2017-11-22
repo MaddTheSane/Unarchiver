@@ -65,7 +65,7 @@ static BOOL SanityCheckString(NSString *string);
 			[NSFont menuFontOfSize:[NSFont smallSystemFontSize]],NSFontAttributeName,
 		nil];
 
-		float maxwidth=[[self class] maximumEncodingNameWidthWithAttributes:normalattrs];
+		CGFloat maxwidth=[[self class] maximumEncodingNameWidthWithAttributes:normalattrs];
 
 		NSMutableParagraphStyle *parastyle=[NSMutableParagraphStyle new];
 		[parastyle setTabStops:[NSArray arrayWithObjects:
@@ -76,10 +76,7 @@ static BOOL SanityCheckString(NSString *string);
 		[smallattrs setObject:parastyle forKey:NSParagraphStyleAttributeName];
 	}
 
-	NSArray *encodings=[[self class] encodings];
-	NSEnumerator *enumerator=[encodings objectEnumerator];
-	NSDictionary *encdict;
-	while((encdict=[enumerator nextObject]))
+	for(NSDictionary *encdict in [[self class] encodings])
 	{
 		NSStringEncoding encoding=[[encdict objectForKey:@"Encoding"] longValue];
 
@@ -149,15 +146,12 @@ NSComparisonResult encoding_sort(NSDictionary *enc1,NSDictionary *enc2,void *dum
 
 +(CGFloat)maximumEncodingNameWidthWithAttributes:(NSDictionary *)attrs
 {
-	float maxwidth=0;
+	CGFloat maxwidth=0;
 
-	NSArray *encodings=[[self class] encodings];
-	NSEnumerator *enumerator=[encodings objectEnumerator];
-	NSDictionary *encdict;
-	while((encdict=[enumerator nextObject]))
+	for(NSDictionary *encdict in [[self class] encodings])
 	{
 		NSString *name=[encdict objectForKey:@"Name"];
-		float width=[name sizeWithAttributes:attrs].width;
+		CGFloat width=[name sizeWithAttributes:attrs].width;
 		if(width>maxwidth) maxwidth=width;
 	}
 	return maxwidth;
@@ -177,7 +171,7 @@ static BOOL IsSurrogateLowCharacter(unichar c)
 
 static BOOL SanityCheckString(NSString *string)
 {
-	int length=(int)[string length];
+	NSInteger length=[string length];
 	for(int i=0;i<length;i++)
 	{
 		unichar c=[string characterAtIndex:i];

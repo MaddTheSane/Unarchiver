@@ -106,7 +106,7 @@ NSStringEncoding globalpasswordencoding=0;
 	else return [[NSUserDefaults standardUserDefaults] boolForKey:@"openExtractedFolder"];
 }
 
--(void)setOpenExctractedItem:(BOOL)open { openextractedoverride=open; }
+-(void)setOpenExtractedItem:(BOOL)open { openextractedoverride=open; }
 
 
 

@@ -229,7 +229,7 @@ enum extracionDestination {
 	[archiveController setDestination:destination];
 	[archiveController setDeleteArchive:deleteOriginals];
 	[archiveController setFolderCreationMode:creatingFolder];
-	[archiveController setOpenExctractedItem:openFolders];
+	[archiveController setOpenExtractedItem:openFolders];
 	[appController addArchiveController:archiveController];
 }
 

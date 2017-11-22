@@ -23,7 +23,7 @@
 	BOOL cancelled,ignoreall,haderrors;
 
 	#ifndef IsLegacyVersion
-	NSMutableArray *scopedurls;
+	NSMutableArray<NSURL*> *scopedurls;
 	#endif
 }
 

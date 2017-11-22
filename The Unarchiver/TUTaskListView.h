@@ -20,13 +20,11 @@
 
 -(void)setResizeAction:(SEL)action target:(id)target;
 
--(NSSize)preferredSize;
+@property (readonly) NSSize preferredSize;
 
 @end
 
 @interface TUTaskView:NSView
-{
-}
 
 -(instancetype)init;
 -(TUTaskListView *)taskListView;
@@ -34,8 +32,6 @@
 @end
 
 @interface TUMultiTaskView:TUTaskView
-{
-}
 
 -(instancetype)init;
 -(void)setDisplayedView:(NSView *)dispview;

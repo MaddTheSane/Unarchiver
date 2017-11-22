@@ -45,21 +45,16 @@
 
 -(void)_layoutSubviews
 {
-	NSEnumerator *enumerator;
-	NSView *subview;
-
 	CGFloat oldheight=totalheight;
 
 	totalheight=0;
-	enumerator=[[self subviews] reverseObjectEnumerator];
-	while((subview=[enumerator nextObject])) totalheight+=[subview frame].size.height+1;
+	for(NSView *subview in [[self subviews] reverseObjectEnumerator]) totalheight+=[subview frame].size.height+1;
 	if(totalheight) totalheight-=1;
 
 	NSRect listframe=[self frame];
 	CGFloat y=listframe.size.height-totalheight;
 
-	enumerator=[[self subviews] reverseObjectEnumerator];
-	while((subview=[enumerator nextObject]))
+	for(NSView *subview in [[self subviews] reverseObjectEnumerator])
 	{
 		NSRect frame=[subview frame];
 
@@ -77,22 +72,20 @@
 		[resizetarget performSelector:resizeaction withObject:self];
 	}
 
-//	float newheight=y;
-//	float newy=listframe.origin.y+newheight-listframe.size.height;
+//	CGFloat newheight=y;
+//	CGFloat newy=listframe.origin.y+newheight-listframe.size.height;
 //	[self setFrame:NSMakeRect(listframe.origin.x,newy,listframe.size.width,newheight)];
 //	[self setNeedsDisplay:YES];
 }
 
 -(void)drawRect:(NSRect)rect
 {
-	NSEnumerator *enumerator=[[self subviews] objectEnumerator];
-	NSView *subview;
 	BOOL isblue=NO;
 
 	NSColor *whitecol=[NSColor whiteColor];
 	NSColor *bluecol=[NSColor colorWithCalibratedRed:237.0/255.0 green:242.0/255.0 blue:1 alpha:1];
 
-	while((subview=[enumerator nextObject]))
+	for(NSView *subview in self.subviews)
 	{
 		NSRect frame=[subview frame];
 
@@ -158,9 +151,7 @@
 
 -(void)setDisplayedView:(NSView *)dispview
 {
-	NSEnumerator *enumerator=[[self subviews] objectEnumerator];
-	NSView *subview;
-	while((subview=[enumerator nextObject])) [subview removeFromSuperview];
+	for(NSView *subview in self.subviews) [subview removeFromSuperview];
 
 	NSSize viewsize=[dispview frame].size;
 	NSSize selfsize=[self frame].size;
