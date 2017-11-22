@@ -6,14 +6,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CSURLCache:NSObject
 {
-	NSMutableArray *providers;
+	NSMutableArray<id<CSURLCacheProvider>> *providers;
 	NSMutableDictionary<NSString*,NSURL*> *cachedurls;
 	NSMutableDictionary<NSString*,NSData*> *cachedbookmarks;
 }
 
 @property (class, readonly, strong, nullable) CSURLCache *defaultCache;
 
--(void)addURLProvider:(NSObject <CSURLCacheProvider> *)provider;
+-(void)addURLProvider:(id<CSURLCacheProvider>)provider;
 -(void)cacheSecurityScopedURL:(NSURL *)url;
 
 -(nullable NSURL *)securityScopedURLAllowingAccessToURL:(NSURL *)url;
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@protocol CSURLCacheProvider
+@protocol CSURLCacheProvider <NSObject>
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray<NSString *> * _Nonnull availablePaths;
 -(nullable NSURL *)securityScopedURLForPath:(NSString *)path;

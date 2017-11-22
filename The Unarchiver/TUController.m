@@ -5,6 +5,7 @@
 #import <XADMaster/XADPlatform.h>
 #import "TUDockTileView.h"
 #import "The_Unarchiver-Swift.h"
+#import "UserDefaultKeys.h"
 
 #ifdef UseSandbox
 #import "CSURLCache.h"
@@ -18,11 +19,6 @@
 #import <sys/stat.h>
 #import <Carbon/Carbon.h>
 
-
-#define CurrentFolderDestination 1
-#define DesktopDestination 2
-#define SelectedDestination 3
-#define UnintializedDestination 4
 
 static BOOL IsPathWritable(NSString *path);
 
@@ -85,7 +81,7 @@ static BOOL IsPathWritable(NSString *path);
 	#endif
 
 	[encodingpopup buildEncodingListWithAutoDetect];
-	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
+	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:UDKFileNameEncoding];
 //	if(encoding) [encodingpopup selectItemWithTag:encoding];
 	if(encoding) [encodingpopup selectItemAtIndex:[encodingpopup indexOfItemWithTag:encoding]];
 	else [encodingpopup selectItemAtIndex:encodingpopup.numberOfItems-1];
@@ -147,7 +143,7 @@ static BOOL IsPathWritable(NSString *path);
 	[self performSelector:@selector(delayedAfterLaunch) withObject:nil afterDelay:0.3];
 
 	#ifdef UseSandbox
-	if([[NSUserDefaults standardUserDefaults] integerForKey:@"extractionDestination"]==UnintializedDestination)
+	if([[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination]==UDKDestinationUninitialized)
 	{
 		NSArray *array=[NSBundle mainBundle].preferredLocalizations;
 		if(array && array.count && [array[0] isEqual:@"en"])
@@ -165,14 +161,14 @@ static BOOL IsPathWritable(NSString *path);
 
 			NSInteger res=[panel runModal];
 			if(res==NSOKButton) [[NSUserDefaults standardUserDefaults]
-			setInteger:CurrentFolderDestination forKey:@"extractionDestination"];
+			setInteger:UDKDestinationCurrentFolder forKey:UDKDestination];
 			else [[NSUserDefaults standardUserDefaults]
-			setInteger:SelectedDestination forKey:@"extractionDestination"];
+			setInteger:UDKDestinationSelected forKey:UDKDestination];
 		}
 		else
 		{
 			[[NSUserDefaults standardUserDefaults]
-			setInteger:CurrentFolderDestination forKey:@"extractionDestination"];
+			setInteger:UDKDestinationCurrentFolder forKey:UDKDestination];
 		}
 	}
 	#endif
@@ -211,9 +207,9 @@ static BOOL IsPathWritable(NSString *path);
 	filename=filename.stringByResolvingSymlinksInPath;
 	#endif
 
-	int desttype;
-	if(GetCurrentKeyModifiers()&(optionKey|shiftKey)) desttype=SelectedDestination;
-	else desttype=(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"extractionDestination"];
+	UDKDestinationType desttype;
+	if(GetCurrentKeyModifiers()&(optionKey|shiftKey)) desttype=UDKDestinationSelected;
+	else desttype=[[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination];
 
 	[self addArchiveControllerForFile:filename destinationType:desttype];
 	return YES;
@@ -222,35 +218,31 @@ static BOOL IsPathWritable(NSString *path);
 
 
 
--(void)addArchiveControllersForFiles:(NSArray *)filenames destinationType:(int)desttype;
+-(void)addArchiveControllersForFiles:(NSArray *)filenames destinationType:(UDKDestinationType)desttype;
 {
-	NSEnumerator *enumerator=[filenames objectEnumerator];
-	NSString *filename;
-	while((filename=[enumerator nextObject])) [self addArchiveControllerForFile:filename destinationType:desttype];
+	for(NSString *filename in filenames) [self addArchiveControllerForFile:filename destinationType:desttype];
 }
 
--(void)addArchiveControllersForURLs:(NSArray *)urls destinationType:(int)desttype;
+-(void)addArchiveControllersForURLs:(NSArray *)urls destinationType:(UDKDestinationType)desttype;
 {
-	NSEnumerator *enumerator=[urls objectEnumerator];
-	NSURL *url;
-	while((url=[enumerator nextObject])) [self addArchiveControllerForFile:url.path destinationType:desttype];
+	for(NSURL *url in urls) [self addArchiveControllerForFile:url.path destinationType:desttype];
 }
 
--(void)addArchiveControllerForFile:(NSString *)filename destinationType:(int)desttype;
+-(void)addArchiveControllerForFile:(NSString *)filename destinationType:(UDKDestinationType)desttype;
 {
 	NSString *destination;
 	switch(desttype)
 	{
 		default:
-		case CurrentFolderDestination:
+		case UDKDestinationCurrentFolder:
 			destination=filename.stringByDeletingLastPathComponent;
 		break;
 
-		case DesktopDestination:
-			destination=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+		case UDKDestinationDesktop:
+			destination=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 		break;
 
-		case SelectedDestination:
+		case UDKDestinationSelected:
 			destination=selecteddestination;
 		break;
 	}
@@ -411,7 +403,7 @@ static BOOL IsPathWritable(NSString *path);
 		panel.directoryURL = [NSURL fileURLWithPath:destination];
 
 		[panel beginSheetModalForWindow:mainwindow completionHandler:^(NSInteger result) {
-			[self archiveDestinationPanelDidEnd:panel returnCode:(int)result contextInfo:(__bridge void *)(archive)];
+			[self archiveDestinationPanelDidEnd:panel returnCode:result contextInfo:(__bridge void *)(archive)];
 		}];
 	}
 
@@ -683,7 +675,7 @@ static BOOL IsPathWritable(NSString *path);
 
 -(void)updateDestinationPopup
 {
-	NSString *path=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+	NSString *path=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 	NSImage *icon=[TUController iconForPath:path];
 
 	icon.size = NSMakeSize(16,16);
@@ -696,7 +688,7 @@ static BOOL IsPathWritable(NSString *path);
 {
 	if(destinationpopup.selectedTag==1000)
 	{
-		NSString *oldpath=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+		NSString *oldpath=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 		NSOpenPanel *panel=[NSOpenPanel openPanel];
 
 		[panel setCanChooseDirectories:YES];
@@ -713,7 +705,7 @@ static BOOL IsPathWritable(NSString *path);
 		panel.directoryURL = [NSURL fileURLWithPath:oldpath];
 		[panel setAllowedFileTypes:nil];
 		[panel beginSheetModalForWindow:prefswindow completionHandler:^(NSInteger result) {
-			[self destinationPanelDidEnd:panel returnCode:(int)result contextInfo:nil];
+			[self destinationPanelDidEnd:panel returnCode:result contextInfo:nil];
 		}];
 		#endif
 	}
@@ -733,12 +725,12 @@ static BOOL IsPathWritable(NSString *path);
 		NSString *directory=url.path;
 		#endif
 
-		[[NSUserDefaults standardUserDefaults] setObject:directory forKey:@"extractionDestinationPath"];
+		[[NSUserDefaults standardUserDefaults] setObject:directory forKey:UDKDestinationPath];
 		[self updateDestinationPopup];
 	}
 
 	[destinationpopup selectItem:diritem];
-	[[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"extractionDestination"];
+	[[NSUserDefaults standardUserDefaults] setInteger:UDKDestinationDesktop forKey:UDKDestination];
 }
 
 
@@ -750,7 +742,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([pboard.types containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self addArchiveControllersForFiles:filenames destinationType:CurrentFolderDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:UDKDestinationCurrentFolder];
 	}
 }
 
@@ -761,7 +753,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([pboard.types containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self addArchiveControllersForFiles:filenames destinationType:DesktopDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:UDKDestinationDesktop];
 	}
 }
 
@@ -772,7 +764,7 @@ userData:(NSString *)data error:(NSString **)error
 	if([pboard.types containsObject:NSFilenamesPboardType])
 	{
 		NSArray *filenames=[pboard propertyListForType:NSFilenamesPboardType];
-		[self addArchiveControllersForFiles:filenames destinationType:SelectedDestination];
+		[self addArchiveControllersForFiles:filenames destinationType:UDKDestinationSelected];
 	}
 }
 
@@ -780,17 +772,17 @@ userData:(NSString *)data error:(NSString **)error
 
 -(IBAction)unarchiveToCurrentFolder:(id)sender
 {
-	[self selectAndUnarchiveFilesWithDestination:CurrentFolderDestination];
+	[self selectAndUnarchiveFilesWithDestination:UDKDestinationCurrentFolder];
 }
 
 -(IBAction)unarchiveToDesktop:(id)sender
 {
-	[self selectAndUnarchiveFilesWithDestination:DesktopDestination];
+	[self selectAndUnarchiveFilesWithDestination:UDKDestinationDesktop];
 }
 
 -(IBAction)unarchiveTo:(id)sender
 {
-	[self selectAndUnarchiveFilesWithDestination:SelectedDestination];
+	[self selectAndUnarchiveFilesWithDestination:UDKDestinationSelected];
 }
 
 -(void)selectAndUnarchiveFilesWithDestination:(int)desttype
@@ -818,7 +810,7 @@ userData:(NSString *)data error:(NSString **)error
 
 -(IBAction)changeCreateFolder:(id)sender
 {
-	int createfolder=(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"createFolder"];
+	int createfolder=(int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
 	singlefilecheckbox.enabled = createfolder==1;
 }
 

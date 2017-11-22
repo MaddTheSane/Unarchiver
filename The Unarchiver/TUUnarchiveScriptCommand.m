@@ -1,27 +1,5 @@
 #import "TUUnarchiveScriptCommand.h"
-
-//User defaults keys:
-
-/*
- Keys -> type
- //importants:
- @"deleteExtractedArchive"
- @"openExtractedArchive"
- @"extractionDestinationPath" string
- 
- @"createFolder" integer:
-	1 : only …
-	2 : always
-	3 : never
- @"extractionDestination" integer
- @"changeDateOfFiles"
- */
-
-#define UDKdelete  @"deleteExtractedArchive"
-#define UDKopen  @"openExtractedFolder"
-#define UDKdestination @"extractionDestination"
-#define UDKdestinationPath @"extractionDestinationPath"
-#define UDKcreateFolderMode @"createFolder"
+#import "UserDefaultKeys.h"
 
 //keys for the parameters of the command
 #define PKdestination @"destination"
@@ -30,43 +8,39 @@
 #define PKcreatingFolder @"creatingFolder"
 #define PKwaitUntilFinished @"waitUntilFinished"
 
-//Enum for the AppleScript enumerarion "File Destination"
-enum destinationFolder {
+//! Enum for the AppleScript enumerarion "File Destination"
+typedef NS_ENUM(OSType, destinationFolder) {
 	destinationFolderDesktop = 'Desk',
 	destinationFolderAskUser = 'AskU',
 	destinationFolderOriginal = 'Orig',
 	destinationFolderUserDefault = 'UDef'
-	};
+};
 
-//Enum for the AppleScript enumerarion "Create new folder"
-enum creatingFolderEnum {
+//! Enum for the AppleScript enumerarion "Create new folder"
+typedef NS_ENUM(OSType, creatingFolderEnum) {
 	creatingFolderNever = 'NevE',
 	creatingFolderOnly = 'OnlY',
 	creatingFolderAlways = 'AlwA'
-	};
-
-enum creatingFolderUD {
-	creatingFolderUDOnly = 1,
-	creatingFolderUDAlways = 2,
-	creatingFolderUDNever = 3
-	};
-
-enum extracionDestination {
-	extractionDestinationCurrentFolderDestination = 1,
-	extractionDestinationDesktopDestination = 2, //selected by user at pref panel, maybe other than ~/Desktop
-	extractionDestinationSelectedDestination = 3,
-	extractionDestinationUnintializedDestination = 4,
-	extractionDestinationCustomPath=10,
-	};
+};
 
 @implementation TUUnarchiveScriptCommand
+{
+	NSTimer *restoringTimer;
+	TUController * appController; //!< Needed for calling the unarchaving methods
+	BOOL deleteOriginals;
+	BOOL openFolders; //!< currently not used (at least in Not Legacy)
+	BOOL waitUntilFinished;
+	TUCreateEnclosingDirectory creatingFolder;
+	UDKDestinationType desttype;
+	NSString * extractDestination;
+}
 
 #pragma mark Overriding methods:
 -(instancetype)initWithCommandDescription:(NSScriptCommandDescription *)commandDef
 {
 	self=[super initWithCommandDescription:commandDef];
 	if (self) {
-		extractDestination = [[NSUserDefaults standardUserDefaults] stringForKey:UDKdestinationPath];
+		extractDestination = [[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 		appController = [NSApplication sharedApplication].delegate;
 	}
 	return self;
@@ -98,41 +72,41 @@ enum extracionDestination {
 	}
 	//Check and evaluate the parameter "destination"
 	id destination=evaluatedArgs[PKdestination];
-	int destinationIntValue;
+	UDKDestinationType destinationIntValue;
 	if (destination)
 	{
 		if ([destination isKindOfClass:[NSString class]] && [fileManager fileExistsAtPath:destination])
 		{
 			extractDestination = destination;
-			destinationIntValue = extractionDestinationCustomPath;
+			destinationIntValue = UDKDestinationCustomPath;
 		}
 		else
 		{
-			unsigned long destinationLongValue=[destination unsignedLongValue];
+			destinationFolder destinationLongValue=[destination unsignedIntValue];
 			switch (destinationLongValue)
 			{
 				case destinationFolderDesktop:
-					destinationIntValue = extractionDestinationCustomPath;
+					destinationIntValue = UDKDestinationCustomPath;
 					extractDestination = (@"~/Desktop").stringByExpandingTildeInPath;
 					break;
 				case destinationFolderOriginal:
-					destinationIntValue = extractionDestinationCurrentFolderDestination;
+					destinationIntValue = UDKDestinationCurrentFolder;
 					break;
 				case destinationFolderAskUser:
-					destinationIntValue = extractionDestinationSelectedDestination;
+					destinationIntValue = UDKDestinationSelected;
 					break;
 				case destinationFolderUserDefault:
-					destinationIntValue = extractionDestinationDesktopDestination;
+					destinationIntValue = UDKDestinationDesktop;
 					break;
 				default:
 					//If there is no parameter we use the user defaults
-					destinationIntValue = (int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKdestination];
+					destinationIntValue = [[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination];
 					break;
 			}
 		}
 	}
 	else {
-		destinationIntValue = (int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKdestination];
+		destinationIntValue = [[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination];
 	}
 	desttype=destinationIntValue;
 	
@@ -141,19 +115,19 @@ enum extracionDestination {
 	openFolders = [self evalBooleanParameterForKey:PKopening];
 	waitUntilFinished =[self evalBooleanParameterForKey:PKwaitUntilFinished];
 	
-	unsigned long creatingFolderValue  = [evaluatedArgs[PKcreatingFolder] unsignedLongValue];
+	creatingFolderEnum creatingFolderValue  = [evaluatedArgs[PKcreatingFolder] unsignedIntValue];
 	switch (creatingFolderValue) {
 		case creatingFolderNever:
-			creatingFolder = creatingFolderUDNever;
+			creatingFolder = TUCreateEnclosingDirectoryNever;
 			break;
 		case creatingFolderOnly:
-			creatingFolder = creatingFolderUDOnly;
+			creatingFolder = TUCreateEnclosingDirectoryMutlipleFilesOnly;
 			break;
 		case creatingFolderAlways:
-			creatingFolder = creatingFolderUDAlways;
+			creatingFolder = TUCreateEnclosingDirectoryAlways;
 			break;
 		default:
-			creatingFolder = (int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKcreateFolderMode];
+			creatingFolder = [[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
 			break;
 	}
 	
@@ -180,10 +154,10 @@ enum extracionDestination {
 	id parameter = evaluatedArgs[parameterKey];
 	if (! parameter) {
 		if ([parameterKey isEqualToString:PKdeleting]) {
-			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKdelete];
+			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKDelete];
 		}
 		if ([parameterKey isEqualToString:PKopening]) {
-			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKopen];
+			return [[NSUserDefaults standardUserDefaults] boolForKey:UDKOpen];
 		}
 		if ([parameterKey isEqualToString:PKwaitUntilFinished]) {
 			return YES;
@@ -194,8 +168,7 @@ enum extracionDestination {
 
 -(id)errorFileDontExist:(NSString *)file
 {
-	// TODO: choose a correct error number
-	self.scriptErrorNumber = 1;
+	self.scriptErrorNumber = fnfErr;
 	NSString *errorMessage = [NSString stringWithFormat:@"The file %@ doesn't exist.",file];
 	self.scriptErrorString = errorMessage;
 	return nil;
@@ -214,13 +187,13 @@ enum extracionDestination {
 	NSString *destination;
 	switch (desttype) {
 		default:
-		case extractionDestinationCurrentFolderDestination:
+		case UDKDestinationCurrentFolder:
 			destination=fileName.stringByDeletingLastPathComponent;
 			break;
-		case extractionDestinationDesktopDestination:
-			destination=[[NSUserDefaults standardUserDefaults] stringForKey:@"extractionDestinationPath"];
+		case UDKDestinationDesktop:
+			destination=[[NSUserDefaults standardUserDefaults] stringForKey:UDKDestinationPath];
 			break;
-		case extractionDestinationCustomPath:
+		case UDKDestinationCustomPath:
 			destination=extractDestination;
 			break;
 	}

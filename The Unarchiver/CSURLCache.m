@@ -1,6 +1,6 @@
 #import "CSURLCache.h"
 
-static BOOL HasPathPrefix(NSString *path,NSString *prefix);
+static BOOL HasPathPrefix(NSString *_Nonnull path,NSString *_Nonnull prefix);
 
 @interface CSURLCache () <CSURLCacheProvider>
 @end
@@ -35,12 +35,12 @@ static BOOL HasPathPrefix(NSString *path,NSString *prefix);
 	return self;
 }
 
--(void)addURLProvider:(NSObject <CSURLCacheProvider> *)provider
+-(void)addURLProvider:(id<CSURLCacheProvider>)provider
 {
 	[providers addObject:provider];
 }
 
--(void)removeURLProvider:(NSObject <CSURLCacheProvider> *)provider
+-(void)removeURLProvider:(id<CSURLCacheProvider>)provider
 {
 	[providers removeObjectIdenticalTo:provider];
 }

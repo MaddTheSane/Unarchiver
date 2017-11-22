@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "UserDefaultKeys.h"
 
 int main(int argc,const char **argv)
 {
@@ -14,19 +15,19 @@ int main(int argc,const char **argv)
         desktop=[NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
         #endif
 
-        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"autoDetectionThreshold": @"80",
-            @"filenameEncoding": @"0",
-            @"deleteExtractedArchive": @"0",
-            @"openExtractedFolder": @"0",
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{UDKDetectionThreshold: @80,
+            UDKFileNameEncoding: @0,
+            UDKDelete: @NO,
+            UDKOpen: @NO,
             #ifdef IsLegacyVersion
-            @"1",@"extractionDestination",
+			UDKDestination: @(UDKDestinationCurrentFolder),
             #else
-            @"extractionDestination": @"4",
+            UDKDestination: @(UDKDestinationUninitialized),
             #endif
-            @"createFolder": @"1",
-            @"folderModifiedDate": @"1",
-            @"changeDateOfFiles": @"0",
-            @"extractionDestinationPath": desktop}];
+            UDKCreateFolderMode: @(TUCreateEnclosingDirectoryMutlipleFilesOnly),
+            UDKModifyFolderDates: @1,
+            UDKModifyFileDates: @NO,
+            UDKDestinationPath: desktop}];
 
 	}
 

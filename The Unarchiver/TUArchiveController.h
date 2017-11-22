@@ -2,14 +2,9 @@
 
 #import "TUArchiveTaskView.h"
 #import "TUDockTileView.h"
+#import "UserDefaultKeys.h"
 
 @class TUController,TUEncodingPopUp;
-
-typedef NS_ENUM(int, TUCreateEnclosingDirectory) {
-	TUCreateEnclosingDirectoryMutlipleFilesOnly = 1, //!< Enclose multiple items.
-	TUCreateEnclosingDirectoryAlways, //!< Always enclose.
-	TUCreateEnclosingDirectoryNever //!< Never enclose.
-};
 
 @interface TUArchiveController:NSObject
 {

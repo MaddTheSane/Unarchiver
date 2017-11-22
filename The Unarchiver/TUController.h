@@ -7,6 +7,7 @@
 #import "TUTaskListView.h"
 @class TUEncodingPopUp;
 #import "TUDockTileView.h"
+#import "UserDefaultKeys.h"
 
 @interface TUController:NSObject
 {
@@ -46,9 +47,9 @@
 -(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)app;
 -(BOOL)application:(NSApplication *)app openFile:(NSString *)filename;
 
--(void)addArchiveControllersForFiles:(NSArray *)filenames destinationType:(int)desttype;
--(void)addArchiveControllersForURLs:(NSArray *)urls destinationType:(int)desttype;
--(void)addArchiveControllerForFile:(NSString *)filename destinationType:(int)desttype;
+-(void)addArchiveControllersForFiles:(NSArray<NSString*> *)filenames destinationType:(UDKDestinationType)desttype;
+-(void)addArchiveControllersForURLs:(NSArray<NSURL*> *)urls destinationType:(UDKDestinationType)desttype;
+-(void)addArchiveControllerForFile:(NSString *)filename destinationType:(UDKDestinationType)desttype;
 -(void)addArchiveController:(TUArchiveController *)archive;
 -(void)actuallyAddArchiveController:(TUArchiveController *)archive;
 -(TUArchiveController *)archiveControllerForFilename:(NSString *)filename;

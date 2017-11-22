@@ -4,7 +4,7 @@
 #import "TUEncodingPopUp.h"
 #import <XADMaster/XADRegex.h>
 #import <XADMaster/XADPlatform.h>
-
+#import "UserDefaultKeys.h"
 
 
 
@@ -73,13 +73,13 @@ NSStringEncoding globalpasswordencoding=0;
 -(TUCreateEnclosingDirectory)folderCreationMode
 {
 	if(foldermodeoverride>=0) return foldermodeoverride;
-	else return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"createFolder"];
+	else return [[NSUserDefaults standardUserDefaults] integerForKey:UDKCreateFolderMode];
 }
 
 -(BOOL)copyArchiveDateToExtractedFolder
 {
 	if(copydateoverride>=0) return copydateoverride!=0;
-	else return [[NSUserDefaults standardUserDefaults] integerForKey:@"folderModifiedDate"]==2;
+	else return [[NSUserDefaults standardUserDefaults] integerForKey:UDKModifyFolderDates]==2;
 }
 
 -(void)setCopyArchiveDateToExtractedFolder:(BOOL)copydate { copydateoverride=copydate; }
@@ -87,7 +87,7 @@ NSStringEncoding globalpasswordencoding=0;
 -(BOOL)changeDateOfExtractedSingleItems
 {
 	if(changefilesoverride>=0) return changefilesoverride!=0;
-	else return [[NSUserDefaults standardUserDefaults] boolForKey:@"changeDateOfFiles"];
+	else return [[NSUserDefaults standardUserDefaults] boolForKey:UDKModifyFileDates];
 }
 
 -(void)setChangeDateOfExtractedSingleItems:(BOOL)changefiles { changefilesoverride=changefiles; }
@@ -95,7 +95,7 @@ NSStringEncoding globalpasswordencoding=0;
 -(BOOL)deleteArchive
 {
 	if(deletearchiveoverride>=0) return deletearchiveoverride!=0;
-	else return [[NSUserDefaults standardUserDefaults] boolForKey:@"deleteExtractedArchive"];
+	else return [[NSUserDefaults standardUserDefaults] boolForKey:UDKDelete];
 }
 
 -(void)setDeleteArchive:(BOOL)delete { deletearchiveoverride=delete; }
@@ -103,7 +103,7 @@ NSStringEncoding globalpasswordencoding=0;
 -(BOOL)openExtractedItem
 {
 	if(openextractedoverride>=0) return openextractedoverride!=0;
-	else return [[NSUserDefaults standardUserDefaults] boolForKey:@"openExtractedFolder"];
+	else return [[NSUserDefaults standardUserDefaults] boolForKey:UDKOpen];
 }
 
 -(void)setOpenExtractedItem:(BOOL)open { openextractedoverride=open; }
@@ -161,7 +161,7 @@ NSStringEncoding globalpasswordencoding=0;
 
 -(NSString *)stringForXADPath:(XADPath *)path
 {
-	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
+	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:UDKFileNameEncoding];
 	if(!encoding) encoding=selected_encoding;
 	if(!encoding) encoding=path.encoding;
 	return [path stringWithEncoding:encoding];
@@ -378,7 +378,7 @@ NSStringEncoding globalpasswordencoding=0;
 {
 	NSUserDefaults *defs=[NSUserDefaults standardUserDefaults];
 	NSArray *tmpdirs=[defs arrayForKey:@"orphanedTempDirectories"];
-	if(!tmpdirs) tmpdirs=[NSArray array];
+	if(!tmpdirs) tmpdirs=@[];
 	[defs setObject:[tmpdirs arrayByAddingObject:tmpdir] forKey:@"orphanedTempDirectories"];
 	[defs synchronize];
 }
@@ -386,7 +386,7 @@ NSStringEncoding globalpasswordencoding=0;
 -(void)forgetTempDirectory:(NSString *)tmpdir
 {
 	NSUserDefaults *defs=[NSUserDefaults standardUserDefaults];
-	NSMutableArray *tmpdirs=[NSMutableArray arrayWithArray:[defs arrayForKey:@"orphanedTempDirectories"]];
+	NSMutableArray *tmpdirs=[[defs arrayForKey:@"orphanedTempDirectories"] mutableCopy];
 	[tmpdirs removeObject:tmpdir];
 	[defs setObject:tmpdirs forKey:@"orphanedTempDirectories"];
 	[defs synchronize];
@@ -413,12 +413,12 @@ NSStringEncoding globalpasswordencoding=0;
 	// TODO: Stop using NSStringEncoding.
 
 	// If the user has set an encoding in the preferences, always use this.
-	NSStringEncoding setencoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
+	NSStringEncoding setencoding=[[NSUserDefaults standardUserDefaults] integerForKey:UDKFileNameEncoding];
 	if(setencoding) return [XADString encodingNameForEncoding:setencoding];
 
 	// If the user has already been asked for an encoding, try to use it.
 	// Otherwise, if the confidence in the guessed encoding is high enough, try that.
-	int threshold=(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"autoDetectionThreshold"];
+	int threshold=(int)[[NSUserDefaults standardUserDefaults] integerForKey:UDKDetectionThreshold];
 
 	NSStringEncoding encoding=0;
 	if(selected_encoding) encoding=selected_encoding;
@@ -465,7 +465,7 @@ NSStringEncoding globalpasswordencoding=0;
 
 			if(applytoall)
 			{
-				globalpassword=password;
+				globalpassword=[password copy];
 				globalpasswordencoding=encoding;
 			}
 		}
@@ -481,7 +481,7 @@ NSStringEncoding globalpasswordencoding=0;
 	XADPath *name=dict[XADFileNameKey];
 
 	// TODO: Do something prettier here.
-	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:@"filenameEncoding"];
+	NSStringEncoding encoding=[[NSUserDefaults standardUserDefaults] integerForKey:UDKFileNameEncoding];
 	if(!encoding) encoding=selected_encoding;
 	if(!encoding) encoding=name.encoding;
 

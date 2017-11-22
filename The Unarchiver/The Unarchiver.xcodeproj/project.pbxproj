@@ -64,6 +64,8 @@
 		551F2AAB1FC57AA800CE4E5A /* TUEncodingPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F2AA91FC57AA800CE4E5A /* TUEncodingPopUp.swift */; };
 		5559AB9C1FC58165002CB79D /* XADMasterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */; };
 		5559AB9D1FC58165002CB79D /* XADMasterSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5559ABA51FC5E51D002CB79D /* UserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */; };
+		5559ABA61FC5E51D002CB79D /* UserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */; };
 		5565D3B31FC4CB8700AFF13C /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; };
 		5565D3B41FC4CB8700AFF13C /* XADMaster.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5565D3BB1FC4CC6D00AFF13C /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; };
@@ -500,6 +502,8 @@
 		551F2A731FC4D4CE00CE4E5A /* sv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		551F2AA71FC57AA700CE4E5A /* The Unarchiver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Unarchiver-Bridging-Header.h"; sourceTree = "<group>"; };
 		551F2AA91FC57AA800CE4E5A /* TUEncodingPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEncodingPopUp.swift; sourceTree = "<group>"; };
+		5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultKeys.m; sourceTree = "<group>"; };
+		5559ABA71FC5E52E002CB79D /* UserDefaultKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultKeys.h; sourceTree = "<group>"; };
 		55A2D4521FBF936200939897 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XADMaster.xcodeproj; path = ../XADMaster/XADMaster/XADMaster.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -565,6 +569,8 @@
 				1B4E39F61677EDA200AA29D3 /* CSURLCache.m */,
 				1B6FA2090A58A1D800066489 /* CSFileTypeList.h */,
 				1B6FA20A0A58A1D800066489 /* CSFileTypeList.m */,
+				5559ABA71FC5E52E002CB79D /* UserDefaultKeys.h */,
+				5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1041,6 +1047,7 @@
 				1B6BD59D1BB194D000EA3E01 /* TUCancelButton.m in Sources */,
 				1B6BD59E1BB194D000EA3E01 /* CSFileTypeList.m in Sources */,
 				1B6BD59F1BB194D000EA3E01 /* TUEncodingPopUp.m in Sources */,
+				5559ABA61FC5E51D002CB79D /* UserDefaultKeys.m in Sources */,
 				1B6BD5A01BB194D000EA3E01 /* TUArchiveTaskView.m in Sources */,
 				1B6BD5A11BB194D000EA3E01 /* TUTaskQueue.m in Sources */,
 				1B6BD5A21BB194D000EA3E01 /* TUDockTileView.m in Sources */,
@@ -1061,6 +1068,7 @@
 				1B932D6A0A560AC900F7DE66 /* TUCancelButton.m in Sources */,
 				1B6FA20B0A58A1D800066489 /* CSFileTypeList.m in Sources */,
 				1BED5DB50A600D6E00CA31C2 /* TUEncodingPopUp.m in Sources */,
+				5559ABA51FC5E51D002CB79D /* UserDefaultKeys.m in Sources */,
 				1B81DDA710003BBB005C5B23 /* TUArchiveTaskView.m in Sources */,
 				1B81DDCE10012A2D005C5B23 /* TUTaskQueue.m in Sources */,
 				DBE800E416275114005847F9 /* TUDockTileView.m in Sources */,
