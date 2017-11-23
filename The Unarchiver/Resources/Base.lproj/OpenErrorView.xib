@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
@@ -19,9 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="445" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button verticalHuggingPriority="750" imageHugsTitle="YES" id="18">
+                <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                     <rect key="frame" x="350" y="2" width="85" height="28"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="GnB-ZA-hQ1"/>
+                    </constraints>
                     <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="28">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -33,9 +35,8 @@ DQ
                         <action selector="okAfterOpenError:" target="-2" id="24"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" id="17">
-                    <rect key="frame" x="59" y="38" width="374" height="42"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                    <rect key="frame" x="59" y="38" width="373" height="42"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="27">
                         <font key="font" metaFont="smallSystem"/>
                         <string key="title">1
@@ -45,12 +46,26 @@ DQ
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView id="16">
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="16">
                     <rect key="frame" x="11" y="43" width="32" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="1Gr-3q-pxw"/>
+                        <constraint firstAttribute="height" constant="32" id="gHT-gY-3E5"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="26"/>
                 </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="18" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="16" secondAttribute="trailing" constant="8" symbolic="YES" id="8R3-yR-iAi"/>
+                <constraint firstItem="18" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="D6s-Xf-x6X"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="17" secondAttribute="bottom" constant="12" id="EQS-tI-PIl"/>
+                <constraint firstItem="17" firstAttribute="top" secondItem="5" secondAttribute="top" constant="6" id="RPh-GH-VDg"/>
+                <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="15" id="RzH-3L-Q0j"/>
+                <constraint firstItem="17" firstAttribute="leading" secondItem="16" secondAttribute="trailing" constant="18" id="aQJ-Yk-q8E"/>
+                <constraint firstItem="18" firstAttribute="top" relation="greaterThanOrEqual" secondItem="16" secondAttribute="bottom" constant="13" id="btV-cg-8fY"/>
+                <constraint firstItem="16" firstAttribute="top" secondItem="5" secondAttribute="top" constant="11" id="cVB-y8-TJe"/>
+                <constraint firstItem="16" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="11" id="tdQ-HN-NoJ"/>
+            </constraints>
         </customView>
     </objects>
     <resources>

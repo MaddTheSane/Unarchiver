@@ -60,7 +60,7 @@ class TUEncodingPopUp: NSPopUpButton {
 		
 		for encdict in TUEncodingPopUp.encodings {
 			let preSwiftEnc = encdict["Encoding"] as! UInt
-			let encoding = String.Encoding(rawValue: preSwiftEnc)
+			let encoding: String.Encoding = String.Encoding(rawValue: preSwiftEnc)
 			
 			if let string = string, !string.canDecode(withEncoding: encoding) {
 				continue

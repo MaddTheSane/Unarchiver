@@ -167,6 +167,9 @@
 /* Class = "NSTextFieldCell"; title = "%"; ObjectID = "415"; */
 "415.title" = "%";
 
+/* Class = "NSTextFieldCell"; title = ""; ObjectID = "416"; */
+"416.title" = "";
+
 /* Class = "NSTextFieldCell"; title = "(Un nivel de confianza inferior hace que el programa pregunte por una codificación en vez de usar la detección automática.)"; ObjectID = "417"; */
 "417.title" = "(Un nivel de confianza inferior hace que el programa pregunte por una codificación en vez de usar la detección automática.)";
 

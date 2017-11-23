@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
@@ -21,9 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="356" height="66"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <subviews>
-                <button imageHugsTitle="YES" id="23" customClass="TUCancelButton">
+                <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23" customClass="TUCancelButton">
                     <rect key="frame" x="330" y="27" width="14" height="14"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="Mtv-Hh-VEj"/>
+                        <constraint firstAttribute="height" constant="14" id="Wfj-Hf-9iB"/>
+                    </constraints>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="close_normal" imagePosition="above" alignment="center" alternateImage="close_press" inset="2" id="37">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system" size="10"/>
@@ -32,34 +35,53 @@
                         <action selector="cancelExtraction:" target="-2" id="24"/>
                     </connections>
                 </button>
-                <imageView id="17">
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="17">
                     <rect key="frame" x="11" y="20" width="32" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="MUB-0M-TP3"/>
+                        <constraint firstAttribute="height" constant="32" id="RJs-ZY-meZ"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="36"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" id="9">
-                    <rect key="frame" x="57" y="46" width="265" height="14"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                    <rect key="frame" x="57" y="46" width="268" height="14"/>
                     <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Unarchiving &quot;file.zip&quot;" id="35">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="7">
-                    <rect key="frame" x="57" y="10" width="265" height="11"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7">
+                    <rect key="frame" x="57" y="10" width="268" height="11"/>
                     <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="directory/file.ext" id="34">
                         <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <progressIndicator verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="bar" id="6">
+                <progressIndicator verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                     <rect key="frame" x="58" y="27" width="265" height="12"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </progressIndicator>
             </subviews>
+            <constraints>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="17" secondAttribute="trailing" constant="15" id="1gE-0o-jj9"/>
+                <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" constant="12" id="5iA-Q3-FWw"/>
+                <constraint firstItem="9" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="5vU-0c-wxq"/>
+                <constraint firstItem="17" firstAttribute="top" secondItem="5" secondAttribute="top" constant="14" id="7n1-tL-bNz"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="17" secondAttribute="trailing" constant="16" id="EhB-PY-VWx"/>
+                <constraint firstAttribute="bottom" secondItem="17" secondAttribute="bottom" constant="20" symbolic="YES" id="LnB-hy-Srt"/>
+                <constraint firstItem="9" firstAttribute="top" secondItem="5" secondAttribute="top" constant="6" id="MMA-JP-5ML"/>
+                <constraint firstItem="9" firstAttribute="leading" secondItem="7" secondAttribute="leading" id="Mc6-Ia-xNK"/>
+                <constraint firstItem="17" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="11" id="cez-0p-FFK"/>
+                <constraint firstItem="6" firstAttribute="bottom" secondItem="23" secondAttribute="bottom" id="dU8-kQ-tsF"/>
+                <constraint firstItem="6" firstAttribute="trailing" secondItem="9" secondAttribute="trailing" id="fXU-tt-dPQ"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="9" secondAttribute="bottom" constant="7" id="hMA-Oy-Tgl"/>
+                <constraint firstItem="23" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="7" id="mvg-Z3-lsw"/>
+                <constraint firstItem="6" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" id="syK-HE-LUp"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="6" id="we1-gB-xns"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="59" id="yXJ-fh-lab"/>
+                <constraint firstItem="23" firstAttribute="top" secondItem="5" secondAttribute="top" constant="25" id="ydv-kK-WT8"/>
+            </constraints>
         </customView>
     </objects>
     <resources>

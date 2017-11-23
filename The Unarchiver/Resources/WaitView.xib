@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
@@ -19,9 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="445" height="24"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button imageHugsTitle="YES" id="15" customClass="TUCancelButton">
+                <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15" customClass="TUCancelButton">
                     <rect key="frame" x="419" y="5" width="14" height="14"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Ftt-Jo-imb"/>
+                        <constraint firstAttribute="width" constant="14" id="fcZ-Hb-RBb"/>
+                    </constraints>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="close_normal" imagePosition="above" alignment="center" alternateImage="close_press" inset="2" id="20">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system" size="10"/>
@@ -30,21 +33,33 @@
                         <action selector="cancelWait:" target="-2" id="16"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" id="8">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8">
                     <rect key="frame" x="57" y="5" width="354" height="14"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Filename.zip" id="19">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView id="7">
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="7">
                     <rect key="frame" x="19" y="4" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="B8R-5m-Rxi"/>
+                        <constraint firstAttribute="height" constant="16" id="ZpC-Mg-Epa"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="18"/>
                 </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="7" secondAttribute="trailing" constant="24" id="4pS-Fb-UNg"/>
+                <constraint firstAttribute="trailing" secondItem="15" secondAttribute="trailing" constant="12" id="6WZ-XO-wRP"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="19" id="AVB-SU-dbH"/>
+                <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" constant="4" id="eZb-TE-hIX"/>
+                <constraint firstItem="15" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" id="hre-Gm-2BG"/>
+                <constraint firstItem="8" firstAttribute="centerY" secondItem="5" secondAttribute="centerY" id="in9-vV-RmE"/>
+                <constraint firstItem="15" firstAttribute="leading" secondItem="8" secondAttribute="trailing" constant="10" id="j2a-cB-41S"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="5" secondAttribute="top" constant="4" id="oUQ-8U-wyc"/>
+            </constraints>
         </customView>
     </objects>
     <resources>
