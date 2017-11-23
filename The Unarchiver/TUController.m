@@ -140,19 +140,17 @@ static BOOL IsPathWritable(NSString *path);
 	if ([[NSUserDefaults standardUserDefaults] integerForKey:UDKDestination] == UDKDestinationUninitialized) {
 		NSArray *array = [NSBundle mainBundle].preferredLocalizations;
 		if (array && array.count && [array[0] isEqual:@"en"]) {
-			NSAlert *panel = [NSAlert alertWithMessageText:
-										  NSLocalizedString(@"Where should The Unarchiver extract archives?", @"Title for nagging alert on first startup")
-											 defaultButton:NSLocalizedString(@"Extract to the same folder", @"Button to extract to the same folder in nagging alert on first startup")
-										   alternateButton:NSLocalizedString(@"Ask every time", @"Button to ask every time in nagging alert on first startup")
-											   otherButton:nil
-								 informativeTextWithFormat:NSLocalizedString(
-															   @"Would you like The Unarchiver to extract archives to the same folder as the "
-															   @"archive file, or would you prefer to be asked for a destination folder for "
-															   @"every individual archive?",
-															   @"Content of nagging alert on first startup")];
+			NSAlert *panel = [NSAlert new];
+			panel.messageText = NSLocalizedString(@"Where should The Unarchiver extract archives?", @"Title for nagging alert on first startup");
+			panel.informativeText = NSLocalizedString(@"Would you like The Unarchiver to extract archives to the same folder as the "
+													  @"archive file, or would you prefer to be asked for a destination folder for "
+													  @"every individual archive?",
+													  @"Content of nagging alert on first startup");
+			[panel addButtonWithTitle:NSLocalizedString(@"Extract to the same folder", @"Button to extract to the same folder in nagging alert on first startup")];
+			[panel addButtonWithTitle:NSLocalizedString(@"Ask every time", @"Button to ask every time in nagging alert on first startup")];
 
 			NSInteger res = [panel runModal];
-			if (res == NSOKButton)
+			if (res == NSAlertFirstButtonReturn)
 				[[NSUserDefaults standardUserDefaults]
 					setInteger:UDKDestinationCurrentFolder
 						forKey:UDKDestination];
@@ -422,7 +420,7 @@ static BOOL IsPathWritable(NSString *path);
 {
 	TUArchiveController *archive = (__bridge id)info;
 
-	if (res == NSOKButton) {
+	if (res == NSModalResponseOK) {
 
 #ifdef IsLegacyVersion
 		selecteddestination = [[panel directory] retain];
@@ -684,7 +682,7 @@ static BOOL IsPathWritable(NSString *path);
 
 - (void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void *)context
 {
-	if (res == NSOKButton) {
+	if (res == NSModalResponseOK) {
 #ifdef IsLegacyVersion
 		NSString *directory = [panel directory];
 #else
@@ -763,7 +761,7 @@ static BOOL IsPathWritable(NSString *path);
 
 	NSInteger res = [panel runModal];
 
-	if (res == NSOKButton) {
+	if (res == NSModalResponseOK) {
 #ifdef IsLegacyVersion
 		[self addArchiveControllersForFiles:[panel filenames]
 							destinationType:desttype];

@@ -325,21 +325,15 @@ NSStringEncoding globalpasswordencoding = 0;
 
 	// Delete archive if requested, but only if no errors were encountered.
 	if (deletearchivepref && !haderrors) {
-		NSString *directory = archivename.stringByDeletingLastPathComponent;
 		NSArray *allpaths = unarchiver.outerArchiveParser.allFilenames;
 		NSMutableArray *allfiles = [NSMutableArray arrayWithCapacity:allpaths.count];
-		NSEnumerator *enumerator = [allpaths objectEnumerator];
-		NSString *path;
-		while ((path = [enumerator nextObject])) {
-			if ([path.stringByDeletingLastPathComponent isEqual:directory])
-				[allfiles addObject:path.lastPathComponent];
+		NSMutableArray *urls = [[NSMutableArray alloc] initWithCapacity:allfiles.count];
+		for (NSString *path in allpaths) {
+			[urls addObject:[NSURL fileURLWithPath:path]];
 		}
-
-		[[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
-													 source:directory
-												destination:@""
-													  files:allfiles
-														tag:nil];
+		[[NSWorkspace sharedWorkspace] recycleURLs:urls completionHandler:^(NSDictionary<NSURL *,NSURL *> * _Nonnull newURLs, NSError * _Nullable error) {
+			//do nothing.
+		}];
 		//[self playSound:@"/System/Library/Components/CoreAudio.component/Contents/Resources/SystemSounds/dock/drag to trash.aif"];
 	}
 
