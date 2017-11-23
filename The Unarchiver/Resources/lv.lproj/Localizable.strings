@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (vēl +%2$d)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -101,3 +101,4 @@
 "Buffer was too short" = "Pārāk īss buferis";
 "Text encoding was defective" = "Defektīvs teksta kodējums";
 "Could not create symlink" = "Nevarēja izveidot simbolsaiti";
+

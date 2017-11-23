@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d más)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -101,6 +101,4 @@
 "Buffer was too short" = "El buffer era demasiado corto";
 "Text encoding was defective" = "La codificación del texto era defectuosa";
 "Could not create symlink" = "No se ha podido crear el symlink";
-
-
 

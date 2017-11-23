@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d more)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -80,6 +80,4 @@
 "Buffer was too short" = "Ara bellek çok kısaydı";
 "Text encoding was defective" = "Metin kodlaması kusurluydu";
 "Could not create symlink" = "symlink oluşturulamıyor";
-
-
 

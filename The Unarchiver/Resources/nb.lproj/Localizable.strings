@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d igjen)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -101,6 +101,4 @@
 "Buffer was too short" = "Mellomlager (buffer) var for kort";
 "Text encoding was defective" = "Tekstkoding var defekt";
 "Could not create symlink" = "Kunne ikke opprette symbolsk lenke (symlink)";
-
-
 

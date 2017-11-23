@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d további)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -101,6 +101,4 @@
 "Buffer was too short" = "A puffer túl rövid volt";
 "Text encoding was defective" = "A szöveg kódolása hiányos volt";
 "Could not create symlink" = "Szimbolikus csatolás késztése sikertelen";
-
-
 

@@ -1,4 +1,4 @@
-﻿/* Status text for queued multi-part archives */
+/* Status text for queued multi-part archives */
 "%@ (+%d more)" = "%1$@ (+%2$d více)";
 
 /* Error message string. The first %@ is the file name, the second the archive name, the third is error message */
@@ -78,3 +78,4 @@
 "Buffer was too short" = "Zásobník je příliš malý";
 "Text encoding was defective" = "Kódování textu bylo chybné";
 "Could not create symlink" = "Nelze vytvořit symbolického zástupce";
+
