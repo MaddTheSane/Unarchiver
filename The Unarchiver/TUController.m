@@ -280,14 +280,14 @@ static BOOL IsPathWritable(NSString *path);
 
 - (TUArchiveController *)archiveControllerForFilename:(NSString *)filename
 {
-	NSEnumerator *enumerator = [archivecontrollers objectEnumerator];
-	TUArchiveController *archive;
-	while (archive = [enumerator nextObject]) {
-		if (archive.isCancelled)
+	for (TUArchiveController *archive in archivecontrollers) {
+		if (archive.isCancelled) {
 			continue;
+		}
 		NSArray *filenames = archive.allFilenames;
-		if ([filenames containsObject:filename])
+		if ([filenames containsObject:filename]) {
 			return archive;
+		}
 	}
 	return nil;
 }
