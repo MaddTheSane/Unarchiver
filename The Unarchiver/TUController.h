@@ -9,6 +9,8 @@
 #import "TUDockTileView.h"
 #import "UserDefaultKeys.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface TUController : NSObject <NSApplicationDelegate> {
 	TUTaskQueue *addtasks, *extracttasks;
 	NSMutableArray *archivecontrollers;
@@ -19,7 +21,7 @@
 
 	BOOL opened;
 
-	IBOutlet NSWindow *mainwindow;
+	IBOutlet __weak NSWindow *mainwindow;
 	IBOutlet TUTaskListView *mainlist;
 	IBOutlet TUEncodingPopUp *encodingpopup;
 
@@ -39,7 +41,7 @@
 
 - (void)cleanupOrphanedTempDirectories;
 
-@property (NS_NONATOMIC_IOSONLY, readonly, strong) NSWindow *window;
+@property (NS_NONATOMIC_IOSONLY, readonly, weak) NSWindow *window;
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasRunningExtractions;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification;
@@ -51,12 +53,12 @@
 - (void)addArchiveControllerForFile:(NSString *)filename destinationType:(UDKDestinationType)desttype;
 - (void)addArchiveController:(TUArchiveController *)archive;
 - (void)actuallyAddArchiveController:(TUArchiveController *)archive;
-- (TUArchiveController *)archiveControllerForFilename:(NSString *)filename;
+- (nullable TUArchiveController *)archiveControllerForFilename:(NSString *)filename;
 
 - (void)findDestinationForArchiveController:(TUArchiveController *)archive;
 - (void)gainAccessToDestinationForArchiveController:(TUArchiveController *)archive;
 - (void)checkDestinationForArchiveController:(TUArchiveController *)archive;
-- (void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void *)info;
+- (void)archiveDestinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(nullable void *)info;
 - (void)archiveTaskView:(TUArchiveTaskView *)taskview notWritableResponse:(int)response;
 - (void)prepareArchiveController:(TUArchiveController *)archive;
 - (void)finishSetupForArchiveController:(TUArchiveController *)archive;
@@ -71,28 +73,28 @@
 
 - (void)updateDestinationPopup;
 - (IBAction)changeDestination:(id)sender;
-- (void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(void *)context;
+- (void)destinationPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)res contextInfo:(nullable void *)context;
 
 - (void)unarchiveToCurrentFolderWithPasteboard:(NSPasteboard *)pboard
 									  userData:(NSString *)data
-										 error:(NSString **)error;
+										 error:(NSString *_Nullable*_Nullable)error;
 - (void)unarchiveToDesktopWithPasteboard:(NSPasteboard *)pboard
 								userData:(NSString *)data
-								   error:(NSString **)error;
+								   error:(NSString *_Nullable*_Nullable)error;
 - (void)unarchiveToWithPasteboard:(NSPasteboard *)pboard
 						 userData:(NSString *)data
-							error:(NSString **)error;
+							error:(NSString *_Nullable*_Nullable)error;
 
-- (IBAction)unarchiveToCurrentFolder:(id)sender;
-- (IBAction)unarchiveToDesktop:(id)sender;
-- (IBAction)unarchiveTo:(id)sender;
+- (IBAction)unarchiveToCurrentFolder:(nullable id)sender;
+- (IBAction)unarchiveToDesktop:(nullable id)sender;
+- (IBAction)unarchiveTo:(nullable id)sender;
 - (void)selectAndUnarchiveFilesWithDestination:(UDKDestinationType)desttype;
 
-- (IBAction)changeCreateFolder:(id)sender;
+- (IBAction)changeCreateFolder:(nullable id)sender;
 
-- (IBAction)openSupportBoard:(id)sender;
-- (IBAction)openBugReport:(id)sender;
-- (IBAction)openHomePage:(id)sender;
+- (IBAction)openSupportBoard:(nullable id)sender;
+- (IBAction)openBugReport:(nullable id)sender;
+- (IBAction)openHomePage:(nullable id)sender;
 
 + (NSImage *)iconForPath:(NSString *)path;
 
@@ -102,3 +104,5 @@
 -(NSNumber *)_fileSystemNumber:(NSString *)filename;*/
 
 @end
+
+NS_ASSUME_NONNULL_END

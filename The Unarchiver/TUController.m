@@ -803,30 +803,31 @@ static BOOL IsPathWritable(NSString *path);
 + (NSImage *)iconForPath:(NSString *)path
 {
 	NSString *usernameregex = NSUserName().escapedPattern;
+	NSBundle *ctBundle = [[NSBundle alloc] initWithPath:@"/System/Library/CoreServices/CoreTypes.bundle"];
 
 #define regexForUserPath(path) [NSString stringWithFormat:@"/%@/%@$", usernameregex, path, nil]
-#define folderIconNamed(iconName) [[NSImage alloc] initWithContentsOfFile:@"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/" iconName]
+#define folderIconNamed(iconName) [ctBundle imageForResource: iconName]
 
 	NSImage *icon = nil;
 
 	if ([path matchedByPattern:[NSString stringWithFormat:@"/%@$", usernameregex, nil]]) {
-		icon = folderIconNamed(@"HomeFolderIcon.icns");
+		icon = folderIconNamed(@"HomeFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Desktop")]) {
-		icon = folderIconNamed(@"DesktopFolderIcon.icns");
+		icon = folderIconNamed(@"DesktopFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Documents")]) {
-		icon = folderIconNamed(@"DocumentsFolderIcon.icns");
+		icon = folderIconNamed(@"DocumentsFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Public")]) {
-		icon = folderIconNamed(@"PublicFolderIcon.icns");
+		icon = folderIconNamed(@"PublicFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Pictures")]) {
-		icon = folderIconNamed(@"PicturesFolderIcon.icns");
+		icon = folderIconNamed(@"PicturesFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Downloads")]) {
-		icon = folderIconNamed(@"DownloadsFolder.icns");
+		icon = folderIconNamed(@"DownloadsFolder");
 	} else if ([path matchedByPattern:regexForUserPath(@"Movies")]) {
-		icon = folderIconNamed(@"MovieFolderIcon.icns");
+		icon = folderIconNamed(@"MovieFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Music")]) {
-		icon = folderIconNamed(@"MusicFolderIcon.icns");
+		icon = folderIconNamed(@"MusicFolderIcon");
 	} else if ([path matchedByPattern:regexForUserPath(@"Sites")]) {
-		icon = folderIconNamed(@"SitesFolderIcon.icns");
+		icon = folderIconNamed(@"SitesFolderIcon");
 	}
 
 	if (!icon) {

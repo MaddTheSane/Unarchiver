@@ -54,8 +54,9 @@ class TUEncodingPopUp: NSPopUpButton {
 			let paraStyle = NSMutableParagraphStyle()
 			paraStyle.tabStops = [NSTextTab(textAlignment: .left, location: maxWidth + 10)]
 			
-			normalattrs[.paragraphStyle] = paraStyle.copy()
-			smallattrs[.paragraphStyle] = paraStyle.copy()
+			let immPara = paraStyle.copy()
+			normalattrs[.paragraphStyle] = immPara
+			smallattrs[.paragraphStyle] = immPara
 		}
 		
 		for encdict in TUEncodingPopUp.encodings {
@@ -94,12 +95,15 @@ class TUEncodingPopUp: NSPopUpButton {
 	
 	@objc class var encodings: [[String : Any]] {
 		var encodingarray = [[String : Any]]()
-		let allCFEncs = CFStringGetListOfAvailableEncodings()!
-		var curentEncPos = allCFEncs
-		while curentEncPos.pointee != kCFStringEncodingInvalidId {
-			curentEncPos = curentEncPos.successor()
-		}
-		let encodings = UnsafeBufferPointer(start: allCFEncs, count: allCFEncs.distance(to: curentEncPos))
+		let encodings: UnsafeBufferPointer<CFStringEncoding> = {
+			let allCFEncs = CFStringGetListOfAvailableEncodings()!
+			var curentEncPos = allCFEncs
+			while curentEncPos.pointee != kCFStringEncodingInvalidId {
+				curentEncPos = curentEncPos.successor()
+			}
+
+			return UnsafeBufferPointer(start: allCFEncs, count: allCFEncs.distance(to: curentEncPos))
+		}()
 		
 		for cfencoding in encodings {
 			let encoding = CFStringConvertEncodingToNSStringEncoding(cfencoding)
@@ -121,7 +125,8 @@ class TUEncodingPopUp: NSPopUpButton {
 			if(isunicode1&&!isunicode2) return NSOrderedAscending;
 			else if(!isunicode1&&isunicode2) return NSOrderedDescending;
 			else*/ //return [name1 compare:name2 options:NSCaseInsensitiveSearch|NSNumericSearch];
-			return name1.compare(name2, options: [.caseInsensitive, .numeric]) == .orderedAscending
+			let ret = name1.compare(name2, options: [.caseInsensitive, .numeric])
+			return ret == .orderedAscending
 		})
 	}
 	
