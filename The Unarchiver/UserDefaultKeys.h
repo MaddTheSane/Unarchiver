@@ -36,16 +36,21 @@ extern NSString *const UDKModifyFileDates;
 
 typedef NS_ENUM(NSInteger, UDKDestinationType) {
 	UDKDestinationCurrentFolder = 1,
-	UDKDestinationDesktop, //!< //selected by user at pref panel, may be other
-						   //! than ~/Desktop
+	//! selected by user at pref panel, may be other
+	//! than ~/Desktop
+	UDKDestinationDesktop,
+	//! Always let user select the path.
 	UDKDestinationSelected,
 	UDKDestinationUninitialized,
+	//! Only used for scripting.
 	UDKDestinationCustomPath = 10
 };
 
 typedef NS_ENUM(NSInteger, TUCreateEnclosingDirectory) {
-	TUCreateEnclosingDirectoryMutlipleFilesOnly =
-		1,							  //!< Enclose multiple items.
-	TUCreateEnclosingDirectoryAlways, //!< Always enclose.
-	TUCreateEnclosingDirectoryNever   //!< Never enclose.
+	//! Enclose multiple items.
+	TUCreateEnclosingDirectoryMutlipleFilesOnly = 1,
+	//! Always enclose.
+	TUCreateEnclosingDirectoryAlways,
+	//! Never enclose.
+	TUCreateEnclosingDirectoryNever
 };
