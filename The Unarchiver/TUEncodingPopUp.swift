@@ -49,7 +49,7 @@ class TUEncodingPopUp: NSPopUpButton {
 			normalattrs[.font] = NSFont.menuFont(ofSize: NSFont.systemFontSize)
 			smallattrs[.font] = NSFont.menuFont(ofSize: NSFont.smallSystemFontSize)
 			
-			let maxWidth = TUEncodingPopUp.maximumEncodingNameWidth(attributes: normalattrs)
+			let maxWidth = ceil(TUEncodingPopUp.maximumEncodingNameWidth(attributes: normalattrs))
 			
 			let paraStyle = NSMutableParagraphStyle()
 			paraStyle.tabStops = [NSTextTab(textAlignment: .left, location: maxWidth + 10)]
@@ -60,14 +60,13 @@ class TUEncodingPopUp: NSPopUpButton {
 		}
 		
 		for encdict in TUEncodingPopUp.encodings {
-			let preSwiftEnc = encdict["Encoding"] as! UInt
-			let encoding: String.Encoding = String.Encoding(rawValue: preSwiftEnc)
+			let encoding = encdict.encoding
 			
 			if let string = string, !string.canDecode(withEncoding: encoding) {
 				continue
 			}
 			
-			let encodingName = encdict["Name"] as! String
+			let encodingName = encdict.name
 			let item = NSMenuItem()
 			
 			if let string = string {
@@ -80,7 +79,8 @@ class TUEncodingPopUp: NSPopUpButton {
 				
 				let tabRange = preAttrStr.range(of: "\t")!
 				let smallStrRange = tabRange.lowerBound ..< preAttrStr.endIndex
-				attrStr.setAttributes(smallattrs, range: NSRange(smallStrRange, in: preAttrStr))
+				let smallStrNSRange = NSRange(smallStrRange, in: preAttrStr)
+				attrStr.setAttributes(smallattrs, range: smallStrNSRange)
 				
 				item.attributedTitle = attrStr
 			} else {
@@ -92,9 +92,7 @@ class TUEncodingPopUp: NSPopUpButton {
 		}
 	}
 	
-	
-	@objc class var encodings: [[String : Any]] {
-		var encodingarray = [[String : Any]]()
+	class var encodings: [(name: String, encoding: String.Encoding)] {
 		let encodings: UnsafeBufferPointer<CFStringEncoding> = {
 			let allCFEncs = CFStringGetListOfAvailableEncodings()!
 			var curentEncPos = allCFEncs
@@ -105,20 +103,18 @@ class TUEncodingPopUp: NSPopUpButton {
 			return UnsafeBufferPointer(start: allCFEncs, count: allCFEncs.distance(to: curentEncPos))
 		}()
 		
-		for cfencoding in encodings {
-			let encoding = CFStringConvertEncodingToNSStringEncoding(cfencoding)
-			let name = String.localizedName(of: String.Encoding(rawValue: encoding))
+		let encodingarray = encodings.map { (cfencoding) -> (name: String, encoding: String.Encoding) in
+			let encoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(cfencoding))
+			let name = String.localizedName(of: encoding)
 			
-			if encoding == String.Encoding.unicode.rawValue {
-				continue
-			}
-			encodingarray.append(["Name": name,
-								  "Encoding": encoding])
+			return (name, encoding)
+		}.filter { (element) -> Bool in
+			return element.encoding != .unicode
 		}
 		
 		return encodingarray.sorted(by: { (lhs, rhs) -> Bool in
-			let name1 = lhs["Name"] as! String
-			let name2 = rhs["Name"] as! String
+			let name1 = lhs.name
+			let name2 = rhs.name
 			/*BOOL isunicode1=[name1 hasPrefix:@"Unicode"];
 			BOOL isunicode2=[name2 hasPrefix:@"Unicode"];
 			
@@ -135,7 +131,7 @@ class TUEncodingPopUp: NSPopUpButton {
 		var maxwidth: CGFloat = 0
 		
 		for encdict in TUEncodingPopUp.encodings {
-			let name = encdict["Name"] as! String
+			let name = encdict.name
 			let width = name.size(withAttributes: attrs).width
 			if width > maxwidth {
 				maxwidth = width
