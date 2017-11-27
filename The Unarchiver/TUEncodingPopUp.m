@@ -1,7 +1,5 @@
 #import "TUEncodingPopUp.h"
 
-static BOOL SanityCheckString(NSString *string);
-
 static BOOL IsSurrogateHighCharacter(unichar c)
 {
 	return c >= 0xd800 && c <= 0xdbff;
@@ -12,7 +10,7 @@ static BOOL IsSurrogateLowCharacter(unichar c)
 	return c >= 0xdc00 && c <= 0xdfff;
 }
 
-static BOOL SanityCheckString(NSString *string)
+BOOL TUSanityCheckString(NSString *string)
 {
 	NSInteger length = string.length;
 	for (int i = 0; i < length; i++) {
@@ -32,11 +30,6 @@ static BOOL SanityCheckString(NSString *string)
 		}
 	}
 	return YES;
-}
-
-BOOL TUSanityCheckString(NSString *string)
-{
-	return SanityCheckString(string);
 }
 
 /*+(NSDictionary *)encodingDictionary
