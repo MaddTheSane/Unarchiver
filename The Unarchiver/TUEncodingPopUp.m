@@ -13,7 +13,7 @@ static BOOL IsSurrogateLowCharacter(unichar c)
 BOOL TUSanityCheckString(NSString *string)
 {
 	NSInteger length = string.length;
-	for (int i = 0; i < length; i++) {
+	for (NSInteger i = 0; i < length; i++) {
 		unichar c = [string characterAtIndex:i];
 		if (IsSurrogateHighCharacter(c)) {
 			return NO;
