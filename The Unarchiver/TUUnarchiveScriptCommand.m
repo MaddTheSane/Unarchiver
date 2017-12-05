@@ -61,9 +61,7 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 
 	//We check that all the files exists
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSEnumerator *enumerator = [files objectEnumerator];
-	NSString *file;
-	while ((file = [enumerator nextObject])) {
+	for (NSString *file in files) {
 		if (![fileManager fileExistsAtPath:file]) {
 			return [self errorFileDontExist:file];
 		}
@@ -123,9 +121,7 @@ typedef NS_ENUM(OSType, creatingFolderEnum) {
 			break;
 	}
 
-	enumerator = [files objectEnumerator];
-	NSString *filename;
-	while ((filename = [enumerator nextObject])) {
+	for (NSString *filename in files) {
 		[self unarchiveFile:filename];
 	}
 
