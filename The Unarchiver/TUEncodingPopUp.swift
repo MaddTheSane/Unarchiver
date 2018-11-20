@@ -6,8 +6,7 @@
 //
 
 import Cocoa
-import XADMaster.XADString
-import XADMasterSwift
+import XADMaster.String
 
 class TUEncodingPopUp: NSPopUpButton {
 
@@ -62,7 +61,7 @@ class TUEncodingPopUp: NSPopUpButton {
 		for encdict in TUEncodingPopUp.encodings {
 			let encoding = encdict.encoding
 			
-			if let string = string, !string.canDecode(withEncoding: encoding) {
+			if let string = string, !string.canDecode(with: encoding) {
 				continue
 			}
 			
@@ -70,7 +69,7 @@ class TUEncodingPopUp: NSPopUpButton {
 			let item = NSMenuItem()
 			
 			if let string = string {
-				guard let decoded = string.string(withEncoding: encoding), TUSanityCheckString(decoded) else {
+				guard let decoded = string.string(with: encoding), TUSanityCheckString(decoded) else {
 					continue
 				}
 				
@@ -103,13 +102,14 @@ class TUEncodingPopUp: NSPopUpButton {
 			return UnsafeBufferPointer(start: allCFEncs, count: allCFEncs.distance(to: curentEncPos))
 		}()
 		
-		let encodingarray = encodings.map { (cfencoding) -> (name: String, encoding: String.Encoding) in
+		let encodingarray = encodings.compactMap { (cfencoding) -> (name: String, encoding: String.Encoding)? in
 			let encoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(cfencoding))
+			if encoding == .unicode {
+				return nil
+			}
 			let name = String.localizedName(of: encoding)
 			
 			return (name, encoding)
-		}.filter { (element) -> Bool in
-			return element.encoding != .unicode
 		}
 		
 		return encodingarray.sorted(by: { (lhs, rhs) -> Bool in

@@ -62,8 +62,6 @@
 		3D66507810378C6F00A679EF /* UniversalDetector.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3D664F51103776C900A679EF /* UniversalDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		551F2AAA1FC57AA800CE4E5A /* TUEncodingPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F2AA91FC57AA800CE4E5A /* TUEncodingPopUp.swift */; };
 		551F2AAB1FC57AA800CE4E5A /* TUEncodingPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F2AA91FC57AA800CE4E5A /* TUEncodingPopUp.swift */; };
-		5559AB9C1FC58165002CB79D /* XADMasterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */; };
-		5559AB9D1FC58165002CB79D /* XADMasterSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5559ABA51FC5E51D002CB79D /* UserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */; };
 		5559ABA61FC5E51D002CB79D /* UserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 5559ABA41FC5E51D002CB79D /* UserDefaultKeys.m */; };
 		5565D3B31FC4CB8700AFF13C /* XADMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565D37B1FC4C04800AFF13C /* XADMaster.framework */; };
@@ -96,13 +94,6 @@
 			remoteGlobalIDString = 1B0DDCAB0A2D0AD10009B697;
 			remoteInfo = DetectorTest;
 		};
-		5559AB9E1FC58165002CB79D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 555EF06F1EA7DB1F000CAE58;
-			remoteInfo = XADMasterSwift;
-		};
 		5565D37A1FC4C04800AFF13C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
@@ -123,20 +114,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 5500A60F1D776ADB00321300;
 			remoteInfo = "XADMaster-simple";
-		};
-		5565D3801FC4C04800AFF13C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 555EF0701EA7DB1F000CAE58;
-			remoteInfo = XADMasterSwift;
-		};
-		5565D3821FC4C04800AFF13C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5591221B1EB3D07D007CF99D;
-			remoteInfo = "XADMasterSwift-iOS";
 		};
 		5565D3841FC4C04800AFF13C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -257,6 +234,13 @@
 			remoteGlobalIDString = 55F5908E1EB53613000B4973;
 			remoteInfo = "Static Library";
 		};
+		55CE551721A4C094002B4073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56FBC8C70A57528100BE98CF /* XADMaster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 73DA3465206B6BF1006ADB42;
+			remoteInfo = XADMasterTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -281,7 +265,6 @@
 			files = (
 				5565D3B41FC4CB8700AFF13C /* XADMaster.framework in Copy Frameworks */,
 				3D66507810378C6F00A679EF /* UniversalDetector.framework in Copy Frameworks */,
-				5559AB9D1FC58165002CB79D /* XADMasterSwift.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +524,6 @@
 			files = (
 				5565D3B31FC4CB8700AFF13C /* XADMaster.framework in Frameworks */,
 				1B033DEE1BA15D27008792ED /* QuartzCore.framework in Frameworks */,
-				5559AB9C1FC58165002CB79D /* XADMasterSwift.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				1B1B99F00B07C8D200EC8324 /* Carbon.framework in Frameworks */,
 				3D66507710378C6A00A679EF /* UniversalDetector.framework in Frameworks */,
@@ -666,8 +648,6 @@
 				5565D37B1FC4C04800AFF13C /* XADMaster.framework */,
 				5565D37D1FC4C04800AFF13C /* XADMaster.framework */,
 				5565D37F1FC4C04800AFF13C /* XADMaster.framework */,
-				5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */,
-				5565D3831FC4C04800AFF13C /* XADMasterSwift.framework */,
 				5565D3851FC4C04800AFF13C /* libXADMaster.a */,
 				5565D3871FC4C04800AFF13C /* libXADMaster.win.a */,
 				5565D3891FC4C04800AFF13C /* libXADMaster.ios.a */,
@@ -681,6 +661,7 @@
 				5565D3991FC4C04800AFF13C /* lsar */,
 				5565D39B1FC4C04800AFF13C /* unar.exe */,
 				5565D39D1FC4C04800AFF13C /* lsar.exe */,
+				55CE551821A4C094002B4073 /* XADMasterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -733,7 +714,6 @@
 			);
 			dependencies = (
 				5565D3B61FC4CB8700AFF13C /* PBXTargetDependency */,
-				5559AB9F1FC58165002CB79D /* PBXTargetDependency */,
 			);
 			name = "The Unarchiver";
 			productInstallPath = "$(HOME)/Applications";
@@ -847,20 +827,6 @@
 			remoteRef = 5565D37E1FC4C04800AFF13C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5565D3811FC4C04800AFF13C /* XADMasterSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = XADMasterSwift.framework;
-			remoteRef = 5565D3801FC4C04800AFF13C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5565D3831FC4C04800AFF13C /* XADMasterSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = XADMasterSwift.framework;
-			remoteRef = 5565D3821FC4C04800AFF13C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5565D3851FC4C04800AFF13C /* libXADMaster.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -964,6 +930,13 @@
 			fileType = archive.ar;
 			path = libUniversalDetector.a;
 			remoteRef = 55A2D45D1FBF936300939897 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		55CE551821A4C094002B4073 /* XADMasterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XADMasterTests.xctest;
+			remoteRef = 55CE551721A4C094002B4073 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1086,11 +1059,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5559AB9F1FC58165002CB79D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = XADMasterSwift;
-			targetProxy = 5559AB9E1FC58165002CB79D /* PBXContainerItemProxy */;
-		};
 		5565D3B61FC4CB8700AFF13C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = XADMaster;
